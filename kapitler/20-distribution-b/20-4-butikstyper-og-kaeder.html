@@ -6,221 +6,121 @@
     <title>20.4 Butikstyper og kæder — Afsætning Studiesite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
                     },
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    }
                 }
             }
         }
     </script>
     <style>
         body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-        .prose-content h2 { scroll-margin-top: 5rem; }
-        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
-        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
-        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
-        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .sidebar-link:hover { transform: translateX(4px); }
-        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
-        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+        .chapter-card { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .chapter-card:hover { transform: translateY(-6px) scale(1.01); }
+        .sidebar-link { transition: all 0.2s ease; }
+        .sidebar-link:hover { transform: translateX(3px); }
+        .sidebar-link.active { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 3px solid #10b981; }
+        .fade-up { animation: fadeUp 0.5s ease-out forwards; opacity: 0; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); }
     </style>
 </head>
-<body class="bg-white min-h-screen">
+<body class="bg-white min-h-screen antialiased">
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="../../index.html" class="flex items-center gap-3 group">
-                <span class="text-2xl">📖</span>
-                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            <a href="../../index.html" class="flex items-center gap-2.5 group">
+                <span class="text-xl">📖</span>
+                <span class="font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors">Afsætning</span>
             </a>
-            <div class="hidden md:flex items-center gap-1">
-                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
-                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
-                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            <div class="flex items-center gap-2">
+                <a href="../../index.html" class="hidden sm:inline-flex px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all">Hjem</a>
+                <a href="../../soeg.html" class="px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <span class="hidden sm:inline">Søg</span>
+                </a>
             </div>
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
         </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
-        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
-        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
-        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
     </div>
 </nav>
 
 <main class="pt-20 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+        <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
             <!-- Sidebar -->
             <aside class="hidden lg:block">
-                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
-                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pb-8 pr-2">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-4 hover:text-emerald-600 transition-colors">
                         <span>🚚</span> 20. Distribution
                     </a>
-                    <div class="space-y-1">
-                        <a href="20-distribution-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20. Distribution (B)</a>
-<a href="20-1-direkte-og-indirekte-distribution.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.1 Direkte og indirekte distribution</a>
-<a href="20-2-distributionskanaler.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.2 Distributionskanaler</a>
-<a href="20-3-distributionsstrategi.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.3 Distributionsstrategi</a>
-<a href="20-4-butikstyper-og-kaeder.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">20.4 Butikstyper og kæder</a>
-<a href="20-5-e-handel.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.5 E-handel</a>
-<a href="case-20-1-morfars-dk.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.1_Morfars.dk</a>
-<a href="case-20-2-loow-undertoej-og-toej-af-merino-uld.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.2_LOOW - Undertøj og tøj af merino-uld</a>
-<a href="case-20-3-varens-vej-til-kunden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.3_Varens vej til kunden</a>
-<a href="case-20-4-wide-path-camper.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.4_Wide Path Camper</a>
-<a href="opgaver-og-cases-til-kapitel-20.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 20</a>
-<a href="opsamling-paa-kapitel-20.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 20</a>
-<a href="traening-til-kapitel-20.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 20</a>
-
-                    </div>
+                    <div class="space-y-0.5"><a href="20-distribution-b.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">20. Distribution (B)</a>
+<a href="20-1-direkte-og-indirekte-distribution.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">20.1 Direkte og indirekte distribution</a>
+<a href="20-2-distributionskanaler.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">20.2 Distributionskanaler</a>
+<a href="20-3-distributionsstrategi.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">20.3 Distributionsstrategi</a>
+<a href="20-4-butikstyper-og-kaeder.html" class="sidebar-link active block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">20.4 Butikstyper og kæder</a>
+<a href="20-5-e-handel.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">20.5 E-handel</a>
+<a href="case-20-1-morfars-dk.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 20.1_Morfars.dk</a>
+<a href="case-20-2-loow-undertoej-og-toej-af-merino-uld.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 20.2_LOOW - Undertøj og tøj af merino-uld</a>
+<a href="case-20-3-varens-vej-til-kunden.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 20.3_Varens vej til kunden</a>
+<a href="case-20-4-wide-path-camper.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 20.4_Wide Path Camper</a>
+<a href="opgaver-og-cases-til-kapitel-20.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opgaver og cases til kapitel 20</a>
+<a href="opsamling-paa-kapitel-20.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opsamling på kapitel 20</a>
+<a href="traening-til-kapitel-20.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Træning til kapitel 20</a>
+</div>
                 </div>
             </aside>
             
             <!-- Content -->
-            <article class="min-w-0 max-w-3xl">
-                <div class="mb-6">
-                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
-                        ← 20. Distribution
-                    </a>
-                </div>
+            <article class="min-w-0 max-w-2xl">
+                <a href="index.html" class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-emerald-600 mb-6 transition-colors lg:hidden">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    20. Distribution
+                </a>
                 
-                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-8 fade-up">
                     20.4 Butikstyper og kæder
                 </h1>
                 
-                <div class="prose-content fade-in" style="animation-delay: 0.1s">
-                    <p class="text-slate-700 leading-relaxed mb-4">
-20.4 Butikstyper og kæder Aa I
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-o Butikstyper
-o Detailhandelskæder
-o Kooperativer
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-o Franchising
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Det er vigtigt for producenten at have viden om, i hvilke butikker man forventer
-= at! 'e købe forskellige produkter. Her skelner man mellem forskellige ty S af
-buti«er, som tiltrækker forskellige kundegrupper.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Der findes overordnet set tre butikstyper, der hver især har nogle kendetegn.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Dagligvarebutikker
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Dagligvarebutikker er butikker, hvor man gør sine daglige indkøb. Det er typisk
+                <div class="fade-up" style="animation-delay:0.08s">
+                    
+    <div class="prose-content">
+        <p class="text-slate-700 leading-relaxed mb-4">Det er vigtigt for producenten at have viden om, i hvilke butikker man forventer
+= at! &#x27;e købe forskellige produkter. Her skelner man mellem forskellige ty S af
+butier, som tiltrækker forskellige kundegrupper.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Der findes overordnet set tre butikstyper, der hver især har nogle kendetegn.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Dagligvarebutikker er butikker, hvor man gør sine daglige indkøb. Det er typisk
 mad, kolonialvarer og andre fornødenheder, og blandt disse butikker finder vi
-bl.a. Bilka, Føtex, Netto, Kvickly, Coop 365, Rema 1000 og Spar.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Udvalgsvarebutikker
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Udvalgsvarebutikker er butikker, som har udvalgte varer inden for nogle
+bl.a. Bilka, Føtex, Netto, Kvickly, Coop 365, Rema 1000 og Spar.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Udvalgsvarebutikker er butikker, som har udvalgte varer inden for nogle
 bestemte kategorier. Det kan være butikker der fx forhandler sportstøj, tøj eller
-elektronik. Her kan nævnes H&M, Sportigan samt Power.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Spe "'albutikker
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-I specialbutikker køber vi varer af et bestemt mærke som fx B&O-butikker og
-Abercrombie & Fitch butikker. Apotekere, boghandlere eller slagterbutikker er
-ligeledes specialister, som har et afgrænset sortiment på detailvaremarkedet.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Detailhandelskæder
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-I Danmark findes der en række forskellige kædeformer, hvor formålet for kæden
+elektronik. Her kan nævnes H&amp;M, Sportigan samt Power.</p>
+<p class="text-slate-700 leading-relaxed mb-4">I specialbutikker køber vi varer af et bestemt mærke som fx B&amp;O-butikker og
+Abercrombie &amp; Fitch butikker. Apotekere, boghandlere eller slagterbutikker er
+ligeledes specialister, som har et afgrænset sortiment på detailvaremarkedet.</p>
+<p class="text-slate-700 leading-relaxed mb-4">I Danmark findes der en række forskellige kædeformer, hvor formålet for kæden
 er styrke sin konkurrencemæssige position. Man kan sige, at formålet med alt
 kædesamarbejde er at sikre en effektiv og konkurrencedygtig drift. Som
 udgangspunkt har en kæde udarbejdet et koncept, hvori der sikres en effektiv
-daglig drift af de enkelte butikker.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Frivillige kæder
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Frivillige kæder er en række selvstændigt ejede butikker, der arbejder sammen.
-Indehaveren ejer således selv forretningen og driver den for egen regning og
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Egentlige kæder
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Med en egentlig kæde menes en kæde, hvor der kun er én indehaver. Denne form
+daglig drift af de enkelte butikker.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Frivillige kæder er en række selvstændigt ejede butikker, der arbejder sammen.
+Indehaveren ejer således selv forretningen og driver den for egen regning og</p>
+<p class="text-slate-700 leading-relaxed mb-4">Med en egentlig kæde menes en kæde, hvor der kun er én indehaver. Denne form
 for kæde, der også kaldes kapitalkæde, er kendetegnet ved at såvel butikker
 som grossistfunktion ejes af den samme virksomhed eller person. Elgiganten,
 Inspiration og Matas er eksempler på egentlige kæder. Salling Groups butikker
 (Føtex, Bilka, Netto og Salling) er sammen med JYSK nogle af landets største
-egentlige kæder.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kooperativer
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kooperativer er butikker, der grundlæggende ejes af medlemmer af en forening,
-dvs. de ejes af forbrugerne.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Coop er Danmarks største medlems- og forbrugerorganisation med over 2 mio.
-medlemmer, der alle er medejere af Coop og de lokale brugsforeninger. Coop
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Franchising
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Franchising er et koncept, som benyttes af mange forskellige forretningskæder
+egentlige kæder.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Kooperativer er butikker, der grundlæggende ejes af medlemmer af en forening,
+dvs. de ejes af forbrugerne.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Coop er Danmarks største medlems- og forbrugerorganisation med over 2 mio.
+medlemmer, der alle er medejere af Coop og de lokale brugsforeninger. Coop</p>
+<p class="text-slate-700 leading-relaxed mb-4">Franchising er et koncept, som benyttes af mange forskellige forretningskæder
 over hele verden. Et franchisekoncept betyder, at franchisegiveren - typisk
 producenten - udvikler og tilbyder et forretningskoncept, der så overdrager
 retten til at forhandle sit produkt til en selvstændig forretningsindehaver, der
@@ -228,97 +128,70 @@ bliver franchisetager. Franchisetager forpligter sig til at efterleve franchiseg
 retningslinjer for salg af dennes produkter. Retningslinjerne vedrører typisk
 priser, sortiment, butiksindretning, serviceaktiviteter, beliggenhed 0.!. Der er
 ingen særskilt lov om franchising, så aftalerne kan udformes individuelt, og evt.
-uenigheder om det aftalte løses ud fra aftaleloven.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Illustration 20.7: Fordele og ulemper ved franchising
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-= F le for franchisegiver Ulemper for franchisegiver
+uenigheder om det aftalte løses ud fra aftaleloven.</p>
+<p class="text-slate-700 leading-relaxed mb-4">= F le for franchisegiver Ulemper for franchisegiver
 e Hurtig udbredelse af konceptet. e Ikke den fulde kontrol med alle
 e Stærk branding pga. stramme butikker.
 retningslinjer. e Enkelte uheldige franchisetagere
-e Den økonomiske risiko og kan skade koncept og brand.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-likviditetskrav deles med
-franchisetager.
-e Undgår en række ledelsesopgaver.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Fordele for franchisetager Ulemper for franchisetager
-e Kendt koncept og brand letter e Ofte stram styring fra
+e Den økonomiske risiko og kan skade koncept og brand.</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Fordele for franchisetager Ulemper for franchisetager</h3>
+<p class="text-slate-700 leading-relaxed mb-4">e Kendt koncept og brand letter e Ofte stram styring fra
 etablering. franchisegiver.
 e Vejledning fra franchisegiver. e Begrænsede
 e Mindre økonomisk risiko og udfoldelsesmuligheder.
 kapitalbehov end ved start fra e Betale royalty til franchisegiver -
-bunden. "dele" resultatet med denne.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-koncept fra starten. Franchisetager betaler en procentdel af omsætningen til
-franchisegiver i royalty. En del franchisegivere kræver desuden en
-</p>
-<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">indtrædelsesafgift fra franchisetager som en slags startbetaling.</blockquote>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Franchising indebærer en række fordele og ulemper for såvel franchisegiver som
-franchisetager.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Franchising anvendes i stigende omfang, hvilket skyldes, at systemet indebærer
+bunden. &quot;dele&quot; resultatet med denne.</p>
+<p class="text-slate-700 leading-relaxed mb-4">koncept fra starten. Franchisetager betaler en procentdel af omsætningen til
+franchisegiver i royalty. En del franchisegivere kræver desuden en indtrædelsesafgift fra franchisetager som en slags startbetaling.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Franchising indebærer en række fordele og ulemper for såvel franchisegiver som
+franchisetager.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Franchising anvendes i stigende omfang, hvilket skyldes, at systemet indebærer
 mange væsentlige fordele for begge parter. Desuden muliggør franchising en
 meget hurtig international ekspansion, hvilket får stigende betydning for mange
-producenter af stærke brands.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Franchising anvendes bl.a. af Bianco Footwear, Skagerak, Ecco, Rema 1000 og
-McDonald's. Franchising kan anvendes sideløbende med andre
-distributionskanaler - en metode bl.a. Ecco benytter sig af.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-E. \ apel: Moogio
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Moogio er en svensk virksomhed, der sælger gardiner, persienner og
+producenter af stærke brands.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Franchising anvendes bl.a. af Bianco Footwear, Skagerak, Ecco, Rema 1000 og
+McDonald&#x27;s. Franchising kan anvendes sideløbende med andre
+distributionskanaler - en metode bl.a. Ecco benytter sig af.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Moogio er en svensk virksomhed, der sælger gardiner, persienner og
 solafskærmning. I Moogios sortiment findes et bredt udvalg af markiser,
 gardiner og persienner til løsninger både inde og ude. Virksomheden sælger
-sine produkter gennem franchisebutikker, hvoraf der er 17 butikker i Danmark.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-I nedenstående video forklarer en franchisetager fra Moogio, forskellene på de
-forskellige kædeformer.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Gengivet med tilladelse fra Moogio.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-= < Opgave 20.5: Pandora
-</p>
-
-<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Det er vigtigt for producenten at have viden om, i hvilke butikker man forventer = at! 'e købe forskellige produkter. Her skelner man mellem forskellige ty S af buti«er, som tiltrækker forskellige kundegrupper. Dagligvarebutikker er butikker, hvor man gør sine daglige indkøb. Det er typisk mad, kolonialvarer og andre fornødenheder, og blandt disse butikker finder vi bl.a. Bilka, Føtex, Netto, Kvickly, Coop 365, Rema 1000 og Spar.
-</p>
-</div>
+sine produkter gennem franchisebutikker, hvoraf der er 17 butikker i Danmark.</p>
+<p class="text-slate-700 leading-relaxed mb-4">I nedenstående video forklarer en franchisetager fra Moogio, forskellene på de
+forskellige kædeformer.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Det er vigtigt for producenten at have viden om, i hvilke butikker man forventer = at! &#x27;e købe forskellige produkter. Her skelner man mellem forskellige ty S af butier, som tiltrækker forskellige kundegrupper. Dagligvarebutikker er butikker, hvor man gør sine daglige indkøb. Det er typisk mad, kolonialvarer og andre fornødenheder, og blandt disse butikker finder vi bl.a. Bilka, Føtex, Netto, Kvickly, Coop 365, Rema 1000 og Spar.</p>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60">
+            <h3 class="text-base font-bold text-emerald-900 mb-2 flex items-center gap-2">
+                📝 Det vigtigste at huske
+            </h3>
+            <p class="text-emerald-800 text-sm leading-relaxed">Det er vigtigt for producenten at have viden om, i hvilke butikker man forventer
+= at! &#x27;e købe forskellige produkter. Her skelner man mellem forskellige ty S af
+butier, som tiltrækker forskellige kundegrupper. Dagligvarebutikker er butikker, hvor man gør sine daglige indkøb. Det er typisk
+mad, kolonialvarer og andre fornødenheder, og blandt disse butikker finder vi
+bl.a. Bilka, Føtex, Netto, Kvickly, Coop 365, Rema 1000 og Spar.</p>
+        </div>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60">
+            <h3 class="text-base font-bold text-amber-900 mb-3 flex items-center gap-2">
+                🔑 Nøglebegreber i dette afsnit
+            </h3>
+            <div class="flex flex-wrap gap-2"><span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Dagligvarebutikker</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Udvalgsvarebutikker</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Frivillige kæder</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Matas</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Kooperativer</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Coop</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Franchising</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Et franchisekoncept</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Moogio</span></div>
+        </div>
+    </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
-                    <div><a href="20-3-distributionsstrategi.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 20.3 Distributionsstrategi</a></div>
-                    <div><a href="20-5-e-handel.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">20.5 E-handel →</a></div>
+                <!-- Bottom nav -->
+                <div class="mt-16 pt-6 border-t border-slate-100 flex justify-between items-center flex-wrap gap-4">
+                    <div><a href="20-3-distributionsstrategi.html" class="group flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors"><svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>20.3 Distributionsstrategi</a></div>
+                    <div><a href="20-5-e-handel.html" class="group flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">20.5 E-handel<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a></div>
                 </div>
             </article>
         </div>
@@ -326,12 +199,9 @@ Det er vigtigt for producenten at have viden om, i hvilke butikker man forventer
 </main>
 
 
-<footer class="mt-20 border-t border-slate-200 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
-            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
-        </div>
+<footer class="mt-24 py-10 border-t border-slate-100 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-slate-400 text-sm">📖 Afsætning Studiesite — Eksamen 2026</p>
     </div>
 </footer>
 </body>

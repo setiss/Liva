@@ -6,236 +6,110 @@
     <title>Opgaver og cases til kapitel 3 — Afsætning Studiesite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
                     },
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    }
                 }
             }
         }
     </script>
     <style>
         body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-        .prose-content h2 { scroll-margin-top: 5rem; }
-        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
-        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
-        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
-        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .sidebar-link:hover { transform: translateX(4px); }
-        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
-        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+        .chapter-card { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .chapter-card:hover { transform: translateY(-6px) scale(1.01); }
+        .sidebar-link { transition: all 0.2s ease; }
+        .sidebar-link:hover { transform: translateX(3px); }
+        .sidebar-link.active { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 3px solid #10b981; }
+        .fade-up { animation: fadeUp 0.5s ease-out forwards; opacity: 0; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); }
     </style>
 </head>
-<body class="bg-white min-h-screen">
+<body class="bg-white min-h-screen antialiased">
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="../../index.html" class="flex items-center gap-3 group">
-                <span class="text-2xl">📖</span>
-                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            <a href="../../index.html" class="flex items-center gap-2.5 group">
+                <span class="text-xl">📖</span>
+                <span class="font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors">Afsætning</span>
             </a>
-            <div class="hidden md:flex items-center gap-1">
-                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
-                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
-                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            <div class="flex items-center gap-2">
+                <a href="../../index.html" class="hidden sm:inline-flex px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all">Hjem</a>
+                <a href="../../soeg.html" class="px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <span class="hidden sm:inline">Søg</span>
+                </a>
             </div>
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
         </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
-        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
-        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
-        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
     </div>
 </nav>
 
 <main class="pt-20 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+        <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
             <!-- Sidebar -->
             <aside class="hidden lg:block">
-                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
-                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pb-8 pr-2">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-4 hover:text-emerald-600 transition-colors">
                         <span>🌍</span> 3. Ekstern situation
                     </a>
-                    <div class="space-y-1">
-                        <a href="3-den-eksterne-situation-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. Den eksterne situation (B)</a>
-<a href="3-1-omverdensmodellen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.1 Omverdensmodellen</a>
-<a href="3-2-ot-opsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.2 OT-opsamling</a>
-<a href="3-3-muligheds-og-trusselsmatrix.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.3 Muligheds- og trusselsmatrix</a>
-<a href="3-4-pestel-analyse.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.4 PESTEL-analyse</a>
-<a href="case-3-1-decofarver.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.1_Decofarver</a>
-<a href="case-3-2-toms-gruppen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.2_Toms Gruppen</a>
-<a href="case-3-3-discountsupermarkeder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.3_Discountsupermarkeder</a>
-<a href="case-3-4-clever.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.4_Clever</a>
-<a href="opgaver-og-cases-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Opgaver og cases til kapitel 3</a>
-<a href="opsamling-paa-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 3</a>
-<a href="traening-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 3</a>
-<a href="virksomhedens-afhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Virksomhedens afhængige omverden</a>
-<a href="virksomhedens-uafhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Virksomhedens uafhængige omverden</a>
-
-                    </div>
+                    <div class="space-y-0.5"><a href="3-den-eksterne-situation-b.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">3. Den eksterne situation (B)</a>
+<a href="3-1-omverdensmodellen.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">3.1 Omverdensmodellen</a>
+<a href="3-2-ot-opsamling.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">3.2 OT-opsamling</a>
+<a href="3-3-muligheds-og-trusselsmatrix.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">3.3 Muligheds- og trusselsmatrix</a>
+<a href="3-4-pestel-analyse.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">3.4 PESTEL-analyse</a>
+<a href="case-3-1-decofarver.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 3.1_Decofarver</a>
+<a href="case-3-2-toms-gruppen.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 3.2_Toms Gruppen</a>
+<a href="case-3-3-discountsupermarkeder.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 3.3_Discountsupermarkeder</a>
+<a href="case-3-4-clever.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 3.4_Clever</a>
+<a href="opgaver-og-cases-til-kapitel-3.html" class="sidebar-link active block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opgaver og cases til kapitel 3</a>
+<a href="opsamling-paa-kapitel-3.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opsamling på kapitel 3</a>
+<a href="traening-til-kapitel-3.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Træning til kapitel 3</a>
+<a href="virksomhedens-afhaengige-omverden.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Virksomhedens afhængige omverden</a>
+<a href="virksomhedens-uafhaengige-omverden.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Virksomhedens uafhængige omverden</a>
+</div>
                 </div>
             </aside>
             
             <!-- Content -->
-            <article class="min-w-0 max-w-3xl">
-                <div class="mb-6">
-                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
-                        ← 3. Ekstern situation
-                    </a>
-                </div>
+            <article class="min-w-0 max-w-2xl">
+                <a href="index.html" class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-emerald-600 mb-6 transition-colors lg:hidden">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    3. Ekstern situation
+                </a>
                 
-                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-8 fade-up">
                     Opgaver og cases til kapitel 3
                 </h1>
                 
-                <div class="prose-content fade-in" style="animation-delay: 0.1s">
-                    <p class="text-slate-700 leading-relaxed mb-4">
-o Quiz, tjek- og forståelsesopgaver til 3. Den eksterne situation
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-o Oversigt over opgaver til kapitel 3. Den eksterne situation
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-o Oversigt over cases til kapitel 3. Den eksterne situation
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-o Tværgående cases til 3. Den eksterne situation
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-situation
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Quiz
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Tjekopgaver
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Forstaelsesopgaver
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Oversigt over opgaver til kapitel 3. Den eksterne situation
-Opgave 3.1: Mofibo
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.2: En tur rundt pa skolen
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.3: Forlystelsesparker
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-— < gave 3.4: Børneloppen
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.5: Danske virksomheder på det russiske marked
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.6: SWOT-opsamling
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.7: Biografen
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.8: Wolt
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.9: Supermarked versus discountkæde
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.10: PESTEL-analyse - østlige EU-lande
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.11: Spangsberg Chokolade
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 3.12: PESTEL-analyse for Ungarn
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Oversigt over cases til kapitel 3. Den eksterne situation
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Case 3.3: Discountsupermarkeder
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Case 3.4: Clever
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Tværgående cases til 3. Den eksterne situation
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Tværgående case 1: Joe & The Juice
-Tværgående case 3: Søstrene Grene
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Tværgående case 4: Butikskæden Normal
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Tværgående case 15: Månsson
-</p>
-
-<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Dette afsnit omhandler opgaver og cases til kapitel 3 og de centrale begreber inden for dette emne.
-</p>
-</div>
+                <div class="fade-up" style="animation-delay:0.08s">
+                    
+    <div class="prose-content">
+        <h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Opgave 3.5: Danske virksomheder på det russiske marked</h3>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Opgave 3.9: Supermarked versus discountkæde</h3>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Opgave 3.10: PESTEL-analyse - østlige EU-lande</h3>
+<p class="text-slate-700 leading-relaxed mb-4">Dette afsnit omhandler opgaver og cases til kapitel 3 og de centrale begreber inden for dette emne.</p>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60">
+            <h3 class="text-base font-bold text-emerald-900 mb-2 flex items-center gap-2">
+                📝 Det vigtigste at huske
+            </h3>
+            <p class="text-emerald-800 text-sm leading-relaxed">Dette afsnit omhandler opgaver og cases til kapitel 3 og de centrale begreber inden for dette emne.</p>
+        </div>
+        
+    </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
-                    <div><a href="case-3-4-clever.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 3.4_Clever</a></div>
-                    <div><a href="opsamling-paa-kapitel-3.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opsamling på kapitel 3 →</a></div>
+                <!-- Bottom nav -->
+                <div class="mt-16 pt-6 border-t border-slate-100 flex justify-between items-center flex-wrap gap-4">
+                    <div><a href="case-3-4-clever.html" class="group flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors"><svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>Case 3.4_Clever</a></div>
+                    <div><a href="opsamling-paa-kapitel-3.html" class="group flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opsamling på kapitel 3<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a></div>
                 </div>
             </article>
         </div>
@@ -243,12 +117,9 @@ Dette afsnit omhandler opgaver og cases til kapitel 3 og de centrale begreber in
 </main>
 
 
-<footer class="mt-20 border-t border-slate-200 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
-            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
-        </div>
+<footer class="mt-24 py-10 border-t border-slate-100 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-slate-400 text-sm">📖 Afsætning Studiesite — Eksamen 2026</p>
     </div>
 </footer>
 </body>

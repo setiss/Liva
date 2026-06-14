@@ -6,559 +6,249 @@
     <title>14.2 Markedskortet — Afsætning Studiesite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
                     },
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    }
                 }
             }
         }
     </script>
     <style>
         body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-        .prose-content h2 { scroll-margin-top: 5rem; }
-        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
-        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
-        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
-        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .sidebar-link:hover { transform: translateX(4px); }
-        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
-        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+        .chapter-card { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .chapter-card:hover { transform: translateY(-6px) scale(1.01); }
+        .sidebar-link { transition: all 0.2s ease; }
+        .sidebar-link:hover { transform: translateX(3px); }
+        .sidebar-link.active { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 3px solid #10b981; }
+        .fade-up { animation: fadeUp 0.5s ease-out forwards; opacity: 0; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); }
     </style>
 </head>
-<body class="bg-white min-h-screen">
+<body class="bg-white min-h-screen antialiased">
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="../../index.html" class="flex items-center gap-3 group">
-                <span class="text-2xl">📖</span>
-                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            <a href="../../index.html" class="flex items-center gap-2.5 group">
+                <span class="text-xl">📖</span>
+                <span class="font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors">Afsætning</span>
             </a>
-            <div class="hidden md:flex items-center gap-1">
-                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
-                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
-                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            <div class="flex items-center gap-2">
+                <a href="../../index.html" class="hidden sm:inline-flex px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all">Hjem</a>
+                <a href="../../soeg.html" class="px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <span class="hidden sm:inline">Søg</span>
+                </a>
             </div>
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
         </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
-        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
-        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
-        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
     </div>
 </nav>
 
 <main class="pt-20 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+        <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
             <!-- Sidebar -->
             <aside class="hidden lg:block">
-                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
-                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pb-8 pr-2">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-4 hover:text-emerald-600 transition-colors">
                         <span>🎨</span> 14. Marketingmix
                     </a>
-                    <div class="space-y-1">
-                        <a href="14-marketingmix-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">14. Marketingmix (B)</a>
-<a href="14-1-marketingmix-og-plc-forloeb.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">14.1 Marketingmix og PLC-forløb</a>
-<a href="14-2-markedskortet.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">14.2 Markedskortet</a>
-<a href="14-3-push-og-pull-strategi.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">14.3 Push- og pull-strategi</a>
-<a href="case-14-1-bakkedal.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 14.1_Bakkedal</a>
-<a href="opgaver-og-cases-til-kapitel-14.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 14</a>
-<a href="opsamling-paa-kapitel-14.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 14</a>
-<a href="traening-til-kapitel-14.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 14</a>
-
-                    </div>
+                    <div class="space-y-0.5"><a href="14-marketingmix-b.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">14. Marketingmix (B)</a>
+<a href="14-1-marketingmix-og-plc-forloeb.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">14.1 Marketingmix og PLC-forløb</a>
+<a href="14-2-markedskortet.html" class="sidebar-link active block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">14.2 Markedskortet</a>
+<a href="14-3-push-og-pull-strategi.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">14.3 Push- og pull-strategi</a>
+<a href="case-14-1-bakkedal.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 14.1_Bakkedal</a>
+<a href="opgaver-og-cases-til-kapitel-14.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opgaver og cases til kapitel 14</a>
+<a href="opsamling-paa-kapitel-14.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opsamling på kapitel 14</a>
+<a href="traening-til-kapitel-14.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Træning til kapitel 14</a>
+</div>
                 </div>
             </aside>
             
             <!-- Content -->
-            <article class="min-w-0 max-w-3xl">
-                <div class="mb-6">
-                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
-                        ← 14. Marketingmix
-                    </a>
-                </div>
+            <article class="min-w-0 max-w-2xl">
+                <a href="index.html" class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-emerald-600 mb-6 transition-colors lg:hidden">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    14. Marketingmix
+                </a>
                 
-                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-8 fade-up">
                     14.2 Markedskortet
                 </h1>
                 
-                <div class="prose-content fade-in" style="animation-delay: 0.1s">
-                    <p class="text-slate-700 leading-relaxed mb-4">
-Markedskortet er et populært værktøj, når det drejer sig om at måle effekten af
+                <div class="fade-up" style="animation-delay:0.08s">
+                    
+    <div class="prose-content">
+        <p class="text-slate-700 leading-relaxed mb-4">Markedskortet er et populært værktøj, når det drejer sig om at måle effekten af
 virksomhedens parameterindsats med fokus på produktet, d FO E AD)
 promotion. Markedskortet viser forbrugernes kendskab til Mæ: net og ueres
 opfattelse af produktets kvalitet, distributionsgrad og virksomhedens
-kommunikationsindsats.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Værktøjet er udviklet til kortvarige produkter, som købes hyppigt. I praksis vil det
-gælde for mange mærkevarer inden for dagligvareområdet.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Markedskortet er en visuel fremstilling, som måler fire forhold vedrørende et
-mærke:
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-e ‘vor mange, der kender mærket
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-e Hvor mange, der har prøvet mærket
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Holdningen til mærket hos forbrugere, der har prøvet mærket
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Indstillingen til mærket hos de forbrugere, der kender mærket, men ikke har
-prøvet det
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-DINNER | DINNER
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-IEMA KAFFE IRMA KAFFE
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-yam OKOLOGISK: © GKOLOGISK
-| CIRKEL KAFFE _ ORIEL KARE
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-' BUD GUD
-CIRKEL KAFFE ORKELKAFFE omit
-foe) ® i
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Fotu ».rte Ravn Østergaard
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Indsamling af data
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Markedskortet bygger pa en simpel markedsanalyse, fx en survey i form af en
+kommunikationsindsats.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Værktøjet er udviklet til kortvarige produkter, som købes hyppigt. I praksis vil det
+gælde for mange mærkevarer inden for dagligvareområdet.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Markedskortet er en visuel fremstilling, som måler fire forhold vedrørende et
+mærke:</p>
+<p class="text-slate-700 leading-relaxed mb-4">Holdningen til mærket hos forbrugere, der har prøvet mærket</p>
+<p class="text-slate-700 leading-relaxed mb-4">Indstillingen til mærket hos de forbrugere, der kender mærket, men ikke har
+prøvet det</p>
+<p class="text-slate-700 leading-relaxed mb-4">Markedskortet bygger pa en simpel markedsanalyse, fx en survey i form af en
 omnibusanalyse, hvor respondenten stilles få spørgsmål. Markedskortet er vist i
-illustration 14.4, der viser forbrugernes opfattelse af et kaffemærke, som har
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-været på markedet i tre år.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Mange virksomheder indsamler store mængder data om forbrugerne via
+illustration 14.4, der viser forbrugernes opfattelse af et kaffemærke, som har</p>
+<p class="text-slate-700 leading-relaxed mb-4">Mange virksomheder indsamler store mængder data om forbrugerne via
 søgemaskinevirksomhedernes databaser eller software som fx Google Analytics,
 som virksomhederne køber af Google. Disse data kan give et sikkert input til et
 markedskort og anvendes i stedet for en survey. Data til at udfylde markedskortet
 kan tilvejebringes hurtigere og sikrere end før indsamlingen blev digitaliseret.
 Konsekvensen er at markedskortet bliver et endnu bedre styringsværktøj og
-værktøj til at måle effekten af en promotionindsats.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-holdning og køb af produktet kan opdeles i de viste kategorier med
-udgangspunkt i det nævnte mærke inden for kaffe.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Illustration 14.4: Markedskort
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kilde: Udviklet af Otto Ottesen, Handelshøjskolen i København
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Få illustration 14.4 forklaret: Markedskortet
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opdeling af markedskortet
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Hele markedskortet, dvs. de 100% omfatter respondenter, der har nævnt, at de er
+værktøj til at måle effekten af en promotionindsats.</p>
+<p class="text-slate-700 leading-relaxed mb-4">holdning og køb af produktet kan opdeles i de viste kategorier med
+udgangspunkt i det nævnte mærke inden for kaffe.</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Få illustration 14.4 forklaret: Markedskortet</h3>
+<p class="text-slate-700 leading-relaxed mb-4">Hele markedskortet, dvs. de 100% omfatter respondenter, der har nævnt, at de er
 brugere af den pågældende produkttype, i dette tilfælde kaffe. Ikke-brugere
-indgår dermed ikke.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Den første opdeling vedrører kendskabet til mærket. Her tager respondenterne
+indgår dermed ikke.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Den første opdeling vedrører kendskabet til mærket. Her tager respondenterne
 stilling til, om de kender mærket eller ikke. Svarene danner baggrund for en
-vertikal opdeling af markedskortet.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-indtegnes horisontalt i markedskortet.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Det næste snit opdeler den gruppe kunder, der har prøvet mærket i tre grupper.
+vertikal opdeling af markedskortet.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Det næste snit opdeler den gruppe kunder, der har prøvet mærket i tre grupper.
 Nogle kunder synes godt om mærket og foretrækker mærket frem for andre. En
 anden gruppe vil på baggrund af deres erfaring med mærket forkaste det. En
 sidste gruppe synes, at mærket hverken er bedre eller dårligere end tilsvarende
 mærker. Denne gruppe kaldes indifferente. Disse tre grupper kan indtegnes som
-undergrupper i markedskortet blandt de kunder, der har prøvet mærket.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Der vil også være nogle kunder, som kender mærket men ikke har prøvet det.
+undergrupper i markedskortet blandt de kunder, der har prøvet mærket.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Der vil også være nogle kunder, som kender mærket men ikke har prøvet det.
 Disse kan inddeles efter hvem, der er positive og fx overvejer at prøve det, hvem
 der er negative og ikke har en intention om at prøve mærket eller dem, der er
 indifferente. Fordelingen blandt de tre sidstnævnte typer af kunder indtegnes i
 markedskortet som det sidste snit som en opdeling af de kunder, der kender
-mærket, men ikke har prøvet det.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Ne \ al
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Med afsæt i markedskortet kan en række nøgletal beregnes, som kan give
+mærket, men ikke har prøvet det.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Med afsæt i markedskortet kan en række nøgletal beregnes, som kan give
 virksomheden en dybere indsigt i mærkets position og give virksomheden input
 til tilpasninger i marketingmix og dermed opnå en bedre indtjening.
 Kendskabsprocenten kan direkte aflæses. I dette tilfælde (illustration 14.4) kender
 60 % mærket. Da der er flere mærker på markedet, må det antages, at 60 %
 kendskab er tilfredsstillende, men at det stadig vil være relevant at arbejde med
-at forbedre kendskabsprocenten.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-De øvrige nøgletal beregnes således:
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Illustration 14.5: Oversigt over nøgletal
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Prøveandel Har prøvet %-100 _ 24-100 — 1n0
-Kender % — 60 … 40%
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Præferenceandel Foretrækker %-100 — 10-100 _ o
-Har prøvet % 24 41.7%
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Forkastelsesandel Forkaster %-100 __ 2-100
-Har prøvet % 24
+at forbedre kendskabsprocenten.</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Forkastelsesandel Forkaster %-100 __ 2-100</h3>
+<p class="text-slate-700 leading-relaxed mb-4">Har prøvet % 24
 Positivitetsandel Positive %-100
 Har ikke prøvet %
-Indifferensandel Indiff. %-100
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Har ikke prøvet %
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Negativitetsandel
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Negative %-100 7-100
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Har ikke prøvet % 36
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-— 4100 _
-100 — 11.1%
-— 25:100 _
-= 28,100 — 69.4%
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Pa baggrund af nøgletallene kan virksomheden analysere årsagerne til
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-nøgletallenes værdier og udarbejde planer for forbedringer af nøgletallene.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Illustration 14.6 giver en oversigt over mulige årsager til nøgletallenes værdi samt
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-muligheder for forbedringer af nøgletallene.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Illustration 14.6: Årsager til værdien af nøgletal og
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-forbedringsmuligheder
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Nøgletal Årsager til talværdi
-Kendskabsandel Stærk reklameindsats, stor udbredelse
-(60%) (distribution, tid på markedet)
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Prøveandel (40%) Produktets tilgængelighed (bred
-distribution), tid på markedet,
-priskampagner/attraktiv pris. Dominerende
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-markedsleder med høj præferenceandel
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Præferenceandel
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Høj kvalitet, der harmonerer med prisen,
+Indifferensandel Indiff. %-100</p>
+<p class="text-slate-700 leading-relaxed mb-4">Pa baggrund af nøgletallene kan virksomheden analysere årsagerne til</p>
+<p class="text-slate-700 leading-relaxed mb-4">Illustration 14.6 giver en oversigt over mulige årsager til nøgletallenes værdi samt</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Nøgletal Årsager til talværdi</h3>
+<p class="text-slate-700 leading-relaxed mb-4">Kendskabsandel Stærk reklameindsats, stor udbredelse
+(60%) (distribution, tid på markedet)</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Prøveandel (40%) Produktets tilgængelighed (bred</h3>
+<p class="text-slate-700 leading-relaxed mb-4">distribution), tid på markedet,
+priskampagner/attraktiv pris. Dominerende</p>
+<p class="text-slate-700 leading-relaxed mb-4">markedsleder med høj præferenceandel</p>
+<p class="text-slate-700 leading-relaxed mb-4">Høj kvalitet, der harmonerer med prisen,
 emballage (brugervenlighed), stærkt
-USP/ESP
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Indifferensandel Anonymt produkt, der ikke differentierer sig,
+USP/ESP</p>
+<p class="text-slate-700 leading-relaxed mb-4">Indifferensandel Anonymt produkt, der ikke differentierer sig,
 (50%) me-too produkt. For høj pris i forhold til
-valitet
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Forkastelsesandel
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-valitet eller emballage for ringe
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Positivitetsandel
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Godt image, reklame skaber positive
-holdninger
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Forbedringer af nøgletallet
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Intensivere reklameindsatsen
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Udvide distribution, promotion
-i butikkerne og/eller egen
+valitet</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Udvide distribution, promotion</h3>
+<p class="text-slate-700 leading-relaxed mb-4">i butikkerne og/eller egen
 webshop, priskampagner,
-vareprøver
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Forbedre produktets kvalitet
-og/eller emballage
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Skabe USP/ESP. Prisjustering
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Forbedre kvalitet eller
-emballage evt. kombineret
-med at ændre mærke
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Få de positive til at prøve.
+vareprøver</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Forbedre kvalitet eller</h3>
+<p class="text-slate-700 leading-relaxed mb-4">emballage evt. kombineret
+med at ændre mærke</p>
+<p class="text-slate-700 leading-relaxed mb-4">Få de positive til at prøve.
 Promotion i butikkerne,
-priskampagner, vareprøver
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-(69,4%) me-too produkt. For nøj pris I Tornolda til
+priskampagner, vareprøver</p>
+<p class="text-slate-700 leading-relaxed mb-4">(69,4%) me-too produkt. For nøj pris I Tornolda til
 kvalitet
-Negativitetsandel Ry for dårlig kvalitet (herunder evt. Forbedre kvalitet eller
-</p>
-<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">(19,4%) problemer med miljøvenlighed), frastødende emballage evt. kombineret</blockquote>
-<p class="text-slate-700 leading-relaxed mb-4">
-reklamekampagner, dårligt mærkeimage med at ændre mærke samt
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-promotion i butikker
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-De nøgletal, der handler om forkastelse, negativitet og indifferens, bør naturligvis
+Negativitetsandel Ry for dårlig kvalitet (herunder evt. Forbedre kvalitet eller (19,4%) problemer med miljøvenlighed), frastødende emballage evt. kombineret
+reklamekampagner, dårligt mærkeimage med at ændre mærke samt</p>
+<p class="text-slate-700 leading-relaxed mb-4">De nøgletal, der handler om forkastelse, negativitet og indifferens, bør naturligvis
 være så lave som muligt, og forbedringer bør baseres på at mindske værdien af
 disse nøgletal. Blandt forbrugere, der ikke har prøvet et produkt, bør
 positivitetsandelen være størst muligt. Det vil dog være bedre, hvis de positive
 havde prøvet og dermed foretrak, så en høj positivitetsandel kan vurderes både
-positiv og negativ.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Hvilken værdi af et nøgletal, der er tilfredsstillende, vil altid afhænge af
-produkttype og konkurrencesituation samt hvor nyt produktet er på markedet,
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-— og’ rdan nøgletallene historisk har været, så erfaringer med produktet e 1
-for. Ntning for at kunne konkludere på dette.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Analyse af nøgletal
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-I det følgende kommenteres nøgletallene for det omhandlede mærke inden for
+positiv og negativ.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Hvilken værdi af et nøgletal, der er tilfredsstillende, vil altid afhænge af
+produkttype og konkurrencesituation samt hvor nyt produktet er på markedet,</p>
+<p class="text-slate-700 leading-relaxed mb-4">— og’ rdan nøgletallene historisk har været, så erfaringer med produktet e 1
+for. Ntning for at kunne konkludere på dette.</p>
+<p class="text-slate-700 leading-relaxed mb-4">I det følgende kommenteres nøgletallene for det omhandlede mærke inden for
 kaffe samt hvad der bør gøres for at forbedre mærkets position. For at forbedre
 mærkets position kan virksomheden justere udvalgte dele af virksomhedens
-marketingmix.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kendskabsandel og prøveandel
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Om en kendskabsandel på 60% er højt eller lavt er svært at vurdere uden anden
+marketingmix.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Om en kendskabsandel på 60% er højt eller lavt er svært at vurdere uden anden
 information. Øget promotion i form af fx tv-reklamer og evt. influencermarketing
-må formodes at kunne øge kendskabet.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Vurderes prøveandelen for lav, kan årsagen være, at mærket ikke fås i
+må formodes at kunne øge kendskabet.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Vurderes prøveandelen for lav, kan årsagen være, at mærket ikke fås i
 tilstrækkeligt mange butikker og/eller ikke er placeret synligt i butikkerne. En for
-høj pris kan også forårsage en for lav prøveandel. Specielt for
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-konkurrencer samt evt. kampagnetilbud og bedre vareeksponering i butikkerne
-kan hæve prøveandelen. Desuden må virksomheden sikre sig, at distributionen er
-</p>
-
-<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">tilstrækkelig bred og produktet synligt i butikken, sidstnævnte kan kræve betaling</blockquote>
-<p class="text-slate-700 leading-relaxed mb-4">
-af hyldepenge til kæderne.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Holdning blandt forbrugere der har prøvet produktet
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Præferenceandelen omfatter de forbrugere, der køber det pågældende mærke
+høj pris kan også forårsage en for lav prøveandel. Specielt for</p>
+<p class="text-slate-700 leading-relaxed mb-4">konkurrencer samt evt. kampagnetilbud og bedre vareeksponering i butikkerne
+kan hæve prøveandelen. Desuden må virksomheden sikre sig, at distributionen er</p>
+<p class="text-slate-700 leading-relaxed mb-4">tilstrækkelig bred og produktet synligt i butikken, sidstnævnte kan kræve betaling
+af hyldepenge til kæderne.</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Holdning blandt forbrugere der har prøvet produktet</h3>
+<p class="text-slate-700 leading-relaxed mb-4">Præferenceandelen omfatter de forbrugere, der køber det pågældende mærke
 hver gang eller de fleste gange. Denne størrelse skal vurderes i sammenhæng
 med indifferensandelen og forkastelsesandelen, da de summerer til 100%. I dette
 tilfælde virker en indifferensandel på 50% som værende høj, hvilket kan tyde på,
 at produktet ikke er særlig godt differentieret fra konkurrenterne, kunne tyde på
 et me-too produkt, der er godt til prisen og købes pga. pris. Den lave
 forkastelsesandel indikerer, at produktets kvalitet og emballage må være i orden.
-Målet må være at få indifferente til at foretrække mærket, dvs. der skal skabes
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-= US’ 2, Man kunne overveje, om en særlig brugervenlig eller miljøvenlig
-embailage kunne få en del indifferente til at foretrække mærket.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Holdning blandt forbrugere der ikke har prøvet produktet
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Blandt dem, der ikke har prøvet produktet, er de fleste indifferente og de
+Målet må være at få indifferente til at foretrække mærket, dvs. der skal skabes</p>
+<p class="text-slate-700 leading-relaxed mb-4">= US’ 2, Man kunne overveje, om en særlig brugervenlig eller miljøvenlig
+embailage kunne få en del indifferente til at foretrække mærket.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Holdning blandt forbrugere der ikke har prøvet produktet</p>
+<p class="text-slate-700 leading-relaxed mb-4">Blandt dem, der ikke har prøvet produktet, er de fleste indifferente og de
 færreste positive, hvilket ikke er de bedste forudsætninger. Den store
 indifferensandel her kan skyldes det samme som den høje indifferensandel
 blandt dem, der har prøvet. At relativt mange er negative, kan skyldes en
 frastødende reklamekampagne (hadereklame), negativ omtale, en frastødende
-emballage eller at udbyderen har været udsat for dårlig omtale.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Man bør dog være varsom med at foretage ændringer af selve produktet for at
+emballage eller at udbyderen har været udsat for dårlig omtale.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Man bør dog være varsom med at foretage ændringer af selve produktet for at
 imødekomme negative, der ikke har prøvet. Man kan risikere, at de loyale
-forbrugere bliver utilfredse, så præferenceandelen falder.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Interaktivt markedskort
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-mal for et mærke inden en promotionkampagne. Brug musen til at "trække" i
-det interaktive markedskort.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 14.2: Læskedrik
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 14.3: Markedskort for energidrikke
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-[ro
-</p>
-
-<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Markedskortet er et populært værktøj, når det drejer sig om at måle effekten af virksomhedens parameterindsats med fokus på produktet, d FO E AD) promotion. Markedskortet viser forbrugernes kendskab til Mæ: net og ueres opfattelse af produktets kvalitet, distributionsgrad og virksomhedens kommunikationsindsats. Værktøjet er udviklet til kortvarige produkter, som købes hyppigt. I praksis vil det gælde for mange mærkevarer inden for dagligvareområdet.
-</p>
-</div>
+forbrugere bliver utilfredse, så præferenceandelen falder.</p>
+<p class="text-slate-700 leading-relaxed mb-4">mal for et mærke inden en promotionkampagne. Brug musen til at &quot;trække&quot; i
+det interaktive markedskort.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Markedskortet er et populært værktøj, når det drejer sig om at måle effekten af virksomhedens parameterindsats med fokus på produktet, d FO E AD) promotion. Markedskortet viser forbrugernes kendskab til Mæ: net og ueres opfattelse af produktets kvalitet, distributionsgrad og virksomhedens kommunikationsindsats. Værktøjet er udviklet til kortvarige produkter, som købes hyppigt. I praksis vil det gælde for mange mærkevarer inden for dagligvareområdet.</p>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60">
+            <h3 class="text-base font-bold text-emerald-900 mb-2 flex items-center gap-2">
+                📝 Det vigtigste at huske
+            </h3>
+            <p class="text-emerald-800 text-sm leading-relaxed">Markedskortet er et populært værktøj, når det drejer sig om at måle effekten af
+virksomhedens parameterindsats med fokus på produktet, d FO E AD)
+promotion. Markedskortet viser forbrugernes kendskab til Mæ: net og ueres
+opfattelse af produktets kvalitet, distributionsgrad og virksomhedens
+kommunikationsindsats. Mange virksomheder indsamler store mængder data om forbrugerne via
+søgemaskinevirksomhedernes databaser eller software som fx Google Analytics,
+som virksomhederne køber af Google.</p>
+        </div>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60">
+            <h3 class="text-base font-bold text-amber-900 mb-3 flex items-center gap-2">
+                🔑 Nøglebegreber i dette afsnit
+            </h3>
+            <div class="flex flex-wrap gap-2"><span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Markedskortet</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Værktøjet</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Konsekvensen</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Denne gruppe</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Da der</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">At relativt mange</span></div>
+        </div>
+    </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
-                    <div><a href="14-1-marketingmix-og-plc-forloeb.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 14.1 Marketingmix og PLC-forløb</a></div>
-                    <div><a href="14-3-push-og-pull-strategi.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">14.3 Push- og pull-strategi →</a></div>
+                <!-- Bottom nav -->
+                <div class="mt-16 pt-6 border-t border-slate-100 flex justify-between items-center flex-wrap gap-4">
+                    <div><a href="14-1-marketingmix-og-plc-forloeb.html" class="group flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors"><svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>14.1 Marketingmix og PLC-forløb</a></div>
+                    <div><a href="14-3-push-og-pull-strategi.html" class="group flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">14.3 Push- og pull-strategi<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a></div>
                 </div>
             </article>
         </div>
@@ -566,12 +256,9 @@ Markedskortet er et populært værktøj, når det drejer sig om at måle effekte
 </main>
 
 
-<footer class="mt-20 border-t border-slate-200 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
-            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
-        </div>
+<footer class="mt-24 py-10 border-t border-slate-100 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-slate-400 text-sm">📖 Afsætning Studiesite — Eksamen 2026</p>
     </div>
 </footer>
 </body>

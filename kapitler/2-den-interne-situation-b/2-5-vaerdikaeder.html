@@ -6,357 +6,182 @@
     <title>2.5 Værdikæder — Afsætning Studiesite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
                     },
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    }
                 }
             }
         }
     </script>
     <style>
         body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-        .prose-content h2 { scroll-margin-top: 5rem; }
-        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
-        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
-        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
-        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .sidebar-link:hover { transform: translateX(4px); }
-        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
-        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+        .chapter-card { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .chapter-card:hover { transform: translateY(-6px) scale(1.01); }
+        .sidebar-link { transition: all 0.2s ease; }
+        .sidebar-link:hover { transform: translateX(3px); }
+        .sidebar-link.active { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 3px solid #10b981; }
+        .fade-up { animation: fadeUp 0.5s ease-out forwards; opacity: 0; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); }
     </style>
 </head>
-<body class="bg-white min-h-screen">
+<body class="bg-white min-h-screen antialiased">
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="../../index.html" class="flex items-center gap-3 group">
-                <span class="text-2xl">📖</span>
-                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            <a href="../../index.html" class="flex items-center gap-2.5 group">
+                <span class="text-xl">📖</span>
+                <span class="font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors">Afsætning</span>
             </a>
-            <div class="hidden md:flex items-center gap-1">
-                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
-                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
-                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            <div class="flex items-center gap-2">
+                <a href="../../index.html" class="hidden sm:inline-flex px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all">Hjem</a>
+                <a href="../../soeg.html" class="px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <span class="hidden sm:inline">Søg</span>
+                </a>
             </div>
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
         </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
-        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
-        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
-        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
     </div>
 </nav>
 
 <main class="pt-20 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+        <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
             <!-- Sidebar -->
             <aside class="hidden lg:block">
-                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
-                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pb-8 pr-2">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-4 hover:text-emerald-600 transition-colors">
                         <span>🏢</span> 2. Intern situation
                     </a>
-                    <div class="space-y-1">
-                        <a href="2-den-interne-situation-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2. Den interne situation (B)</a>
-<a href="2-1-virksomhedskarakteristik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2.1 Virksomhedskarakteristik</a>
-<a href="2-2-konkurrencebegreber.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2.2 Konkurrencebegreber</a>
-<a href="2-3-forretningsmodeller.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2.3 Forretningsmodeller</a>
-<a href="2-4-business-model-canvas.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2.4 Business Model Canvas</a>
-<a href="2-5-vaerdikaeder.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">2.5 Værdikæder</a>
-<a href="2-6-sw-opsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2.6 SW-opsamling</a>
-<a href="case-2-1-a-c-perchs-thehandel.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 2.1_A.C. Perchs Thehandel</a>
-<a href="case-2-2-restaurant-flammen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 2.2_Restaurant Flammen</a>
-<a href="case-2-3-paa-studierejse-med-ryanair.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 2.3_På studierejse med Ryanair</a>
-<a href="case-2-4-montana.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 2.4_Montana</a>
-<a href="case-2-5-gomore.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 2.5_GoMore</a>
-<a href="case-2-6-locked-escape-rooms-offline.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 2.6_Locked Escape Rooms (offline)</a>
-<a href="opgaver-og-cases-til-kapitel-2.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 2</a>
-<a href="opsamling-paa-kapitel-2.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 2</a>
-<a href="traening-til-kapitel-2.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 2</a>
-
-                    </div>
+                    <div class="space-y-0.5"><a href="2-den-interne-situation-b.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">2. Den interne situation (B)</a>
+<a href="2-1-virksomhedskarakteristik.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">2.1 Virksomhedskarakteristik</a>
+<a href="2-2-konkurrencebegreber.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">2.2 Konkurrencebegreber</a>
+<a href="2-3-forretningsmodeller.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">2.3 Forretningsmodeller</a>
+<a href="2-4-business-model-canvas.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">2.4 Business Model Canvas</a>
+<a href="2-5-vaerdikaeder.html" class="sidebar-link active block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">2.5 Værdikæder</a>
+<a href="2-6-sw-opsamling.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">2.6 SW-opsamling</a>
+<a href="case-2-1-a-c-perchs-thehandel.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 2.1_A.C. Perchs Thehandel</a>
+<a href="case-2-2-restaurant-flammen.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 2.2_Restaurant Flammen</a>
+<a href="case-2-3-paa-studierejse-med-ryanair.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 2.3_På studierejse med Ryanair</a>
+<a href="case-2-4-montana.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 2.4_Montana</a>
+<a href="case-2-5-gomore.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 2.5_GoMore</a>
+<a href="case-2-6-locked-escape-rooms-offline.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 2.6_Locked Escape Rooms (offline)</a>
+<a href="opgaver-og-cases-til-kapitel-2.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opgaver og cases til kapitel 2</a>
+<a href="opsamling-paa-kapitel-2.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opsamling på kapitel 2</a>
+<a href="traening-til-kapitel-2.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Træning til kapitel 2</a>
+</div>
                 </div>
             </aside>
             
             <!-- Content -->
-            <article class="min-w-0 max-w-3xl">
-                <div class="mb-6">
-                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
-                        ← 2. Intern situation
-                    </a>
-                </div>
+            <article class="min-w-0 max-w-2xl">
+                <a href="index.html" class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-emerald-600 mb-6 transition-colors lg:hidden">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    2. Intern situation
+                </a>
                 
-                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-8 fade-up">
                     2.5 Værdikæder
                 </h1>
                 
-                <div class="prose-content fade-in" style="animation-delay: 0.1s">
-                    <p class="text-slate-700 leading-relaxed mb-4">
-o Produktudvikling (R&D)
-o Produktion
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-o Marketing
-o Salg og service
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-o Margin
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-inform
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-inform
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-LD RØDDERNE.
-VAR SMAGEN
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-At grøntsagerne er dyrket i Danmark og ikke i udlandet, kan være værdiskabende for mange
-kunder.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-VOLT UNG ULIT UI UUVINILL GP VRNUTIVUITIUIT IVITUITUUT beh UUO. VITNOVITTILULIT NUT I UYL
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-værdikæden til systematisk at analysere sine aktiviteter for at identificere, hvor
-</p>
-<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">virksomheden opnår konkurrencemæssige fordele.</blockquote>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Værdikæden viser alle de aktiviteter og sammenhængen mellem aktiviteterne,
+                <div class="fade-up" style="animation-delay:0.08s">
+                    
+    <div class="prose-content">
+        <p class="text-slate-700 leading-relaxed mb-4">At grøntsagerne er dyrket i Danmark og ikke i udlandet, kan være værdiskabende for mange
+kunder.</p>
+<p class="text-slate-700 leading-relaxed mb-4">VOLT UNG ULIT UI UUVINILL GP VRNUTIVUITIUIT IVITUITUUT beh UUO. VITNOVITTILULIT NUT I UYL</p>
+<p class="text-slate-700 leading-relaxed mb-4">værdikæden til systematisk at analysere sine aktiviteter for at identificere, hvor virksomheden opnår konkurrencemæssige fordele.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Værdikæden viser alle de aktiviteter og sammenhængen mellem aktiviteterne,
 der skal udføres i virksomheden fra den indledende produktudvikling over
 produktion og markedsføring til produktet anvendes af slutbrugeren. Fx er
 virksomheden Heinz verdenskendt for at tilføje værdi til råvaren tomater.
-Resultatet er en markedsandel i USA på over 50 % inden for tomatketchup.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Værditilvæksten måles som kundeværdi. Værdien af et produkt vurderes
+Resultatet er en markedsandel i USA på over 50 % inden for tomatketchup.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Værditilvæksten måles som kundeværdi. Værdien af et produkt vurderes
 individuelt af den enkelte kunde. Fx mener mange forbrugere, at Coca-Cola har
-en højere værdi for dem end konkurrerende produkter.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Værdikæden består af en række aktiviteter, der udføres med henblik på at
-— -"abe et produkt med størst mulig kundeværdi.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Idéen i værdikædeanalysen er at identificere og udvikle de aktiviteter, der tilfører
-produktet mest værdi ved brug af færrest mulige omkostninger.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Mange danske virksomheder flytter produktionen til lande med lavere arbejdsløn
+en højere værdi for dem end konkurrerende produkter.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Værdikæden består af en række aktiviteter, der udføres med henblik på at
+— -&quot;abe et produkt med størst mulig kundeværdi.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Idéen i værdikædeanalysen er at identificere og udvikle de aktiviteter, der tilfører
+produktet mest værdi ved brug af færrest mulige omkostninger.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Mange danske virksomheder flytter produktionen til lande med lavere arbejdsløn
 for at spare omkostninger. Et eksempel herpå er slagterivirksomheden Danish
 Crown, der har flyttet arbejdspladser fra Danmark til Tyskland. Det er ikke, fordi
 den danske slagteriarbejder skaber mindre værdi end sin tyske kollega, måske
 tværtimod. I Tyskland er slagteriarbejderes løn 30 % lavere, og på den måde kan
 Danish Crown reducere omkostningerne. Virksomhedens margin, som er
-virksomhedens fortjeneste, kan dermed blive højere.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Værdikæden skal udarbejdes specifikt for hver enkelt virksomhed, fordi
+virksomhedens fortjeneste, kan dermed blive højere.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Værdikæden skal udarbejdes specifikt for hver enkelt virksomhed, fordi
 værdikæderne kan se forskellige ud i forhold til hvilke aktiviteter, virksomhederne
-har.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Virksomhedens konkurrencedygtighed er et udtryk for virksomhedens effektivitet
-og evne til at opfylde kundernes krav og behov. Med værdikæden har
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-konkurrenceevne.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Der, hvor en virksomhed er i stand til at skabe større værditilvækst end
+har.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Virksomhedens konkurrencedygtighed er et udtryk for virksomhedens effektivitet
+og evne til at opfylde kundernes krav og behov. Med værdikæden har</p>
+<p class="text-slate-700 leading-relaxed mb-4">Der, hvor en virksomhed er i stand til at skabe større værditilvækst end
 konkurrenterne, siges virksomheden at have en konkurrencemæssig fordel. Det
 kan også være her, en af virksomhedens kernekompetencer netop ligger.
 Virksomhedens konkurrencemæssige fordel ligger i det led i værdikæden, hvor
 den kan skabe større værditilvækst end konkurrenterne. Det vil typisk være i
 dette led, virksomheden har sin kernekompetence. Hvis virksomheden ikke kan
-skabe tilstrækkelig værdi, bør den outsource aktiviteten til en underleverandør.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Illustration 2.7: Den forenklede værdikædemodel
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kilde: Svend Hollensen: Marketing Management - A Relationship Approach. 2nd edition.
-Prentice Hall, 2010.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-I værdikæderne bruges begreberne upstream og downstream. Grænsen mellem
+skabe tilstrækkelig værdi, bør den outsource aktiviteten til en underleverandør.</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Illustration 2.7: Den forenklede værdikædemodel</h3>
+<p class="text-slate-700 leading-relaxed mb-4">I værdikæderne bruges begreberne upstream og downstream. Grænsen mellem
 upstream og downstream går på det sted i værdikæden, hvor virksomhedernes
-produkter er klar til distribution og salg.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Upstream-aktiviteter er de værdikædeaktiviteter, der ligger før produktet er
-færdigproduceret eller klar til salg.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Produktudvikling (R&D)
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Produktudvikling kaldes også for research and development (R&D). Det er
+produkter er klar til distribution og salg.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Upstream-aktiviteter er de værdikædeaktiviteter, der ligger før produktet er
+færdigproduceret eller klar til salg.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Produktudvikling kaldes også for research and development (R&amp;D). Det er
 vigtigt for virksomheder at have nye produkter på vej for at afløse de produkter,
 som er i slutningen af deres produktlivscyklus. Det er naturligvis også af
 konkurrencemæssige årsager, at virksomheder løbende bliver nødt til at udvikle
-og forbedre deres sortiment.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Det kan være en helt afgørende konkurrencemæssig fordel at være først på et
+og forbedre deres sortiment.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Det kan være en helt afgørende konkurrencemæssig fordel at være først på et
 marked med et nyt produkt. Man kalder det at være first mover. Fx konkurrerer
 mange medicinalvirksomheder på at være de første på markedet med mere
-effektive produkter med færre bivirkninger.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-For virksomheden Novo Nordisk, der fremstiller insulin til sukkersygepatienter, er
+effektive produkter med færre bivirkninger.</p>
+<p class="text-slate-700 leading-relaxed mb-4">For virksomheden Novo Nordisk, der fremstiller insulin til sukkersygepatienter, er
 forskning særlig vigtigt. I disse år forsker Novo Nordisk i et oralt insulinprodukt,
-= SO. 1 tages i pilleform og ikke som hidtil via injektioner.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Produktion
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Produktionsprocessen omfatter de aktiviteter, der foregar i forbindelse med
-omdannelse af råvarer og komponenter til færdige produkter.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Værdien af en færdigsamlet bil er meget større end værdien af de enkelte dele.
+= SO. 1 tages i pilleform og ikke som hidtil via injektioner.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Produktionsprocessen omfatter de aktiviteter, der foregar i forbindelse med
+omdannelse af råvarer og komponenter til færdige produkter.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Værdien af en færdigsamlet bil er meget større end værdien af de enkelte dele.
 For at være konkurrencedygtig er bilproducenterne nødt til at investere i
 teknologi og industrirobotter, som øger produktiviteten, så der kan produceres
-flest mulige biler pr. time.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Hvis produktionsaktiviteten er forbundet med store omkostninger, bør
+flest mulige biler pr. time.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Hvis produktionsaktiviteten er forbundet med store omkostninger, bør
 værditilvæksten svare hertil, således at forbrugerne vil betale for varens værdi i
-sidste ende.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Pandora en af verdens førende smykkeproducenter. Pandora har egen
+sidste ende.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Pandora en af verdens førende smykkeproducenter. Pandora har egen
 produktion i Asien, samt egne butikker i hele verden. På den måde kontrollerer
-virksomheden hele værdikæden fra produktion til slutbruger.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Marketing vedrører de aktiviteter, der skal udtøres med henblik på markedstøring
-over for både mellemhandlere og slutbrugere. Det drejer sig fx om valg af
-</p>
-<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">distributionskanaler, reklame, prisfastsættelse og branding.</blockquote>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Salg og service
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Salgsarbejdet varetages ofte af en stab af sælgere. Koordination af sælgernes
-indsats forestås af salgschefen.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Service kan finde sted før, under og efter salget. Det omhandler uhåndgribelige
+virksomheden hele værdikæden fra produktion til slutbruger.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Marketing vedrører de aktiviteter, der skal udtøres med henblik på markedstøring
+over for både mellemhandlere og slutbrugere. Det drejer sig fx om valg af distributionskanaler, reklame, prisfastsættelse og branding.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Salgsarbejdet varetages ofte af en stab af sælgere. Koordination af sælgernes
+indsats forestås af salgschefen.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Service kan finde sted før, under og efter salget. Det omhandler uhåndgribelige
 aktiviteter, som mellemhandlere eller slutbrugere tillægger værdi. For en
 mellemhandler kan det fx være muligheden for at sende ikke solgte varer retur,
 kort leveringstid, en hjemmeside med gode råd eller FAQ, oplæring af
 medarbejdere osv. For slutbrugerne kan service være en udvidet garanti,
-brugervenlig vejledning på hjemmesiden osv.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Me Vin
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-o
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Margin er forskellen mellem produktets totale værdi, altså markedsprisen og de
+brugervenlig vejledning på hjemmesiden osv.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Margin er forskellen mellem produktets totale værdi, altså markedsprisen og de
 omkostningerne virksomheden har ved at fremstille og gennemføre alle
 værdikædens aktiviteter. Jo højere margin, jo mere værdi har virksomheden
 formået at tilføre produktet i forhold til, hvad det har kostet virksomheden at
-skabe denne værdi.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Det er naturligvis svært at afgøre, hvor store omkostningerne er for hver aktivitet
+skabe denne værdi.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Det er naturligvis svært at afgøre, hvor store omkostningerne er for hver aktivitet
 fordelt ud på et specifikt produkt. Generelt vil en øget forædlingsgrad, og dermed
 kundeværdi, øge virksomhedens margin. Marginen for en kop to-go kaffe fra en
 kaffebar må formodes at være væsentligt højere end marginen for en pose kaffe
 såvel i kroner som i %. Merværdien af, at en forbruger kan få en kop kaffe, nar
-behovet opstår, har en høj værdi, der direkte afspejles i prisen.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Eksempel: For Emma
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-For Emma: Et glutenfrit bageri.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-i— “oto: Birte Ravn Østergaard
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-For Emma er et eksempel på en virksomhed, der kan analyseres ved hjælp
-af den forenklede værdikæde.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Idéen til For Emma fik Helle Bagger-Sørensen, da hun gerne vil gøre
+behovet opstår, har en høj værdi, der direkte afspejles i prisen.</p>
+<p class="text-slate-700 leading-relaxed mb-4">For Emma er et eksempel på en virksomhed, der kan analyseres ved hjælp
+af den forenklede værdikæde.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Idéen til For Emma fik Helle Bagger-Sørensen, da hun gerne vil gøre
 hverdagen helt normal for sin datter. I 2010 blev Helles datter Emma meget
 syg, og efter utallige undersøgelser fandt lægerne ud af, at Emma led af
 cøliaki, og derfor kan hun ikke tåle gluten. Familien besluttede sig derfor
@@ -364,295 +189,104 @@ for at lægge kosten om, så hele familien spiste glutenfrit, og Helle
 begyndte at eksperimentere med at bage glutenfri brød, pizza og kager.
 Familie og venner var meget begejstrede for Helles produkter, og idéen
 opstod til at åbne bageriet og webshoppen, som i dag sælger brød, kager,
-slik, marmelader og melblandinger uden gluten og laktose.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Produktudviklingen omhandler udvikling af glutenfri brød, pizza og kager
+slik, marmelader og melblandinger uden gluten og laktose.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Produktudviklingen omhandler udvikling af glutenfri brød, pizza og kager
 uden gluten og laktose, da forretningsidéen er at tilbyde denne type
-produkter til gluten- og laktoseallergikere.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-åbnede For Emma også i Aarhus. For Emma har ambitioner om at åbne
-flere butikker i de større byer-hvorfra der sælges gluten- og laktosefri brød,
-</p>
-
-<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">kager og slik til private, virksomheder og institutioner. Helle overvejer også</blockquote>
-<p class="text-slate-700 leading-relaxed mb-4">
-at etablere sig syd for grænsen.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Marketing sker via sociale medier og gennem butikkernes tilstedeværelse i
-bybilledet.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Værdikæder for handels- og servicevirksomheder
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Værdikæden bør tilpasses den enkelte virksomheds opbygning. Det er klart, at
+produkter til gluten- og laktoseallergikere.</p>
+<p class="text-slate-700 leading-relaxed mb-4">åbnede For Emma også i Aarhus. For Emma har ambitioner om at åbne
+flere butikker i de større byer-hvorfra der sælges gluten- og laktosefri brød,</p>
+<p class="text-slate-700 leading-relaxed mb-4">kager og slik til private, virksomheder og institutioner. Helle overvejer også
+at etablere sig syd for grænsen.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Marketing sker via sociale medier og gennem butikkernes tilstedeværelse i
+bybilledet.</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Værdikæder for handels- og servicevirksomheder</h3>
+<p class="text-slate-700 leading-relaxed mb-4">Værdikæden bør tilpasses den enkelte virksomheds opbygning. Det er klart, at
 værdikæden for handels- og servicevirksomheder ser anderledes ud end for
 produktionsvirksomheder, da disse virksomhedstyper skaber værdi gennem
-andre aktiviteter.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-En Jelsvirksomhed har ikke egen produktion. Handelsvirksomheden ir »er
+andre aktiviteter.</p>
+<p class="text-slate-700 leading-relaxed mb-4">En Jelsvirksomhed har ikke egen produktion. Handelsvirksomheden ir er
 produkter og sælger dem uforarbejdet videre til en højere pris. Der er fx tale om
 grossist- eller detailvirksomheder. Indkøbs- og lagerstyringen er en central
 aktivitet i en handelsvirksomhed ligesom salg og service, hvor hovedaktiviteten
 typisk ligger. Det vil være forskelligt fra virksomhed til virksomhed, hvor mange
-resurser der bruges på markedsføring.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Illustration 2.8: Den forenklede værdikæde: grossistvirksomhed
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kilde: Svend Hollensen: Marketing Management - A Relationship Approach. 2. Edition.
-Prentice Hall, 2010.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Et eksempel på en grossist er Dagrofa Engros, der handler med kiosker. Dagrofa
+ressourcer der bruges på markedsføring.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Illustration 2.8: Den forenklede værdikæde: grossistvirksomhed</p>
+<p class="text-slate-700 leading-relaxed mb-4">Et eksempel på en grossist er Dagrofa Engros, der handler med kiosker. Dagrofa
 Engros distribuerer fx produkter fra Tulip, Rynkeby, Dansukker, Nestlé, Arla,
-Påskebrød, Kraft og Bacardi til kiosker og mindre detailhandlende.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Ih. N ation 2.9: Den forenklede værdikæde: detailvirksomhed
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kilde: Svend Hollensen: Marketing Management - A Relationship Approach. 2. Edition.
-Prentice Hall, 2010.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Et eksempel på en detailhandelskæde er byggemarkedskæden Bauhaus, der
-skaber værdi ved at have et relativt bredt og dybt sortiment, ligesom
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-detailhandelskæder som fx jem & Fix er værdiskabelsen mere baseret på lave
-priser og butiksindretningen er mere sparsom. Bauhaus bruger også flere
-</p>
-<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">resurser på promotion end Jem & Fix.</blockquote>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-For servicevirksomheder kan man tage udgangspunkt i værdikæden i illustration
-2.10. I afsnit 16.2 introduceres yderligere en værdikæde for servicevirksomheder.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Illustration 2.10: Den forenklede værdikæde: servicevirksomhed
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kilde: Svend Hollensen: Marketing Management - A Relationship Approach. 2. Edition.
-Prentice Hall, 2010.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Porters oprindelige værdikæde
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Til sidst vises Porters oprindelige værdikæde. Denne værdikædemodel kan
+Påskebrød, Kraft og Bacardi til kiosker og mindre detailhandlende.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Ih. N ation 2.9: Den forenklede værdikæde: detailvirksomhed</p>
+<p class="text-slate-700 leading-relaxed mb-4">Et eksempel på en detailhandelskæde er byggemarkedskæden Bauhaus, der
+skaber værdi ved at have et relativt bredt og dybt sortiment, ligesom</p>
+<p class="text-slate-700 leading-relaxed mb-4">detailhandelskæder som fx jem &amp; Fix er værdiskabelsen mere baseret på lave
+priser og butiksindretningen er mere sparsom. Bauhaus bruger også flere ressourcer på promotion end Jem &amp; Fix.</p>
+<p class="text-slate-700 leading-relaxed mb-4">For servicevirksomheder kan man tage udgangspunkt i værdikæden i illustration
+2.10. I afsnit 16.2 introduceres yderligere en værdikæde for servicevirksomheder.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Illustration 2.10: Den forenklede værdikæde: servicevirksomhed</p>
+<p class="text-slate-700 leading-relaxed mb-4">Til sidst vises Porters oprindelige værdikæde. Denne værdikædemodel kan
 benyttes til analyse af større og mere komplekse virksomheder. Som det fremgår
 af nedenstående illustration, er kæden delt op i primær- og støtteaktiviteter.
 Primæraktiviteterne kendes fra den forenklede værdikæde. Støtteaktiviteterne
-kaldes også supportaktiviteter.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Illustration 2.11: Porters oprindelige værdikædemodel
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kilde: Svend Hollensen: Marketing Management - A Relationship Approach. 2. Edition.
-Prentice Hall, 2010.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-— Sty aktiviteterne
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Den oprindelige værdikædemodels støtteaktiviteter beskrives nærmere her, da
+kaldes også supportaktiviteter.</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Illustration 2.11: Porters oprindelige værdikædemodel</h3>
+<p class="text-slate-700 leading-relaxed mb-4">Den oprindelige værdikædemodels støtteaktiviteter beskrives nærmere her, da
 det er disse aktiviteter, der adskiller denne værdikædemodel fra de forenklede
 modeller. Støtteaktiviteterne støtter op om primæraktiviteterne, som alle handler
-om den fysiske produktion af varer og efterfølgende marketing og service.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-e Indkøb omfatter de aktiviteter, der vedrører indkøb i relation til andre led i
-værdikæden.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-¢ De teknologiske resurser består af aktiviteter, der kan forbedre og
-effektivisere primæraktiviteterne hver for sig eller samlet.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-oe Menneskelige resurser kan være afgørende for virksomhedens
+om den fysiske produktion af varer og efterfølgende marketing og service.</p>
+<p class="text-slate-700 leading-relaxed mb-4">e Indkøb omfatter de aktiviteter, der vedrører indkøb i relation til andre led i
+værdikæden.</p>
+<p class="text-slate-700 leading-relaxed mb-4">¢ De teknologiske ressourcer består af aktiviteter, der kan forbedre og
+effektivisere primæraktiviteterne hver for sig eller samlet.</p>
+<p class="text-slate-700 leading-relaxed mb-4">oe Menneskelige ressourcer kan være afgørende for virksomhedens
 konkurrencedygtighed. Der skal være kompetente medarbejdere på de
-forskellige poster, der vedrører såvel primær- som støtteaktiviteterne.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-e Virksomhedens infrastruktur omhandler den administrative opbygning og
+forskellige poster, der vedrører såvel primær- som støtteaktiviteterne.</p>
+<p class="text-slate-700 leading-relaxed mb-4">e Virksomhedens infrastruktur omhandler den administrative opbygning og
 samarbejdet mellem medarbejderne. Virksomheden skal være organiseret
 hensigtsmæssigt i henhold til de primæraktiviteter, der skal udføres, og
-ledelsen skal være i besiddelse af det strategiske overblik.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-UNIIVTRK UIUT UL VØ1UINOTUTI
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Trin 1: Introduktion
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Forklar kort, hvorfor du har valgt at analysere virksomhedens
+ledelsen skal være i besiddelse af det strategiske overblik.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Forklar kort, hvorfor du har valgt at analysere virksomhedens
 værdikæde. Begrundelsen kan fx være, at modellen skaber et godt
-overblik over værdiskabelsen i virksomheden.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-BJ: = X x?
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Virksomhedens veerdikeede analyseres for at fa overblik over
+overblik over værdiskabelsen i virksomheden.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Virksomhedens veerdikeede analyseres for at fa overblik over
 veerdiskabelsen i virksomheden og dermed virksomhedens
-styrker ...
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-124 /2400
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-ø Kladden er ikke gemt
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Trin 2: Valg af model
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Trin 3: Analysearbejdet
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Trin 4: Sammenfatning
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-» Eksempel på værdikædeanalyse
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Nedenfor er et eksempel på værdikædeanalyse. Eksemplet tager
+styrker ...</p>
+<p class="text-slate-700 leading-relaxed mb-4">Nedenfor er et eksempel på værdikædeanalyse. Eksemplet tager
 udgangspunkt i den faglige viden, som en elev forventes at have i slutningen af
-studieforløbet kort før eksamen i afsætningsfaget.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-KiMs er en stor dansk producent af chips og markedsleder med en
-markedsandel på 45 procent af det danske marked.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Der skabes sprød værdi.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-iStockphoto.com/Oktay Ortakcioglu
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-KiMs' værdikæde
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-KiMs' værdikæde består af den række af aktiviteter, der tilsammen skaber værdi
-for kunden, og som dermed giver virksomheden konkurrencemæssige fordele.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-underbygger primæraktiviteterne og strækker sig ofte over alle
-primæraktiviteterne.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Støtteaktiviteter
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Den teknologiske udvikling går hånd i hånd med produktudviklingen. KiMs
+studieforløbet kort før eksamen i afsætningsfaget.</p>
+<p class="text-slate-700 leading-relaxed mb-4">KiMs er en stor dansk producent af chips og markedsleder med en
+markedsandel på 45 procent af det danske marked.</p>
+<p class="text-slate-700 leading-relaxed mb-4">KiMs&#x27; værdikæde består af den række af aktiviteter, der tilsammen skaber værdi
+for kunden, og som dermed giver virksomheden konkurrencemæssige fordele.</p>
+<p class="text-slate-700 leading-relaxed mb-4">underbygger primæraktiviteterne og strækker sig ofte over alle
+primæraktiviteterne.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Den teknologiske udvikling går hånd i hånd med produktudviklingen. KiMs
 sørger hele tiden for, at der er nye produkter i støbeskeen, og disse udvikles på
 grundlag af markedsanalyser, der afdækker forbrugernes behov og tendenser
 på markedet for snacks, peanuts og nødder. Der fokuseres meget på
 produktudvikling, da tendenser i samfundet går i retning af, at man ikke skal
 have så meget fedt. KiMs har derfor udviklet nye produkter, der er fedtfattige.
 Fx har de udviklet en ny serie brød, der som hovedingrediens har rugmel i
-stedet for kartofler og majs.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Virksomheden har den nyeste teknologi i produktionen og
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-pre iktionsanlæggene kan omstilles til forskellige produktionsstørrelser. K's
+stedet for kartofler og majs.</p>
+<p class="text-slate-700 leading-relaxed mb-4">pre iktionsanlæggene kan omstilles til forskellige produktionsstørrelser. K&#x27;s
 he i produktionen en scanner, der scanner alle chips og frasorterer alle / ps
 med mørke pletter. Ved at optimere produktionen gennem
 teknologiforbedringer kan man opnå konkurrencedygtige priser til fordel for
-forbrugeren.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Både mht. produktudvikling og teknologisk udvikling skabes der merværdi for
-kunden.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Indkøb foretages centralt. KiMs forhandler en gang om året priser og
+forbrugeren.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Både mht. produktudvikling og teknologisk udvikling skabes der merværdi for
+kunden.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Indkøb foretages centralt. KiMs forhandler en gang om året priser og
 mængder med samtlige leverandører. Indkøb er overordnet delt op i kartofler
 og ingredienser. Her skabes ikke særlig meget merværdi for kunden, men der
-er fokus på at holde omkostningerne nede.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Primære aktiviteter
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-I den indgående logistik har leverandører en central rolle. KiMs har flere nøje
+er fokus på at holde omkostningerne nede.</p>
+<p class="text-slate-700 leading-relaxed mb-4">I den indgående logistik har leverandører en central rolle. KiMs har flere nøje
 udvalgte leverandører. Man stiller store krav til disse leverandører. Det gælder
-både leverandører af krydderier og kartofler. Kartoflerne kommer bl.a. fra
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-kvalitet til produktionen. KiMs bruger 20.000 tons kartofler om året til deres
-chipsproduktion og har altid 3.500 tons på lager til produktionen. KiM's
+både leverandører af krydderier og kartofler. Kartoflerne kommer bl.a. fra</p>
+<p class="text-slate-700 leading-relaxed mb-4">kvalitet til produktionen. KiMs bruger 20.000 tons kartofler om året til deres
+chipsproduktion og har altid 3.500 tons på lager til produktionen. KiM&#x27;s
 opbygger relationen til deres samarbejdspartnere, der fx leverer krydderier og
 andre ingredienser flere gange om året. Her skabes merværdi for forbrugeren,
 da man opnår at få de bedste kartofler på markedet til produktionen af chips
-krydret med kvalitetssikrede krydderier.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Selve produktionen minder om mange andre af fødevareproduktioner. I
+krydret med kvalitetssikrede krydderier.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Selve produktionen minder om mange andre af fødevareproduktioner. I
 produktionen er der flere produktionsgange. Med en truck køres kartoflerne
 ind i sorteringsmaskinen, hvor sten og andre urenheder sorteres fra, førend
 kartoflerne vaskes. Derefter sorteres de af en medarbejder ved båndet, der
@@ -660,66 +294,69 @@ fører dem til snittemaskinerne. De vaskes igen og koges i solsikkeolie. Under
 processen tjekkes for korrekt fedtprocent og stegetemperatur. Endelig tørres
 de og krydres med salt og krydderier. De afvejes og kommer i poser og pakkes.
 Der går 4 kilo kartofler til 1 kilo chips. Til det britiske marked er det vigtigt, man
-ar / der sma kartofler, da briterne foretrækker små chips.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Her skabes der merværdi for kunden, da kunden får et produkt, der er af en høj
-kvalitet.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Efter produktionen af chips, peanuts og nødder køres poserne i papkasser på
+ar / der sma kartofler, da briterne foretrækker små chips.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Her skabes der merværdi for kunden, da kunden får et produkt, der er af en høj
+kvalitet.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Efter produktionen af chips, peanuts og nødder køres poserne i papkasser på
 lageret, hvor en ekstern distributør dagligt henter produkterne og kører dem
 ud til detailhandlen. Der produceres mere end 100.000 paller pr år. Her skabes
-der ikke nævneværdig merværdi for kunden.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-KiMs er det mest kendte brand i branchen. KiMs har et stort
+der ikke nævneværdig merværdi for kunden.</p>
+<p class="text-slate-700 leading-relaxed mb-4">KiMs er det mest kendte brand i branchen. KiMs har et stort
 markedsføringsbudget, og det er herigennem de har opnået den høje
 kendskabsgrad. Man har i en årrække gennem massiv markedsføring opbygget
-et brand, forbrugerne er meget loyale overfor. Omdrejningspunktet for al KiMs'
-markedsføring er deres slogan 'når du er sulten for sjov'. KiMs reklamerer
+et brand, forbrugerne er meget loyale overfor. Omdrejningspunktet for al KiMs&#x27;
+markedsføring er deres slogan &#x27;når du er sulten for sjov&#x27;. KiMs reklamerer
 meget i TV, men de markedsfører sig ikke mellem børneudsendelserne på TV.
 De mener ikke, det er etisk forsvarligt, da børn kan have svært ved at skelne
 mellem reklamer og virkelighed. Alligevel benytter Kims sig af de sociale
-medier i sin markedsføring.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opsummering
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Sammenfattende skabes der størst værdi i KiMs' produktion, hvor råvaren
+medier i sin markedsføring.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Sammenfattende skabes der størst værdi i KiMs&#x27; produktion, hvor råvaren
 kartoffel tages igennem en række produktionsprocesser og kiloprisen for
 kartoffelproduktet mangedobles. Sammen med markedsføringsaktiviteterne,
-som også er med til at give KiM's produkter konkurrencemæssige fordele,
-skabes der størst værdi i de primære aktiviteter.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 2.10: Værdikæde for Andersen Furniture
-= Opgave 2.11: Jysks værdikæde
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opgave 2.12: Værdikæde for Starbucks
-</p>
-
-<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-At grøntsagerne er dyrket i Danmark og ikke i udlandet, kan være værdiskabende for mange kunder. VOLT UNG ULIT UI UUVINILL GP VRNUTIVUITIUIT IVITUITUUT beh UUO. VITNOVITTILULIT NUT I UYL
-</p>
-</div>
+som også er med til at give KiM&#x27;s produkter konkurrencemæssige fordele,
+skabes der størst værdi i de primære aktiviteter.</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Opgave 2.10: Værdikæde for Andersen Furniture</h3>
+<p class="text-slate-700 leading-relaxed mb-4">= Opgave 2.11: Jysks værdikæde</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Opgave 2.12: Værdikæde for Starbucks</h3>
+<p class="text-slate-700 leading-relaxed mb-4">At grøntsagerne er dyrket i Danmark og ikke i udlandet, kan være værdiskabende for mange kunder. VOLT UNG ULIT UI UUVINILL GP VRNUTIVUITIUIT IVITUITUUT beh UUO. VITNOVITTILULIT NUT I UYL</p>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60">
+            <h3 class="text-base font-bold text-emerald-900 mb-2 flex items-center gap-2">
+                📝 Det vigtigste at huske
+            </h3>
+            <p class="text-emerald-800 text-sm leading-relaxed">Værdikæden viser alle de aktiviteter og sammenhængen mellem aktiviteterne,
+der skal udføres i virksomheden fra den indledende produktudvikling over
+produktion og markedsføring til produktet anvendes af slutbrugeren. Fx er
+virksomheden Heinz verdenskendt for at tilføje værdi til råvaren tomater.
+Resultatet er en markedsandel i USA på over 50 % inden for tomatketchup. Værditilvæksten måles som kundeværdi. Værdien af et produkt vurderes
+individuelt af den enkelte kunde.</p>
+        </div>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60">
+            <h3 class="text-base font-bold text-amber-900 mb-3 flex items-center gap-2">
+                🔑 Nøglebegreber i dette afsnit
+            </h3>
+            <div class="flex flex-wrap gap-2"><span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">At grøntsagerne</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Resultatet</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Et eksempel herpå</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Tyskland</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Virksomhedens konkurrencedygtighed</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Produktudvikling</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Hvis produktionsaktiviteten</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Margin</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Emma</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Støtteaktiviteterne</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Kladden</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Nedenfor</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Indkøb</span></div>
+        </div>
+    </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
-                    <div><a href="2-4-business-model-canvas.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 2.4 Business Model Canvas</a></div>
-                    <div><a href="2-6-sw-opsamling.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">2.6 SW-opsamling →</a></div>
+                <!-- Bottom nav -->
+                <div class="mt-16 pt-6 border-t border-slate-100 flex justify-between items-center flex-wrap gap-4">
+                    <div><a href="2-4-business-model-canvas.html" class="group flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors"><svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>2.4 Business Model Canvas</a></div>
+                    <div><a href="2-6-sw-opsamling.html" class="group flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">2.6 SW-opsamling<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a></div>
                 </div>
             </article>
         </div>
@@ -727,12 +364,9 @@ At grøntsagerne er dyrket i Danmark og ikke i udlandet, kan være værdiskabend
 </main>
 
 
-<footer class="mt-20 border-t border-slate-200 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
-            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
-        </div>
+<footer class="mt-24 py-10 border-t border-slate-100 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-slate-400 text-sm">📖 Afsætning Studiesite — Eksamen 2026</p>
     </div>
 </footer>
 </body>

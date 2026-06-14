@@ -6,248 +6,170 @@
     <title>Case 22.3_Danske Forlystelsesparker — Afsætning Studiesite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
                     },
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    }
                 }
             }
         }
     </script>
     <style>
         body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-        .prose-content h2 { scroll-margin-top: 5rem; }
-        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
-        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
-        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
-        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .sidebar-link:hover { transform: translateX(4px); }
-        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
-        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+        .chapter-card { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .chapter-card:hover { transform: translateY(-6px) scale(1.01); }
+        .sidebar-link { transition: all 0.2s ease; }
+        .sidebar-link:hover { transform: translateX(3px); }
+        .sidebar-link.active { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 3px solid #10b981; }
+        .fade-up { animation: fadeUp 0.5s ease-out forwards; opacity: 0; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); }
     </style>
 </head>
-<body class="bg-white min-h-screen">
+<body class="bg-white min-h-screen antialiased">
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="../../index.html" class="flex items-center gap-3 group">
-                <span class="text-2xl">📖</span>
-                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            <a href="../../index.html" class="flex items-center gap-2.5 group">
+                <span class="text-xl">📖</span>
+                <span class="font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors">Afsætning</span>
             </a>
-            <div class="hidden md:flex items-center gap-1">
-                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
-                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
-                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            <div class="flex items-center gap-2">
+                <a href="../../index.html" class="hidden sm:inline-flex px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all">Hjem</a>
+                <a href="../../soeg.html" class="px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <span class="hidden sm:inline">Søg</span>
+                </a>
             </div>
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
         </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
-        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
-        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
-        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
     </div>
 </nav>
 
 <main class="pt-20 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+        <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
             <!-- Sidebar -->
             <aside class="hidden lg:block">
-                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
-                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pb-8 pr-2">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-4 hover:text-emerald-600 transition-colors">
                         <span>📣</span> 22. Promotion
                     </a>
-                    <div class="space-y-1">
-                        <a href="22-promotion-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22. Promotion (B)</a>
-<a href="22-1-organisering-af-promotionaktiviteter.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.1 Organisering af promotionaktiviteter</a>
-<a href="22-2-promotionbudskab-og-storytelling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.2 Promotionbudskab og storytelling</a>
-<a href="22-3-massekommunikation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3 Massekommunikation</a>
-<a href="22-3-1-reklame.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.1 Reklame</a>
-<a href="22-3-2-public-relations-pr.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.2 Public Relations (PR)</a>
-<a href="22-3-3-sales-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.3 Sales promotion</a>
-<a href="22-3-4-sponsorering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.4 Sponsorering</a>
-<a href="22-4-direct-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.4 Direct marketing</a>
-<a href="22-4-1-loyalitetsklubber-og-nyhedsbreve.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.4.1 Loyalitetsklubber og nyhedsbreve</a>
-<a href="22-5-online-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5 Online promotion</a>
-<a href="22-5-1-paid-owned-og-earned-media.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.1 Paid, owned og earned media</a>
-<a href="22-5-2-website-og-algoritmer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.2 Website og algoritmer</a>
-<a href="22-5-3-seo-og-sem.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.3 SEO og SEM</a>
-<a href="22-5-4-omni-channel-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.4 Omni channel marketing</a>
-<a href="22-5-5-content-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.5 Content marketing</a>
-<a href="22-5-6-sociale-medier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.6 Sociale medier</a>
-<a href="22-5-7-influencer-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.7 Influencer marketing</a>
-<a href="case-22-1-innocent-drinks.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.1_Innocent Drinks</a>
-<a href="case-22-2-wide-path-camper.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.2_Wide Path Camper</a>
-<a href="case-22-3-danske-forlystelsesparker.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 22.3_Danske Forlystelsesparker</a>
-<a href="opgaver-og-cases-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 22</a>
-<a href="opsamling-paa-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 22</a>
-<a href="traening-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 22</a>
-
-                    </div>
+                    <div class="space-y-0.5"><a href="22-promotion-b.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22. Promotion (B)</a>
+<a href="22-1-organisering-af-promotionaktiviteter.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.1 Organisering af promotionaktiviteter</a>
+<a href="22-2-promotionbudskab-og-storytelling.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.2 Promotionbudskab og storytelling</a>
+<a href="22-3-massekommunikation.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.3 Massekommunikation</a>
+<a href="22-3-1-reklame.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.3.1 Reklame</a>
+<a href="22-3-2-public-relations-pr.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.3.2 Public Relations (PR)</a>
+<a href="22-3-3-sales-promotion.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.3.3 Sales promotion</a>
+<a href="22-3-4-sponsorering.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.3.4 Sponsorering</a>
+<a href="22-4-direct-marketing.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.4 Direct marketing</a>
+<a href="22-4-1-loyalitetsklubber-og-nyhedsbreve.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.4.1 Loyalitetsklubber og nyhedsbreve</a>
+<a href="22-5-online-promotion.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.5 Online promotion</a>
+<a href="22-5-1-paid-owned-og-earned-media.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.5.1 Paid, owned og earned media</a>
+<a href="22-5-2-website-og-algoritmer.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.5.2 Website og algoritmer</a>
+<a href="22-5-3-seo-og-sem.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.5.3 SEO og SEM</a>
+<a href="22-5-4-omni-channel-marketing.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.5.4 Omni channel marketing</a>
+<a href="22-5-5-content-marketing.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.5.5 Content marketing</a>
+<a href="22-5-6-sociale-medier.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.5.6 Sociale medier</a>
+<a href="22-5-7-influencer-marketing.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">22.5.7 Influencer marketing</a>
+<a href="case-22-1-innocent-drinks.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 22.1_Innocent Drinks</a>
+<a href="case-22-2-wide-path-camper.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 22.2_Wide Path Camper</a>
+<a href="case-22-3-danske-forlystelsesparker.html" class="sidebar-link active block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 22.3_Danske Forlystelsesparker</a>
+<a href="opgaver-og-cases-til-kapitel-22.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opgaver og cases til kapitel 22</a>
+<a href="opsamling-paa-kapitel-22.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opsamling på kapitel 22</a>
+<a href="traening-til-kapitel-22.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Træning til kapitel 22</a>
+</div>
                 </div>
             </aside>
             
             <!-- Content -->
-            <article class="min-w-0 max-w-3xl">
-                <div class="mb-6">
-                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
-                        ← 22. Promotion
-                    </a>
-                </div>
+            <article class="min-w-0 max-w-2xl">
+                <a href="index.html" class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-emerald-600 mb-6 transition-colors lg:hidden">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    22. Promotion
+                </a>
                 
-                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-8 fade-up">
                     Case 22.3_Danske Forlystelsesparker
                 </h1>
                 
-                <div class="prose-content fade-in" style="animation-delay: 0.1s">
-                    <p class="text-slate-700 leading-relaxed mb-4">
-Case 22.3: Danske Forlystelsesparker
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-iStockphoto.com/SeanPavonePhoto
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Danmark har et ganske stort antal forlystelsesparker, hvoraf Tivoli er i top-5
-over mest besøgte forlystelsesparker i Europa.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Danmark har også en række mindre forlystelsesparker, herunder sommerlande
+                <div class="fade-up" style="animation-delay:0.08s">
+                    
+    <div class="prose-content">
+        <p class="text-slate-700 leading-relaxed mb-4">Danmark har et ganske stort antal forlystelsesparker, hvoraf Tivoli er i top-5
+over mest besøgte forlystelsesparker i Europa.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Danmark har også en række mindre forlystelsesparker, herunder sommerlande
 og mere temaorienterede forlystelsessteder (temaparker) som fx Randers
-Regnskov og Danfoss Universe.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Forlystelses- og temaparkerne besøges af såvel danskere som udlændinge, og
-informationer om parkerne findes bl.a. på VisitDenmarks hjemmeside
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-De fleste forlystelsesparker indeholder, udover forlystelserne også
-restaurationer og barer. Nogle er desuden tilknyttet overnatningsfaciliteter -
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Ud over at dække behovet hos forbrugerne og skabe indtjening til ejerne, er en
+Regnskov og Danfoss Universe.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Forlystelses- og temaparkerne besøges af såvel danskere som udlændinge, og
+informationer om parkerne findes bl.a. på VisitDenmarks hjemmeside</p>
+<p class="text-slate-700 leading-relaxed mb-4">De fleste forlystelsesparker indeholder, udover forlystelserne også
+restaurationer og barer. Nogle er desuden tilknyttet overnatningsfaciliteter -</p>
+<p class="text-slate-700 leading-relaxed mb-4">Ud over at dække behovet hos forbrugerne og skabe indtjening til ejerne, er en
 del forlystelsesparker til stor gavn for en hel by eller landsdel, idet den kan
 virke som en magnet for turister, der ofte kombinerer et besøg i
 forlystelsesparken med at besøge andre attraktioner i området og foretage
-forskellige indkøb hos områdets erhvervsdrivende.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Selvom oplevelsesøkonomien og turistbranchen som helhed ofte lider under
+forskellige indkøb hos områdets erhvervsdrivende.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Selvom oplevelsesøkonomien og turistbranchen som helhed ofte lider under
 økonomiske kriser, rammes danske forlystelsesparker ikke nødvendigvis af
 disse kriser. En årsag kan være, at forlystelsesparkerne har et alsidigt udbud og
 samtidig har formået at tilpasse sig udviklingen. De fleste forlystelsesparker
 tilbyder forskellige pakkeløsninger, så forbrugerne kan kombinere en række
 oplevelser. Ofte ses pakkeløsninger i samarbejde med relaterede virksomheder
-</p>
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">fx feriehusudlejningsbureauer, lokale turistbureauer o.lign.</li>
-</ul>
-<p class="text-slate-700 leading-relaxed mb-4">
-Forlystelsesparkernes udfordringer er, at deres besøgstal er meget afhængig af
+- fx feriehusudlejningsbureauer, lokale turistbureauer o.lign.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Forlystelsesparkernes udfordringer er, at deres besøgstal er meget afhængig af
 ve ‘hold og udenlandske turister. Desuden er de faste omkostninger v
-dræn af parkerne meget høje, hvilket stiller krav til stordrift og høje besøys»tal.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-De største danske forlystelsesparker, målt i antal besøgende 2023
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Forlystelsespark Besøgstal
-</p>
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Tivoli 4.031.000</li>
-<li class="ml-4 mb-1 text-slate-700">Dyrehavsbakken 1.875.000</li>
-<li class="ml-4 mb-1 text-slate-700">Djurs Sommerland 811.588</li>
-<li class="ml-4 mb-1 text-slate-700">Fårup Sommerland 664.803</li>
-<li class="ml-4 mb-1 text-slate-700">Tivoli Friheden 615.665</li>
-<li class="ml-4 mb-1 text-slate-700">Lego House 312.000</li>
-<li class="ml-4 mb-1 text-slate-700">Jesperhus 243.227</li>
-</ul>
-<p class="text-slate-700 leading-relaxed mb-4">
-oo. SUITE Tartu Jælldtu 222.9UU
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kilde: Attraktionslisten 2023 - Danmarks mest besøgte attraktioner. VisitDenmark, udgivet
-juli 2024.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Note: Både Legoland og BonBon-land formodes at ligge på listen, men de har ikke oplyst
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-besøgstal
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Spørgsmål
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Du kan vælge at tage udgangspunkt i en selvvalgt forlystelses- eller
+dræn af parkerne meget høje, hvilket stiller krav til stordrift og høje besøystal.</p>
+<h3 class="text-lg font-bold text-slate-800 mt-8 mb-2">Forlystelsespark Besøgstal</h3>
+<p class="text-slate-700 leading-relaxed mb-4">2. Dyrehavsbakken 1.875.000
+3. Djurs Sommerland 811.588
+4. Fårup Sommerland 664.803
+5. Tivoli Friheden 615.665
+6. Lego House 312.000
+7. Jesperhus 243.227</p>
+<p class="text-slate-700 leading-relaxed mb-4">Note: Både Legoland og BonBon-land formodes at ligge på listen, men de har ikke oplyst</p>
+<p class="text-slate-700 leading-relaxed mb-4">Du kan vælge at tage udgangspunkt i en selvvalgt forlystelses- eller
 temapark. Søg informationer om denne på dens hjemmeside og via
-øvrige kilder.
-</p>
-
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Redegør for forbrugs- og købsadfærd for en typisk familie relateret</li>
-</ul>til forlystelser.
-
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Analyser konkurrenceforholdene på markedet.</li>
-</ul>
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Analyser parkens serviceleverancesystem.</li>
-</ul>
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Analysér parkens promotionindsats.</li>
-</ul>
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Vurder potentialet i anvendelsen af online promotion for en af de</li>
-</ul>store danske forlystelsesparker.
-
-<p class="text-slate-700 leading-relaxed mb-4">
-“N
-NV
-</p>
-
-<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Danmark har et ganske stort antal forlystelsesparker, hvoraf Tivoli er i top-5 over mest besøgte forlystelsesparker i Europa. Danmark har også en række mindre forlystelsesparker, herunder sommerlande og mere temaorienterede forlystelsessteder (temaparker) som fx Randers Regnskov og Danfoss Universe.
-</p>
-</div>
+øvrige kilder.</p>
+<p class="text-slate-700 leading-relaxed mb-4">1. Redegør for forbrugs- og købsadfærd for en typisk familie relateret
+til forlystelser.</p>
+<p class="text-slate-700 leading-relaxed mb-4">2. Analyser konkurrenceforholdene på markedet.</p>
+<p class="text-slate-700 leading-relaxed mb-4">5. Vurder potentialet i anvendelsen af online promotion for en af de
+store danske forlystelsesparker.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Danmark har et ganske stort antal forlystelsesparker, hvoraf Tivoli er i top-5 over mest besøgte forlystelsesparker i Europa. Danmark har også en række mindre forlystelsesparker, herunder sommerlande og mere temaorienterede forlystelsessteder (temaparker) som fx Randers Regnskov og Danfoss Universe.</p>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60">
+            <h3 class="text-base font-bold text-emerald-900 mb-2 flex items-center gap-2">
+                📝 Det vigtigste at huske
+            </h3>
+            <p class="text-emerald-800 text-sm leading-relaxed">Ud over at dække behovet hos forbrugerne og skabe indtjening til ejerne, er en
+del forlystelsesparker til stor gavn for en hel by eller landsdel, idet den kan
+virke som en magnet for turister, der ofte kombinerer et besøg i
+forlystelsesparken med at besøge andre attraktioner i området og foretage
+forskellige indkøb hos områdets erhvervsdrivende.</p>
+        </div>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60">
+            <h3 class="text-base font-bold text-amber-900 mb-3 flex items-center gap-2">
+                🔑 Nøglebegreber i dette afsnit
+            </h3>
+            <div class="flex flex-wrap gap-2"><span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Tivoli</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Nogle</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Forlystelsesparkernes udfordringer</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Desuden</span></div>
+        </div>
+    </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
-                    <div><a href="case-22-2-wide-path-camper.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 22.2_Wide Path Camper</a></div>
-                    <div><a href="opgaver-og-cases-til-kapitel-22.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opgaver og cases til kapitel 22 →</a></div>
+                <!-- Bottom nav -->
+                <div class="mt-16 pt-6 border-t border-slate-100 flex justify-between items-center flex-wrap gap-4">
+                    <div><a href="case-22-2-wide-path-camper.html" class="group flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors"><svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>Case 22.2_Wide Path Camper</a></div>
+                    <div><a href="opgaver-og-cases-til-kapitel-22.html" class="group flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opgaver og cases til kapitel 22<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a></div>
                 </div>
             </article>
         </div>
@@ -255,12 +177,9 @@ Danmark har et ganske stort antal forlystelsesparker, hvoraf Tivoli er i top-5 o
 </main>
 
 
-<footer class="mt-20 border-t border-slate-200 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
-            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
-        </div>
+<footer class="mt-24 py-10 border-t border-slate-100 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-slate-400 text-sm">📖 Afsætning Studiesite — Eksamen 2026</p>
     </div>
 </footer>
 </body>

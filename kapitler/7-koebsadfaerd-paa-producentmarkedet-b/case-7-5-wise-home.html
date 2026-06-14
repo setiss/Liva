@@ -6,294 +6,187 @@
     <title>Case 7.5_Wise Home — Afsætning Studiesite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
                     },
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    }
                 }
             }
         }
     </script>
     <style>
         body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-        .prose-content h2 { scroll-margin-top: 5rem; }
-        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
-        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
-        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
-        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .sidebar-link:hover { transform: translateX(4px); }
-        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
-        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+        .chapter-card { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .chapter-card:hover { transform: translateY(-6px) scale(1.01); }
+        .sidebar-link { transition: all 0.2s ease; }
+        .sidebar-link:hover { transform: translateX(3px); }
+        .sidebar-link.active { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 3px solid #10b981; }
+        .fade-up { animation: fadeUp 0.5s ease-out forwards; opacity: 0; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); }
     </style>
 </head>
-<body class="bg-white min-h-screen">
+<body class="bg-white min-h-screen antialiased">
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="../../index.html" class="flex items-center gap-3 group">
-                <span class="text-2xl">📖</span>
-                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            <a href="../../index.html" class="flex items-center gap-2.5 group">
+                <span class="text-xl">📖</span>
+                <span class="font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors">Afsætning</span>
             </a>
-            <div class="hidden md:flex items-center gap-1">
-                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
-                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
-                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            <div class="flex items-center gap-2">
+                <a href="../../index.html" class="hidden sm:inline-flex px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all">Hjem</a>
+                <a href="../../soeg.html" class="px-3 py-1.5 rounded-full text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <span class="hidden sm:inline">Søg</span>
+                </a>
             </div>
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
         </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
-        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
-        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
-        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
     </div>
 </nav>
 
 <main class="pt-20 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+        <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
             <!-- Sidebar -->
             <aside class="hidden lg:block">
-                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
-                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pb-8 pr-2">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-4 hover:text-emerald-600 transition-colors">
                         <span>🏗️</span> 7. Købsadfærd (producent)
                     </a>
-                    <div class="space-y-1">
-                        <a href="7-koebsadfaerd-paa-producentmarkedet-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7. Købsadfærd på producentmarkedet (B)</a>
-<a href="7-1-delmarkeder-paa-producentmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7.1 Delmarkeder på producentmarkedet</a>
-<a href="7-2-koebstyper-paa-producentmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7.2 Købstyper på producentmarkedet</a>
-<a href="7-3-koebsbeslutningsproces-paa-producentmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7.3 Købsbeslutningsproces på producentmarkedet</a>
-<a href="7-4-valgkriterier-paa-producentmarkedets-delmarkeder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7.4 Valgkriterier på producentmarkedets delmarkeder</a>
-<a href="7-5-faktorer-der-paavirker-koebsadfaerden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7.5 Faktorer der påvirker købsadfærden</a>
-<a href="case-7-1-trip-trap-woodcare.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7.1_Trip Trap Woodcare</a>
-<a href="case-7-2-hilti.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7.2_Hilti</a>
-<a href="case-7-3-wemarket.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7.3_WeMarket</a>
-<a href="case-7-4-statens-koeb-af-f-35-kampfly.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7.4_Statens køb af F-35 kampfly</a>
-<a href="case-7-5-wise-home.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 7.5_Wise Home</a>
-<a href="opgaver-og-cases-til-kapitel-7.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 7</a>
-<a href="opsamling-paa-kapitel-7.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 7</a>
-<a href="traening-til-kapitel-7.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 7</a>
-
-                    </div>
+                    <div class="space-y-0.5"><a href="7-koebsadfaerd-paa-producentmarkedet-b.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">7. Købsadfærd på producentmarkedet (B)</a>
+<a href="7-1-delmarkeder-paa-producentmarkedet.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">7.1 Delmarkeder på producentmarkedet</a>
+<a href="7-2-koebstyper-paa-producentmarkedet.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">7.2 Købstyper på producentmarkedet</a>
+<a href="7-3-koebsbeslutningsproces-paa-producentmarkedet.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">7.3 Købsbeslutningsproces på producentmarkedet</a>
+<a href="7-4-valgkriterier-paa-producentmarkedets-delmarkeder.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">7.4 Valgkriterier på producentmarkedets delmarkeder</a>
+<a href="7-5-faktorer-der-paavirker-koebsadfaerden.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">7.5 Faktorer der påvirker købsadfærden</a>
+<a href="case-7-1-trip-trap-woodcare.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 7.1_Trip Trap Woodcare</a>
+<a href="case-7-2-hilti.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 7.2_Hilti</a>
+<a href="case-7-3-wemarket.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 7.3_WeMarket</a>
+<a href="case-7-4-statens-koeb-af-f-35-kampfly.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 7.4_Statens køb af F-35 kampfly</a>
+<a href="case-7-5-wise-home.html" class="sidebar-link active block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Case 7.5_Wise Home</a>
+<a href="opgaver-og-cases-til-kapitel-7.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opgaver og cases til kapitel 7</a>
+<a href="opsamling-paa-kapitel-7.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Opsamling på kapitel 7</a>
+<a href="traening-til-kapitel-7.html" class="sidebar-link  block px-3 py-1.5 text-xs text-slate-600 rounded-lg truncate">Træning til kapitel 7</a>
+</div>
                 </div>
             </aside>
             
             <!-- Content -->
-            <article class="min-w-0 max-w-3xl">
-                <div class="mb-6">
-                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
-                        ← 7. Købsadfærd (producent)
-                    </a>
-                </div>
+            <article class="min-w-0 max-w-2xl">
+                <a href="index.html" class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-emerald-600 mb-6 transition-colors lg:hidden">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    7. Købsadfærd (producent)
+                </a>
                 
-                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-8 fade-up">
                     Case 7.5_Wise Home
                 </h1>
                 
-                <div class="prose-content fade-in" style="animation-delay: 0.1s">
-                    <p class="text-slate-700 leading-relaxed mb-4">
-Case 7.5: Wise Home
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Virksomheden Wise Home i Ry blev grundlagt i 2016 af K7 dl E 10 [
+                <div class="fade-up" style="animation-delay:0.08s">
+                    
+    <div class="prose-content">
+        <p class="text-slate-700 leading-relaxed mb-4">Virksomheden Wise Home i Ry blev grundlagt i 2016 af K7 dl E 10 [
 softwarevirksomhed, der har specialiseret sig i at levere fuldautomatiske
-forbrugsregnskaber til ejendomme med flere beboelser (eller
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-erhvervslejemål). Virksomheden befinder sig i den såkaldte
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-proptechbranche (property technology), og har i 2024 ca. 20 ansatte.
-Virksomheden har endnu ikke haft overskud. I 2024 udgjorde
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-underskuddet 3,8 mio. kr.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-= V / Homes produkter
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Produkterne er IT-baserede løsninger, der registrerer forbruget af el, vand og
+forbrugsregnskaber til ejendomme med flere beboelser (eller</p>
+<p class="text-slate-700 leading-relaxed mb-4">erhvervslejemål). Virksomheden befinder sig i den såkaldte</p>
+<p class="text-slate-700 leading-relaxed mb-4">proptechbranche (property technology), og har i 2024 ca. 20 ansatte.
+Virksomheden har endnu ikke haft overskud. I 2024 udgjorde</p>
+<p class="text-slate-700 leading-relaxed mb-4">Produkterne er IT-baserede løsninger, der registrerer forbruget af el, vand og
 varme, og sender det færdige forbrugsregnskab til administratoren af en
-ejendom. Wise Home's forbrugsregnskab kan synkroniseres med
+ejendom. Wise Home&#x27;s forbrugsregnskab kan synkroniseres med
 ejendomsadministratorens IT-system, så administratoren ikke skal opstille et
-forbrugsregnskab.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Ejeren af ejendommen eller dennes vicevært eller ejendomsadministrator
-slipper med Wise Home's løsninger for at aflæse hver enkelt boligs
+forbrugsregnskab.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Ejeren af ejendommen eller dennes vicevært eller ejendomsadministrator
+slipper med Wise Home&#x27;s løsninger for at aflæse hver enkelt boligs
 forbrugsmålere, hvilket i de mindst teknologisk udviklede ejendomme kan
-kræve adgang til hver enkelt bolig ved hver aflæsning.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Wise Home tilbyder desuden deres kunder rådgivning om ressourcespild og
+kræve adgang til hver enkelt bolig ved hver aflæsning.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Wise Home tilbyder desuden deres kunder rådgivning om ressourcespild og
 muligheder for forbrugsoptimering, idet systemet registrerer spild og fejl i
 ejendommens forsyningssystemer. En løsning der er blevet mere populær efter
-de store energiprisstigninger i 2022.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-løsninger skaber dermed værdi for både beboeren og ejeren/administratoren
-af den pågældende bolig.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-G at med tilladelse fra wise home.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Wise Homes kunder
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Wise Homes primære kundegrupper er ejendomsadministrationsvirksomheder,
+de store energiprisstigninger i 2022.</p>
+<p class="text-slate-700 leading-relaxed mb-4">løsninger skaber dermed værdi for både beboeren og ejeren/administratoren
+af den pågældende bolig.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Wise Homes primære kundegrupper er ejendomsadministrationsvirksomheder,
 bolig- og andelsboligforeninger samt ejere af udlejningsejendomme
 (ejendomsinvestorer) i hele Danmark. Nogle ejendomsinvestorer vælger selv at
 administrere deres ejendomme, andre outsourcer arbejdet til en
 ejendomsadministrator som fx Newsec og Deas. Af ejendomsinvestorer kan
 nævnes Actus Ejendomme, Crecendo, Jeudan og Olav de Linde.
 Virksomhederne benævner enten sig selv ejendomsinvestor eller
-ejendomsselskab.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Wise Homes løsninger sælges som abonnementer, hvor Wise Homes udstyr
+ejendomsselskab.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Wise Homes løsninger sælges som abonnementer, hvor Wise Homes udstyr
 installeres i de boliger/erhvervsbygninger, som abonnementet vedrører.
 Kunden bliver dermed en del af Wise Homes infrastruktur, og udstyret
-udsender forbrugsdata i realtid.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-1 1eDruar zuz3 valgte EIVIVUFONGeN at INVESLETE et IMINOnpeløp I WISE norme.
+udsender forbrugsdata i realtid.</p>
+<p class="text-slate-700 leading-relaxed mb-4">1 1eDruar zuz3 valgte EIVIVUFONGeN at INVESLETE et IMINOnpeløp I WISE norme.
 EMDFonden (Energi- og MiljøData Fonden) har til formål at formidle og udvikle
 viden og teknologi, der reducerer ressourceanvendelse og miljøbelastning.
-Investeringen er et led i Wise Home's kapitalrejsning til sikring af fremtidig
-vækst nationalt såvel som internationalt.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Wise Homes øvrige ejere består bl.a af ledere og ejere af
+Investeringen er et led i Wise Home&#x27;s kapitalrejsning til sikring af fremtidig
+vækst nationalt såvel som internationalt.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Wise Homes øvrige ejere består bl.a af ledere og ejere af
 ejendomsadministrations- og ejendomsinvesteringsvirksomheder med
-erfaring inden for såvel IT som ejendomsadministration og -investering.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opkøb
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-I maj 2023 offentliggjorde Wise Home opkøbet af proptechvirksomheden
+erfaring inden for såvel IT som ejendomsadministration og -investering.</p>
+<p class="text-slate-700 leading-relaxed mb-4">I maj 2023 offentliggjorde Wise Home opkøbet af proptechvirksomheden
 KeepFocus i Silkeborg af den tyske ejer Noventic, der vil øge fokus på sit
 hjemmemarked. KeepFocus udviklede hardware og software til energistyring
 samt services til at nedbringe ressourceforbruget i bygninger. Opkøbet giver
 W ome mulighed for at integrere KeepFocus’ data om ejendommene
 software. Dette vil age Wise Homes muligheder for at optimere sine kunders
-forbrug og mindske ressourcespildet.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Opkøbet gør Wise Home til en førende udbyder af fuldautomatiske
+forbrug og mindske ressourcespildet.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Opkøbet gør Wise Home til en førende udbyder af fuldautomatiske
 forbrugsregnskabsløsninger baseret på frit tilgængelige data. Opkøbet har
 bl.a. til formål at forberede Wise Home til at indtræde på udenlandske
-markeder.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Wise Homes nærmeste konkurrent er tyske Techem, der er repræsenteret med
+markeder.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Wise Homes nærmeste konkurrent er tyske Techem, der er repræsenteret med
 over 100 afdelinger i mere end 20 lande. Techem beskæftiger i alt 3.500
-medarbejdere.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Kilder
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-e Ejendomswatch, Proptechfirma med ejendomsaktører i ryggen køber
-op hos tyskere, 03.05.2023
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-e Lasso, virksomhedsinfo.
-e Emdfonden.dk
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-e Wisehome.dk
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Spørgsmål
-</p>
-
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Udarbejd en virksomhedskarakteristik af Wise Home ud fra casen og</li>
-</ul>
-<p class="text-slate-700 leading-relaxed mb-4">
-informationer, du selv indsamler.
-</p>
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Analyser Wise Home's værditilbud.</li>
-</ul>
-<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Analyser relevante omverdensfaktorer for Wise Home og vurder,</li>
-</ul>hvilke der må forventes at have størst indflydelse på virksomheden.
-
-<p class="text-slate-700 leading-relaxed mb-4">
-= . Analyser den formodede købsadfærd for en kunde
+medarbejdere.</p>
+<p class="text-slate-700 leading-relaxed mb-4">e Ejendomswatch, Proptechfirma med ejendomsaktører i ryggen køber
+op hos tyskere, 03.05.2023</p>
+<p class="text-slate-700 leading-relaxed mb-4">informationer, du selv indsamler.
+2. Analyser Wise Home&#x27;s værditilbud.</p>
+<p class="text-slate-700 leading-relaxed mb-4">3. Analyser relevante omverdensfaktorer for Wise Home og vurder,
+hvilke der må forventes at have størst indflydelse på virksomheden.</p>
+<p class="text-slate-700 leading-relaxed mb-4">= . Analyser den formodede købsadfærd for en kunde
 (ejendomsinvestor, ejendomsadministrationsselskab eller
-andelsboligforening), der ønsker at købe en abonnementsløsning til
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-forbrugsregnskaber.
-</p>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-“N
-NV
-</p>
-
-<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
-
-<p class="text-slate-700 leading-relaxed mb-4">
-Virksomheden Wise Home i Ry blev grundlagt i 2016 af K7 dl E 10 [ softwarevirksomhed, der har specialiseret sig i at levere fuldautomatiske forbrugsregnskaber til ejendomme med flere beboelser (eller proptechbranche (property technology), og har i 2024 ca. 20 ansatte. Virksomheden har endnu ikke haft overskud. I 2024 udgjorde
-</p>
-</div>
+andelsboligforening), der ønsker at købe en abonnementsløsning til</p>
+<p class="text-slate-700 leading-relaxed mb-4">Virksomheden Wise Home i Ry blev grundlagt i 2016 af K7 dl E 10 [ softwarevirksomhed, der har specialiseret sig i at levere fuldautomatiske forbrugsregnskaber til ejendomme med flere beboelser (eller proptechbranche (property technology), og har i 2024 ca. 20 ansatte. Virksomheden har endnu ikke haft overskud. I 2024 udgjorde</p>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60">
+            <h3 class="text-base font-bold text-emerald-900 mb-2 flex items-center gap-2">
+                📝 Det vigtigste at huske
+            </h3>
+            <p class="text-emerald-800 text-sm leading-relaxed">Produkterne er IT-baserede løsninger, der registrerer forbruget af el, vand og
+varme, og sender det færdige forbrugsregnskab til administratoren af en
+ejendom. Wise Home&#x27;s forbrugsregnskab kan synkroniseres med
+ejendomsadministratorens IT-system, så administratoren ikke skal opstille et
+forbrugsregnskab. Wise Home tilbyder desuden deres kunder rådgivning om ressourcespild og
+muligheder for forbrugsoptimering, idet systemet registrerer spild og fejl i
+ejendommens forsyningssystemer.</p>
+        </div>
+        
+        <div class="mt-10 p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60">
+            <h3 class="text-base font-bold text-amber-900 mb-3 flex items-center gap-2">
+                🔑 Nøglebegreber i dette afsnit
+            </h3>
+            <div class="flex flex-wrap gap-2"><span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Produkterne</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">En løsning der</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Homes primære kundegrupper</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Investeringen</span>
+<span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">Homes nærmeste konkurrent</span></div>
+        </div>
+    </div>
                 </div>
                 
-                <!-- Navigation -->
-                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
-                    <div><a href="case-7-4-statens-koeb-af-f-35-kampfly.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 7.4_Statens køb af F-35 kampfly</a></div>
-                    <div><a href="opgaver-og-cases-til-kapitel-7.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opgaver og cases til kapitel 7 →</a></div>
+                <!-- Bottom nav -->
+                <div class="mt-16 pt-6 border-t border-slate-100 flex justify-between items-center flex-wrap gap-4">
+                    <div><a href="case-7-4-statens-koeb-af-f-35-kampfly.html" class="group flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors"><svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>Case 7.4_Statens køb af F-35 kampfl</a></div>
+                    <div><a href="opgaver-og-cases-til-kapitel-7.html" class="group flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opgaver og cases til kapitel 7<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a></div>
                 </div>
             </article>
         </div>
@@ -301,12 +194,9 @@ Virksomheden Wise Home i Ry blev grundlagt i 2016 af K7 dl E 10 [ softwarevirkso
 </main>
 
 
-<footer class="mt-20 border-t border-slate-200 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center">
-            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
-            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
-        </div>
+<footer class="mt-24 py-10 border-t border-slate-100 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-slate-400 text-sm">📖 Afsætning Studiesite — Eksamen 2026</p>
     </div>
 </footer>
 </body>
