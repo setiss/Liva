@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 3.3_Discountsupermarkeder — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🌍</span> 3. Ekstern situation
+                    </a>
+                    <div class="space-y-1">
+                        <a href="3-den-eksterne-situation-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. Den eksterne situation (B)</a>
+<a href="3-1-omverdensmodellen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.1 Omverdensmodellen</a>
+<a href="3-2-ot-opsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.2 OT-opsamling</a>
+<a href="3-3-muligheds-og-trusselsmatrix.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.3 Muligheds- og trusselsmatrix</a>
+<a href="3-4-pestel-analyse.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.4 PESTEL-analyse</a>
+<a href="case-3-1-decofarver.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.1_Decofarver</a>
+<a href="case-3-2-toms-gruppen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.2_Toms Gruppen</a>
+<a href="case-3-3-discountsupermarkeder.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 3.3_Discountsupermarkeder</a>
+<a href="case-3-4-clever.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.4_Clever</a>
+<a href="opgaver-og-cases-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 3</a>
+<a href="opsamling-paa-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 3</a>
+<a href="traening-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 3</a>
+<a href="virksomhedens-afhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Virksomhedens afhængige omverden</a>
+<a href="virksomhedens-uafhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Virksomhedens uafhængige omverden</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 3. Ekstern situation
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Case 3.3_Discountsupermarkeder
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Case 3.3: Discountsupermarkeder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der er kamp om kunderne på discountmarkedet i Danmark. Med de seneste
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+års inflation og prisbevidste kunder, er forbrugerfokusset flyttet over på
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+discountsupermarkederne. Udover den stigende kamp om kundernes gunst, er
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+der også sket store restruktureringer blandt nogle af aktørerne på markedet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Coop begyndte i 2023 en omstrukturering, hvilket betød en afvikling af kæden
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+fakta. Mange af faktabutikkerne ændrede navn og koncept til Coop 365. I løbet
+af 2023 og 2024 trak Aldi sig ud af det danske marked. Aldi forklarer selv deres
+dårlige resultater med, at de ikke har været gode nok til at få deres budskaber
+ud. Rema 1000 har efterfølgende overtaget 114 af Aldis butikker.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Re~ > 1000 har i de senere år været den kæde der har vækstet mest ift. ar”. ' af
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+bu. N er. Rema 1000, der opererer med et franchsiekoncept, åbnede alen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+2024 64 nye butikker.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I sommeren 2025 var de 5 største discountkæders butiksantal følgende:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kæde Antal butikker
+Netto 553
+Rema 1000 422
+Coop 365/Fakta 370
+Lidl 150
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: De forskellige discountkæders egne hjemmesider
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Inflation fører til nyt koncept
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+10 butikker, der har et mindre sortiment end andre discountsupermarkeder til
+priser, der i gennemsnit er 15% lavere end de øvrige discountsupermarkeder.
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">BASALTs sortiment er såkaldte basisvarer, og omfatter ikke køle- og frostvarer.</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+80% af varerne koster under 20 kr. pr. stk., og 50% under 10 kr.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I nogle byer, fx Silkeborg, valgte Salling Group at omdanne en Netto til BASALT.
+Der blev også åbnet BASALT i andre byer, så kæden i starten af 2023 bestod af
+11 butikker.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Michael Bregendahl
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Den 25. maj 2023 meddelte Salling Group, at man lukker BASALT efter 7
+måneders drift. BASALT havde da 8 butikker tilbage samt 2, der skulle have
+været åbnet. Af de 8 butikker vil de 4 blive ændret til de Nettobutikker, de var
+inden Basalt åbnede. Resten lukkes.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ifølge Salling Group skyldes lukningen af BASALT ændringer i
+samfundsøkonomien i retning af lavere inflation og energipriser, hvilket betød
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Spørgsmål
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Med udgangspunkt i én af aktørerne på discountmarkedet</li>
+</ul>analyseres omverdensforholdene for den valgte virksomhed.
+<p class="text-slate-700 leading-relaxed mb-4">
+Analysen kræver, at du foretager en yderligere informationssøgning.
+Anvend én eller flere af nedenstående modeller.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o - Omverdensmodellen
+o - PESTEL
+o - SWOT-opstillingen
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Opstil et eksempel på en muligheds- eller trusselsmatrix ud fra</li>
+</ul>besvarelsen i spørgsmål 1.
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Vurdér den valgte aktørs overlevelsesmuligheder.</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Detailwatch.dk, Ophørsudsalg i Aldi: Her er planen for lukning af 59
+butikker, 06.01.2023
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Ritzau.dk, Salling Group, Her ligger Danmarks 10 BASALT-butikker,
+22.11.2022
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Ritzau.dk, dk, Salling Group, BASALT tester videre og åbner i nye byer,
+24.03.2023
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Finans.dk, Salling Group lukker discountkæde, 25.05.2023
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Detailwatch.dk, Rema 1000 fortsætter vækst efter butiksbonanza -
+men i svagere tempo, 28.04.2025
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+[ro
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+fakta. Mange af faktabutikkerne ændrede navn og koncept til Coop 365. I løbet af 2023 og 2024 trak Aldi sig ud af det danske marked. Aldi forklarer selv deres dårlige resultater med, at de ikke har været gode nok til at få deres budskaber ud. Rema 1000 har efterfølgende overtaget 114 af Aldis butikker. 10 butikker, der har et mindre sortiment end andre discountsupermarkeder til priser, der i gennemsnit er 15% lavere end de øvrige discountsupermarkeder.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-3-2-toms-gruppen.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 3.2_Toms Gruppen</a></div>
+                    <div><a href="case-3-4-clever.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Case 3.4_Clever →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

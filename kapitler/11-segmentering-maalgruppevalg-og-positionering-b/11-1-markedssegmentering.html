@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.1 Markedssegmentering — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🎯</span> 11. Segmentering
+                    </a>
+                    <div class="space-y-1">
+                        <a href="11-segmentering-maalgruppevalg-og-positionering-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11. Segmentering, målgruppevalg og positionering (B)</a>
+<a href="11-1-markedssegmentering.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">11.1 Markedssegmentering</a>
+<a href="11-2-segmenteringsprocessen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.2 Segmenteringsprocessen</a>
+<a href="11-3-livsstilsanalyser.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.3 Livsstilsanalyser</a>
+<a href="11-4-personaer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.4 Personaer</a>
+<a href="11-5-maalgruppevalg.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.5 Målgruppevalg</a>
+<a href="11-6-positionering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.6 Positionering</a>
+<a href="case-11-1-kender-du-typen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.1_Kender du typen</a>
+<a href="case-11-2-chips-med-matematik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.2_Chips (med matematik)</a>
+<a href="case-11-3-nature-footwear.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.3_Nature Footwear</a>
+<a href="conzoom-modellen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Conzoom-modellen</a>
+<a href="gallup-kompas.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Gallup Kompas</a>
+<a href="opgaver-og-cases-til-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 11</a>
+<a href="opsamling-paa-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 11</a>
+<a href="traening-til-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 11</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 11. Segmentering
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    11.1 Markedssegmentering
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+x?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Målgruppebeskrivelse
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© Stikord til målgruppebeskrivelsen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Segmenteringsprocessens faser
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ethvert marked er på efterspørgselssiden karakteriseret ved en mængde
+forbrugere, der adskiller sig fra hinanden på en række punkter, fx køn, holdninger
+og 'akriterier. Derfor inddeler virksomhederne typisk markedet, der udgø - af
+de, \ -ntielle forbrugere, i en række mindre grupper, også kaldet segmen Et
+segment består af forbrugere med ensartede behov og præferencer. Når en
+virksomhed skal fastlægge sin målgruppe, arbejder den først med
+segmentering.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 11.2: Inddeling af markedet i segmenter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+; p mera
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nar virksomheden inddeler markedet i segmenter, sker det pa basis af forskellige
+forbrugerkarakteristika, sa et segment bestar altsa af forbrugere med ensartede
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+— ker” *egn.
+To ?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedssegmentering er en opdeling af markedet i homogene grupper
+(segmenter). Homogene grupper betyder, at virksomheden finder
+forbrugere med ensartede kendetegn. Fx: alder, bopæl, køn, værdier,
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+holdninger, livsstil, købsadfærd og forbrug.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Målgruppe er det eller de segmenter, som virksomheden retter sit
+marketingmix mod.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Målgruppebeskrivelse :
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En målgruppebeskrivelse er en karakteristik af virksomhedens målgruppe. Når
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+beskrives i afsnit 11.2.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+virksomheden gør i forbindelse med segmenteringsprocessen. Man skal blot
+beskrive den målgruppe, som den pågældende virksomhed allerede har valgt på
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">baggrund af indsamlet information om målgruppen.</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Stikord til målgruppebeskrivelsen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Alder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Køn
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Indkomst
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+oe Bopæl og boligtype
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Uddannelse og job
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Husstandsstørrelse og familiemæssig status
+e Fritidsaktiviteter og ferieform
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Indkøbsmønstre</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+e Verdier og holdninger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Livsstil
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel på målgruppebeskrivelse
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Sannes Familiecamping ved Gudhjem sigter mod målgruppen familier - specielt
+børnefamilier. Mange forældre ønsker at besøge spændende steder, hvor man
+kan give sine børn nogle gode oplevelser. Familier med børn vil gerne både
+udfordres og underholdes, og specielt familier med yngre børn efterspørger
+oplevelser med dyr. Børnefamilier holder ofte ferie, hvor der er specielt fokus
+på børnene, da der i den travle hverdag kan være mangel af tid. Børnefamilier
+bruger endvidere en del tid på nettet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+forældrene fra ca. 25-45 år og børnene fra omkring 3-15 år. Børnefamilier
+oplever, at det er vanskeligt at motivere ældre teenagebørn til at tage på
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">campingferie i Danmark.</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Børnefamilierne har en husstandsindkomst på ca. 400.000-700.000 kr. og bor
+fordelt i hele Danmark, måske med en overvægt af familier bosiddende i Jylland
+og i udkanten af byerne, når det drejer sig om lidt større byer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ve tschebane i vandlandet. Mini-golf på området.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Michael Bregendahl Foto: Michael Bregendahl
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mht. købsadfærd kan det nævnes, at børnefamilier har relativt faste
+indkøbsvaner med stor loyalitet overfor mærker, hvorimod villigheden til at
+prøve noget nyt er noget mindre. Børnefamilieneres medievaner er ligeledes
+meget faste, og mange børnefamilier har taget de digitale medier til sig.
+Børnefamilier får overvejende sociale- og tryghedsbehov opfyldt, men
+børnefamilier efterspørger også aktiviteter, hvor specielt børnenes egobehov
+kan tilfredsstilles, så børnenes selvværd kan stimuleres.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilder: Familiecamping.dk "Sannes Familiecamping" og Conzoom Danmark,
+conzoom.dk/danmark
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Segmenteringsprocessens faser
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+virksomheden en række fordele. Virksomheden kan påvirke målgruppen, da den
+gennem sin kommunikation dels kan tale målgruppens sprog, og dels kan
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">fokusere på målgruppens behov og krav. Samtidig kan virksomheden udnytte</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+sine ressourcer bedre, da kommunikationen kan rettes mod de købere, der reelt
+er potentielle kunder. Endelig kan virksomheden målrette sin produktudvikling,
+da den lettere kan spotte eventuelle udækkede behov eller pains hos målgrupper,
+som den kender godt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 11.3: Segmenteringsprocessens faser
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Svend Hollensen: Marketing Management - A relationship approach. 3. udgave.
+Pearson, 2015.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Man skal dog være opmærksom på, at nogle mennesker kan være svære at sætte
+i bås. Den enkelte forbruger har ikke altid ensartede præferencer. Den ene dag
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+hun med i Paradise Hotel. Først på måneden køber Karen økologisk, men sidst på
+måneden er hun måske ligeglad med miljøet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Segmenteringsprocessen forklaret med billeder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedssegmentering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= systime >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+bedre læring
+</p>
+
+< 1 > 3 Q Google Slides
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 11.1: Målgruppebeskrivelse for Aarstiderne
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+“N
+NV
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ethvert marked er på efterspørgselssiden karakteriseret ved en mængde forbrugere, der adskiller sig fra hinanden på en række punkter, fx køn, holdninger og 'akriterier. Derfor inddeler virksomhederne typisk markedet, der udgø - af de, \ -ntielle forbrugere, i en række mindre grupper, også kaldet segmen Et segment består af forbrugere med ensartede behov og præferencer. Når en virksomhed skal fastlægge sin målgruppe, arbejder den først med segmentering. Nar virksomheden inddeler markedet i segmenter, sker det pa basis af forskellige forbrugerkarakteristika, sa et segment bestar altsa af...
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="11-segmentering-maalgruppevalg-og-positionering-b.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 11. Segmentering, målgruppevalg og posit</a></div>
+                    <div><a href="11-2-segmenteringsprocessen.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">11.2 Segmenteringsprocessen →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

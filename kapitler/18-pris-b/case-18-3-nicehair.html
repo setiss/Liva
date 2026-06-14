@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 18.3_Nicehair — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>💰</span> 18. Pris
+                    </a>
+                    <div class="space-y-1">
+                        <a href="18-pris-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18. Pris (B)</a>
+<a href="18-1-prisstrategi.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18.1 Prisstrategi</a>
+<a href="18-2-priselasticitet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18.2 Priselasticitet</a>
+<a href="18-3-prisfastsaettelsesmetoder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18.3 Prisfastsættelsesmetoder</a>
+<a href="18-4-prisdifferentiering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18.4 Prisdifferentiering</a>
+<a href="18-5-prisfastsaettelse-for-nye-produkter.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18.5 Prisfastsættelse for nye produkter</a>
+<a href="case-18-1-ejendomsmaeglerbranchen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 18.1_Ejendomsmæglerbranchen</a>
+<a href="case-18-2-campingvogne.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 18.2_Campingvogne</a>
+<a href="case-18-3-nicehair.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 18.3_Nicehair</a>
+<a href="case-18-4-smukfest.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 18.4_Smukfest</a>
+<a href="opgaver-og-cases-til-kapitel-18.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 18</a>
+<a href="opsamling-paa-kapitel-18.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 18</a>
+<a href="traening-til-kapitel-18.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 18</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 18. Pris
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Case 18.3_Nicehair
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Case 18.3: Nicehair
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Case 18.3: Nicehair : -
+Ø E
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nicehair sælger hår- og beautyprodukter på nettet og er Danmarks største
+online beauty-shop. Tonny Nielsen Bruun startede webshoppen Nicehair i
+</p>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Salget tog hurtig fart, og Tonny gik fra at være sig selv til at have 50</li>
+</ul>ansatte på tre et halvt år. Pricerunner kårede i 2022 Nicehair til Årets E-handler
+<p class="text-slate-700 leading-relaxed mb-4">
+inden for kategorien "Skønhed”.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ideen til virksomheden fik Tonny fra sin kone, som er frisør. Mens han læste HA,
+begyndte han at sælge hårprodukter gennem dba.dk og trendsales.dk. Men
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+han fik lyst til mere og etablerede en egentlig netbutik i 2009 med
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Story House Egmont.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fakta om Nicehair
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Tonny Nielsen Bruun stiftede hårpleje-webshoppen Nicehair.dk i
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Virksomheden sælger mere end 10.000 forskellige hårprodukter og
+andre produkter til personlig pleje over internettet. Konceptet er at
+sælge mærkevarer billigere end frisører og andre udbydere samt at
+levere lynhurtigt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Virksomheden sender over 40.000 pakker ud hver måned.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e 12021 omsatte Nicehair for 389 mio. kr., mens 2022 resulterede i
+faldende omsætning med et underskud på 8,2 mio. kr. I 2023 var
+underskuddet 3,3 mio. kr.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Virksomheden er udelukkende på konsumentmarkedet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vækstplaner
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tonny Nielsen Bruun ønsker fortsat vækst og etablere sig inden for flere
+områder. “Og vi har rigtig mange andre domænenavne, som vi gerne vil bruge,
+så vi kigger hele tiden efter en mulighed for at komme i gang,” siger Tonny
+Nielsen Bruun. Sortimentet er løbende blevet udvidet og tæller over 10.000
+forskellige varer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden sætter høj service i fokus og ekspederer ordrerne på dag-til-dag
+basis. Netkunderne vil gerne have deres varer så hurtigt som muligt, og ved at
+sikre hurtig levering opnår Tonny ofte nye ordrer, ligesom virksomheden får
+gode vurderinger på nettet. Varerne bestilles ofte i dagtimerne, så der er
+deltidsmedarbejdere, der pakker ordrene om eftermiddagen og aftenen. Høj
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Promotionaktiviteter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden bruger ikke penge på reklame i traditionelle medier, men bruger
+en del Google Ads-annoncekroner for at sikre, at virksomheden popper frem på
+skærmen, når der søges på hårprodukter og andre varer, som NiceHair har i
+sortimentet. Endvidere promoverer virksomheden sig via de sociale medier.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I 2018 trådte Tonny Nielsen Bruun tilbage som administrerende direktør og
+ansatte Hans Tost, der tidligere var marketingchef for restaurantkæden Sunset
+Boulevard. Siden 1. marts 2021 har Susanne Snogdal været administrerende
+direktør for Nicehair.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ændrede ejerskabsforhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Siden 2016 har Story House Egmont gennem årene overtaget flere ejerandele i
+~ N iir, og i 2022 blev Nicehair 100 procent ejet af Story House Egmont.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Processen med at integrere Nicehair webshoppen fuldt ud i Egmont har haft
+den konsekvens, at et overskud på 6,6 mio. kr. i 2021 blev til underskud på 8,2
+mio. kr. og 3.3 mio kr. i hhv, 2022 og 2023.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Man ønskede fra Egmonts side at blive nummer et på onlinemarkedet. Det
+lykkedes ikke.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Man adskiller sig ikke rigtig fra Matas, som er klart den største, og
+det skal der ændres på. Dengang, jeg var med, havde vi et
+ambassadør-program, hvor vi havde 300 influencere, og det er en
+af de ting, jeg vil satse rigtig meget på igen, og få dem endnu
+tættere på virksomheden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tonny Nielsen Bruun
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I 2024 kom Nicehair igen på Tonny Nielsen Bruuns hænder, da Story House
+Egmont solgte webshoppen Nicehair tilbage til ham.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+blive Nordens største spiller inden for beauty og heller ikke havde
+en retning, hvor det kunne lade sig gøre for dem.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tonny Nielsen Bruun
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nicehair-stifteren vil kigge på, om webshoppen kan skabe et private label-
+brand i samarbejde med nogle af ambassadørerne. Derudover vil stifteren
+være mere aggressiv på prissætning og markedsføring.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jeg har altid været klassens frække dreng i beauty-branchen, hvor vi
+nogle gange gjorde ting, der måske ikke var helt gennemtænkte
+med for høje rabatsatser, i forhold til hvad der kunne lade sig gøre
+økonomisk. Det mener jeg, at vi skal tilbage til. En gang imellem må
+vi godt lige lukke øjnene og tænke på, at vi skal huskes af
+forbrugerne og ikke tænke på så meget andet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Te Nielsen Bruun
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Google-søgning pa “Shampoo”
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Spørgsmål
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Giv en kort karakteristik af virksomheden Nicehair og analyser</li>
+</ul>virksomhedens kernekompetence.
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Analyser konkurrencesituationen på markedet for hårprodukter.</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Diskuter Nicehair.dk's prisfastsættelsesmetode samt deres</li>
+</ul>prisfastsættelse på nye produkter.
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e BT Erhverv: Nicehair.dk får ny topchef; stifter træder tilbage,
+23.08.2018
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Ritzau, Kæmpe skønhedsvirksomhed flytter til større lokaler i Esbjerg,
+22.4.2020
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Ugeavisen Esbjerg, Ny NiceHoair-direktør stiler mod
+milliardomsætning, 26.02.2021
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Mediawatch: Egmont: jeg kan gøre det bedre, 13.12.2024
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nicehair sælger hår- og beautyprodukter på nettet og er Danmarks største online beauty-shop. Tonny Nielsen Bruun startede webshoppen Nicehair i 2009. Salget tog hurtig fart, og Tonny gik fra at være sig selv til at have 50 ansatte på tre et halvt år. Pricerunner kårede i 2022 Nicehair til Årets E-handler inden for kategorien "Skønhed”. Ideen til virksomheden fik Tonny fra sin kone, som er frisør. Mens han læste HA, begyndte han at sælge hårprodukter gennem dba.dk og trendsales.dk. Men
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-18-2-campingvogne.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 18.2_Campingvogne</a></div>
+                    <div><a href="case-18-4-smukfest.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Case 18.4_Smukfest →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

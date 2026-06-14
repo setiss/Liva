@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 1.3_Unges gæld, forbrug og opsparing — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📊</span> 1. Markedsanalyse
+                    </a>
+                    <div class="space-y-1">
+                        <a href="1-markedsanalyse-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1. Markedsanalyse (B)</a>
+<a href="1-1-formaal-med-dataindsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.1 Formål med dataindsamling</a>
+<a href="1-10-repraesentativitet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.10 Repræsentativitet</a>
+<a href="1-11-markedsanalyseprocessen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.11 Markedsanalyseprocessen</a>
+<a href="1-12-big-data.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.12 Big data</a>
+<a href="1-2-data.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.2 Data</a>
+<a href="1-3-databaser.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.3 Databaser</a>
+<a href="1-4-kvalitative-metoder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.4 Kvalitative metoder</a>
+<a href="1-5-kvantitative-metoder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.5 Kvantitative metoder</a>
+<a href="1-6-spoergeskemaudformning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.6 Spørgeskemaudformning</a>
+<a href="1-7-stikproeveplan.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.7 Stikprøveplan</a>
+<a href="1-8-stikproeveudvaelgelse.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.8 Stikprøveudvælgelse</a>
+<a href="1-9-fejlkilder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.9 Fejlkilder</a>
+<a href="case-1-1-internethandel.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.1_Internethandel</a>
+<a href="case-1-2-vis-mig-dit-skrald.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.2_Vis mig dit skrald</a>
+<a href="case-1-3-unges-gaeld-forbrug-og-opsparing.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 1.3_Unges gæld, forbrug og opsparing</a>
+<a href="case-1-4-dataindsamling-i-praksis.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.4_Dataindsamling i praksis</a>
+<a href="case-1-5-den-oekologiske-forbruger-med-matematik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.5_Den økologiske forbruger (med matematik)</a>
+<a href="case-1-6-danskernes-motionsvaner-med-matematik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.6_Danskernes motionsvaner (med matematik)</a>
+<a href="opgaver-og-cases-til-kapitel-1.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 1</a>
+<a href="opsamling-paa-kapitel-1.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 1</a>
+<a href="traening-til-kapitel-1.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 1</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 1. Markedsanalyse
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Case 1.3_Unges gæld, forbrug og opsparing
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <strong class="font-semibold text-slate-900">Emne</strong>: Kildekritik og metodevalg — baseret på Finans Danmarks analyse fra 2023.
+
+<p class="text-slate-700 leading-relaxed mb-4">
+---
+</p>
+
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Baggrund</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Finans Danmark har udgivet en analyse om danske unges gæld, forbrug og opsparing. Analysen indeholder fire kapitler med tilhørende metodebeskrivelser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+---
+</p>
+
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Opgaver</h2>
+
+<h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Opgave 1: Kildekritisk vurdering</h3>
+<p class="text-slate-700 leading-relaxed mb-4">
+Foretag en overordnet kildekritisk vurdering af analysen med udgangspunkt i:
+</p>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Dataindsamlingsmetoder</strong> — beskrevet i de grå bokse i starten af hvert kapitel (s. 8, 25 og 46)</li>
+<li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Forskerens interesser</strong> — Finans Danmark er en interesseorganisation for banksektoren. Hvilken betydning har det for analysens objektivitet?</li>
+</ul>
+<h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Opgave 2: Analysens brugere</h3>
+<p class="text-slate-700 leading-relaxed mb-4">
+Vurder, hvilke <strong class="font-semibold text-slate-900">personer og organisationer</strong> der kan bruge rapportens resultater.
+</p>
+
+<h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Opgave 3: Metodevalg</h3>
+<p class="text-slate-700 leading-relaxed mb-4">
+Figur 1.12 i rapporten viser, at 18–29-årige mænd er mere tilbøjelige til at investere i aktier end 18–29-årige kvinder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Antag at du ønsker at analysere <strong class="font-semibold text-slate-900">årsagerne</strong> til, at unge mænd foretrækker aktier frem for fonde:
+</p>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Giv forslag til relevante metoder der kan afdække denne problemstilling</li>
+<li class="ml-4 mb-1 text-slate-700">Argumentér for dit metodevalg</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+---
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Casen træner kildekritik ved at stille spørgsmål til en eksisterende analyse og dens metodiske grundlag. Finans Danmarks interesse som brancheorganisation er relevant for vurderingen af analysens objektivitet. Opgave 3 kræver selvstændig stillingtagen til metodisk fremgangsmåde.
+</p>
+
+</div><div class="keywords-section mt-8 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl"><h2 class="text-xl font-bold text-amber-800 mb-3">🔑 Nøglebegreber</h2>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Kildekritik</strong>: Systematisk vurdering af en datakildes troværdighed, formål og begrænsninger</li>
+<li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Interesseorganisation</strong>: Organisation der repræsenterer en bestemt gruppes interesser — kan påvirke analysers objektivitet</li>
+<li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Objektivitet</strong>: At en analyse ikke er farvet af forskerens/udgiverens interesser</li>
+</ul></div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-1-2-vis-mig-dit-skrald.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 1.2_Vis mig dit skrald</a></div>
+                    <div><a href="case-1-4-dataindsamling-i-praksis.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Case 1.4_Dataindsamling i praksis →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.5 Konkurrencemæssige positioner — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>⚔️</span> 4. Konkurrenceforhold
+                    </a>
+                    <div class="space-y-1">
+                        <a href="4-konkurrenceforhold-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4. Konkurrenceforhold (B)</a>
+<a href="4-1-markedskarakteristik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.1 Markedskarakteristik</a>
+<a href="4-2-konsument-og-producentmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.2 Konsument- og producentmarkedet</a>
+<a href="4-3-konkurrentidentifikation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.3 Konkurrentidentifikation</a>
+<a href="4-4-markedsandel-og-praeferencer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.4 Markedsandel og præferencer</a>
+<a href="4-5-konkurrencemaessige-positioner.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">4.5 Konkurrencemæssige positioner</a>
+<a href="4-6-konkurrentanalyse.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.6 Konkurrentanalyse</a>
+<a href="case-4-1-mikrobryggerier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.1_Mikrobryggerier</a>
+<a href="case-4-2-bareen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.2_bareen</a>
+<a href="case-4-3-carzilla.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.3_CARZILLA</a>
+<a href="case-4-4-fastfood-markedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.4_Fastfood-markedet</a>
+<a href="case-4-5-benzinmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.5_Benzinmarkedet</a>
+<a href="case-4-6-det-danske-sodavandsmarked-offline.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.6_Det danske sodavandsmarked (offline)</a>
+<a href="opgaver-og-cases-til-kapitel-4.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 4</a>
+<a href="opsamling-paa-kapitel-4.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 4</a>
+<a href="traening-til-kapitel-4.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 4</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 4. Konkurrenceforhold
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    4.5 Konkurrencemæssige positioner
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o Markedsleder
+o Markedsudfordrer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Markedsfølger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Markedsnicher
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En virksomheds konkurrencemæssige position fastlægges primært ud fra
+virksomhedens markedsandel.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+markedsnichere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 4.8: De konkurrencemæssige positioner
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+istockphoto.com/-VICTOR- — & Systime
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Udvikling i markedsandele for skadesforsikring
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Forsikring & Pension, Markedsandele for skadesforsikring.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustrationen viser udviklingen i markedsandelene på markedet for
+skadeforsikring målt på omsætning (forsikringspræmieindtægter). I 2022
+opkøbte forsikringsselskabet Alm. Brand konkurrenten Codan. Brandet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= ” , Brand er som vist den 3. største på markedet for skadesforsikring '
+i. «tal i alle de viste år. Lægges Codans markedsandel oveni, bliver Alm.
+Brand Group som koncern markedsudfordrer med en samlet
+markedsandel, der er større end Topdanmarks i de viste år. Selskaberne
+Codan og Alm. Brand fortsætter dog efter opkøbet som selvstændige
+brands, så Topdanmark er markedsudfordrer på mærkeniveau.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsleder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Michael Bregendahl
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konkurrencerådet tilsyn med virksomheder, der har en markedsandel på 40 % og
+derover. Tilsynet skal sikre, at markedslederen ikke misbruger sin dominerende
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">stilling til at tage for høje priser for sine produkter. Herhjemme drejer det sig fx</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+om virksomheder som Carlsberg og Arla Foods.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedslederen er typisk først med nye produkter på markedet. Distributionen
+er intensiv, og reklameindsatsen er stor. For markedslederen er hovedmålet på
+strategisk niveau at forsvare sin førerposition. Førerpositionen kan forsvares på
+mange forskellige måder: udvidelse af totalmarkedet, markedsandelen eller
+kundeandelen samt forsvar af markedsandelen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Førerpositionen kan forsvares på mange forskellige måder:
+Illustration 4.9: Markedslederens strategiske muligheder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udvidelse af e Få nuværende forbrugere til at øge forbruget
+= t 1arkedet e Satse på nye brugere (ny målgruppe) fra det
+latente marked
+e Tage nye distributionskanaler i anvendelse
+e Finde nye brugsmuligheder for produktet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forsvar af e Løbende produktudvikling
+markedsandelen e Effektivisering af distributionssystemet
+e Intensiv promotion
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udvidelse af Målgruppe: Kunder, som ikke allerede handler hos
+markedsandelen virksomheden:
+e Aggressiv anvendelse af de 4 P'er over for
+konkurrenternes kunder
+e Opkøb af konkurrenter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udvidelse af Målgruppe: Kunder, som allerede handler hos
+kundeandelen virksomheden fx ved:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Mersalg til nuværende kunder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Kundeloyalitetsprogrammer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Udvidelse af sortimentet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempler: Markedslederens muligheder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Som markedsleder på brillemarkedet - målt på antal solgte briller - har Louis
+Nielsen valgt at udvide totalmarkedet ved at satse på firmabriller.
+Virksomheden har udviklet et koncept, der tilbyder virksomheder
+konkurrencedygtige priser på såvel skærmbriller som læsebriller.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+På markedet for skadesforsikring ses, at Tryg forsvarer sin markedsandel ved
+intensiv promotion for Trygfonden, som alle Trygs kunder automatisk er
+medlem af. Trygfonden er kendt for sine CSR-tiltag inden for kystlivredning,
+hjertestartere osv.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I slutningen af 2017 købte Tryg konkurrenten Alka, hvilket øgede
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Trygkoncernens markedsandel. De to selskaber har dog bevaret hver sit brand.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ved npkøb af Alka fik Tryg adgang til en ny kundegruppe, idet en stor del af
+A kunder er medlem af bestemte fagforeninger, der har rabataftale n.
+selskabet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Matas har en af Danmarks største kundeklubber - Club Matas. Ved at give
+klubmedlemmerne specifikke fordele som fx løbende at optjene rabatter,
+forsøger Matas at fastholde kunderne samt gøre Matas mere attraktiv for nye
+kunder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Janne Andersen, SVP, Matas Marketing, fortæller om Club Matas.
+Gengivet med tilladelse fra Matas A/S
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+=  M< 2dsudfordrer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Mikkel Brunvold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De typiske kendetegn for markedsudfordreren er, at de har næststørst
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+markedsandel og aggressiv markedsforing.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsudfordreren har nogle principielle muligheder for at fastholde og
+udbygge sin position pa to mader:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Angreb på e Satse på samme målgruppe(r) som markedslederen,
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">> markedslederen men med bedre tilfredsstillelse af kundernes behov</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+eller pain, fx bedre produkt og bedre service (frontalt
+angreb)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Satse på nogle målgrupper, som ikke har førsteprioritet
+hos markedslederen (flankeangreb)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Angreb på andre e Ændre marketingmixet for nuværende produkter i
+konkurrenter forhold til konkurrenterne
+e Satse på områder, hvor konkurrenter er særligt sårbare
+og ikke har finansielle ressourcer til at reagere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempler: Markedsudfordrerens muligheder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= book var det første verdensomspændende sociale netværk. Instag
+formaede for nogle ar tilbage at lave et flankeangreb ved at fokusere pa
+billeder og det visuelle udtryk pa deres platform, hvilket appellerede til en
+specifik malgruppe som dermed fandt Instagram mere attraktivt end
+Facebook. Begge virksomheder er i dag ejet af samme virksomhed - Meta.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+På det danske ølmarked er Carlsberg markedsleder med en markedsandel
+på omkring 52 %. Royal Unibrew er markedsudfordrer med en
+markedsandel på omkring 23 %.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsfølger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsfølgeren kan betragtes som en mere fredelig konkurrent sammenlignet
+med udfordreren. Følgeren er sjældent først med nye produkter. Tværtimod er
+der ofte tale om efterligninger af markedslederens produkter. Dette kendes fx i
+forbindelse med billigere varianter, som minder om etablerede produkter, fx
+smagsvarianter i chips eller øl. Ofte findes disse også som private label-
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Som regel er markedsfølgerens produkter relativt billige, og derfor har
+markedsfølgeren ofte gode muligheder på markeder, hvor der forekommer
+segmenter, hvis efterspørgsel er ret prisfølsom.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsfølgerens muligheder er:
+Illustration 4.11: Markedsfølgerens strategiske muligheder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tilpasning e Sælge en forbedret udgave af konkurrerende produkter
+e Anvende andre distributionskanaler end konkurrenternes
+e Anden pris (oftest lavere) end konkurrenternes
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Efterligning e Mild form for kopiering af konkurrentprodukter (me-too
+produkter)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempler: Markedsfølgers muligheder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Acer er markedsfølger på det danske pc-marked med en lav markedsandel.
+På tablet-markedet er det Acer, Asus og Lenovo, der er markedsfølgere.
+Flere af disse fokuserer meget på prisen. Man får her tablets til noget
+under af prisen på markedslederen (Apples) produkter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsnicher
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsnichere er virksomheder, der er specialister i at betjene en lille del af
+markedet sammenlignet med de større konkurrenter. En anden mulighed er, at
+de større konkurrenter ikke interesserer sig for nichen, da nichen
+størrelsesmæssigt ikke er attraktiv.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der er en tendens til, at en markedsnicher benytter sig af enten stærkt
+differentierede produkter til høj pris eller deciderede lavprisprodukter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Betjene en mindre niche på markedet (snæver målgruppe), som skal
+udvides og beskyttes
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Have fokus på stor margin i stedet for stor volumen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e To overordnede pris-segmenter:
+o Stærkt differentierede produkter til høj pris (premium)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o En niche kan specialisere sig i at levere ekstra høj kvalitet, en
+speciel service eller et geografisk fokus
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Michael Bregendahl
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempler: Markedsnicherens muligheder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempler på differentierede nicheprodukter er fx Æblerov som fremstiller
+naturligt gæret cider, og urproducenten Nordgreen som har stor fokus på
+bæredygtighed. Lavprisprodukter i nichesammenhæng kunne være Frem
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+inden for sodavand. Frem ejes i dag af Royal Unibrew.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 4.9: Markedet for feriehusudlejning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 4.10: Streaming af musik
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+“N
+NV
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En virksomheds konkurrencemæssige position fastlægges primært ud fra virksomhedens markedsandel. Illustrationen viser udviklingen i markedsandelene på markedet for skadeforsikring målt på omsætning (forsikringspræmieindtægter). I 2022 opkøbte forsikringsselskabet Alm. Brand konkurrenten Codan. Brandet
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="4-4-markedsandel-og-praeferencer.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 4.4 Markedsandel og præferencer</a></div>
+                    <div><a href="4-6-konkurrentanalyse.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">4.6 Konkurrentanalyse →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

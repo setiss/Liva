@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.2 Afsætningsfaglige genrer — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🔬</span> Metode
+                    </a>
+                    <div class="space-y-1">
+                        <a href="1-fagets-modeller-og-arbejdsmetode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1. Fagets modeller og arbejdsmetode</a>
+<a href="2-afsaetningsfaglige-kompetencer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2. Afsætningsfaglige kompetencer</a>
+<a href="3-at-kommunikere-i-afsaetning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. At kommunikere i afsætning</a>
+<a href="3-1-argumentation-og-dokumentation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.1 Argumentation og dokumentation</a>
+<a href="3-2-afsaetningsfaglige-genrer.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">3.2 Afsætningsfaglige genrer</a>
+<a href="4-informationssoegning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4. Informationssøgning</a>
+<a href="5-kildekritik-og-empiri.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">5. Kildekritik og empiri</a>
+<a href="6-fagets-analysemetoder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">6. Fagets analysemetoder</a>
+<a href="case-1-kvalitativ-metode-og-feltarbejde.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1_Kvalitativ metode og feltarbejde</a>
+<a href="opgaver-og-cases-til-samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til Samfundsvidenskabelig metode</a>
+<a href="opsamling-paa-samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på samfundsvidenskabelig metode</a>
+<a href="samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Samfundsvidenskabelig metode</a>
+<a href="traening-til-samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til samfundsvidenskabelig metode</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← Metode
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    3.2 Afsætningsfaglige genrer
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+3.2 Afsætningsfaglige genrer Aa Wo:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ø EG
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lige som du kender det fra dansk, hvor der skrives i forskellige genrer, arbejder
+man også med genrer i den skriftlige del af faget afsætning. Du vil møde
+fors’ "lige genrer i afsætning i løbet af hhx: >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Notat - besvarelse af skriftlige caseopgaver
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Synopsis
+e Rapport - besvarelse af studieområdeprojekt (SOP) og andre projektforløb
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+NOtat .
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">I hverdagen vil du støde på opgaver og cases, som skal besvares skriftligt. En</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+case vil typisk bestå af et tekstmateriale med en beskrivelse af en virksomhed
+og/eller en branche suppleret med bilag i form af talmateriale og andre
+informationer. Casen kan også tage udgangspunkt i et tema eller en tendens,
+hvor der ikke direkte er et fokus på en bestemt virksomhed. Hertil vil der være en
+række spørgsmål.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I afsætning er der tradition for at bruge åbne spørgsmål i cases og opgaver, da
+der ofte er mange veje at gå, når en virksomhedscase skal løses. Årsagen til dette
+er, at der er et væld af udviklingsmuligheder for en virksomhed, så der findes
+ingen patentløsninger.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når man skal løse en afsætningscase, er det derfor vigtigt at medtænke følgende
+i løsningen:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+« Nervej nøje valget af teorier og modeller
+e Begrund valget af teorier og modeller
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Opstil forudsætninger og afgrænsninger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Notat i skriftlig afsætning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksamensformen i skriftlig afsætning er en opgave bestående af ca. 2000 ord
+med tilhørende spørgsmål. Opgaven består af flere bilag fra forskellige
+afsendere. Din besvarelse skal opbygges som et notat. Strukturen i et notat følger
+spørgsmålene til casen, således at det tydeligt fremgår af notatet, hvilke
+spørgsmål der besvares.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det er selvfølgelig vigtigt at læse spørgsmålene til en case meget grundigt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der er især tre ting, som det er vigtigt at lægge mærke til:
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Hvilket kernestofområder spørges der om?</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+"Analyser virksomhedens interne og eksterne forhold", kan du bruge
+værktøjskassen til at finde de modeller og teorier, der ligger inden for
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">kernestofområdet. I det konkrete eksempel kan en virksomheds interne og</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+eksterne forhold analyseres på mange forskellige måder ved hjælp af en række
+modeller: swot-opstilling, værdikæde, omverdensmodel etc. Der er selvfølgelig
+ikke meningen, at alle analysemodellerne skal bruges, så det er vigtigt, at den
+eller de analyseværktøjer, der passer bedst til casen, udvælges og at modelvalget
+begrundes.
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Hvilket taksonomisk niveau er opgaven på?</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+Taksonomi betyder, at opgaver stilles på forskellige niveauer. Inden du går i gang
+med at løse en opgave, skal du gøre dig bevidst om, hvilket taksonomisk niveau
+opgaven befinder sig på.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Me’ for afsætning bygger på SOLO-taksonomien, som bruges til at inde’
+Sve, .edsgraden af forskellige spørgsmål, der arbejdes med i faget.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 10: SOLO-taksonomien
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Taksonomisk Eksempel Forklaring
+niveau
+</p>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">niveau: e redegøre Det er vigtigt, at fagets begreber</li>
+</ul>Stof gengives o karakterisere inddrages.
+<p class="text-slate-700 leading-relaxed mb-4">
+o opstille
+e beregne
+</p>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">niveau: e analysere På dette niveau inddrages metoder</li>
+</ul>e forklare og modeller.
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Stof struktureres og
+sammenhænge
+forklares
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e sammenligne
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">niveau: e vurdere Dette niveau er det øverste og bygger</li>
+</ul>Det behandlede stof e diskutere dermed på de to andre niveauer. Når
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">e perspektivere en virksomheds strategivalg fx skal</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+vurderes og
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+bedømmes vurderes, bygger vurderingen på
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+analyser udført på 2. niveau.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: J.B. Biggs og K. Collis: Evaluating the Quality of Learning - the SOLO taxonomy.
+Academic Press, 1982.
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Hvor mange procent tæller opgaven?</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+Nogle opgaver er forsynet med en procentvis vægtfordeling, men ikke alle
+opgaver. Du skal tage hensyn til vægtfordelingen, når du disponerer den tid, der
+er til rådighed til besvarelse af opgaven. Omfanget af en delopgavebesvarelse,
+der tæller 30% skal naturligvis være større og mere dybdegående end omfanget
+af en delopgavebesvarelse, der kun tæller 15%. Er der ikke en vægtfordeling, så
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= vee mærksom på, at det er de højeste taksonomiske niveauer, der tælle sti
+bea, .1imelsen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der er i den skriftlige eksamensopgave på A-niveau ikke angivet vægte på
+opgaven, da din besvarelse vurderes ud fra en helhedsvurdering. Dog vægtes
+spørgsmålene på det laveste taksonomiske niveau mindst, hvorimod
+spørgsmålene på det højeste taksonomiske niveau vægtes mest. Det er dog
+vigtigt at alle spørgsmålene prioriteres, da der er tale om en helhedsvurdering.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Til den skriftlige eksamen i Afsætning på A-niveau skal din besvarelse opbygges
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+som notat. Det betyder bl.a. at du ikke skal lave forside, indholdsfortegnelse,
+fodnoter eller kildeliste da dette ikke indgår i bedømmelsen af din opgave.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+iStockphoto.com/YakobchukOlena
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Synopsis
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Synopsen er en kort, koncentreret og sammenhængende tekst, hvor der kan
+= brv punktopstillinger og korte beskrivelser. Ofte bruges synopsen som
+gru. ag for en mundtlig fremlæggelse.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Synopsen kan fx opbygges efter følgende skabelon:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Indledning med en kort redegørelse for, hvilke problemstillinger og
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+faglige dilemmaer du vil arbejde med
+e Kort karakteristik af virksomheden
+e Analyse af fagligt relevante problemstillinger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Konklusion (opsamling og sammenfatning af opgaven)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I forbindelse med erhvervscase følger synopsen en bestemt struktur:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Karakteristik af virksomheden
+e Redegørelse for casevirksomhedens kritiske succesfaktorer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Analyse af de udfordringer, som virksomheden står overfor
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Kildeliste
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">© Bilag</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Derudover skal synopsen indeholde metodeovervejelser om, hvordan
+fagene bidrager til arbejdet med casevirksomheden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I stedet for en konklusion afrundes en synopsis i erhvervscase med en
+handlingsplan eller en aktionsplan, hvor der præsenteres overvejelser om,
+hvordan de foreslåede løsninger kan implementeres, og om de foreslåede
+løsninger er realistiske.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Rapport
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En rapport er typisk et større, skriftligt arbejde, der tager udgangspunkt i en
+problemformulering eller en opgaveformulering. Læreren kan give dig en
+op. formulering, som du skal besvare, eller rapporten kan være produk
+forbindelse med et projektforløb, hvor du selvstændigt eller i en gruppe
+afgrænser et emne og formulerer en problemformulering.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En rapport kan fx opbygges efter følgende skabelon:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Forside
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Indholdsfortegnelse
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Indledning med metodeafsnit og afgrænsning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e En række afsnit med analyser, hvori opgaven besvares
+e Konklusion (opsamling og sammenfatning af opgaven)
+e Kildeliste
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Evt. bilag
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel på afgrænsning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I min problemformulering får jeg til opgave at redegøre for det danske
+marked for alkoholsodavand samt analysere en udvalgt tv-reklame for
+Somersby. Da produktet Somersby ikke befinder sig på markedet for
+alkoholsodavand, men derimod på markedet for for cider og øl, tager
+jeg udgangspunkt i markedet for alkoholsodavand som bestående af
+dels cider med alkohol - fx Somersby - energidrikke med alkohol - fx
+Cult Shaker - og af sodavand med alkohol - som fx Smirnoff Ice.
+Sodavand med alkohol vil jeg i opgaven beskrive som 'alkopops'.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Overordnet er min definition af markedet for alkoholsodavand altså, at
+det omfatter alkoholiske drikke med kulsyre. Markedet for
+alkoholsodavand har ikke klare grænser, idet der konstant introduceres
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e typer af produkter på markedet, heriblandt Somersby, hvis
+lancering anses som en lancering af en helt ny produktkategori i
+markedet. Jeg vil i min opgave udelukkende fokusere på det danske
+marked.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Uddrag af studieområdeprojekt skrevet af Camilla 3.H.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Da rapporten ofte er et større, skriftligt produkt, er det vigtigt at arbejde med at
+disponere stoffet og opbygge strukturen i rapporten. Nedenfor er en oversigt
+over de væsentligste begreber, der knytter sig til rapportgenren.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 11: Oversigt over begreber, der bruges i rapportskrivningen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Begreb Forklaring
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Disposition En disposition er et udkast til strukturen i rapporten. Der skal være en klar sammenhæng
+mellem problemformuleringen og dispositionen for rapporten. Dispositionen viser hvilke
+elementer, der skal med i rapporten, og er samtidig en foreløbig indholdsfortegnelse for
+rapporten.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Struktur Strukturen viser, hvordan de forskellige underemner og delelementer i rapporten vægtes
+i forhold til hinanden. De delemner, der er centrale, fremstår med stor vægt i rapporten
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Indledning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Problem-
+formulering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Il
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konklusion
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Neden for er en oversigt, der på en overskuelig måde viser hvordan de tre genrer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+delemnet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I starten af rapporten vil der ofte være en indledning eller et metodeafsnit, hvori du
+redegør for, hvordan rapporten er bygget op, og hvilke teorier og modeller rapporten
+bygger på. Med andre ord forklarer dette afsnit den røde tråd i rapporten og gør det
+lettere for læseren at forstå opbygningen af rapporten. I afsnittet kan der også være en
+afgrænsning af emnet og dine overvejelser i forbindelse hermed.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvis du skriver ud fra en lærerstillet problemformulering (fx i et studieområdeprojekt),
+kan der også være behov for at uddybe en række forhold i indledningen:
+e Emnet kan afgrænses, hvis det er relevant.
+e Du kan redegøre for, hvorfor et bestemt emne eller en teori er aktuel eller
+interessant at tage op.
+Væsentlige begreber kan defineres.
+Du kan medtage en begrundelse af valget af teorier og metoder.
+Du kan redegøre for, hvordan dataindsamlingen er foregået.
+Du kan redegøre for strukturen i rapporten.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En problemformulering er en kort tekst, der afgrænser, konkretiserer og problematiserer
+det emne, der skal undersøges.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Inden problemformuleringen kan fastlægges, skal der indsamles information om emnet,
+så emnet kan afgrænses, og der kan vælges en hensigtsmæssig vinkel på den valgte
+problemstilling.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Problemformuleringen er styrende i et projektforløb. Det er problemformuleringen, der
+fastlægger projektets fokus, og viser den grundlæggende struktur i rapporten.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En opgaveformulering er typisk formuleret af læreren, og den er lige som
+problemformuleringen styrende for projektforløbet. Forud for fastlæggelse af en
+opgaveformulering vil der være en vejledningsperiode, hvor elev og lærer i fælles:
+arbejder med at afgrænse et overordnet emne, så læreren kan udarbejde
+opgaveformuleringen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Husk at afslutte din rapport med en konklusion, hvor du sammenfatter dine analyser og
+vurderinger i relation til problemformuleringen. Der skal være en tydelig sammenhæng
+mellem den problemstilling, der er stillet, og konklusionen, og dermed må der ikke stå
+nye informationer eller argumenter i konklusionen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+har forskelle og ligheder. Det gøres ud fra forskellige forhold, der er med til at
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+kendetegne, men også vise hvor og hvad de hver især anvendes.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 12: Oversigt over afsætningsfaglige genrer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Anvend-
+else
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Input
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Notat
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksamensopgaver i
+afsætning A
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Afleveringsopgaver
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udleveret casemateriale (evt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+suppleret med
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Rapport
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Studieomradeprojektet
+(SOP)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Individuelle projekter
+Gruppeprojekter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Selvstaendig
+informationssøgning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Synopsis
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Erhvervscase
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udleveret casemateriale
+suppleret med
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Struktur
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fokus
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Frem-
+stillings-
+form
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Note-
+apparat
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde-
+liste
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typiske
+formu-
+leringer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Følger opgaveformuleringen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Afhænger af:
+¢ Taksonomisk niveau
+e Kernestofomrade
+¢ Elevens selvstændige
+teori- og metodevalg
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Casevirksomhed, branche
+eller tema
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Afhænger af
+spørgsmål
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Varierende -
+Skriftlig eksamen i afsætning
+A: 5 timers fordybelsestid
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Bruges normalt ikke
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Bruges normalt ikke
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+¢ "Ud fra casematerialet
+afgrænses markedet
+til..."
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e "Pa basis af bilag 1
+segmenteres xx's
+marked ..."
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+oe "Med udgangspunkt i
+tabel 2 vurderes det,
+at xx’s
+konkurrencemæssige
+position på yy marked
+er..."
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Statistisk
+materiale
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Virksomheds-
+information på
+hjemmeside,
+regnskaber mv.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lærerformuleret eller
+selvstændigt formuleret
+problemformulering
+med stigende
+taksonomi:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+¢ Redegørelse
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Analyse
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Vurdering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomhed,
+branche, marked eller
+teori
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Redegørelse
+Analyse
+Diskussion
+Vurdering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+SOP: 15-20 sider
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+2 uger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Heraf 30 timer
+fordybelsestid og 20
+timer undervisning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Andre projekter:
+varierende
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Noter med
+kildehenvisninger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Krav sidst i rapporten
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e "Irapporten xx
+fra Euromonitor
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+¢ "Ud fra direktør
+nn's udtalelse i
+Børsen den..."
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e "Med baggrund i
+data fra
+brancheforening
+ZZ..."
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fast skabelon:
+e Virksomheds-
+karakteristik
+e Dilemmaer
+e Analyser
+e Handlingsplan
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Casevirksomhed
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Stikordsagtigt
+Oversigtsform
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Varierende -
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Erhvervscase: 3-5
+normalsider
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+48 timers fordybelsestid i
+grupper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Noter med
+kildehenvisninger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Krav sidst i synopsen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e "Casen rejser
+følgende dilemmaer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e "Casevirksomhedens
+hoveddilemma er..."
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e "Konsekvenserne af
+at indføre … i
+virksomhed w vil
+være."
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e "Sammenfattende
+bør virksomhed w
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Neden for er et eksempel fra en 3. års elev, der har lavet et metodeafsnit i sin
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+SOP. I eksemplet reflekterer eleven over flere modeller og argumenterer for
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel på metodevalg i SOP
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I analysen har jeg valgt Roccamore som primære virksomhedscase, fordi
+feminisme er dybt integreret i brandets forretningsmodel. Som kontrast
+har jeg som supplerende virksomhedscase valgt Always grundet den
+relevante #LikeAGirl-kampagne. Dette brand har aldrig har været skabt
+med et feministisk formål. Gennem disse to virksomheder bliver min
+analyse mere nuanceret. I afsætningsfaget har jeg brugt kvalitative
+metoder gennem anvendelsen af brandingmodeller som f.eks.
+kommunikationstrekanten, hvor der er taget udgangspunkt i bogen
+"Branding" af Heidi Hansen. Jeg er desuden gået i dybden med teorier som
+ESP og storytelling, som har bidraget til min undersøgelse af Roccamores
+femvertising-strategi.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Den generelle kommunikationsmodel er anvendt i reklameanalysen af
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= ys’ kampagnefilm, da den bidrager til afdækningen af
+sammenheengen mellem indkodning og afkodning. Som grundlag for
+Roccamore-analysen er der foretaget en forretningsmodel (BMC) for
+brandet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Historiefaget har bidraget med kilde- og diskursanalyser til brug i analysen
+af 1960'er reklamer, hvor metoderne er nyttige til at perspektivere kilderne
+til samtidens tendenser. Analyserne er baseret på den kildekritiske metode.
+Både redegørelsen og den historiske analyse bygger på den kønshistoriske
+metode, idet jeg undersøger udviklingen i kønsroller og -idealer.
+Diskursanalysen understøtter denne metode i analysen. I
+dataindsamlingsprocessen har jeg anvendt en række relevante trykte
+bøger og e-bøger i begge fag. I sær i afsætning har jeg tilegnet mig viden
+gennem teoretiske afsætningsbøger til brug i analysen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I diskussionen består kildegrundlaget bl.a. af engelsksprogede rapporter
+om femvertising. Der er foretaget få videnskabelige studier på emnet
+"femvertising" og jeg har derfor brugt skriftlige afhandlinger i form af
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+af femvertising på forbrugeren, så jeg har taget udgangspunkt i
+amerikanske studier, hvor respondenterne er amerikanere. I min
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">diskussion tager jeg desuden udelukkende udgangspunkt i</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+konsekvenserne for de kvindelige forbrugere. Rent geografisk er min
+opgave afgrænset til den vestlige verden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Uddrag af metodeafsnit i et studieområdeprojekt (SOP) skrevet af Maya, 3.P. Maya
+har anvendt fagene afsætning og historie.
+</p>
+
+< Forrige
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lige som du kender det fra dansk, hvor der skrives i forskellige genrer, arbejder man også med genrer i den skriftlige del af faget afsætning. Du vil møde fors’ "lige genrer i afsætning i løbet af hhx: > e Synopsis e Rapport - besvarelse af studieområdeprojekt (SOP) og andre projektforløb
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="3-1-argumentation-og-dokumentation.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 3.1 Argumentation og dokumentation</a></div>
+                    <div><a href="4-informationssoegning.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">4. Informationssøgning →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

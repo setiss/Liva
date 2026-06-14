@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 3.4_Clever — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🌍</span> 3. Ekstern situation
+                    </a>
+                    <div class="space-y-1">
+                        <a href="3-den-eksterne-situation-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. Den eksterne situation (B)</a>
+<a href="3-1-omverdensmodellen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.1 Omverdensmodellen</a>
+<a href="3-2-ot-opsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.2 OT-opsamling</a>
+<a href="3-3-muligheds-og-trusselsmatrix.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.3 Muligheds- og trusselsmatrix</a>
+<a href="3-4-pestel-analyse.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.4 PESTEL-analyse</a>
+<a href="case-3-1-decofarver.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.1_Decofarver</a>
+<a href="case-3-2-toms-gruppen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.2_Toms Gruppen</a>
+<a href="case-3-3-discountsupermarkeder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.3_Discountsupermarkeder</a>
+<a href="case-3-4-clever.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 3.4_Clever</a>
+<a href="opgaver-og-cases-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 3</a>
+<a href="opsamling-paa-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 3</a>
+<a href="traening-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 3</a>
+<a href="virksomhedens-afhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Virksomhedens afhængige omverden</a>
+<a href="virksomhedens-uafhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Virksomhedens uafhængige omverden</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 3. Ekstern situation
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Case 3.4_Clever
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Case 3.4: Clever &, Aa [] !
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Clever leverer ladeløsninger til elbiler. Virksomheden har investeret kraftigt i
+udvikling af ladeløsninger både til private hjemme i carporten, til virksomheder
+og boligforeninger og i et net af ladestationer til bilister på farten. Clever blev
+etableret i 2009 og er ejet af energi- og fibernetkoncernerne Andel og ERGI,
+som har en mindre ejerandel.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forretningsmodellen er salg af abonnementer til elbilejere, så man får en
+samlet løsning dækkende både ladning privat og når man er på farten. Clever
+har partnerskaber med mange af de bilmærker, som sælger elbiler og
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+an
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Store investeringer i ladenetværk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Clevers ladenet består af 23 lynladestationer og 10.000 offentlige ladepunkter i
+Danmark. De offentlige ladepunkter er ladestandere på parkeringspladser, ved
+arbejdspladser osv. De offentlige ladepunkter er enten Clevers egne
+ladestandere, eller ladestandere fra en anden udbyder som Clever samarbejder
+med. Udover lynladestationer og offentlige ladestandere, tilbyder Clever også
+ladeløsninger til private. Løsningen er typisk en ladeboks i forbrugerens
+indkørsel eller garage med et tilhørende abonemment.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden vil investere kraftigt i udbygning af ladenetværket frem mod
+2030, da elbiler kommer til at udgøre en større og større del af bilerne på de
+danske veje. i 2025 forventer virksomheden at investere 900 millioner i
+ladenetværket.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+B inden for den store investering er kraftig vækst i salget af elbiler i
+Danmark. I 2024 var det første år nogensinde, hvor elbiler udgjorde den
+største andel af solgte biler. 51% af alle solgte biler i 2024 var således elbiler og
+9% var hybridbiler. Benzin- og dieselbiler udgjorde dermed kun 40% af salget.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Registreringsafgifter og konkurrence
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I Danmark er der høje registeringsafgifter på biler, som er en form for skat.
+Politikerne har dog indført lavere registeringsafgift for elbiler, da de har en
+positiv effekt på miljøet. Dermed får elbilkøbere en rabat sammenlignet med
+køb af en benzin- eller dieseldrevet bil. Klimarådet anbefaler, at elbilkøbere får
+et tilskud for at sætte yderligere fart i omstillingen til eldrevne biler.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konkurrencerådet har undersøgt markedet for elopladning af biler. De
+anbefaler at forbyde salg af hjemme- og udeopladning i en samlet
+abonnementsløsning i en periode på fem år. Formålet er at øge konkurrencen
+på lademarkedet. Clevers direktør afviser, at der ikke er konkurrence på
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Clever åbner motorvejscafé
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I slutningen af november åbnede Clever sin første motorvejscafé ved
+lynladestationen i Aabenraa. Clever ønsker at tilbyde kunderne mad og drikke
+mens bilen oplades. Motorvejscaféen er den første af sin art i Danmark.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Alt for længe har mad på motorvejen været af tvivlsom kvalitet. Det
+vil vi ændre med vores caféer. Vi gør op med den klassiske
+tankstationsjunk og viser, at det sagtens kan lade sig gøre at
+servere lækker mad og drikke, der både er skabt med omtanke og
+smager fantastisk.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mette Nøhr, Chief Experience Officer ved Clever
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Find og argumenter for alle de faktorer i omverdenen, som påvirker</li>
+</ul>= ever, og er medvirkende til Clevers store investering i ladenettet. U
+<p class="text-slate-700 leading-relaxed mb-4">
+nedenstående tabel.
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Vurder om de forskellige faktorer i omverdenen udgør trusler eller</li>
+</ul>muligheder for Clever.
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Informationer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Børsen, Elbiler brager frem, og Tesla har sat sig tungt på elbilparken,
+12.06.2024
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Børsen, Clever skyder 1 mia. kr. i ladestandere, 15.01.2024
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Finans.dk, Ladeboss kritiserer potentielt forbud: Det vil være et "kæmpe
+tab”, 15.12.2023
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Andel.dk, Clever og Andel investerer 900 mio. kr. i ny ladeinfrastruktur i
+2025 =, 13.04.2025
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Fdm.dk, Elbiler skubber benzinbiler af banen  , 03.01.2025
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+farten (pressemeddelelse) , 28.11.2024
+e Fdm.dk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Clever.dk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Faktorer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Demografiske forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Medier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Interesseorganisationer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Miljø
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Politiske og lovgivningsmæssige forhold
+Økonomiske forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kulturelle forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Teknologiske forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Andre forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tabellen kan downloades i Word-format.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Argumentation
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Neeste
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Clever leverer ladeløsninger til elbiler. Virksomheden har investeret kraftigt i udvikling af ladeløsninger både til private hjemme i carporten, til virksomheder og boligforeninger og i et net af ladestationer til bilister på farten. Clever blev etableret i 2009 og er ejet af energi- og fibernetkoncernerne Andel og ERGI, som har en mindre ejerandel. Forretningsmodellen er salg af abonnementer til elbilejere, så man får en samlet løsning dækkende både ladning privat og når man er på farten. Clever har partnerskaber med mange af de bilmærker, som sælger elbiler og
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-3-3-discountsupermarkeder.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 3.3_Discountsupermarkeder</a></div>
+                    <div><a href="opgaver-og-cases-til-kapitel-3.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opgaver og cases til kapitel 3 →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

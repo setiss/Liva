@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18.2 Priselasticitet — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>💰</span> 18. Pris
+                    </a>
+                    <div class="space-y-1">
+                        <a href="18-pris-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18. Pris (B)</a>
+<a href="18-1-prisstrategi.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18.1 Prisstrategi</a>
+<a href="18-2-priselasticitet.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">18.2 Priselasticitet</a>
+<a href="18-3-prisfastsaettelsesmetoder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18.3 Prisfastsættelsesmetoder</a>
+<a href="18-4-prisdifferentiering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18.4 Prisdifferentiering</a>
+<a href="18-5-prisfastsaettelse-for-nye-produkter.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">18.5 Prisfastsættelse for nye produkter</a>
+<a href="case-18-1-ejendomsmaeglerbranchen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 18.1_Ejendomsmæglerbranchen</a>
+<a href="case-18-2-campingvogne.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 18.2_Campingvogne</a>
+<a href="case-18-3-nicehair.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 18.3_Nicehair</a>
+<a href="case-18-4-smukfest.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 18.4_Smukfest</a>
+<a href="opgaver-og-cases-til-kapitel-18.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 18</a>
+<a href="opsamling-paa-kapitel-18.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 18</a>
+<a href="traening-til-kapitel-18.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 18</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 18. Pris
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    18.2 Priselasticitet
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+18.2 Priselasticitet &, Aa [] !
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Sammenhængen mellem pris og mængde
+o Ændring i omverdensforhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© Prisens indflydelse på afsætningen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Priselastiske og prisuelastiske produkter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Efterspørgselsforhold kan afhænge af markedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Mc < ets efterspørgsel afhænger i større eller mindre udstrækning af pr! »
+hvilket fremgår af efterspørgselskurven i illustration 18.2, der angiver en
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+stigende efterspørgsel ved faldende pris. Graden af sammenhæng mellem pris
+og efterspørgsel benævnes priselasticitet og er forskellig for forskellige
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+og mængde.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 18.2: Generel eftersporgselskurve
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Etterspørgselskurven (E) viser sammenhængen mellem pris og atsat mængde ud
+fra en alt andet lige betragtning. Dvs. at vi kun betragter prisen som afgørende
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">for afsætningen. Andre forhold som fx indkomstændringer, skærpet konkurrence</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+og advarsel mod produktet indgår ikke. Kurven er fremkommet ud fra
+observerede sammenhænge mellem pris og mængde eller som et resultat af en
+markedsanalyse. Ved prisen (p) kan der afsættes mængden (m), der udgør
+markedets samlede efterspørgsel ved prisen p. Når man ændrer prisen, bevæger
+man sig på efterspørgselskurven (E) og på mængdeaksen aflæses, hvorledes den
+efterspurgte mængde har ændret sig. Stiger prisen til p;, falder den afsatte
+mængde til my.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En ændring i prisen giver via efterspørgselskurven en ændring i efterspurgt
+mængde.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ændring i omverdensforhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hw. N ophæver alt andet lige-betingelsen og ser på, at der kan ske ændrin 7 i
+en række omverdensforhold som fx indkomst, befolkningsstørrelse og
+konkurrence vil efterspørgselskurven blive forskudt (ændre placering) i
+diagrammet. I illustration 18.2 er efterspørgselskurven EF; udtryk for en ændring i
+efterspørgslen som følge af ændringer i udefra kommende forhold.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En forskydning af en given efterspørgselskurve angiver en generel ændring i
+efterspørgslen efter et produkt som følge af ændringer i omverdensforholdene.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vi forestiller os, at diagrammet i illustration 18.2 viser efterspørgselskurver for
+charterrejser. Kurven E vedrører 2023, mens kurven E; repræsenterer 2024. En
+forskydning af efterspørgselskurven fra E til Ey kan fx skyldes, at forbrugerne har
+fået et større rådighedsbeløb i 2024. Forskydningen resulterer i, at den samlede
+efterspørgsel på markedet stiger. Hvor der ved prisen p kunne sælges mængden
+m i 2023, kunne der i 2024 sælges mængden m,. Hvis udbuddet ikke ændres i
+takt med efterspørgselsforholdene, vil den stigende betalingsvilje føre til, at
+charterselskaberne kan vælge mellem følgende muligheder mht. prisen:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Fastholde prisen og sælge en større mængde - m, i stedet for m
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e En kombination af de to muligheder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel på priselasticitet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+120 + Pris i kr
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+50 NO
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Meengde, stk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+10 20 30 40 50 60 70 80
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Priselasticitet, E, =-1,22, omsætning = 1.650 kr.
+Priselasticitet, F, = -0,846 , omsætning = 2.383 kr.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Træk i det røde punkt for at prøve interaktiviteten.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Efterspørgselskurvens placering kan afhænge af, hvor mange studerende, der
+er i baren den pågældende dag, hvor tørstige de er, eller deres aktuelle
+disponible indkomst (kan være højest umiddelbart efter udbetaling af SU).
+Disse faktorer bestemmer efterspørgslen efter fadøl ved forskellige priser. Den
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+efterspørgslen efter fadøl ved en hvilken som helst pris.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når du trækker i punktet P, kan du bevæge dig ad efterspørgselskurverne, dvs.
+foretage en ændring af prisen, hvilket medfører en ændring af den afsatte
+mængde fadøl.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvad sker der med efterspørgslen efter øl i forskellige scenarier?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Af den blå kurve fremgår det, at priselasticiteten er +1 og dermed
+neutralelastisk ved en pris på 50 kr., der svarer til en afsætning på 33,3 øl.
+Omsætningen bliver hermed 1667 kr, den højest mulige omsætning på den blå
+efterspørgselskurve. Det fremgår, at hvis du hæver prisen bliver
+priselasticiteten numerisk > 1, dvs. efterspørgslen bliver priselastisk. Dette vil få
+omsætningen til at falde, fordi faldet i afsætningen er %-vis større end den %-
+vise prisstigning.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Si r du i stedet prisen til < 50 kr, bliver efterspørgslen prisuelastisk, dé
+priselasticiteten numerisk < 1. Igen vil omsætningen falde, men det skyldes I
+dette tilfælde, at stigningen i afsætningen er %-vis mindre end det %-vise
+prisfald.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det vil sige, at ved priser < 50 kr., hvor efterspørgslen er prisuelastisk, kan du
+øge omsætningen ved at hæve prisen. Ved priser > 50 kr., hvor efterspørgslen
+er priselastisk, kan du øge omsætningen ved at sænke prisen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Prisens indflydelse på afsætningen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I det følgende vil vi udelukkende beskæftige os med prisens indflydelse på
+afsætningen, dvs. at alt andet lige-betingelsen gælder, og efterspørgselskurven
+ligger fast. Herved kan man vurdere priselasticiteten med udgangspunkt i
+illustration 18.3.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De to figurer tager begge udgangspunkt i, at prisen på de 2 produkter i
+udgangssituationen er p. Ved denne pris efterspørges mængden m. Herefter
+hæver man i begge tilfælde prisen til p;. Dette får i begge tilfælde afsætningen til
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= at f fra m til m ,, men faldet i mængden er forskellig i de 2 situationer, + et
+skyiucs, at produkterne har forskellig priselasticitet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Priselasticitet er den relative ændring i afsætningen af et produkt
+(mængden) ved en given relativ ændring i prisen på produktet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At pris- og mængdeændringerne er relative betyder, at ændringen beregnes som
+en % eller et decimaltal.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I Illustration 18.3 vises et priselastisk produkt i venstre graf. Dette kommer til
+udtryk ved, at mængden falder relativt mere, end prisen stiger. Dvs. at en
+prisstigning vil give virksomheden en faldende omsætning.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En vare er priselastisk, når den relative ændring i afsætningen er større end den
+relative ændring i prisen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I Illustration 18.3 vises et prisuelastisk produkt i højre graf. Mængden falder i
+dette tilfælde relativt mindre, end prisen stiger. Virksomheden kan i dette tilfælde
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+' , == ==
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+den relative ændring i prisen.
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Priselasticiteten (ep) kan beregnes som vist i følgende formel (Hvis man ønsker at</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+anvende %-tal i stedet for decimaltal, ganges differencen i de 2 tællere med 100.)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ny afsætning — oprindelig afsætning
+oprindelig afsætning
+ny pris — oprindelig pris
+oprindelig pris
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ep =
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når priselasticiteten er beregnet, skal resultatet fortolkes. Dette gøres ved at
+betragte både fortegn og talværdi.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fortegnet fortæller, om afsætningen ændrer sig i samme retning som prisen (+)
+eller i modsat retning (-).
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Hovedregel: Negativt fortegn (-)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e !indtagelse: Varer der købes ud fra et veblenmotiv. Her kan fortegnet være
+sitivt (+), hvis vebleneffekten er meget stærk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Af talværdien kan man aflæse, om den pågældende vare er priselastisk,
+neutralelastisk eller prisuelastisk. Når man betragter talværdien (= den numeriske
+værdi), ses bort fra fortegnet. Resultaterne 2 og -2 har altså samme talværdi.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mht. priselasticitetens talværdi kan følgende konkluderes:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Talværdi > 1 — varen er priselastisk. En prisnedsættelse vil i denne situation
+give sælger en øget omsætning. Produktet som vises i venstre graf i
+illustration 18.3 er priselastisk, efterspørgselskurven er relativt flad
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Talværdi < 1 — varen er prisuelastisk. En prisforhøjelse vil i denne situation
+give sælger en øget omsætning. Dette gælder for produktet i højre graf i
+illustration 18.3, hvor efterspørgselskurven er relativt stejl
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Talværdi = 1 — varen er neutralelastisk. En prisændring vil i denne situation
+ikke påvirke sælgers omsætning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Priselastiske og prisuelastiske produkter kan typisk karakteriseres således:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Priselastiske produkter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Udvalgsvarer/luksusvarer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Produkter med høj budgetandel
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Produkter/mærker der er lette at erstatte
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Mærker med svage forbrugerpræferencer
+e Produkter der er lette at lagre (hamstring)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Målgruppe med lavt rådighedsbeløb
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= suelastiske produkter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Dagligvarer/nødvendighedsvarer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Produkter med lav budgetandel
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Produkter/mærker, der er svære at erstatte
+e Mærker med stærke forbrugerpræferencer
+e Produkter der er svære at lagre
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Målgruppe med højt rådighedsbeløb
+Det er svært at finde eksempler på neutralelastiske produkter. Det vil være en
+tilfældighed, at priselasticiteten netop beregnes til -1.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Efterspørgselsforhold kan afhænge af markedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+marked. Danske forbrugere opfattes generelt som værende yderst prisbevidste -
+en tendens, der omfatter de fleste produktgrupper. Dog er vi samtidig krævende
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">mht. kvalitet. Dette har fået den konsekvens, at discountkonceptet har gode kår</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+for såvel dagligvarer som udvalgsvarer. Sidstnævnte i form af butikker med
+skrabet serviceniveau baseret på, at kunden selv henter produkterne. Til gengæld
+tilbydes de samme mærker som i den traditionelle detailhandel.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Elektronikkæden Power er et eksempel på en butikskæde, der har stor succes
+med at markedsføre forbrugerelektronik, herunder hårde hvidevarer, til lave
+priser via skrabede butikker og med en vis afstand mellem butikkerne. På
+dagligvaremarkedet taler Rema 1000 succes sit tydelige sprog.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 18.4: Mælkeforbruget i en familie
+Opgave 18.5: Ændring i efterspørgsel på mælkeprodukter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 18.6: Brand og priselasticitet
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Mc < ets efterspørgsel afhænger i større eller mindre udstrækning af pr! » hvilket fremgår af efterspørgselskurven i illustration 18.2, der angiver en stigende efterspørgsel ved faldende pris. Graden af sammenhæng mellem pris og efterspørgsel benævnes priselasticitet og er forskellig for forskellige
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="18-1-prisstrategi.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 18.1 Prisstrategi</a></div>
+                    <div><a href="18-3-prisfastsaettelsesmetoder.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">18.3 Prisfastsættelsesmetoder →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

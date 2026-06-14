@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virksomhedens afhængige omverden — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🌍</span> 3. Ekstern situation
+                    </a>
+                    <div class="space-y-1">
+                        <a href="3-den-eksterne-situation-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. Den eksterne situation (B)</a>
+<a href="3-1-omverdensmodellen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.1 Omverdensmodellen</a>
+<a href="3-2-ot-opsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.2 OT-opsamling</a>
+<a href="3-3-muligheds-og-trusselsmatrix.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.3 Muligheds- og trusselsmatrix</a>
+<a href="3-4-pestel-analyse.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.4 PESTEL-analyse</a>
+<a href="case-3-1-decofarver.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.1_Decofarver</a>
+<a href="case-3-2-toms-gruppen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.2_Toms Gruppen</a>
+<a href="case-3-3-discountsupermarkeder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.3_Discountsupermarkeder</a>
+<a href="case-3-4-clever.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.4_Clever</a>
+<a href="opgaver-og-cases-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 3</a>
+<a href="opsamling-paa-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 3</a>
+<a href="traening-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 3</a>
+<a href="virksomhedens-afhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Virksomhedens afhængige omverden</a>
+<a href="virksomhedens-uafhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Virksomhedens uafhængige omverden</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 3. Ekstern situation
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Virksomhedens afhængige omverden
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o Konkurrenterne
+o Kunder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Mellemhandlere
+o Leverandører
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Eksempel: Volas afhængige omverden
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= IV nhedens afhængige omverden ses alle de aktører eller interesser ler
+har stor indflydelse på virksomhedens fremtidige handlemuligheder. Omvendt
+kan virksomheden også påvirke aktørerne direkte eller indirekte gennem
+forskellige tiltag.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Den afhængige omverden (kaldes også nærmiljøet) består af de
+aktører, som virksomheden er i jævnlig kontakt med og er afhængig af.
+Virksomheden kan i et vist omfang påvirke den afhængige omverden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Benzinpriser er meget følsomme overfor fx geopolitiske kriser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= iSte ,0to.com/dutchphotography
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konkurrenterne
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konkurrenterne er en af aktørerne. Hvis en tankstation sænker prisen på benzin
+med fx en krone, har det stor betydning på nabotankstationens omsætning, og
+om nabotankstationen skal reagere med en prisnedsættelse.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konkurrenter kan ses både i snæver og bred forstand. Vigtigst er typisk
+konkurrenter som fremstiller produkter inden for den samme produktkategori
+målrettet den samme målgruppe. I bredere forstand konkurrerer en virksomhed
+dog med mange andre produkter om forbrugernes rådighedsbeløb.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fx vil et rejsebureau der tilbyder charterrejser være i snæver konkurrence med
+andre rejsebureauer. Dog vil forbrugeren også kunne bruge ferietiden på at leje
+et sommerhus i Danmark, tage på interrail i Europa eller noget helt tredje. Dette
+åbner op for konkurrenter i en bredere forstand, der alle vil have en del af
+forbrugerens feriebudget.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Klas. >. badestrand, som mange danskere foretrækker i deres sommerferie.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Søren Seest Marquart
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kunder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kunder er en vigtig del af virksomhedens nærmiljø. Svigtende efterspørgsel fra
+kunderne er en af de største trusler for enhver virksomhed. Virksomheden
+påvirker kunderne gennem sammensætningen af sit marketingmix.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kunderne kan også påvirke virksomheden. Fx kan kundernes præferencer og
+behov løbende ændre sig, hvilket kan påvirke virksomheden positivt eller
+negativt. Ændrede kundepræferencer kræver at virksomheden løbende tilpasser
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+sig.
+Mellemhandlere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mellemhandlere er grossister og detailhandlere. Virksomheden kan have brug for
+mellemhandlere til at varetage opgaver i forbindelse med produkternes vej ud til
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+en virksomhed, hvis en mellemhandler dropper samarbejdet og fx tager
+produkter fra en konkurrerende virksomhed ind i sit sortiment.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Leverandører
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Leverandører leverer fx råvarer og halvfabrikata til virksomheden. Leverandøren
+skal agere præcist og hurtigt, så virksomheden har tilstrækkeligt med råvarer til
+produktionen. Herudover spiller prisen en væsentlig rolle, idet råvareforbruget
+indgår i virksomhedens omkostninger, som igen kan være afgørende for
+virksomhedens konkurrenceevne. Det er vigtigt for virksomheden at etablere et
+stabilt samarbejde med sine gode leverandører.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Volas afhængige omverden
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vola er en dansk producent af vandhaner og armaturer primært til køkken
+adeværelser. Design og kvalitet er i fokus, og produkternes prisnive
+er højt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Volas kunder er fx bygherrer og arkitektvirksomheder, der skal opføre nye
+byggerier. Kunderne kan stille krav til fx holdbarhed, design og
+dokumentation i forhold til bæredygtighed.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vola sælger også produkter til privatkunder, men dette foregår igennem
+mellemhandlere. Mellemhandlerne er bl.a. Bad & Stil og VVS-shoppen.dk.
+Mellemhandlerne kan fx påvirke Vola i forhold til hvordan Volas brand
+bliver opfattet af slutkunden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Da virksomheden er en produktionsvirksomhed, er der også mange
+leverandører. Vola kan fx påvirke leverandørerne ved at stille krav om
+dokumentation af bæredygtige initiativer i produktionen eller ved at stille
+krav om leveringstid, betalingsbetingelser osv.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+være nødvendigt for Vola at agere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 3.1: Mofibo
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 3.2: En tur rundt på skolen
+</p>
+
+< Forrige
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= IV nhedens afhængige omverden ses alle de aktører eller interesser ler har stor indflydelse på virksomhedens fremtidige handlemuligheder. Omvendt kan virksomheden også påvirke aktørerne direkte eller indirekte gennem forskellige tiltag. Den afhængige omverden (kaldes også nærmiljøet) består af de aktører, som virksomheden er i jævnlig kontakt med og er afhængig af. Virksomheden kan i et vist omfang påvirke den afhængige omverden.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="traening-til-kapitel-3.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Træning til kapitel 3</a></div>
+                    <div><a href="virksomhedens-uafhaengige-omverden.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Virksomhedens uafhængige omverden →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

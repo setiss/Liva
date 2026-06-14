@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22.3.1 Reklame — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📣</span> 22. Promotion
+                    </a>
+                    <div class="space-y-1">
+                        <a href="22-promotion-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22. Promotion (B)</a>
+<a href="22-1-organisering-af-promotionaktiviteter.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.1 Organisering af promotionaktiviteter</a>
+<a href="22-2-promotionbudskab-og-storytelling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.2 Promotionbudskab og storytelling</a>
+<a href="22-3-massekommunikation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3 Massekommunikation</a>
+<a href="22-3-1-reklame.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">22.3.1 Reklame</a>
+<a href="22-3-2-public-relations-pr.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.2 Public Relations (PR)</a>
+<a href="22-3-3-sales-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.3 Sales promotion</a>
+<a href="22-3-4-sponsorering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.4 Sponsorering</a>
+<a href="22-4-direct-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.4 Direct marketing</a>
+<a href="22-4-1-loyalitetsklubber-og-nyhedsbreve.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.4.1 Loyalitetsklubber og nyhedsbreve</a>
+<a href="22-5-online-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5 Online promotion</a>
+<a href="22-5-1-paid-owned-og-earned-media.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.1 Paid, owned og earned media</a>
+<a href="22-5-2-website-og-algoritmer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.2 Website og algoritmer</a>
+<a href="22-5-3-seo-og-sem.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.3 SEO og SEM</a>
+<a href="22-5-4-omni-channel-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.4 Omni channel marketing</a>
+<a href="22-5-5-content-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.5 Content marketing</a>
+<a href="22-5-6-sociale-medier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.6 Sociale medier</a>
+<a href="22-5-7-influencer-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.7 Influencer marketing</a>
+<a href="case-22-1-innocent-drinks.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.1_Innocent Drinks</a>
+<a href="case-22-2-wide-path-camper.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.2_Wide Path Camper</a>
+<a href="case-22-3-danske-forlystelsesparker.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.3_Danske Forlystelsesparker</a>
+<a href="opgaver-og-cases-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 22</a>
+<a href="opsamling-paa-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 22</a>
+<a href="traening-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 22</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 22. Promotion
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    22.3.1 Reklame
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o Målsætninger for reklameindsatsen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Reklamemidler og -medier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklame er en vigtig promotionparameter. Når man laver en reklamekampagne,
+er det vigtigt at kigge på de reklamemidler- og medier, man kan benytte. Reklame
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+anvendes ofte i sammenhæng med andre promotionparametre.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+og adfeerd.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I forbindelse med reklame skal vi se nærmere pa:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Målsætninger for reklameindsatsen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Reklamemidler og -medier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Målsætninger for reklameindsatsen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udgangspunktet for planlægning af reklameindsatsen er målgruppen og
+tilhørende målsætninger. Det kan være:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Opbygge kendskab til mærket
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e ''adligeholde eller øge kendskabet til mærket
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e abe præferencer for mærket
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Skabe umiddelbart salg
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ved opstilling af mål for reklameindsatsen er det nyttigt at beregne
+reklamenulpunktet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamenulpunktet er betegnelsen for det mindste krav, man må stille til
+en stigning i afsætningen i forbindelse med iværksættelse af en
+reklamekampagne.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamenulpunktet beregnes som:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklameomkostningerne
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Dækningsbidraget pr. stk.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamemidler og -medier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamemidler er de typer formidlere, der bringer budskabet frem til
+modtageren.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Man skelner mellem primære medier og sekundære medier. De primære
+medier er de bærende medier i en samlet kampagne, fx tv og internet.
+Sekundære medier understøtter de primære medier, men kan ikke stå alene i
+kampagnen. Sekundære medier er ofte radio og outdoor, som er egnede til korte
+budskaber, der gentages ofte.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamemedier er de endelige bærere af et konkret reklamebudskab.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamemidlerne kan således formidles via forskellige medier. Sammenhænnen
+set iustrationen, der er en oversigt over eksempler på reklamemidler c
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+medier.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 22.4: Oversigt over eksempler på reklamemidler og
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+reklamemedier
+Reklamemidler Reklamemedier
+Annoncer e Dagblade (aviser), fx Jyllands-Posten og BT
+e Distriktsblade, fx Ugeavisen Odense
+e Ugeblade/magasiner, fx Se & Hør, Elle og Bo Bedre
+e Fagblade/foreningsblade, fx Ingeniøren
+Reklamefilm o Tv
+e Biograf
+e Reklamevideoer på fx Facebook eller YouTube
+e Reklamefilm på virksomhedens hjemmeside
+Elektroniske e Virksomhedens hjemmeside
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tryksager
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lydmedier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Outdoor
+(trafikreklame)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Messer og
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+udstillinger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Butiksreklame
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamegenstande
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Sponsorering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Product placement
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Facebook, YouTube, TikTok, X, Instagram m.fl.
+Søgemaskiner, fx Google
+SMS
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Salgsbreve, brochurer, kataloger og tilbudsaviser
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Radio
+Podcast
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Spotify
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Stationære, fx posters i busskure og lufthavne, på
+husgavle, plakatsøjler
+Mobile, fx på busser og taxaer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Messer og udstillinger, som er åbne for offentligheden,
+ofte mod betaling af entré
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Point of sale-materiale, dvs. skilte og plakater
+Film til brug ved salgsopstilling
+Intern radio - butikkens højttaleranlæg
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Give-aways, fx caps, lightere og kuglepenne
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamebander på sportspladser, sportsudøveres tøj
+OSV.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Product placement er en form for skjult reklame.
+Virksomheden betaler et beløb til filmselskabet for at
+virksomhedens produkter/brand indgår i en film, en tv-
+serie eller et show
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I det følgende skal vi se nærmere på nogle enkelte reklamemidler.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+An. acer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En annonce i et printmedie kan købes i mange forskellige størrelser, og
+betingelserne varierer fra medie til medie.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Prisen for en indrykning afhænger af størrelsen på annoncen. I nogle dagblade
+og magasiner kan man købe standardstørrelser, men man kan normalt købe
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+annoncer i individuelle størrelser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamefilm i tv
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tv betragtes som et stærkt medie, fordi det benytter både lyd og bevægelse. Tv-
+reklame er stort set altid på medieplanen, fx når de større mærkevarefirmaer skal
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+lancere nye mærker.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Svaghederne ved tv-reklame er, at man ikke kan være sikker på, at spottet bliver
+set. Tv-seerne kan fx zappe væk til andre kanaler, når reklameblokken kører. Tv-
+spots skal bestilles i ret god tid.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+million kr. vil som hovedregel være brugt bedre i andre medier. I forhold til andre
+medier er det forholdsvis dyrt at producere reklamefilm. Produktionsbudgetter
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">på beløb fra 500.000-1.000.000 kr. er almindelige for tv-spots.</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tv-reklame kan vises som:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Landsdækkende (TV2 og TV3 mv.)
+e Regionalt (TV2 lokalstationer)
+e Lokalt (Diverse lokalstationer)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Internationale kanaler (CNN, BBC)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tv-stationerne tilbyder at vise reklamespots på forskellige tider af døgnet, og
+priserne varierer meget, afhængigt af det forventede antal seere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Grundlaget for beregningen af prisen for et reklamespot på tv er kontaktprisen,
+i— dvs ‘sen for 1000 seerkontakter. Kontaktprisen benævnes CPM (Cost Per + "e).
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamefilm i biograf
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklamefilm i biografer kan vises lokalt og landsdækkende. En lokal reklame kan
+vises i få sekunder og bestå af et eller flere stillbilleder. Der er også mulighed for
+at vise længere reklamefilm, og annoncøren kan vælge en landsdækkende
+ordning.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Dansk Reklamefilm A/S står for salg og distribution af biografreklame i Danmark
+til et landsdækkende net af biografer med mere end 400 biografsale. Der er
+mulighed for at rette reklamerne mod specifikke målgrupper i forhold til
+filmgenrer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+For reklamefilm i biografer er der både lighedspunkter og forskelle med tv-
+reklamespots. I begge tilfælde kan benyttes levende billeder og lyd. I biografen er
+sanseindtrykkene stærke pga. det store lærred, den gode lyd og mørket i salen.
+Desuden er holdningen til reklame i biografen generelt positiv.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 22.5: Cykler
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Neeste
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reklame er en vigtig promotionparameter. Når man laver en reklamekampagne, er det vigtigt at kigge på de reklamemidler- og medier, man kan benytte. Reklame Udgangspunktet for planlægning af reklameindsatsen er målgruppen og tilhørende målsætninger. Det kan være:
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="22-3-massekommunikation.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 22.3 Massekommunikation</a></div>
+                    <div><a href="22-3-2-public-relations-pr.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">22.3.2 Public Relations (PR) →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

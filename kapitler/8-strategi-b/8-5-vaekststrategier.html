@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.5 Vækststrategier — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>♟️</span> 8. Strategi
+                    </a>
+                    <div class="space-y-1">
+                        <a href="8-strategi-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8. Strategi (B)</a>
+<a href="8-1-swot-opsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.1 SWOT-opsamling</a>
+<a href="8-2-tows-matrix.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.2 TOWS-matrix</a>
+<a href="8-3-mission-vision-og-vaerdier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.3 Mission, vision og værdier</a>
+<a href="8-4-konkurrencestrategier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.4 Konkurrencestrategier</a>
+<a href="8-5-vaekststrategier.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">8.5 Vækststrategier</a>
+<a href="8-6-bowmans-strategiske-ur.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.6 Bowmans strategiske ur</a>
+<a href="case-8-1-dan-cake.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 8.1_Dan Cake</a>
+<a href="case-8-2-roskilde-festival.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 8.2_Roskilde Festival</a>
+<a href="case-8-3-dk-company.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 8.3_DK Company</a>
+<a href="opgaver-og-cases-til-kapitel-8.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 8</a>
+<a href="opsamling-paa-kapitel-8.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 8</a>
+<a href="traening-til-kapitel-8.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 8</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 8. Strategi
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    8.5 Vækststrategier
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o Markedspenetrering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Produktudvikling
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+fe}
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsudviklin
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Diversifikation
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De fleste virksomheder har vækst som en overordnet målsætning. Vækst måles
+= oft om stigning i omsætningen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vækststrategi er den langsigtede planlægning, som skal sikre opfyldelsen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+af virksomhedens vækstmål.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+IVNVUUUNUIT UI UUVINILEL UI I. LY VU! Wout, UV! UIMUYV Foro WIIONLUL UL UVG un
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+vækstmatrix,der fastlægger, hvordan virksomheden kan nå de vækstmål, som
+virksomheden har defineret, på forskellig vis. Ansoff tager udgangspunkt i to
+variable: produkt og marked, som opdeles i hhv. nuværende og nyt produkt og
+nuværende og nyt marked. Denne vækstmatrix anvendes stadig i dag rundt om i
+verden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vækst gennem intensivering går ud på, at virksomheden vælger vækststrategier
+inden for sine nuværende rammer, dvs. ved anvendelse af sin kernekompetence.
+Vækst ved intensivering benævnes derfor ofte organisk vækst.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Den intensive vækst kan foretages i form af:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Markedspenetrering
+e Produktudvikling
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Markedsudvikling
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der tages i større eller mindre grad afsæt i virksomhedens nuværende produkt-
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+og markedsområder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 8.8: Ansoffs vækstmatrix, vækst ved intensivering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Frit efter Philip Kotler & Kevin Lane Keller, Marketing Management, 2009
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedspenetrering
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Når virksomheden ønsker at øge salget af sine nuværende produkter på de</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+nuværende markeder, kan den vælge markedspenetrering. Dette kan gøres på
+følgende måder:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forøgelse af forbrugsfrekvensen hos målgruppen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ved hjælp af en reklamekampagne eller andre aktiviteter kan virksomheden
+opfordre målgruppen til at øge forbruget af produktet. Dette kan fx gøres ved at
+reklamere for flere anledninger til at bruge produktet og hyppigere brug.
+Desuden kan forbrugsmængden øges ved at skabe øget forbrug pr. gang. På
+slikmarkedet anvendes denne strategi ved at tilbyde slikposer med større
+indhold.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+For langvarige produkter vil strategien gå ud på at appellere til hyppigere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+5 ud iing, hvilket kan fremmes ved at tilbyde forbrugeren en favorabel
+byttepris eller ved at gøre opmærksom på klare fordele ved at skifte produktet ud
+i utide.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Producenter af hårde hvidevarer anvender fx argumenter om lavenergi til at få
+forbrugerne til at udskifte hvidevarer, der ellers er funktionsdygtige.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forbrugsfrekvensen for et produkt kan forøges ved, at producenten gør
+kunderne opmærksom på, at produktet kan anvendes til flere formål - nye
+anvendelsesmuligheder. Appelsinjuice var oprindeligt en del af et morgenmåltid. I
+dag er det fx almindeligt at bruge appelsinjuice i drinks og som en tørstslukker,
+man kan have lige ved hånden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Colourbox.com
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forøve det effektive marked
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forage det effektive marked kan ske ved at få ikke-brugere til at bruge produktet.
+Denne strategi er bedst egnet for virksomheder med en stor markedsandel.
+Mindre udbydere risikerer blot at åbne nye muligheder for konkurrenterne og
+kun øge sit eget salg ganske lidt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forøge markedsandelen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forøge markedsandelen vil ske på konkurrenternes bekostning og kræver ofte
+store ressourcer til markedsføring i form af intensiv reklame og evt.
+prisnedsættelser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Produktudvikling
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Produktudvikling anvendes, hvis virksomheden vurderer, at dens nuværende
+marked er stabilt, men at produktet ikke længere lever op til kundernes behov på
+tilfredsstillende vis. Produktudvikling kan omfatte:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+teknologi end det tidligere produkt eller indeholder en afgørende teknisk
+fornyelse. En del producenter af manuelt betjente plæneklippere har valgt at
+lancere en serie robotplæneklippere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fornyelse af eksisterende produkt vedrører en markant ændring af et
+produkt, fx udvikling af en ny bilmodel. Baggrunden for denne form for
+produktudvikling er typisk, at den tidligere model ikke længere er
+tidssvarende, hvilket kan skyldes konkurrenternes produktudvikling,
+udvikling af ny teknologi, fx nye landvindinger inden for sikkerhed i biler.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Sortimentsudvidelse benævnes også line-extension - produktlinjen udvides.
+Denne produktudviklingsstrategi anvendes, når virksomheden ønsker at
+tiltrække en bredere målgruppe og evt. føre en palisadestrategi, dvs. at man
+ønsker at have et komplet produktprogram, der kan dække behovene hos en
+meget bred målgruppe. Thise har fx valgt at udvide deres økologiske smør
+med en variant, der indeholder sydesalt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Active Wear
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+produktudviklet, og lanceret sports- og fritidstøj, der både er modetøj og
+samtidig har en række funktionelle egenskaber, som traditionelt er kendt
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">fra sportstøj. Det er med til at gøre afstanden mellem mode- og sportstøj</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+mindre. Tøjkæder som H&M, Gina Tricot og japanske Uniqlo er med på
+bølgen med active wear kollektioner, og også danske Bestseller med bl.a.
+ONLY Play som moderigtig sportskollektion.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsudvikling
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsudvikling går ud på at markedsføre et eksisterende produkt over for nye
+markeder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Somersby
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Mikkel Brunvold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Carlsberg står bag mærket Somersby og blev hurtig markedsleder efter
+lanceringen i Danmark og Norge i 2008. Somersby gik fra at være på det
+danske marked til at være på over 50 markeder i en periode på mindre end 10
+år. Nu bryster Somersby sig af at være blevet verdens største internationale
+ciderbrand. Somersby konkurrerer blandt andet med det engelske ciderbrand
+Strongbow.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+sig nu i mere end 47 lande og produceres i mere end 10 smagsvarianter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nye segmenter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nye segmenter kan være en mulighed for at foretage markedsudvikling på
+virksomhedens nuværende, geografiske markeder. Dette kan fx ske ved at udvide
+markedet fra kun at omfatte producentmarkedet til også at omfatte
+konsumentmarkedet. Dette kan i visse tilfælde kræve nogle tilpasninger af
+produkterne. Konsumentmarkedet efterspørger ofte mindre og billigere varianter
+af et bestemt produkt end virksomheder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vinkøleskabe har i mange år været brugt inden for cateringbranchen. De seneste
+år har nogle udbydere af vinkøleskabe forsøgt at udvide markedet til
+konsumentmarkedet i takt med private forbrugeres stigende interesse for vin.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Me ‘sudviklingen er i dette tilfælde baseret på nye segmenter. De
+vinkwieskabe, der markedsføres på konsumentmarkedet, er de mindste varianter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Geografisk markedsudvikling
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Geografisk markedsudvikling, hvor virksomheden foretager eksport eller
+internationalisering anvendes i stigende omfang som vækststrategi i takt med
+den stigende globalisering og åbning af udenlandske markeder. På denne måde
+opnår virksomheden muligheder for stordriftsfordele, da markedspotentialet
+øges betragteligt. Desuden kan geografisk markedsudvikling give mulighed for at
+forlænge et produkts levetid. Dette er fx tilfældet inden for it-branchen, hvor
+produkter med en teknologi, der er forældet i den vestlige verden, kan sælges på
+markeder med en væsentlig lavere købekraft, hvor det teknologiske stadie ofte
+halter efter den vestlige verden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Geografisk markedsudvikling kan også ske inden for landets grænser.
+Ejendomsmæglerkæden John Frandsen med hovedsæde i Randers har de seneste
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+“N
+NV
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Michael Bregendahl
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+NYE UISIDULIONSIorrmer Kar ogSå være er vej Ul at 1Ioretage Mar KeauSsuavIKIIng.
+De fysiske butikker har fx været helt centrale for Søstrene Grene siden
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">etableringen i 1973. Senere har virksomheden valgt at satse på egen webshop,</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+hvilket åbner op for et nyt marked. Ved at sælge via internettet samtidig med salg
+fra butikker kan Søstrene Grene udvide sit marked.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Diversifikation
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ansoff beskæftiger sig i sin model også med vækst gennem lancering af nye
+produkter på nye markeder. Denne vækststrategi benævnes diversifikation.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I 2021 lancerede forsikringsselskabet Alka et mobiltelefoniselskab, Alka mobil,
+der kun sælger mobiltelefoni til Alkas kunder. Denne strategi er udtryk for
+diversifikation, da det er et nyt forretningsområde for Alka. Der var ligeledes tale
+om diversifikation, da Molslinjen etablerede Kombardo Ekspressen som “en
+forbindelse mellem landsdelene”. Etableringen af Kombardo Ekspressen bet~4, at
+fæ. 2lskabet nu også skulle involvere sig i busdrift. Til gengæld opnås e.
+synergieffekt, da de fleste af Kombardoekspressens ruter involverer brug af
+Molslinjens færger.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ansoffs komplette model fremgår af nedenstående illustration. I kapitel 10
+behandles emnet diversifikation nærmere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 8.9: Ansoffs vækstmatrix
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Frit efter Philip Kotler & Kevin Lane Keller, Marketing Management, 2009
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 8.7: Vækststrategier i bilbranchen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 8.8: Vand er ikke bare vand
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De fleste virksomheder har vækst som en overordnet målsætning. Vækst måles = oft om stigning i omsætningen. vækstmatrix,der fastlægger, hvordan virksomheden kan nå de vækstmål, som virksomheden har defineret, på forskellig vis. Ansoff tager udgangspunkt i to variable: produkt og marked, som opdeles i hhv. nuværende og nyt produkt og nuværende og nyt marked. Denne vækstmatrix anvendes stadig i dag rundt om i verden.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="8-4-konkurrencestrategier.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 8.4 Konkurrencestrategier</a></div>
+                    <div><a href="8-6-bowmans-strategiske-ur.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">8.6 Bowmans strategiske ur →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

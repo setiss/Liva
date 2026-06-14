@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.2 Segmenteringsprocessen — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🎯</span> 11. Segmentering
+                    </a>
+                    <div class="space-y-1">
+                        <a href="11-segmentering-maalgruppevalg-og-positionering-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11. Segmentering, målgruppevalg og positionering (B)</a>
+<a href="11-1-markedssegmentering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.1 Markedssegmentering</a>
+<a href="11-2-segmenteringsprocessen.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">11.2 Segmenteringsprocessen</a>
+<a href="11-3-livsstilsanalyser.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.3 Livsstilsanalyser</a>
+<a href="11-4-personaer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.4 Personaer</a>
+<a href="11-5-maalgruppevalg.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.5 Målgruppevalg</a>
+<a href="11-6-positionering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.6 Positionering</a>
+<a href="case-11-1-kender-du-typen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.1_Kender du typen</a>
+<a href="case-11-2-chips-med-matematik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.2_Chips (med matematik)</a>
+<a href="case-11-3-nature-footwear.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.3_Nature Footwear</a>
+<a href="conzoom-modellen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Conzoom-modellen</a>
+<a href="gallup-kompas.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Gallup Kompas</a>
+<a href="opgaver-og-cases-til-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 11</a>
+<a href="opsamling-paa-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 11</a>
+<a href="traening-til-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 11</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 11. Segmentering
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    11.2 Segmenteringsprocessen
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Marketing en g…. — segidenne iBog Liva
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+11.2 Segmenteringsprocessen Aa WW:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+& Åb
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Beskrivelse af relevante forhold for produktet på markedet
+o Valg af segmenteringsvariable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© Sociodemografiske variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Adfærdsorienterede variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Psykografiske variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I dette afsnit gennemgås segmenteringsprocessen mere detaljeret.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheder anvender metoden i større eller mindre udstrækning, når de skal
+identificere deres målgrupper.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hva. >undetegner de mest ivrige håndboldfans?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Søren Seest Marquart
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Beskrivelse af relevante forhold for produktet på markedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I denne fase udarbejdes en kort markedskarakteristik, hvor relevante forhold
+inddrages. Virksomheden kan indledningsvis foretage en afgrænsning af
+markedet, fx geografisk. Hvis en mindre virksomhed er beliggende i en bestemt
+landsdel, kan det være naturligt, at virksomheden også finder sin målgruppe her.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Endvidere kan virksomheden identificere andre faktorer, der har betydning for
+selve segmenteringsprocessen. Det kan være vigtigt at analysere branchen. Har
+den særlige kendetegn eller forhold, der kan have betydning for
+segmenteringen? Man kan bl.a. vurdere konkurrencesituationen. Er der fx få
+udbydere, kan segmenteringen se anderledes ud, end hvis branchen er
+kendetegnet ved mange udbydere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Valg af segmenteringsvariable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Segmenteringsvariable er kendetegn, der beskriver den enkelte
+forbruger, fx alder, indkomst, bopæl eller livsstil.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I illustration 11.4 er der en opdeling af segmenteringsvariablene. Nogle
+segmenteringsvariable er lettere at identificere hos forbrugerne end andre. I
+illustrationen er dem som er lettest at finde placeret øverst.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Sociodemografiske variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De sociodemografiske variable er meget udbredte segmenteringsvariable. Oftest
+er de sociodemografiske variable nemme at se og identificere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+” > sociodemografiske variable vedrører de geografiske og demografi 2
+.detegn, som forbrugere har.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 11.4: Sociodemografiske variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Segmenteringsvariabel Eksempler
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Alder Under 2, 2-5, 6-11, 12-17, 18-24, 25-34, 35-49, 50-60, 61+
+Køn Kvinde, mand
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Bopæl Lejebolig, ejerlejlighed, parcelhus, kollegie
+Bopælsområde Storby, provinsby, på landet, Jylland, Fyn, Sjælland
+Livsfase Ung, single, nygift uden børn, par med små børn,
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ægtepar med udeboende børn, pensionister, enlige
+Uddannelse Folkeskole, gymnasium, faglært, akademiker
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Beskæftigelse Studerende, tømrer, læge, advokat, sekretær, lærer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ITNUKUTTIDE ZUV.VVUY-507.7T7T, IVVU.VVYU-AaAITIT. TTT, DUV.UUU-/UU.UUU, Uver
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Svend Hollensen: Marketing Management - A relationship approach. 3. udgave.
+Pearson, 2015. s. 314.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Alder, køn, bopæl, bopælsområde og livsfase
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Alder, køn, bopæl og bopælsområde har i mange år været de vigtigste variable i
+denne kategori.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Livsfasebegrebet er en nuancering af aldersbegrebet, hvor der ses på den
+familiemæssige status i kombination med alderen. Et individs livsforløb kan
+inddeles i forskellige faser: barndom, ungdom, familiestiftelse, første barn,
+børnene flytter hjemmefra, midaldrende og pensionisttilværelse. Dette har stor
+betydning for forbrugerens forbrugsmønster.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+sker i dag langt senere end tidligere. Derudover ser man i Danmark også en
+stigning i enlige der bevidst vælger at bo alene.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når man tidligere nåede bestemte aldersbaserede milepæle, fx 50-årsdagen, så
+var der en masse forhold, der var givet, fx at man ikke fik børn, og at man ikke
+sagde sit job op for at realisere sig selv ved at tage på jordomrejse. Disse rammer
+brydes ofte i dag.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Uddannelse, beskæftigelse og indkomst
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Uddannelse præger en persons holdninger, adfærd og værdier. Gennem
+uddannelse får man holdninger og værdier, man tager videre med i livet. Har man
+fx taget en erhvervsøkonomisk uddannelse på universitetet, kan en værdi være,
+at økonomisk succes er vigtigt her i livet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Størrelsen på ens indkomst samt beskæftigelse kan også påvirke ens
+= for smønster og præferencer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Adfærdsorienterede variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Man kan også segmentere ud fra forbrugernes adfærd i forhold til produktet. De
+adfærdsorienterede variable handler om forbrugerens købsadfærd, og hvordan
+forbrugeren agerer. Segmenteringen er baseret på forbrugernes kendskab til
+produktet gennem bl.a. medievalg, men også erfaringer med produktet er ofte et
+godt udgangspunkt for segmentering. De adfærdsorienterede variable er ofte
+mindre synlige ved den enkelte forbruger. Dog ved mange virksomheder ofte
+meget om vores adfærd, især baseret på vores aktivitet på internettet og de
+sociale medier.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Adfærdsorienterede variabler vedrører forbrugerens adfærd i forhold til
+produkter og brands.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+mens andre kun drikker kaffe en gang i mellem eller måske slet ikke kan lide
+kaffe. Nogle er meget loyale over for et mærke, som de altid køber, mens andre
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">skifter mærke, hvis de kan spare nogle penge. I illustration 11.5 ses en oversigt</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+over adfærdsorienterede variable.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 11.5: Eksempler på adfærdsorienterede variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Segmenteringsvariabel Eksempler
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Medievaner og Læser man mange blade og magasiner? Hører man
+indkøbsvaner mange podcasts? Handler man primært på internettet?
+Loyalitet Skifter man meget mellem mærker?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Er man meget loyal overfor bestemte mærker?
+Forbrugshyppighed Er man heavy, medium eller light user?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= F dringsvillighed Er man villig til at prøve nye produkter, fx ny teknc
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvi. >. chokolade vælger forbrugeren ved varehylden?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Søren Seest Marquart
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Psykografiske variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Modsat de adfærdsorienterede variable, der handler om, hvad forbrugerne gør,
+handler de psykografiske variable mere om, hvem forbrugeren er. De
+psykografiske variable kredser derfor om fx livsstil, holdninger, værdier og
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+personlighed.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Psykografiske variable beskriver forbrugerens holdninger, værdier,
+interesser, personlighed og livsstil.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De psykografiske variable kan være svære at spotte for en virksomhed, men ofte
+vil vores digitale spor og adfærd på nettet give et indblik i de psykografiske
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+variable.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+psykografiske variable, man kan tage udgangspunkt i. Illustrationen er dog
+meget forsimplet. Fx kan "holdninger og værdier" jo dække over holdninger til
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">mange forskellige ting - fx økologi, politiske forhold, klima, sociale forhold,</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+dyrevelfærd osv.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 11.6: Eksempler på psykografiske variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Segmenteringsvariabel Eksempler
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Holdninger og værdier Politisk overbevisning, etik, klimaorienteret
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Personlighed Ekstrovert/introvert, individualistisk, traditionsbunden
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Interesser Fritidsinteresser, fiskeri, hækling, sportsinteresseret,
+rejselysten
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= l \ Sundhedsorienteret, karriereorienteret, selvrealiser
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Til at komme mere i dybden med de psykografiske variable, kan man tage
+udgangspunkt i livsstilsanalyserne i afsnit 11.3.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Brug af data til segmentering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jeppe Godske Olsen, VP Commercial i virksomheden Raptor Services A/S, giver
+et indblik i, hvordan man kan bruge data fra kundens online adfærd til at
+segmentere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jeppe Godske Olsen fortæller om, hvordan man i højere grad bruger data til at
+segmentere fremfor demografiske segmenteringsvariable.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Som Jeppe nævner i videoen, kan virksomheder ved hjælp af en customer data
+ple**arm afdække forbrugerens adfærd på nettet og afdække, hvilken livs?" og
+in sser forbrugeren har. Dette kan gøre virksomheder (retailers) i stan. 7 at
+finde bestemte kendetegn i data. Det handler derfor i højere grad om, hvor vidt
+en forbruger fx er tilbudsjæger eller går op i økologi end traditionelle
+demografiske segmenteringsvariable som fx alder og køn. Viden om
+kundernes digitale adfærd gør det muligt at målrette markedsføringen til den
+enkelte forbruger.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det er ofte personens sociale relationer, som er afgørende. Derfor kan
+demografi stadig bruges i nogle sammenhænge. I rejsebranchen kan man fx
+bruge viden om en husstands størrelse, når budskaber skal tilpasses.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Segmentering og opdeling i segmenter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I illustration 11.3 er vist segmenteringsprocessens faser. I
+segmenteringsprocessens fase 2 opdeles markedet i segmenter. Med
+udgangspunkt i de mange segmenteringsvariable skal man nu udvælge netop de
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+segmenteringskriterier vælges, og der opstilles forskellige relevante segmenter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det kan være, at man eksempelvis har opstillet 11 segmenter (ligesom i
+illustration 11.3). For at skabe et overblik, kan man give segmenterne en
+overskrift eller lave en kort beskrivelse til hvert segment. Man udvælger derefter
+nogle segmenter, der er interessante i forhold til produktet, som man arbejder
+videre med i næste fase af segmenteringsprocessen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 11.2: Segmenter på slikmarkedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 11.3: Hvem dyrker hvad?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 11.4: Relevante segmenteringsvariable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Læs mere: Psykologi i marketing
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Beskrivelse af relevante forhold for produktet på markedet o Valg af segmenteringsvariable Virksomheder anvender metoden i større eller mindre udstrækning, når de skal identificere deres målgrupper.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="11-1-markedssegmentering.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 11.1 Markedssegmentering</a></div>
+                    <div><a href="11-3-livsstilsanalyser.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">11.3 Livsstilsanalyser →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

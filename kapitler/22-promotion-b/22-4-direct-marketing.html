@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22.4 Direct marketing — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📣</span> 22. Promotion
+                    </a>
+                    <div class="space-y-1">
+                        <a href="22-promotion-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22. Promotion (B)</a>
+<a href="22-1-organisering-af-promotionaktiviteter.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.1 Organisering af promotionaktiviteter</a>
+<a href="22-2-promotionbudskab-og-storytelling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.2 Promotionbudskab og storytelling</a>
+<a href="22-3-massekommunikation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3 Massekommunikation</a>
+<a href="22-3-1-reklame.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.1 Reklame</a>
+<a href="22-3-2-public-relations-pr.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.2 Public Relations (PR)</a>
+<a href="22-3-3-sales-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.3 Sales promotion</a>
+<a href="22-3-4-sponsorering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.4 Sponsorering</a>
+<a href="22-4-direct-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">22.4 Direct marketing</a>
+<a href="22-4-1-loyalitetsklubber-og-nyhedsbreve.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.4.1 Loyalitetsklubber og nyhedsbreve</a>
+<a href="22-5-online-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5 Online promotion</a>
+<a href="22-5-1-paid-owned-og-earned-media.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.1 Paid, owned og earned media</a>
+<a href="22-5-2-website-og-algoritmer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.2 Website og algoritmer</a>
+<a href="22-5-3-seo-og-sem.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.3 SEO og SEM</a>
+<a href="22-5-4-omni-channel-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.4 Omni channel marketing</a>
+<a href="22-5-5-content-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.5 Content marketing</a>
+<a href="22-5-6-sociale-medier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.6 Sociale medier</a>
+<a href="22-5-7-influencer-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.7 Influencer marketing</a>
+<a href="case-22-1-innocent-drinks.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.1_Innocent Drinks</a>
+<a href="case-22-2-wide-path-camper.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.2_Wide Path Camper</a>
+<a href="case-22-3-danske-forlystelsesparker.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.3_Danske Forlystelsesparker</a>
+<a href="opgaver-og-cases-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 22</a>
+<a href="opsamling-paa-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 22</a>
+<a href="traening-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 22</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 22. Promotion
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    22.4 Direct marketing
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Direct marketing er en form for markedsføring, som gør det muligt for
+virksomheder at kommunikere direkte til kunden. Man kan anvende forsk L G
+markedsføringsteknikker såsom sms, e-mail, online annoncer, distribution a:
+kataloger samt interaktive hjemmesider der gør det muligt at have en direkte
+kommunikation med kunden. Kommunikationen er altid målrettet den enkelte
+kunde i det omfang, mediet tillader. Virksomheder, som arbejder med direct
+marketing, er i høj grad afhængige af at have en opdateret database med
+kundernes telefonnummer, postadresser, e-mailadresser samt eventuelle data om
+forbrugerens præferencer og interesser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det -> for mange virksomheder den mest omkostningseffektive form for
+ma Nasføring. Ved direct marketing kan man kommunikere relativt præci.
+kunden i forhold til massekommunikationen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Permission marketing
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I forbindelse med direct marketing er det vigtigt, at kunderne har givet deres
+tilladelse til at modtage henvendelser fra virksomheden. Man betegner det
+permission marketing. Det er ulovligt at udsende e-mails med
+reklamebudskaber til såvel private som virksomheder - med mindre de på
+forhånd har givet deres tilladelse. For at opnå tilladelse til at kontakte kunderne
+elektronisk kan virksomheden give kunderne nogle fordele som fx:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gratis adgang til relevante og interessante informationer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Gratis brug af services
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gratis download af programmer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Konkurrencer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Rigtig mange mennesker giver tilladelse til, at virksomheder må sende e-mails til
+dem ved at indføje dette i konkurrencebetingelser, når man deltager i
+konkurrencer på fx Facebook, De færreste læser betingelserne igennem, men
+sætter blot flueben ved "I agree".
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når man melder sig ind i en kundeklub, giver man som oftest også virksomheden
+lov til at kontakte en via e-mail og evt. sms. Derudover kan virksomheden tracke
+forbrugerens købsadfærd både ved køb på webshop og i en fysisk butik.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden Legekæden har en kundeklub ,som giver kunden nogle fordele.
+Et medlemskab i kundeklubben giver rabat på produkter, fri fragt på webshop,
+rabat på oplevelser rundt i landet samt en fødselsdagsgave. Til gengæld kan
+Legekæden kontakte kunden direkte.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Neeste
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Direct marketing er en form for markedsføring, som gør det muligt for virksomheder at kommunikere direkte til kunden. Man kan anvende forsk L G markedsføringsteknikker såsom sms, e-mail, online annoncer, distribution a: kataloger samt interaktive hjemmesider der gør det muligt at have en direkte kommunikation med kunden. Kommunikationen er altid målrettet den enkelte kunde i det omfang, mediet tillader. Virksomheder, som arbejder med direct marketing, er i høj grad afhængige af at have en opdateret database med kundernes telefonnummer, postadresser, e-mailadresser samt eventuelle data om...
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="22-3-4-sponsorering.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 22.3.4 Sponsorering</a></div>
+                    <div><a href="22-4-1-loyalitetsklubber-og-nyhedsbreve.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">22.4.1 Loyalitetsklubber og nyhedsbreve →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4 Markedsandel og præferencer — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>⚔️</span> 4. Konkurrenceforhold
+                    </a>
+                    <div class="space-y-1">
+                        <a href="4-konkurrenceforhold-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4. Konkurrenceforhold (B)</a>
+<a href="4-1-markedskarakteristik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.1 Markedskarakteristik</a>
+<a href="4-2-konsument-og-producentmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.2 Konsument- og producentmarkedet</a>
+<a href="4-3-konkurrentidentifikation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.3 Konkurrentidentifikation</a>
+<a href="4-4-markedsandel-og-praeferencer.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">4.4 Markedsandel og præferencer</a>
+<a href="4-5-konkurrencemaessige-positioner.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.5 Konkurrencemæssige positioner</a>
+<a href="4-6-konkurrentanalyse.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4.6 Konkurrentanalyse</a>
+<a href="case-4-1-mikrobryggerier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.1_Mikrobryggerier</a>
+<a href="case-4-2-bareen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.2_bareen</a>
+<a href="case-4-3-carzilla.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.3_CARZILLA</a>
+<a href="case-4-4-fastfood-markedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.4_Fastfood-markedet</a>
+<a href="case-4-5-benzinmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.5_Benzinmarkedet</a>
+<a href="case-4-6-det-danske-sodavandsmarked-offline.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4.6_Det danske sodavandsmarked (offline)</a>
+<a href="opgaver-og-cases-til-kapitel-4.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 4</a>
+<a href="opsamling-paa-kapitel-4.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 4</a>
+<a href="traening-til-kapitel-4.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 4</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 4. Konkurrenceforhold
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    4.4 Markedsandel og præferencer
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o Markedsandele
+o Præferencer på markedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Konkurrenceformer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden har brug for at måle sig med sine konkurrenter. Når en
+virksomhed skal måle sin succes, er det interessant at betragte virksomhedens
+ove” ud og andre økonomiske nøgletal og sammenholde disse med
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+kor renternes tal.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De fleste virksomheder arbejder pa flere markeder og med flere produktgrupper.
+Dermed mader virksomheden ogsa en reekke forskellige konkurrenter. Derfor
+hører man ofte virksomheder udtrykke hvor store markedsandele, de har inden
+for forskellige typer af produkter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+_ M-»>-edsandele
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Traditionelt opgør virksomhederne succes ved at beregne den markedsandel,
+der er opnået.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsandelen er et udtryk for, hvor stor en andel af den samlede
+efterspørgsel på markedet, den enkelte virksomhed har.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En stor markedsandel er et udtryk for en dominerende stilling på markedet, og
+en stor markedsandel giver virksomheden mulighed for at opnå stordriftsfordele.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En dominerende producent eller importør vil normalt også have lettere ved at
+blive bredt repræsenteret i detailleddet (mange forhandlere). Dette er særlig
+vigtigt for især dagligvarer, når produktets slutbrugere befinder sig på
+konsumentmarkedet. Det kan være en selvforstærkende effekt at have en stor
+markedsandel.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Markedet målt i værdi
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">© Markedet målt i volumen, fx tons eller liter</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Markedet målt som antal forbrugere eller kunder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I forbindelse med søgning i databaser vil man ofte støde på, at opgørelserne
+bygger på volumen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+For fx pengeinstitutter og telefoniselskaber kan det give god mening at opgøre
+markedsandelen ud fra, hvor stor en andel af kunderne, man betjener.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når markedsandelen skal beregnes, skal man præcisere tre forhold:
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Hvilket geografisk marked, beregningen vedrører (fx det danske marked)</li>
+<li class="ml-4 mb-1 text-slate-700">Tidsperiode (fx første halvår af 2024)</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+2 ”-oduktet (fx chokoladebarer)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 4.5: Beregning af markedsandel
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomhed As salg 600.000 kr.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomhed B's salg 300.000 kr.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomhed C's salg 100.000 kr.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det samlede salg 1.000.000 kr.
+Virksomhed As markedsandel (600.000 - 100)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+1.000.000 60%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Præferencer pa markedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I mange tilfælde foretrækker kunderne bestemte udbydere eller bestemte
+mærker frem for andre. Dette kaldes et heterogent marked.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+markeder er præferencerne stærkere, og der er en større del af køberne, der har
+præferencer. Dette illustreres i illustration 4.6.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 4.6: Præferencer på markedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der kan være forskellige årsager til, at der er præferencer på markedet. I sig selv
+kan produktet være forklaringen. Hvis forbrugerne opfatter produkter fra
+forskellige virksomheder som forskellige, har vi den vigtigste årsag til
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= pri ‘nce, og man taler i så tilfælde om differentierede produkter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Smartphones fra Apple og Samsung vil sikkert blive opfattet som forskellige
+produkter. Der kan være forskel på design og funktioner samt virkemåder for
+funktioner der gør, at mange forbrugere oplever disse mærker som forskellige.
+På den baggrund vil nogle forbrugere foretrække iPhone, mens andre
+foretrækker Samsung.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når forbrugerne har præferencer for en bestemt virksomhed, betyder det ikke
+nødvendigvis, at virksomhedens produkt opfattes som det bedste. Det kan
+skyldes den måde, som virksomheden har benyttet andre parametre på. Mange
+benzinkunder har ikke præferencer for bestemte selskaber, men vælger fx at
+tanke benzin i nærheden af bopæl eller arbejde. I det tilfælde er det
+beliggenheden, der er afgørende for forbrugernes valg.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Colourbox.dk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Et. N .t eksempel kan vedrøre et bestemt par sko fra Nike. Prisen er dens / ne
+i alle butikkerne i byen, nemlig kr. 999,-. Alligevel findes der kunder, som
+foretrækker at købe Nike-sko i én bestemt butik. Det kan skyldes, at man netop i
+denne butik oplever at få en særlig god service, eller at man synes, at der er en
+specielt god atmosfære.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomhederne arbejder i dag hårdt på at skabe præferencer for netop deres
+produkter og mærker. Når der er præferencer, er kunderne mindre tilbøjelige til
+at lade sig styre af lave priser sammenlignet med situationer, hvor kunderne har
+vanskeligt ved at se forskel på produkterne. Ved høje præferencer er kunder
+typisk mindre prisfølsomme.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I dag er det svært at finde markeder, hvor forbrugerne ikke har præferencer. Som
+regel vil der altid være noget, der kan skabe præference for det ene mærke frem
+for det andet eller den ene udbyder frem for den anden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det modsatte af differentierede produkter er standardprodukter.
+Standardprodukter opfattes som helt ens, uanset hvilken virksomhed
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+På markedet for råvarer som kaffe eller kakao ser vi eksempler på
+standardprodukter. Dette kaldes et homogent marked. På producentmarkedet
+finder man i højere grad homogene markeder. Kunderne til råvarer som kakao er
+fx chokoladefabrikker rundt omkring i verden. Indkøberne hos disse fabrikker
+køber kaffe- og kakaobønner på råvarebørser og har ikke præferencer med
+hensyn til, om kakaoen er dyrket af den ene eller den anden kakaofarmer, idet
+kvaliteten er den samme.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der kan dog være kvalitetsforskelle på kaffe og kakao fra forskellige lande,
+ligesom en del af produktionen bærer Fairtrade mærket. Dermed bliver markedet
+for det færdige produkt - fx kaffe i 500 g poser - heterogent, så nogle forbrugere
+foretrækker Gevalia, andre Blå Cirkel.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konkurrenceformer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Ko rencen på et marked vil være påvirket af, om der fx er få store udb;
+eller mange små udbydere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedet for benzin er domineret af få store udbydere og kan dermed
+karakteriseres som et oligopol. Det er dyrt at etablere sig på markedet, og de
+fleste udbydere af benzin på det danske marked er derfor store internationale
+virksomheder. Konkurrencen mellem udbyderne er hård. Da der hos forbrugerne
+er nogen grad af præference for det enkelte benzinselskab, kaldes
+konkurrenceformen for differentieret oligopol.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Den mest udbredte konkurrenceform er monopolistisk konkurrence. Der er fx
+store udbydere af mærkevaretøj og -sko, ligesom der også er mange små
+udbydere inden for en række fødevarer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvis der kun er en udbyder på markedet, har virksomheden monopol. Danske
+Spil har fx monopol på at udbyde visse former for spil. Hvis markedet domineres
+af to udbydere, kaldes konkurrenceformen differentieret duopol. Markedet for
+cola er kendetegnet ved to store udbydere: CocaCola og Pepsi. Der er dog ikke
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 4.7: Oversigt over konkurrenceformer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Antal udbydere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En stor samt en række små
+To
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Få store
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mange små
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konkurrenceform
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Monopol
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Differentieret delvist monopol
+Differentieret duopol
+Differentieret oligopol
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Monopolistisk konkurrence
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 4.7: Ejendomsmæglerkæder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 4.8: Præference for vand
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+“N
+NV
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden har brug for at måle sig med sine konkurrenter. Når en virksomhed skal måle sin succes, er det interessant at betragte virksomhedens ove” ud og andre økonomiske nøgletal og sammenholde disse med De fleste virksomheder arbejder pa flere markeder og med flere produktgrupper. Dermed mader virksomheden ogsa en reekke forskellige konkurrenter. Derfor hører man ofte virksomheder udtrykke hvor store markedsandele, de har inden for forskellige typer af produkter.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="4-3-konkurrentidentifikation.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 4.3 Konkurrentidentifikation</a></div>
+                    <div><a href="4-5-konkurrencemaessige-positioner.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">4.5 Konkurrencemæssige positioner →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

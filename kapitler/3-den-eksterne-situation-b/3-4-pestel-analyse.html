@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.4 PESTEL-analyse — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🌍</span> 3. Ekstern situation
+                    </a>
+                    <div class="space-y-1">
+                        <a href="3-den-eksterne-situation-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. Den eksterne situation (B)</a>
+<a href="3-1-omverdensmodellen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.1 Omverdensmodellen</a>
+<a href="3-2-ot-opsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.2 OT-opsamling</a>
+<a href="3-3-muligheds-og-trusselsmatrix.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.3 Muligheds- og trusselsmatrix</a>
+<a href="3-4-pestel-analyse.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">3.4 PESTEL-analyse</a>
+<a href="case-3-1-decofarver.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.1_Decofarver</a>
+<a href="case-3-2-toms-gruppen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.2_Toms Gruppen</a>
+<a href="case-3-3-discountsupermarkeder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.3_Discountsupermarkeder</a>
+<a href="case-3-4-clever.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3.4_Clever</a>
+<a href="opgaver-og-cases-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 3</a>
+<a href="opsamling-paa-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 3</a>
+<a href="traening-til-kapitel-3.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 3</a>
+<a href="virksomhedens-afhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Virksomhedens afhængige omverden</a>
+<a href="virksomhedens-uafhaengige-omverden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Virksomhedens uafhængige omverden</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 3. Ekstern situation
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    3.4 PESTEL-analyse
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+P - Politiske forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o E-Økonomiske forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© S-Sociale og kulturelle forhold
+° T-Teknologiske forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o E-Miljømæssige forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Til at analysere en virksomheds eksterne forhold og skabe overblik kan
+virksomheden benytte sig af PESTEL-analysen. PESTEL-analysen omfatter analyse
+af faktorer eller forhold i virksomhedens omverden, som har eller kan have
+indflydelse på virksomhedens beslutningsgrundlag.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+PESTEL-analysen har et bredere samfundsanalytisk sigte med fokus på
+virksomhedens fjernmiljø og kan bl.a. anvendes, når virksomheden ønsker at
+vurdere, om den skal starte eksport til et nyt marked. Modellen kan i dette
+tilfælde anvendes som en komparativ analyse, hvor flere lande sammenlignes.
+Gennem analysen får virksomheden overblik over, hvilke lande der har de
+gunstigste markedsbetingelser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+PESTEL-analysen har vægt på virksomhedens fjernmiljø. For at forbedre
+beslutningsgrundlaget suppleres PESTEL-analysen ofte med en
+målgruppeanalyse og en brancheanalyse. Hermed indgår analyser af
+virksomhedens nærmiljø også.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ing. ivl- der serveres pandekager på Cafe Hans en Grietje.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Søren Seest Marquart
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+PESTEL-analysen er et værktøj til analyse af samfundsforhold, der har
+relevans for en virksomheds strategiske beslutninger. Analysen laves for et
+geografisk afgrænset marked.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ledelsen i en virksomhed bør til enhver tid have overblik over nedenstående
+forhold på de markeder, virksomheden opererer på.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 3.11: PESTEL-modellen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forkortelse Factors (Engelsk) Forhold (Dansk)
+P Political Politiske
+E Economic Økonomiske
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">JUCIal alu cultural</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+T Technological
+E Environmental
+L Legal
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ouclaie UY KUILUIENe
+Teknologiske
+Miljømæssige
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lovmæssige
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det afhænger af virksomheden, branchen og markedet, hvilke konkrete forhold i
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+PESTEL-analysen, en virksomhed har brug for at undersøge. Alligevel kan man
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+godt opstille en generel PESTEL-ramme.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 3.12: Den generelle PESTEL-model
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Social and cultural far . ~s
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+— Political Economic factors
+5 factors
+Skatte- og e BNP/
+afgiftspolitik økonomisk
+Erhvervspolitik vækst
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Arbejdsmarkedspolitik
+Statsstøtte
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Told
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Internationale
+organisationer (EU,
+WTO, FN, IMF,
+Verdensbanken)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Technological
+factors
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konkurrenternes
+forsknings- og
+udviklingsaktiviteter
+Nye patenter og
+produkter på
+markedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Konjunkturer
+e Arbejdsløshed
+e Inflation
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Renteniveau
+e Lønniveau
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Valutaforhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Environmental
+factors
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Udbredelse af
+genbrug
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Cirkulær
+økonomi
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Økologi
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Demografi
+Uddannelsesniveau
+Indkomstfordeling
+Mobilitet på
+arbejdsmarkedet
+Livsstil og værdier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Legal
+factors
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lovgivning om
+produktansvar og
+produktsikkerhed
+Konkurrence- og
+monopollovgivning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+på bl.a. universiteter importregulering
+e Offentlig støtte til
+forskning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Analysen går ud på at søge informationer, angive kilder og forholde sig kritisk til
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+hvert af de 6 punkter. Resultaterne for PESTEL-analyserne kan være meget
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+forskellige fra marked til marked. I det følgende uddybes de forskellige faktorer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+P - Politiske forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mht. politiske forhold kan nedenstående problematikker være væsentlige at få
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+overblik over for virksomheden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvor stabile er de politiske omgivelser?
+Hvor udbredt er korruption i landet?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+vordan beskattes virksomheder? (finans-/skattepolitik)
+Hvilken økonomisk politik fører regeringen?
+Hvilke handelsaftaler, som fx EU eller WTO, indgår landet i?
+Regulerer regeringen kulturelle og religiøse forhold?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvilken øvrig relevant lovgivning vedrørende virksomhedens produkter er
+gældende?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvilke virksomhedsstøtteordninger har landet? (erhvervspolitik)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+E- \ onomiske forhold
+Mht. økonomiske forhold, interesserer følgende faktorer ofte virksomhederne:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Landets økonomiske vækst
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Inflationsudviklingen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Renteudviklingen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Valutakursudviklingen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Indkomstfordelingen - den økonomiske ulighed
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udviklingen i den økonomiske vækst har størst betydning for virksomheder, der
+sælger luksusvarer, da disse er relativt indkomstelastiske. For virksomheder, der
+konkurrerer på prisen, kan en faldende vækst i visse tilfælde gavne deres
+konkurrenceevne og dermed øge salget under en lavkonjunktur. Jo mere
+luksusbetonede produkter, virksomheden sælger, jo vigtigere er
+indkomstfordelingen. Valutakursudviklingen har betydning for virksomheder, der
+skal betale eller modtage betaling i en valuta, der har flydende kurs.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Dollaren flyder frit. I perioder stiger den, til andre tider falder den i kurs, og det
+kan være særdeles svært eller endog umuligt at forudsige udsvingene.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når dollaren falder i værdi, har nogle virksomheder glæde af det, mens andre
+virksomheder taber konkurrenceevne. SAS ser et dollarfald som en fordel, fordi
+brændstof handles på verdensmarkedet og afregnes i dollars.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Til gengæld mister danske virksomheder, som er i direkte konkurrence med
+amerikanske selskaber, konkurrenceevne i takt med dollarkursens fald, fx
+Vestas. Når Vestas får betaling af deres kunder i dollars, får de således færre
+kroner ud af salget, da dollaren er blevet mindre værd.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I januar 2026 kostede 1 dollar ca. 6,21 kr. I marts 2026 var dollaren steget og
+toppede omkring 6,55 kr., svarende til en stigning på ca. 5,5 %. Kurserne kan
+derfor svinge ret markant på forholdsvis kort tid.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+S - Sociale og kulturelle forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Sociale og kulturelle forhold dækker over en række forhold, som kan være vidt
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+forskellige fra land til land. For en dansk virksomhed, som har planer om at
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+entrere det brasilianske marked, vil følgende forhold være interessante:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Helbredsforhold, hvad er gennemsnitslevealderen?
+e Uddannelsesforhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Hvor meget fritid har indbyggerne?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Livsstil og modetrends
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Ytringsfrihed og forhold til pressen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Købs- og forbrugsadfærd
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Medie- og læsevaner
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Helligdage og traditioner
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Kulturelle kendetegn
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">- Hvilket forhold har indbyggerne til udenlandske produkter?</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Søren Seest Marquart
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+T - Teknologiske forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden bør have fokus på udviklingen i de teknologiske forhold inden for
+branchen, som kan være en trussel eller en mulighed for virksomheden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksportlandets teknologiske stade
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vil teknologien give bedre og billigere produkter?
+e Vil teknologien give nye produkter eller serviceydelser?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Hvordan vil distribution blive påvirket af ny teknologi (fx homebanking)?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Faldende kommunikationsomkostninger
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">- Innovationsudvikling</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udvikling i e-business
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udvikling inden for AI
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+E - Miljømæssige forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det offentlige stiller en række krav på miljøområdet, som virksomheden skal leve
+op til. Det gælder fx energiforbruget eller håndtering af affald. I dag er
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+begrebet CSR (Corporate Social Responsibility) indarbejdet i de fleste
+virksomheders miljøstrategi, der kan oversættes til virksomhedens ansvar over
+for samfundet. Det vil sige, at virksomheden har et socialt og etisk ansvar over for
+medarbejdere og det samfund, virksomheden agerer i.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Carlsbergs bæredygtighedsmål
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Carlsberg arbejder ud fra fire ambitiøse bæredygtighedsmål:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Zero carbon footprint
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vi vil reducere kulstofemissioner pa vores bryggerier inden 2030 og bruge
+100% vedvarende elektricitet inden 2022. Vi arbejder ogsa sammen med
+partnere i vores værdikæde for at reducere emissionerne af øl-i-hånd med
+30% inden 2030.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Zero water waste
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vi vil reducere vandforbruget på vores bryggerier med halvdelen inden
+2030, og effektivt minimere vandspild under brygningsprocessen. Vi vil
+også samarbejde med partnere for at forbedre vandforvaltningen uden for
+udvalgte bryggerier i højrisikoområder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+VI Vil Ulbyde 100% distripution at alkonoltri bryg I ZU2Z TOr at uavide
+forbrugernes valg. Vi vil også levere ansvarlig drikkebesked samt
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">information om ernæring og ingredienser på vores emballage og online,</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+mens vi danner partnerskaber for at fremme ansvarligt forbrug.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Zero accident culture
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vi vil fortsætte målrettet mod en årlig reduktion af vores ulykkesrate for at
+nå vores 2030-mål for ZERO-ulykker.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Carlsbergdanmark.dk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+L - Lovgivningsmæssige forhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvis man bryder loven, risikerer virksomheder naturligvis er retssag og bøder
+eller andre påbud, hvis sagen tabes. Herudover er retssager forbundet med
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= be ige omkostninger. Virksomheden må derfor have viden om relevan
+lovgivning, som igen kan variere fra land til land.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Google versus EU
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+TF!) er der en lovgivning mod monopoler. Der har været ført flere retssarer
+. tech-giganter som Microsoft, Google og Facebook for brud på EU.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+konkurrence- og monopollovgivning.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Senest har EU-Kommissionen idømt Google en bøde på 1,49 mia. euro
+svarende til ca. 11 mia. kr. Google får bøden, fordi virksomheden ifølge EU
+har misbrugt sin dominans inden for informationssøgning til at favorisere
+egne produkter i forbindelse med annoncering.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En PESTEL-analyse kan give virksomheden et samlet overblik over relevante
+forhold, der bør undersøges eller overvåges på de internationale markeder, som
+virksomheden påtænker at operere på.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 3.10: PESTEL-analyse - østlige EU-lande
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 3.11: Spangsberg Chokolade
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+1 o
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 3.12: PESTEL-analyse for Ungarn
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ISBN 7788761687050. Copyright forfatterne og Systime 2025
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Til at analysere en virksomheds eksterne forhold og skabe overblik kan virksomheden benytte sig af PESTEL-analysen. PESTEL-analysen omfatter analyse af faktorer eller forhold i virksomhedens omverden, som har eller kan have indflydelse på virksomhedens beslutningsgrundlag. PESTEL-analysen har et bredere samfundsanalytisk sigte med fokus på virksomhedens fjernmiljø og kan bl.a. anvendes, når virksomheden ønsker at vurdere, om den skal starte eksport til et nyt marked. Modellen kan i dette tilfælde anvendes som en komparativ analyse, hvor flere lande sammenlignes. Gennem analysen får...
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="3-3-muligheds-og-trusselsmatrix.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 3.3 Muligheds- og trusselsmatrix</a></div>
+                    <div><a href="case-3-1-decofarver.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Case 3.1_Decofarver →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

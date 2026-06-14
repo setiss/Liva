@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Idé og forretningsmodeller (GF) — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📚</span> Grundforløbet
+                    </a>
+                    <div class="space-y-1">
+                        <a href="01-1-marketing-en-grundbog-i-afsaetning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">01_1_Marketing_–_en_grundbog_i_afsætning</a>
+<a href="1-virksomheden-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1. Virksomheden (GF)</a>
+<a href="2-id-og-forretningsmodeller-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">2. Idé og forretningsmodeller (GF)</a>
+<a href="3-den-interne-situation-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. Den interne situation (GF)</a>
+<a href="4-den-eksterne-situation-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4. Den eksterne situation (GF)</a>
+<a href="5-koebsadfaerd-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">5. Købsadfærd (GF)</a>
+<a href="6-maalgruppen-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">6. Målgruppen (GF)</a>
+<a href="7-strategi-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7. Strategi (GF)</a>
+<a href="case-1-hansens-floedeis.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1_Hansens Flødeis</a>
+<a href="case-2-racket-club.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 2_Racket Club</a>
+<a href="case-3-ecooking.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3_ECOOKING</a>
+<a href="case-4-den-oekologiske-forbruger.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4_Den økologiske forbruger</a>
+<a href="case-5-skagenfood.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 5_Skagenfood</a>
+<a href="case-6-dansk.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 6_dansk</a>
+<a href="case-7-yarnjunkies.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7_YarnJunkies</a>
+<a href="opgaver-og-cases-til-afsaetning-paa-grundforloebet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til Afsætning på grundforløbet</a>
+<a href="opsamling-paa-afsaetning-i-grundforloebet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på Afsætning i grundforløbet</a>
+<a href="traening-til-afsaetning-i-grundforloebet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til afsætning i grundforløbet</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← Grundforløbet
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    2. Idé og forretningsmodeller (GF)
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+© Virksomhedens idé, mission, vision og mål
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Forretningsmodeller
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En virksomheds kompetencer er noget, som virksomheden er god til. Fx kan
+virksomheden have særlige kompetencer inden for produktudvikling eller til at
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+yde service. Enhver virksomhed bør arbejde med at udvikle sine kompetencer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fu. ØEN SEESL Vidi YUdaI t
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Virksomhedens idé, mission, vision og mål</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En virksomheds idé er en kortfattet beskrivelse af, hvad der skal være
+virksomhedens eksistensberettigelse. Det handler om, hvorfor virksomheden
+findes, og hvilken værdi den vil levere. Idéen udtrykker også den 'pain', som
+virksomheden dækker hos målgruppen. Forbrugeren vil ofte opleve en pain, fx et
+problem eller en mangel, som virksomheden kan løse eller dække ved at tilbyde
+forskellige produkter og serviceydelser. I virksomhedens mission bliver idéen
+mere konkret. Hvordan skal idéen udføres, af hvem og til hvor mange. De fleste
+virksomheder har også formuleret en vision, der udtrykker i hvilken retning,
+virksomheden ønsker at udvikle sig, og hvad virksomheden ønsker at opnå i
+fremtiden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Et mål er et præcist og målbart udtryk for, hvad virksomheden ønsker at opnå.
+Fo, 1ål er brugbare, bør de opfylder disse kendetegn:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Realistisk: kan målet opnås?
+e Konkret/målbart: kan vi se, når målet er opnået?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Tidsbestemt: hvornår skal det være nået?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mål skal desuden kunne prioriteres og ikke modarbejde hinanden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Too Good To Go
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Too Good To Go er en dansk virksomhed med fokus på at bekæmpe madspild.
+Virksomheden samarbejder med restauranter, caféer, tankstationer osv. med at
+gøre overskudsmad tilgængeligt for forbrugeren. I videoen fortæller
+virksomheden lidt om deres vision og mission.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udviklet i samarbejde med Merkura - videncenter for merkantil udvikling og gengivet med
+tilladelse fra Too Good To Go.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Idé Bekæmpe madspild ved at forbinde butikker og restauranter med
+forbrugere, som kan købe overskydende mad via en app til nedsat p”
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vision Skabe en verden uden madspild.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mission Hos Too Good To Go er vores mission at inspirere og give alle mulighed
+for at bekæmpe madspild sammen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forretningsmodeller
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En virksomheds forretningsmodel er en beskrivelse af, hvordan virksomheden
+skaber og leverer værdi, for hvem, og hvordan den gør det. Forretningsmodellen
+er sammen med virksomhedens idé en beskrivelse af, hvordan virksomheden kan
+skabe værdi ved at fremstille eller sælge produkter, som kunderne er villige til at
+betale for. En produktionsvirksomheds forretningsmodel bygger på fremstilling af
+varer, hvorimod en servicevirksomhed i langt højere grad er afhængig af
+medarbejdere med særlig viden eller kompetencer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+skaber ikke overskud på salget af printere, men produktet kommer hurtigt ud på
+markedet pga. af den lave pris. Den egentlige indtjening ligger på salget af
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">printerpatroner, som er nødvendige for at kunne benytte printeren. Andre</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+virksomheder arbejder med digitale forretningsmodeller, fx Netflix, der leverer
+digitale underholdningsprodukter til en fast abonnementspris.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 3: Arla Foods, LEGO og JYSK
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 4: Too Good To Go
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En virksomheds kompetencer er noget, som virksomheden er god til. Fx kan virksomheden have særlige kompetencer inden for produktudvikling eller til at En virksomheds idé er en kortfattet beskrivelse af, hvad der skal være virksomhedens eksistensberettigelse. Det handler om, hvorfor virksomheden findes, og hvilken værdi den vil levere. Idéen udtrykker også den 'pain', som virksomheden dækker hos målgruppen. Forbrugeren vil ofte opleve en pain, fx et problem eller en mangel, som virksomheden kan løse eller dække ved at tilbyde forskellige produkter og serviceydelser. I virksomhedens mission...
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="1-virksomheden-gf.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 1. Virksomheden (GF)</a></div>
+                    <div><a href="3-den-interne-situation-gf.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">3. Den interne situation (GF) →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

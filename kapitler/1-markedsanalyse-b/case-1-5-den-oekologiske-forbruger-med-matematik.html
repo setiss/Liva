@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 1.5_Den økologiske forbruger (med matematik) — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📊</span> 1. Markedsanalyse
+                    </a>
+                    <div class="space-y-1">
+                        <a href="1-markedsanalyse-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1. Markedsanalyse (B)</a>
+<a href="1-1-formaal-med-dataindsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.1 Formål med dataindsamling</a>
+<a href="1-10-repraesentativitet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.10 Repræsentativitet</a>
+<a href="1-11-markedsanalyseprocessen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.11 Markedsanalyseprocessen</a>
+<a href="1-12-big-data.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.12 Big data</a>
+<a href="1-2-data.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.2 Data</a>
+<a href="1-3-databaser.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.3 Databaser</a>
+<a href="1-4-kvalitative-metoder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.4 Kvalitative metoder</a>
+<a href="1-5-kvantitative-metoder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.5 Kvantitative metoder</a>
+<a href="1-6-spoergeskemaudformning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.6 Spørgeskemaudformning</a>
+<a href="1-7-stikproeveplan.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.7 Stikprøveplan</a>
+<a href="1-8-stikproeveudvaelgelse.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.8 Stikprøveudvælgelse</a>
+<a href="1-9-fejlkilder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1.9 Fejlkilder</a>
+<a href="case-1-1-internethandel.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.1_Internethandel</a>
+<a href="case-1-2-vis-mig-dit-skrald.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.2_Vis mig dit skrald</a>
+<a href="case-1-3-unges-gaeld-forbrug-og-opsparing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.3_Unges gæld, forbrug og opsparing</a>
+<a href="case-1-4-dataindsamling-i-praksis.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.4_Dataindsamling i praksis</a>
+<a href="case-1-5-den-oekologiske-forbruger-med-matematik.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 1.5_Den økologiske forbruger (med matematik)</a>
+<a href="case-1-6-danskernes-motionsvaner-med-matematik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1.6_Danskernes motionsvaner (med matematik)</a>
+<a href="opgaver-og-cases-til-kapitel-1.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 1</a>
+<a href="opsamling-paa-kapitel-1.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 1</a>
+<a href="traening-til-kapitel-1.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 1</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 1. Markedsanalyse
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Case 1.5_Den økologiske forbruger (med matematik)
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <strong class="font-semibold text-slate-900">Emne</strong>: Analyse af den økologiske forbruger — kombinerer desk research, field research og matematik.
+<strong class="font-semibold text-slate-900">Samarbejde</strong>: Udarbejdet med matematikunderviser Anne Pradsgaard Nielsen, Aarhus Handelsgymnasium.
+
+<p class="text-slate-700 leading-relaxed mb-4">
+---
+</p>
+
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Baggrundsfakta om det danske øko-marked</h2>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Danmark er <strong class="font-semibold text-slate-900">internationalt førende</strong> inden for økologiske fødevarer</li>
+<li class="ml-4 mb-1 text-slate-700">I 2023 udgjorde øko-varer <strong class="font-semibold text-slate-900">11,8 %</strong> af det samlede detailsalg — højest i verden (foran Schweiz 11,6 % og Østrig 11,0 %)</li>
+<li class="ml-4 mb-1 text-slate-700">Økologisk drikkemælk: <strong class="font-semibold text-slate-900">41,9 %</strong> af det samlede mælkesalg</li>
+<li class="ml-4 mb-1 text-slate-700">Økologisk ost: <strong class="font-semibold text-slate-900">10,9 %</strong> af ostesalget</li>
+<li class="ml-4 mb-1 text-slate-700">Samlet salg af øko-fødevarer i 2023: <strong class="font-semibold text-slate-900">15,5 mia. kr.</strong> (næsten uændret fra 2022)</li>
+<li class="ml-4 mb-1 text-slate-700">2024-tendenser: Forbrugerne er på vej tilbage til øko — særligt børnefamilier og ældre uden hjemmeboende børn</li>
+</ul>
+<h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Thise Mejeri</h3>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Danmarks næststørste økologiske mejeri</li>
+<li class="ml-4 mb-1 text-slate-700">Overskud 2024: 30,6 mio. kr.</li>
+<li class="ml-4 mb-1 text-slate-700">Ca. 70 % af produktionen sælges i Danmark</li>
+<li class="ml-4 mb-1 text-slate-700">Investerer i øget produktionskapacitet og klimavenlige tiltag</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+---
+</p>
+
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Opgave: Notat om den økologiske forbruger til Thise</h2>
+
+<strong class="font-semibold text-slate-900">Produkt</strong>: Et notat om den økologiske forbruger som input til Thises fremtidige strategi og produktudvikling.
+
+<h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Fase 1: Desk research</h3>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Vurder metoden i <strong class="font-semibold text-slate-900">Økologisk Landsforenings Markedsrapport 2024</strong></li>
+<li class="ml-4 mb-1 text-slate-700">Er analysens resultater repræsentative?</li>
+<li class="ml-4 mb-1 text-slate-700">Beskriv udviklingen i forbruget af øko-fødevarer fra Statistikbanken</li>
+<li class="ml-4 mb-1 text-slate-700">Lav et <strong class="font-semibold text-slate-900">xy-plot</strong> over udviklingen i omsætningen af øko-mælk, ost og æg</li>
+<li class="ml-4 mb-1 text-slate-700">Undersøg via <strong class="font-semibold text-slate-900">regressionsanalyse</strong> sammenhængen mellem årstal og øko-omsætning — hvilken model beskriver bedst?</li>
+<li class="ml-4 mb-1 text-slate-700">Overvej hvad Thise kan bruge modellen til</li>
+<li class="ml-4 mb-1 text-slate-700">Find og bearbejd yderligere data om den økologiske forbruger</li>
+</ul>
+<h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Fase 2: Field research</h3>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Planlæg en markedsanalyse — tag stilling til respondentudvælgelse, metodevalg og spørgeskemakonstruktion</li>
+<li class="ml-4 mb-1 text-slate-700">Gennemfør dataindsamling (opret spørgeskema og del det)</li>
+<li class="ml-4 mb-1 text-slate-700">Bearbejd data i tabeller og grafer, beregn statistiske deskriptorer</li>
+<li class="ml-4 mb-1 text-slate-700">Sammenlign feltresultater med desk research-data</li>
+</ul>
+<h3 class="text-xl font-semibold text-slate-800 mt-8 mb-3">Fase 3: Notatskrivning</h3>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Skriv et fagligt notat til Thise med fokus på markedsanalyseprocessens faser og analysens resultater</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+---
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Casen kombinerer desk research, field research og matematik (regressionsanalyse, statistiske deskriptorer). Den illustrerer, hvordan virksomheder bruger markedsanalyse til strategisk beslutningstagning. Thise Mejeri bruges som case for en konkret virksomhed der har brug for analyse af den danske øko-forbruger.
+</p>
+
+</div><div class="keywords-section mt-8 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl"><h2 class="text-xl font-bold text-amber-800 mb-3">🔑 Nøglebegreber</h2>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Regressionsanalyse</strong>: Matematisk metode til at finde og beskrive sammenhænge i data</li>
+<li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Statistiske deskriptorer</strong>: Middeltal, median, standardafvigelse mv. — beskriver datamaterialets fordeling</li>
+<li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Desk research</strong>: Analyse af eksisterende data (rapport, statistikbank)</li>
+<li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Field research</strong>: Egenindsamlede primære data via spørgeskema</li>
+<li class="ml-4 mb-1 text-slate-700"><strong class="font-semibold text-slate-900">Notatgenre</strong>: Faglig skriftlig genre der præsenterer analyse og konklusioner</li>
+</ul></div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-1-4-dataindsamling-i-praksis.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 1.4_Dataindsamling i praksis</a></div>
+                    <div><a href="case-1-6-danskernes-motionsvaner-med-matematik.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Case 1.6_Danskernes motionsvaner (med ma →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

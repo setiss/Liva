@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 16.3_Nordic Seaplanes — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🤝</span> 16. Serviceydelser
+                    </a>
+                    <div class="space-y-1">
+                        <a href="16-serviceydelser-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16. Serviceydelser (B)</a>
+<a href="16-1-serviceydelser-som-begreb.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16.1 Serviceydelser som begreb</a>
+<a href="16-2-servicepakke-og-vaerdikaede.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16.2 Servicepakke og værdikæde</a>
+<a href="16-3-serviceleverancesystem.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16.3 Serviceleverancesystem</a>
+<a href="16-4-de-7-p-er.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16.4 De 7 P’er</a>
+<a href="16-5-oplevelsesoekonomi.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16.5 Oplevelsesøkonomi</a>
+<a href="case-16-1-den-danske-bankbranche.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 16.1_Den danske bankbranche</a>
+<a href="case-16-2-koebenhavns-skiklub.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 16.2_Københavns Skiklub</a>
+<a href="case-16-3-nordic-seaplanes.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 16.3_Nordic Seaplanes</a>
+<a href="opgaver-og-cases-til-kapitel-16.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 16</a>
+<a href="opsamling-paa-kapitel-16.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 16</a>
+<a href="traening-til-kapitel-16.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 16</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 16. Serviceydelser
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Case 16.3_Nordic Seaplanes
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Case 16.3: Nordic Seaplanes
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Onsdag den 25. maj 2016 åbnede Nordic Seaplanes en vandflyrute melle”
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+de 2 byer. Der flyves mellem havnemolerne ved Østhavnsvej i Aarhus og Nordre
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Aarhus og København. Virksomheden tilbyder hurtig og nem transport n.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Toldbod i København - begge punkter er centralt placeret i de 2 byer. Dette
+giver mulighed for hurtig transport mellem centrum af Aarhus og København.
+Kunderne kan parkere gratis nær molen i Aarhus ,og der er betalingsparkering
+på Nordre Toldbod i København. Nordic Seaplanes tilbyder at bestille taxi til
+passagerer, der måtte ønske dette ved ankomst til destinationen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nordic Seaplanes har hovedkontor i en gammel lagerbygning på Nordre
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Ti d i København. Bygningen er beskedent indrettet og indeholder ve al
+og check-in faciliteter. Virksomheden satser på at få bedre faciliteter i form af
+en bedre terminalbygning, så snart muligheden melder sig.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nordic Seaplanes letter og lander pa vand.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fot~: Michael Bregendahl
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Flyveturen tager 35-45 minutter afhængig af vindforhold. Mødetiden er mindst
+20 minutter før afgang, hvilket giver et samlet tidsforbrug på ca. 70 minutter til
+transport mellem de to byer. Rutens nærmeste konkurrent er SAS' rute mellem
+Tirstrup og København. Denne flyvetur tager 30 minutter, men kræver desuden
+transport mellem Aarhus og Tirstrup, hvilket tager ca. 45 minutter samt check-
+in mindst 30 min. før afgang. Hertil kommer transport mellem Københavns
+lufthavn og København C, der kan klares på ca. 30 minutter inkl. gåturen fra
+gaten til metrostationen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nordic Seaplanes' vandfly kan medtage mellem 12 og 17 passagerer - antallet
+afhænger af standardvægten for passagererne - denne er forskellig for mænd,
+kvinder og børn. Det lave passagerantal giver mindre kø ved security-check og
+gaten, der er placeret ved de flydebroer, hvor flyet ligger fortøjet. Ruten flyves
+med et vandfly fra 1978, der er totalrenoveret med bl.a. lædersæder, inden det
+er sat i drift. Flyet har kostet ca. 30 millioner kr., men er intet i forhold til
+selskabets plan om at satse en milliard kroner på et spritnyt fly, som flyver
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I gaten tilbydes passagererne økologisk kaffe eller te, kildevand, chokolade og
+aviser, der kan tages med ombord. Desuden kan man låne hovedtelefoner og
+lade mobil eller tablet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der tilbydes ca. 4 daglige afgange hver vej, men fartplanen varierer i forhold til
+årets forskellige sæsoner. Prisen varierer afhængig af, hvor fleksibel billetten er.
+Den billigste billet koster omkring 800 kr. og den dyreste omkring 2.200 kr. inkl.
+6 kg. håndbagage. Nordic Seaplanes tilbyder desuden studierabat. I
+sommerferien tilbydes enkeltbilletter til nedsatte priser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nordic Seaplanes tilbyder desuden særlige rabatter til studerende, mulighed
+for at børn kan rejse alene og få hjælp undervejs, at passagerer kan tage deres
+hund med. Efter landingen er der mulighed for bestilling af videre transport fx
+taxa, lejebil, elcykel og limousine med chauffør.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I ingen af 2025 opstod der udfordringer med Københavns Kommune r
+Ska. «iden for den nærmeste fremtid findes et andet sted at lande i havner:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Spørgsmål
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Beskriv Nordic Seaplanes servicepakke og vurder, hvilke elementer</li>
+</ul>af servicepakken, der er vigtigst for virksomhedens
+<p class="text-slate-700 leading-relaxed mb-4">
+konkurrenceevne.
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Med udgangspunkt i relevante segmenteringsovervejelser bedes du</li>
+</ul>beskrive virksomhedens målgruppe.
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Beskriv og analyser Nordic Seaplanes' serviceværdikæde.</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+ISE < 88761687050. Copyright forfatterne og Systime 2025
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Toldbod i København - begge punkter er centralt placeret i de 2 byer. Dette giver mulighed for hurtig transport mellem centrum af Aarhus og København. Kunderne kan parkere gratis nær molen i Aarhus ,og der er betalingsparkering på Nordre Toldbod i København. Nordic Seaplanes tilbyder at bestille taxi til passagerer, der måtte ønske dette ved ankomst til destinationen. = Ti d i København. Bygningen er beskedent indrettet og indeholder ve al og check-in faciliteter. Virksomheden satser på at få bedre faciliteter i form af en bedre terminalbygning, så snart muligheden melder sig.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-16-2-koebenhavns-skiklub.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 16.2_Københavns Skiklub</a></div>
+                    <div><a href="opgaver-og-cases-til-kapitel-16.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opgaver og cases til kapitel 16 →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

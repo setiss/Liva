@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.6 Bowmans strategiske ur — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>♟️</span> 8. Strategi
+                    </a>
+                    <div class="space-y-1">
+                        <a href="8-strategi-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8. Strategi (B)</a>
+<a href="8-1-swot-opsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.1 SWOT-opsamling</a>
+<a href="8-2-tows-matrix.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.2 TOWS-matrix</a>
+<a href="8-3-mission-vision-og-vaerdier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.3 Mission, vision og værdier</a>
+<a href="8-4-konkurrencestrategier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.4 Konkurrencestrategier</a>
+<a href="8-5-vaekststrategier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.5 Vækststrategier</a>
+<a href="8-6-bowmans-strategiske-ur.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">8.6 Bowmans strategiske ur</a>
+<a href="case-8-1-dan-cake.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 8.1_Dan Cake</a>
+<a href="case-8-2-roskilde-festival.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 8.2_Roskilde Festival</a>
+<a href="case-8-3-dk-company.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 8.3_DK Company</a>
+<a href="opgaver-og-cases-til-kapitel-8.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 8</a>
+<a href="opsamling-paa-kapitel-8.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 8</a>
+<a href="traening-til-kapitel-8.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 8</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 8. Strategi
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    8.6 Bowmans strategiske ur
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o Lavprisstrategier
+o Hybridstrategier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Differentieringsstrategier
+o Ikke konkurrencedygtige strategier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I Cliff Bowmans strategiske ur kan virksomheden rette sin indsats mod otte
+= po’ / rer eller strategier, som virksomheden foretrækker.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+konkurrencestrategier. Fx opereres der i det strategiske ur med lave priser,
+hvorimod konkurrencestrategierne har fokus på lave omkostninger. Derudover
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">har det det strategiske ur otte og ikke fire positioner.</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Som det fremgår af nedenstående model, opereres der i det strategiske ur med
+to dimensioner. En prisdimension og en dimension, som udtrykker størrelsen af
+værditilbuddet; altså hvor stor værdi eller værdioplevelse et produkt eller en
+serviceydelse har for forbrugeren.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I henhold til det strategiske ur, har virksomheden mulighed for bevidst at vælge
+en placering og rykke i takt med virksomhedens forsøg på at imødegå relativt
+langsigtede forandringer i den interne og eksterne situation. Herudover kan det
+strategiske ur bruges til at vise et billede af de forskellige aktørers/konkurrenters
+placering i det strategiske ur for en given branche.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Ti ‘tion 8.10: Bowmans strategiske ur
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilo. ~. Faulkner & C. Bowman, The Essence of Competitive Strategy, Prentice Hall, 1.” -
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I illustration 8.10 læser man fra pil 1, med uret, om til pil 8. Det ses, at en
+virksomhed kan vælge mellem:
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">at sætte prisen lavt, men også tilbyde produkter med lav oplevet</li>
+</ul>værdi for kunderne
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">at sætte prisen meget lavt, men alligevel at tilbyde kunderne en</li>
+</ul>rimelig oplevet værdi
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">at sætte prisen lavt for produkter, men hvor virksomheden alligevel</li>
+</ul>tilbyder kunden en høj værdioplevelse
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">at sætte prisen på et mellemniveau, men hvor virksomheden alligevel</li>
+</ul>tilbyder kunden en meget høj værdioplevelse
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">at sætte prisen højt, hvor kunderne tilbydes en høj værdioplevelse</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">at sætte prisen meget højt, men hvor den tilbudte værdioplevelse for</li>
+</ul>kunden er på et mellemniveau
+
+<p class="text-slate-700 leading-relaxed mb-4">
+meget lav oplevet kundeværdi
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvis man ser på hvilke af positionerne eller valg af konkurrencestrategi, der er
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+mest realistiske eller hensigtsmæssige, kan man opdele det strategiske ur i fire
+zoner, som det fremgår af illustration 8.11. Illustrationen viser også, at strategi-
+erne 6, 7 og 8 anses for ikke at være konkurrencedygtige, da prisen er for høj i
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+forhold til den værdi som forbrugeren tillægger produktet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 8.11: Opdeling af det strategiske ur
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: D. Faulkner & C. Bowman, The Essence of Competitive Strategy, Prentice Hall, 1995
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lavprisstrategier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+brugen af virksomhedens produkt eller serviceydelse. Ryanair er et godt
+eksempel på en lavprisstrategi. Kundens oplevelse af værdien af kerneydelsen er
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">forholdsvis lav, da samtlige periferiydelser skal tilkøbes separat. Til gengæld</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+holdes prisen meget lav.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hybridstrategier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Med hybrid menes en blanding mellem lavpris og differentiering. I denne zone
+skal virksomheden sørge for at kunden har en fornuftig oplevelse af et produkts
+eller en serviceydelses værdi. Kunden vil i denne zone ofte overveje om et
+produkts værdioplevelse svarer til prisen på produktet - dvs. om der er value for
+money. Derfor bør virksomhederne have speciel fokus på udvikling af
+produkternes funktionelle kvalitet. Mange forbrugere ser Kohbergs rugbrød som
+et godt brød for pengene. Man kan sagtens få billigere no-brand rugbrød oa
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+mi »gså bedre og meget dyrere rugbrød i fx Lagkagehuset, men Kohb
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+brød er god værdi for pengene.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Andre eksempler er Ikea, som kombinerer lave priser med skandinavisk design
+og Ditur.dk, der sælger kvalitetsure i eksklusivt design til meget
+konkurrencedygtige priser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Pav. > af at Diturs fokus er på online-salg af ure, har virksomheden også en fysisk i ~ «i
+Aarhus.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Differentieringsstrategier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når en virksomhed følger differentiering som en konkurrencestrategi bør
+virksomhederne have fokus på specielt produktudvikling samt smagsmæssig og
+psykologisk kvalitet. Fremragende funktionel kvalitet betragtes her som en
+selvfølgelighed. Denne strategiske position opnås fx via udvikling af specielle
+funktioner, unikt design og/eller heavy branding. I bilbranchen udvikles den
+funktionelle kvalitet løbende. Sensorer, bakkamera og fartpilot var for et par år
+siden ekstraudstyr og med til at differentiere bilmærkerne, men er nu standard
+for ethvert bilbrand. Men så længe en branche kan levere en nyhed, som tilfører
+kunden ekstra oplevet værdi, så kan prisen sættes højt. Et eksempel er fx Coca-
+Cola, der kan tage en højere pris for deres produkter som følge af et stærkt
+brand.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+et godt eksempel på et mærke, der har opnået en helt særlig position i mange
+forbrugeres bevidsthed over det meste af verden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ikke konkurrencedygtige strategier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I den sidste zone vil en virksomhed have svært ved at konkurrere på længere sigt,
+da prisen ikke harmonerer med kundens oplevede værdi. Det er dog klart, at hvis
+en virksomhed er helt alene på markedet (monopol), så kan prisen på et produkt
+godt sættes relativt højt, selv om kundens oplevede værdi kan være særdeles lav.
+Inden for det offentlige findes monopoler, og mange synes fx det er for dyrt med
+fornyelse af et pas, som koster ca. 900 kr. excl. foto, for voksne.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 8.10: Strategi for udvalgte virksomheder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 8.11: Måltidskasser
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+“N
+NV
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I Cliff Bowmans strategiske ur kan virksomheden rette sin indsats mod otte = po’ / rer eller strategier, som virksomheden foretrækker. konkurrencestrategier. Fx opereres der i det strategiske ur med lave priser, hvorimod konkurrencestrategierne har fokus på lave omkostninger. Derudover > har det det strategiske ur otte og ikke fire positioner.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="8-5-vaekststrategier.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 8.5 Vækststrategier</a></div>
+                    <div><a href="case-8-1-dan-cake.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Case 8.1_Dan Cake →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

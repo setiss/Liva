@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22.5.1 Paid, owned og earned media — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📣</span> 22. Promotion
+                    </a>
+                    <div class="space-y-1">
+                        <a href="22-promotion-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22. Promotion (B)</a>
+<a href="22-1-organisering-af-promotionaktiviteter.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.1 Organisering af promotionaktiviteter</a>
+<a href="22-2-promotionbudskab-og-storytelling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.2 Promotionbudskab og storytelling</a>
+<a href="22-3-massekommunikation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3 Massekommunikation</a>
+<a href="22-3-1-reklame.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.1 Reklame</a>
+<a href="22-3-2-public-relations-pr.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.2 Public Relations (PR)</a>
+<a href="22-3-3-sales-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.3 Sales promotion</a>
+<a href="22-3-4-sponsorering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.4 Sponsorering</a>
+<a href="22-4-direct-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.4 Direct marketing</a>
+<a href="22-4-1-loyalitetsklubber-og-nyhedsbreve.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.4.1 Loyalitetsklubber og nyhedsbreve</a>
+<a href="22-5-online-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5 Online promotion</a>
+<a href="22-5-1-paid-owned-og-earned-media.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">22.5.1 Paid, owned og earned media</a>
+<a href="22-5-2-website-og-algoritmer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.2 Website og algoritmer</a>
+<a href="22-5-3-seo-og-sem.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.3 SEO og SEM</a>
+<a href="22-5-4-omni-channel-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.4 Omni channel marketing</a>
+<a href="22-5-5-content-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.5 Content marketing</a>
+<a href="22-5-6-sociale-medier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.6 Sociale medier</a>
+<a href="22-5-7-influencer-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.7 Influencer marketing</a>
+<a href="case-22-1-innocent-drinks.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.1_Innocent Drinks</a>
+<a href="case-22-2-wide-path-camper.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.2_Wide Path Camper</a>
+<a href="case-22-3-danske-forlystelsesparker.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.3_Danske Forlystelsesparker</a>
+<a href="opgaver-og-cases-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 22</a>
+<a href="opsamling-paa-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 22</a>
+<a href="traening-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 22</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 22. Promotion
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    22.5.1 Paid, owned og earned media
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+22.5.1 Paid, owned og earned media Aa Wo:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I en mere digitaliseret verden, er der også kommet mange flere muligheder i
+forhold til at kunne komme i kontakt med kunden i løbet af L
+købsbeslutningsprocessen. Inden et køb af et produkt kan en potentiel kunuc
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+relativt hurtigt undersøge både priser, alternative produkter, omtale og
+specifikationer om et bestemt produkt. Det er derfor vigtigt, at virksomheder er
+opmærksomme på, hvordan kunden bliver eksponeret for produktet, inden der
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+foretages et køb. I mange tilfælde kan virksomheden nemlig ikke selv styre, hvilke
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+informationer kunden får om produktet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+For at skabe et overblik over hvordan kunden kan eksponeres, er det vigtigt, at
+virk- "mheden er opmærksom pa paid, owned og earned media. Et "media" | n
+for. < som en platform eller kommunikationskanal.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+valid meala :
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Man kan argumentere for, at al markedsføring i én eller anden grad koster penge.
+Dog skal der ved paid media forstås den betalte annoncering, som virksomheden
+iværksætter. Det kan fx være bannerreklamer, annoncering på Google (SEM) eller
+reklamer på sociale medier. Dvs. alle former for promotion, hvor man aktivt har
+betalt andre platforme for at skabe synlighed for sin virksomhed, brand eller
+produkter. Paid media kan fx være:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Annoncering på Google (SEM)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Bannerreklamer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Reklamer på sociale medier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I forhold til offline promotion vil tv-reklamer, sponsorater, outdoor-reklamer osv.
+også gå ind under kategorien paid media.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Pa 2dia er alle former for promotion, hvor man aktivt har betalt andre
+platforme for at skabe synlighed for sin virksomhed, brand eller produkter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Owned media
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Owned media omhandler de platforme og promotionformer, som virksomheden
+selv styrer og har kontrol over i forhold til at ramme modtageren. Owned media
+kan fx være:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Virksomhedens hjemmeside
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Egne blogs
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Egne apps
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Egne sider på sociale medier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ligesom med paid media, indgår sociale medier også under owned media. Hvis
+en virksomhed betaler for annoncering på Facebook, er der tale om paid media.
+Hvis virksomheden blot lægger indhold op på sin Instagram eller besvarer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+For mange virksomheder er owned media meget vigtige at indtænke ift. kundens
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">potentielle køb af et produkt. Især hvis virksomheden primært sælger sine</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+produkter igennem egen webshop.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Paid og owned media
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvis man taster 'festivaltelt' i sit søgefelt i Google, kan et resultat se ud som
+ovenfor. I toppen af søgningen står der "Sponsoreret", og umiddelbart
+under er der seks forslag til konkrete produkter fra forskellige
+virksomheder. Disse virksomheder benytter sig af Google produktet Google
+Ads, hvor virksomheder køber retten til at få vist sin annonce, når
+internetbrugere taster netop dette ord i søgefeltet. Der er her tale om
+betalt annoncering - Search Engine Marketing (SEM). Dette går under
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Under annoncerne ser vi den organiske søgning. Her har virksomhederne
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">ikke betalt Google for at ligge øverst. Det er således ikke paid media. I</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+stedet har virksomhederne arbejdet med Search Engine Optimization
+(SEO), som er virksomhedens arbejde med at skabe så relevant et indhold
+på deres hjemmeside, at Googles algoritme placerer deres virksomheder
+øverst. Her er der tale om owned media.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Earned media
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Earned media er den omtale, som virksomheden har gjort sig “fortjent” til.
+Virksomheden kontrollerer ikke selv disse kanaler. Ofte kan god eller dårlig
+omtale fra kunder, historier i pressen eller mange stjerner på Trustpilot have en
+effekt på en virksomheds salg. Mange kunder vil ofte undersøge anmeldelser og
+vu. iger af produkter, inden de foretager et køb. Earned media kan væ
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Anmeldelser på Trustpilot og sociale medier
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Sociale medier (kommentarer)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksterne blogs
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Presseomtale (fx artikler om anmeldelser af produkter)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Budskaber/anmeldelser/kommentarer på earned media kan således være med til
+at sætte et positivt eller negativt fokus på virksomhedens produkt eller brand.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Earned media er, ligesom paid og owned media, ikke kun gældende online.
+Omtale (word of mouth) af et brand eller produkt i en referencegruppe (fx
+venner) er således også earned media.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Earned media serverer ofte troværdige og værdifulde budskaber, men disse
+kommunikationskanaler står helt uden for virksomhedens mulighed for at styre
+eller kontrollere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+1 neaeristaerige mustration SES get tyaueligt, at Pala, owrea og earrmea Mead Karl
+overlappe hinanden. Ved en virksomheds brug af Instagram, kan der således
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">både vere tale om paid, owned og earned. Hvis en virksomhed lancerer en</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+kampagne for et nyt produkt, kan der være betalt annoncering på Instagram
+(paid media). Virksomheden kan også selv lægge noget op på sin egen
+Instagram-side (owned media), og den nye kampagne kan give anledning til
+meget omtale på Instagram (earned media).
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 22.5: Overlap mellem paid, owned og earned media
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+For en virksomhed er det derfor relevant at tænke alle tre elementer ind, når den
+prøver at ramme sin målgruppe.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: YouTube - Paid, owned eller earned media?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Shutterstock.com
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fr kommunikationskanal er ikke kun paid, owned eller earned - det
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+mer an på hvordan kanalen bruges.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fx er YouTube "en paid-kanal", hvis virksomheden betaler en YouTuber for
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+at lave en film om virksomhedens produkter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+YouTube er "en owned-kanal", hvis virksomheden viser en instruktionsfilm
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+om sine produkter, på virksomhedens egen YouTube-kanal.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+YouTube kan også være "en earned-kanal", hvis en person af egen fri vilje
+og helt ubetalt lægger en video omhandlende en af virksomheds produkter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+på personens egen YouTube-kanal.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 22.11: Paid, owned og earned media
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I en mere digitaliseret verden, er der også kommet mange flere muligheder i forhold til at kunne komme i kontakt med kunden i løbet af L købsbeslutningsprocessen. Inden et køb af et produkt kan en potentiel kunuc relativt hurtigt undersøge både priser, alternative produkter, omtale og specifikationer om et bestemt produkt. Det er derfor vigtigt, at virksomheder er opmærksomme på, hvordan kunden bliver eksponeret for produktet, inden der
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="22-5-online-promotion.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 22.5 Online promotion</a></div>
+                    <div><a href="22-5-2-website-og-algoritmer.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">22.5.2 Website og algoritmer →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

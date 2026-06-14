@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.5 Branding — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📦</span> 15. Produkt
+                    </a>
+                    <div class="space-y-1">
+                        <a href="15-produkt-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">15. Produkt (B)</a>
+<a href="15-1-klassifikation-af-produkter.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">15.1 Klassifikation af produkter</a>
+<a href="15-2-kvalitet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">15.2 Kvalitet</a>
+<a href="15-3-sortiment.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">15.3 Sortiment</a>
+<a href="15-4-maerkestrategi.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">15.4 Mærkestrategi</a>
+<a href="15-5-branding.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">15.5 Branding</a>
+<a href="15-6-produktets-livscyklus-plc.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">15.6 Produktets livscyklus (PLC)</a>
+<a href="case-15-1-ben-jerry-s-iseventyr.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 15.1_Ben &amp; Jerry&#x27;s iseventyr</a>
+<a href="case-15-2-madklubben.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 15.2_Madklubben</a>
+<a href="case-15-3-lirum-larum-leg.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 15.3_Lirum Larum Leg</a>
+<a href="case-15-4-kamstrup.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 15.4_Kamstrup</a>
+<a href="opgaver-og-cases-til-kapitel-15.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 15</a>
+<a href="opsamling-paa-kapitel-15.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 15</a>
+<a href="traening-til-kapitel-15.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 15</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 15. Produkt
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    15.5 Branding
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Branding gik oprindeligt ud på, at ranchejerne i USA brændemærkede kvæget, så
+det kunne genkendes. I marketingsammenhæng betyder branding, at
+virksomheden tilføjer bestemte værdier og holdninger til sit mærke.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Branding finder sted på produkt/mærkeniveau. Nogle virksomheder brander
+virksomheden under ét. Det gælder især for servicevirksomheder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Branding er den proces, hvor virksomheden træffer beslutninger
+vedrørende produktets navn og logo samt andre forhold, der skaber værdi
+for køberen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+handler branding om en følelsesmæssig relation, som kunden oplever i forhold til
+produktet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nogle forbrugere opnår høj status og identitet gennem forbruget af brands eller
+mærkevarer. Når virksomhederne så at sige er i stand til at indbygge værdier og
+holdninger i mærket, opnår kunden ved købet en oplevelse af et medejerskab af
+disse holdninger og værdier.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Et stærkt brand kan være en medvirkende årsag til, at et produkt kan sælges til
+en højere pris end konkurrerende produkter, der ikke er brandet lige så kraftigt
+på trods af, at disse produkter kan have en lige så god smagsmæssig og
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+funktionel kvalitet. Branding styrker et produkts imagemæssige kvalitet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Læsø Saltsyderi
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Michael Bregendahl
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+sydningsprocessen og se, hvordan saltet bliver til. Idet fortællingen i sig selv er
+spændende og involverende, opnår saltsyderiet en følelsesmæssig involvering
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">afgæsterne. I dag er Læsø Salt et eftertragtet produkt, hvor kiloprisen er</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+mange gange højere end for andre, almindelige typer af bordsalt. Læsø Salt er
+blevet brandet gennem historien om produktet og har derved fået et stærkt
+ESP.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Corporate branding og produkt branding
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En virksomhed kan brande sine produkter/services, men også selve navnet på
+virksomheden. Når virksomheden har fokus på at styrke virksomhedens
+navn/brand fx for at vise sin betydning i forhold til forskellige grupper af
+interessenter, er der tale om corporate branding.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Fo 3 succes med corporate branding, er det vigtigt, at der er samment
+imenem følgende tre faktorer, da brandingen ellers vil miste troværdighed:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Virksomhedens strategiske vision - topledelsens nedskrevne vision og den
+retning ledelsen ønsker at drive virksomheden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Virksomhedens kultur - værdier, holdninger og adfærd, som ofte udvises af
+medarbejderne.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Virksomhedens image - omverdenens billede af virksomheden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomhedens brand kan opfattes som virksomhedens kerneværdier, som skal
+tiltrække og fastholde kunder og samarbejdspartnere. Virksomhedens identitet
+bliver af mange opfattet som virksomhedens brand og hænger nøje sammen
+med virksomhedens vision, image og kultur. Kunder tager stilling til hele
+virksomheden, dvs. hvad den siger og gør.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Et brand kan således eksistere på flere niveauer. Det ene yderpunkt er, at
+virksomheden brander de enkelte produkter, mærkestrategien er
+varegruppemærke. Dette kaldes en multibrandstrategi og anvendes fx af
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+produkter. Et eksempel på det er Løgismose.
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Illustration 15.10: Fordele og ulemper ved corporate branding og ét-</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+produkt-ét-brand
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fordele Ulemper
+Corporate e Kun branding af et brand e Dårlig omtale kan skade
+branding e Alle ansatte er fælles om alle produkter
+et brand Risiko for at udvande
+Stordriftsfordele og brandet
+synergi Vanskeligere at appellere til
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eu . odukt -
+ét-brand
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Større synlighed
+Lettere at tiltrække
+dygtig arbejdskraft
+(employer branding)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mulighed for at skabe
+stærke unikke
+produktbrands
+Risikospredning
+Større fleksibilitet ved
+sammensætning af
+sortiment
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nemmere at frasælge
+brands
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+forskellige målgrupper
+Brandets autencitet kan
+svækkes
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Brandet er låst til en
+produktkategori
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Svagere profilering af
+virksomheden
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ingen synergi i
+kommunikation af
+forskellige brands
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ofte større omkostninger
+forbundet med branding af
+det enkelte produkt
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Egen tilvirkning, inspireret af Heidi Hansen, 2024, Branding, 4. udgave, Forlaget
+Samfundslitteratur
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Branding-samarbejde
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fotu ».rte Ravn Østergaard
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheder indgår indimellem samarbejder med andre brands eller kendte for
+at styrke deres branding. I foråret 2024 lancerede de to tv-værter og kendisser
+Sofie Linde og Joakim Ingversen en række designsamarbejder under brandet
+Kimpop. I samarbejde med brandet Kåhler har de lanceret en keramikserie, og i
+samarbejde med sengetøjsproducenten Juna har de designet sengetøj og nattøj.
+Formålet med samarbejdet er at skabe opmærksomhed og dermed opnå et
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+større salg.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 15.10: Orkla
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 15.11: Corporate branding
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lees evt. mere om branding i iBogen Branding
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Læs evt. mere om branding i Kapitel 5 i Markedskommunikation
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Branding gik oprindeligt ud på, at ranchejerne i USA brændemærkede kvæget, så det kunne genkendes. I marketingsammenhæng betyder branding, at virksomheden tilføjer bestemte værdier og holdninger til sit mærke. Branding finder sted på produkt/mærkeniveau. Nogle virksomheder brander virksomheden under ét. Det gælder især for servicevirksomheder.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="15-4-maerkestrategi.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 15.4 Mærkestrategi</a></div>
+                    <div><a href="15-6-produktets-livscyklus-plc.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">15.6 Produktets livscyklus (PLC) →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

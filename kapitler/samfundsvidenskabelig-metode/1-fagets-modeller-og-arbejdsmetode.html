@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Fagets modeller og arbejdsmetode — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🔬</span> Metode
+                    </a>
+                    <div class="space-y-1">
+                        <a href="1-fagets-modeller-og-arbejdsmetode.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">1. Fagets modeller og arbejdsmetode</a>
+<a href="2-afsaetningsfaglige-kompetencer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2. Afsætningsfaglige kompetencer</a>
+<a href="3-at-kommunikere-i-afsaetning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. At kommunikere i afsætning</a>
+<a href="3-1-argumentation-og-dokumentation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.1 Argumentation og dokumentation</a>
+<a href="3-2-afsaetningsfaglige-genrer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.2 Afsætningsfaglige genrer</a>
+<a href="4-informationssoegning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4. Informationssøgning</a>
+<a href="5-kildekritik-og-empiri.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">5. Kildekritik og empiri</a>
+<a href="6-fagets-analysemetoder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">6. Fagets analysemetoder</a>
+<a href="case-1-kvalitativ-metode-og-feltarbejde.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1_Kvalitativ metode og feltarbejde</a>
+<a href="opgaver-og-cases-til-samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til Samfundsvidenskabelig metode</a>
+<a href="opsamling-paa-samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på samfundsvidenskabelig metode</a>
+<a href="samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Samfundsvidenskabelig metode</a>
+<a href="traening-til-samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til samfundsvidenskabelig metode</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← Metode
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    1. Fagets modeller og arbejdsmetode
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o Atarbejde med modeller
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Atarbejde med cases
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Modeller og teorier er fagets 'værktøjer' på samme vis, som en tømrer har sine
+værktøjer: sav og hammer. Afsætning har blot nogle værktøjer, der er af teoretisk
+karakter, men som bygger på virkeligheden. Man bruger dem til at strukturere,
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+forstå og løse virksomhedens problemstillinger.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fott ren Seest Marquart
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At arbejde med modeller
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det kræver informationer at kunne se sammenhænge, anvende modeller og
+træffe de rigtige beslutninger. Informationer får man gennem søgning. Når man
+læser erhvervsartikler i fx Børsen og avisernes erhvervssektioner, får man indsigt
+i virksomheders forhold.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Afsætningsøkonomisk metode er tilvejebringelse og bearbejdning af
+samfundsfaglige data og materiale med henblik på at udlede præcise
+konklusioner.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En model er en måde, hvorpå man kan systematisere begreber eller
+faktorer. Samtidig er en model en forenklet fremstilling af den virkelighed,
+som modellen illustrerer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+dimensioner - eller ud fra to akser - og viser sammenhængen mellem begreber.
+Matrixmodellen kan enten udformes som en tabel, kaldet en matrice, eller som et
+koordinatsystem med fire udfaldsrum.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 2: Eksempel på matrixmodel i tabelform
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Høj kvalitet Lav kvalitet
+Høj pris Virksomhed X
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lav pris Virksomhed Y
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 3: Matrixmodel som et kryds
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration: Systime
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En fasemodel er - som ordet siger - en model, der består af en række faser, som
+man typisk gennemløber i en bestemt rækkefølge. Man anvender fasemodellen
+inden for mange områder i faget afsætning, da denne modelform strukturerer
+analysen, således at man ikke glemmer elementer i sit analysearbejde.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Illustration: Systime
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At arbejde med cases
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I afsætning arbejder man i mange situationer ud fra en overordnet metode, der
+går ud på at identificere problemstillinger i virksomheder, for derefter at finde
+løsningsforslag ud fra givne kriterier. I illustration 5 er en afsætningsøkonomisk
+metode vist. Man tager udgangspunkt i informationer om en virksomhed eller et
+marked - en såkaldt case. Casen bearbejdes med henblik på at finde relevante
+afsætningsmæssige problemstillinger, som virksomheden eller branchen står
+overfor. Disse problemstillinger og udfordringer lægger op til nogle spørgsmål,
+der så skal besvares.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+For at kunne løse virksomhedens udfordringer har man brug for en
+værktøjskasse med teori oftest i form af nogle modeller. Ved at analysere
+virksomheden ud fra forskellige teorier og modeller kan der udarbejdes nogle
+tolkninger af resultaterne, der så munder ud i konklusioner og svar på, hvordan
+virksomheden skal agere fremover. Gennem arbejdet med cases får man
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+fokus på, hvordan man skal drive virksomhed med succes. Nogle gange er
+casematerialet samlet på forhånd, andre gange skal først indsamles data. I
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">afsætning indsamles information og på mange forskellige måder. Det kan være</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+ved analyse af tekster (typisk artikler), statistik og tal, podcasts,
+virksomhedsbesøg, interviews, hjemmesider, sociale medier, videoklip osv. Dette
+kaldes også empiri. Empiri er således information om faktiske forhold.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 5: Afsætningsøkonomisk metode
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration: Systime frit efter Andersen, I., 2014: Den skinbarlige virkelighed -
+vidensproduktion inden for samfundsvidenskaberne (5. udgave), Samfundslitteratur
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave: I: Videnskabelige fagretninger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 2: Matrixmodel
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+[ro
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Neeste
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Modeller og teorier er fagets 'værktøjer' på samme vis, som en tømrer har sine værktøjer: sav og hammer. Afsætning har blot nogle værktøjer, der er af teoretisk karakter, men som bygger på virkeligheden. Man bruger dem til at strukturere, Det kræver informationer at kunne se sammenhænge, anvende modeller og træffe de rigtige beslutninger. Informationer får man gennem søgning. Når man læser erhvervsartikler i fx Børsen og avisernes erhvervssektioner, får man indsigt i virksomheders forhold.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div></div>
+                    <div><a href="2-afsaetningsfaglige-kompetencer.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">2. Afsætningsfaglige kompetencer →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

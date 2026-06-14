@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20.1 Direkte og indirekte distribution — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🚚</span> 20. Distribution
+                    </a>
+                    <div class="space-y-1">
+                        <a href="20-distribution-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20. Distribution (B)</a>
+<a href="20-1-direkte-og-indirekte-distribution.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">20.1 Direkte og indirekte distribution</a>
+<a href="20-2-distributionskanaler.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.2 Distributionskanaler</a>
+<a href="20-3-distributionsstrategi.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.3 Distributionsstrategi</a>
+<a href="20-4-butikstyper-og-kaeder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.4 Butikstyper og kæder</a>
+<a href="20-5-e-handel.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.5 E-handel</a>
+<a href="case-20-1-morfars-dk.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.1_Morfars.dk</a>
+<a href="case-20-2-loow-undertoej-og-toej-af-merino-uld.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.2_LOOW - Undertøj og tøj af merino-uld</a>
+<a href="case-20-3-varens-vej-til-kunden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.3_Varens vej til kunden</a>
+<a href="case-20-4-wide-path-camper.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.4_Wide Path Camper</a>
+<a href="opgaver-og-cases-til-kapitel-20.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 20</a>
+<a href="opsamling-paa-kapitel-20.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 20</a>
+<a href="traening-til-kapitel-20.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 20</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 20. Distribution
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    20.1 Direkte og indirekte distribution
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+20.1 Direkte og indirekte distribution Aa [| :
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når en virksomhed skal sælge et produkt, er det vigtigt at distributionen nøje
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+overvejes. Virksomheden skal vælge en distribution, som nå fø 1 E le dg) [
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+produkter, som virksomheden tilbyder. Fx kan det være vigtigt at produktet ikke
+bliver tilgængeligt for mange steder, især hvis virksomheden ønsker at beskytte
+værdien af et brand.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+“N
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Distribution har bl.a. med fordeling af produkter at gøre. Derfor er distribution
+kun relevant for fysiske produkter. Serviceydelser kan af naturlige årsager ikke
+distribueres, da de ikke er håndgribelige, men i stedet kan man her opfatte
+formidlingen af serviceydelsen som distribution. Når man fx ønsker at besøge en
+forlystelsespark eller se en fodboldkamp, køber man en billet på nettet eller i en
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+billetluge.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Distributionskæden er alle de mellemled, som varen passerer mellem
+producenten og slutbrugeren.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Distributionskæden kan være kort eller lang, afhængig af produkttype,
+produktionssted, brancheforhold osv. Nogle produkter vil passere mange
+mellemled inden de ender ved en forbruger, hvorimod andre produkter vil have
+en kortere vej fra producent til forbruger.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De enkelte led i distributionskæden kaldes distributionskanaler.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En distributionskanal er de enkelte led i distributionskæden, som
+produktet går igennem fra producenten til slutbrugeren, og som fysisk
+håndterer virksomhedens produkter og løser en række andre opgaver.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Dis itionskeedens udseende afhænger af, om man befinder sig på
+konsumentmarkedet eller producentmarkedet. På begge markeder skelner man
+overordnet mellem to former for distribution: direkte distribution og indirekte
+distribution.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Direkte distribution betyder, at virksomheden distribuerer produktet
+direkte til slutbrugeren uden at involvere mellemled.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Indirekte distribution betyder, at virksomheden har et eller flere led i
+distributionskæden, inden produktet ender hos slutbrugeren.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forbrugeren skal altså købe direkte hos producenten, hvis der skal være tale om
+direkte distribution fra producenten.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+fra Siemens i Power, så er der tale om indirekte distribution.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mange køb på B2B-markedet foregår via direkte distribution, dvs. at en
+virksomhed handler direkte hos producenten af det pågældende produkt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: TEE JAYS
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: iStockphptp.com/AlexandrBognat
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden TEE JAYS ligger i Svenstrup i Nordjylland og producerer
+kvalitetstøj fx T-shirts, med et basic og tidsløst look. TEE JAYS har eksisteret
+siden 1976 og bygger på en meget enkel vision: "at producere verdens bedste
+t-shirts". TEE JAYS har distributører over hele Skandinavien og det meste af EU.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Nar en distributør i Finland køber 100 t-shirts af TEE JAYS, så er der tale om
+direkte distribution og i dette tilfælde på producentmarkedet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Når en forbruger i Finland køber en t-shirt fra TEE JAYS i en tøjbutik, så er
+der tale om indirekte distribution på konsumentmarkedet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+konsumentmarkedet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgaver i distributionskæden
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der er flere opgaver i distributionskæden. Nedenfor er de vigtigste gennemgået.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Distributionskæden skal løse en række opgaver i forbindelse med, at produkterne
+distribueres ud til kunderne. Virksomhedens distributionssystem er ofte
+sammensat af flere distributører. En distributør er en virksomhed, hvis primære
+opgave er at formidle produkterne til næste led i kæden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I illustration 20.2 er en helt enkel skitse over distributionskæden for en
+producent.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= Ill tion 20.2: Distributionskæden for en producent
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Som man ser i illustration 20.2, er der tre aktører i distributionskæden, hvoraf den
+sidste er detaillisten. I det følgende er en kort beskrivelse af de opgaver, som
+producenten og distributørerne har.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Pre V.centen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En producent er den virksomhed, der fremstiller produkterne. Det kan fx være
+juice-producenten Rynkeby i Ringe. Producenten har til opgave at fremstille selve
+produktet og herefter få det ud til slutbrugeren så hurtigt, billigt og effektivt som
+muligt. En producent handler som regel ikke direkte med slutbrugeren, når det
+drejer sig om produkter til konsumentmarkedet. Som forbruger kan man ikke
+købe juice direkte hos Rynkeby, men i stedet går man ned i det lokale
+supermarked og køber produktet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Slutbrugeren på konsumentmarkedet handler typisk i butikker, hvor det ønskede
+sortimentet er til stede. En producent har altså som opgave at få sine varer ud i
+de butikker, hvor målgruppen handler.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Distributørerne
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Distributøren, der også kaldes mellemhandler eller forhandler, køber
+produkterne hjem i store mængder for at sælge dem videre til slutbrugerne. Der
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+5 - ø 1
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+og sælge dem videre til butikkerne. Det er kun virksomheder eller andre, som er
+momsregistrerede, der kan handle hos grossister. Lyreco er et eksempel pa en
+grossistvirksomhed. Det er et indkøbssted for virksomheder. Lyreco leverer
+kontorartikler til virksomheder i hele verden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Detaillister
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Detaillister består af de butikker, som slutbrugeren handler i. Det kan være den
+lille butik på gågaden eller de store butikker som Bilka og Kvickly. De små
+butikker køber ofte ind via en grossist. Her kan de finde et dybt og bredt
+sortiment, og de skal ikke forhandle direkte med producenten. De store kæder
+køber derimod ofte varerne hjem fra producenterne. Coop, som bl.a. driver
+Kvickly og SuperBrugsen, har fx selv en indkøbsafdeling, som sørger for at købe
+produkterne til deres butikker direkte hos producenterne.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= De 2 keeder aftager mange produkter, og dermed bliver de interessant
+producenterne at sælge til. Rynkeby vil altså helst sælge deres juice i store
+mængder til Salling Group og Coop, men er mindre interesserede i at sælge
+direkte til den lille nærkøbmand, der kun aftager et ganske lille parti produkter ad
+gangen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Distributørerne - eller distributionskanalerne tilfører værdi på flere områder:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e De sørger for at sammensætte et sortiment til næste led i
+distributionskæden. Isenkræmmerne vil fx gerne handle hos grossister, hvor
+de kan se et dybt og bredt sortiment i stedet for at handle med mange
+forskellige producenter. Forbrugerne vil også gerne kunne vælge mellem
+flere mærker i den samme forretning.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e De bryder store kvanta ned i mindre kvanta, således at forbrugerne kan
+købe én flaske ketchup ad gangen, i stedet for at skulle købe 12 eller 24
+flasker på én gang.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+virksomhedens promotion.
+e De planlægger landsdækkende kommunikations- og marketingkampagner.
+e De finder de potentielle købere.
+e De sørger for den fysiske distribution.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e De overtager ofte risikoen ved at sælge produkterne.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Zalando
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Zalando.com er Europas største online modeforhandler. Zalando startede i
+Berlin i 2008. Zalando opererer på omkring 20 forskellige markeder med alt fra
+high street designerbrands til sportstøj og børnetøj til bade mænd og kvinder.
+Netbutikken havde i 2024 en omsætning på over 10 mia. euro. Zalando sidder
+på ca. 20 % af det samlede salg af modetøj i Danmark.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Za... do distribuerer deres produkter på to måder. Størstedelen distribuere.
+gennem distributionscentre placeret strategiske steder i forhold til deres 15
+forskellige markeder. De har blandt andet et stort centrallager ved Paris i
+Frankrig. Med et helt nyt lager i Polen er Zalando oppe på tre distributionslagre
+i Polen. Desuden styres distributionen også gennem et onlinesystem med flere
+mærkeproducenter, der sender deres varer direkte fra egne lagre til kunder, når
+bestillingen registreres.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 20.1: Økologiske landmænd
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+produkter, som virksomheden tilbyder. Fx kan det være vigtigt at produktet ikke bliver tilgængeligt for mange steder, især hvis virksomheden ønsker at beskytte værdien af et brand. Distribution har bl.a. med fordeling af produkter at gøre. Derfor er distribution kun relevant for fysiske produkter. Serviceydelser kan af naturlige årsager ikke distribueres, da de ikke er håndgribelige, men i stedet kan man her opfatte formidlingen af serviceydelsen som distribution. Når man fx ønsker at besøge en forlystelsespark eller se en fodboldkamp, køber man en billet på nettet eller i en
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="20-distribution-b.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 20. Distribution (B)</a></div>
+                    <div><a href="20-2-distributionskanaler.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">20.2 Distributionskanaler →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

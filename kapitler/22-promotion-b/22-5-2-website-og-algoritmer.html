@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22.5.2 Website og algoritmer — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📣</span> 22. Promotion
+                    </a>
+                    <div class="space-y-1">
+                        <a href="22-promotion-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22. Promotion (B)</a>
+<a href="22-1-organisering-af-promotionaktiviteter.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.1 Organisering af promotionaktiviteter</a>
+<a href="22-2-promotionbudskab-og-storytelling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.2 Promotionbudskab og storytelling</a>
+<a href="22-3-massekommunikation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3 Massekommunikation</a>
+<a href="22-3-1-reklame.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.1 Reklame</a>
+<a href="22-3-2-public-relations-pr.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.2 Public Relations (PR)</a>
+<a href="22-3-3-sales-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.3 Sales promotion</a>
+<a href="22-3-4-sponsorering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.3.4 Sponsorering</a>
+<a href="22-4-direct-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.4 Direct marketing</a>
+<a href="22-4-1-loyalitetsklubber-og-nyhedsbreve.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.4.1 Loyalitetsklubber og nyhedsbreve</a>
+<a href="22-5-online-promotion.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5 Online promotion</a>
+<a href="22-5-1-paid-owned-og-earned-media.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.1 Paid, owned og earned media</a>
+<a href="22-5-2-website-og-algoritmer.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">22.5.2 Website og algoritmer</a>
+<a href="22-5-3-seo-og-sem.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.3 SEO og SEM</a>
+<a href="22-5-4-omni-channel-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.4 Omni channel marketing</a>
+<a href="22-5-5-content-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.5 Content marketing</a>
+<a href="22-5-6-sociale-medier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.6 Sociale medier</a>
+<a href="22-5-7-influencer-marketing.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">22.5.7 Influencer marketing</a>
+<a href="case-22-1-innocent-drinks.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.1_Innocent Drinks</a>
+<a href="case-22-2-wide-path-camper.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.2_Wide Path Camper</a>
+<a href="case-22-3-danske-forlystelsesparker.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 22.3_Danske Forlystelsesparker</a>
+<a href="opgaver-og-cases-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 22</a>
+<a href="opsamling-paa-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 22</a>
+<a href="traening-til-kapitel-22.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 22</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 22. Promotion
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    22.5.2 Website og algoritmer
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+En virksomheds hjemmeside kan potentielt set rumme store mængder tekst,
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+billeder, lydfiler og film. En hjemmeside spiller derfor en stor gf E ti dg) J
+salgsindsatsen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hjemmesiden kan bl.a. bruges til:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Reklameformal
+e Branding
+e Sales promotion, fx konkurrencer eller "smagsprøver" på programmer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Salgsarbejdet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+På nuyle hjemmesider findes en "digital sælger", som automatisk foreslår kuden
+forskellige tilkøb af produkter og serviceydelser, når kunden allerede har lagt
+noget i indkøbskurven.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Personligt salg - online via digital hjælper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+4295.00 00 THA000KK neem ROR seede SMADDER
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gengivet med tilladelse fra Lampeexperten
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+V < » hjemmesider benytter sig af at lade en ekspedient poppe op, nar
+person har klikket tilpas længe rundt pa en hjemmeside. Den virtuelle
+ekspedient spørger, om du har brug for hjælp. Hermed kan kunden få online
+hjælp.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lampeexperten har en lille boks, hvor man inden for butikkens åbningstid er
+online og udenfor åbningstiden er offline og klar til at besvare spørgsmål via
+mail. Der er åbenlyse fordele ved at kunne få besvaret et spørgsmål online, sa
+kunden måske bliver hjulpet videre i købsbeslutningsprocessen. Er alle
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ekspedienter i åbningstiden optaget, optræder de som offline på hjemmesiden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheder kan også gøre brug af algoritmer, der automatisk foreslår
+produkter baseret på data om kundens tidligere adfærd. Denne adfærd kan
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+hjemmesiden huske fra kundens sidste besøg.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jepne Godske Olsen, Global Partner Director i virksomheden Raptor Services
+5 A. ver et indblik i, hvordan en algoritme virker. Hjemmesiden og de
+produkter, der vises, varierer alt efter forbrugerens præferencer og tidligere
+købsadfærd. Hjemmesiden kommer til at fungere som en “seelger”, der
+automatisk kan foreslå relaterede produkter. Bemærk, at nemlig.com er i
+konstant forandring, hvilket eksempelvis betyder, at nogle af de nævnte
+attributter i videoen har ændret sig.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hjemmesider er opbygget forskelligt. Nogle hjemmesider har mest karakter af at
+være en indscannet brochure. Det gælder fx ofte for den lokale håndværksmester.
+Andre virksomheder har meget avancerede hjemmesider, der løbende opdateres.
+I nogle tilfælde er hjemmesiderne login-baserede. På den måde kan medlemmer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+få adgang til særlige informationer eller fordele, som andre ikke kan se.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+På euroman.dk bruges hjemmesiden både som reklame for magasinet og til at
+hverve kunder til et nyhedsbrev, som modtages på e-mail.
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Algoritmebaseret marketing</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jeppe Godske Olsen er Global Partner Director i virksomheden Raptor Services
+A/S, som arbejder med algoritmebaseret segmentering. I de følgende videoer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+kommer han ind på, hvordan virksomheder kan arbejde med salg af produkter
+online såvel som offline.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Algoritmer generelt
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Matching af budskaber med målgrupper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opsalg og data fra fysiske butikker
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Signaturvarer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 22.12: Bog & Idé
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Neeste
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+22.5.2 Website og algoritmer En virksomheds hjemmeside kan potentielt set rumme store mængder tekst, billeder, lydfiler og film. En hjemmeside spiller derfor en stor gf E ti dg) J salgsindsatsen.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="22-5-1-paid-owned-og-earned-media.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 22.5.1 Paid, owned og earned media</a></div>
+                    <div><a href="22-5-3-seo-og-sem.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">22.5.3 SEO og SEM →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

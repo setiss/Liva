@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Søg — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="./index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="./index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="./alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="./soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="./index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="./alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="./soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-24 pb-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-extrabold text-slate-900 mb-8">🔍 Søg i alle kapitler</h1>
+        
+        <div class="relative mb-8">
+            <input type="text" id="search-input" placeholder="Skriv et begreb, f.eks. 'PESTEL' eller 'segmentering'..." 
+                   class="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-lg shadow-sm"
+                   autocomplete="off">
+            <div class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
+                <kbd class="hidden sm:inline-block px-2 py-0.5 text-xs bg-slate-100 rounded border border-slate-200">Ctrl+K</kbd>
+            </div>
+        </div>
+        
+        <div id="search-results" class="space-y-3"></div>
+        <div id="search-empty" class="hidden text-center py-12 text-slate-500">
+            <p class="text-lg">Ingen resultater fundet</p>
+            <p class="text-sm mt-2">Prøv et andet søgeord</p>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+let searchData = [];
+
+fetch('search-index.json')
+    .then(r => r.json())
+    .then(data => { searchData = data; });
+
+const input = document.getElementById('search-input');
+const results = document.getElementById('search-results');
+const empty = document.getElementById('search-empty');
+
+input.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    if (q.length < 2) {
+        results.innerHTML = '';
+        empty.classList.add('hidden');
+        return;
+    }
+    
+    const matches = searchData.filter(item => 
+        item.title.toLowerCase().includes(q) || 
+        item.text.toLowerCase().includes(q)
+    ).slice(0, 20);
+    
+    if (matches.length === 0) {
+        results.innerHTML = '';
+        empty.classList.remove('hidden');
+        return;
+    }
+    
+    empty.classList.add('hidden');
+    results.innerHTML = matches.map(item => {
+        let snippet = '';
+        const idx = item.text.toLowerCase().indexOf(q);
+        if (idx >= 0) {
+            const start = Math.max(0, idx - 60);
+            const end = Math.min(item.text.length, idx + q.length + 60);
+            snippet = (start > 0 ? '...' : '') + 
+                      item.text.slice(start, idx) + 
+                      '<mark class="search-highlight">' + item.text.slice(idx, idx + q.length) + '</mark>' +
+                      item.text.slice(idx + q.length, end) + 
+                      (end < item.text.length ? '...' : '');
+        }
+        return `<a href="${item.url}" class="block p-4 bg-white rounded-xl border border-slate-100 hover:border-emerald-300 hover:shadow-sm transition-all">
+            <div class="font-semibold text-slate-800 text-sm">${item.title}</div>
+            <div class="text-xs text-emerald-600 mt-0.5">${item.chapter}</div>
+            ${snippet ? `<div class="text-xs text-slate-500 mt-2">${snippet}</div>` : ''}
+        </a>`;
+    }).join('');
+});
+
+document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        input.focus();
+    }
+});
+</script>
+</body>
+</html>

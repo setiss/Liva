@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 8.3_DK Company — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>♟️</span> 8. Strategi
+                    </a>
+                    <div class="space-y-1">
+                        <a href="8-strategi-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8. Strategi (B)</a>
+<a href="8-1-swot-opsamling.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.1 SWOT-opsamling</a>
+<a href="8-2-tows-matrix.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.2 TOWS-matrix</a>
+<a href="8-3-mission-vision-og-vaerdier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.3 Mission, vision og værdier</a>
+<a href="8-4-konkurrencestrategier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.4 Konkurrencestrategier</a>
+<a href="8-5-vaekststrategier.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.5 Vækststrategier</a>
+<a href="8-6-bowmans-strategiske-ur.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">8.6 Bowmans strategiske ur</a>
+<a href="case-8-1-dan-cake.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 8.1_Dan Cake</a>
+<a href="case-8-2-roskilde-festival.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 8.2_Roskilde Festival</a>
+<a href="case-8-3-dk-company.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 8.3_DK Company</a>
+<a href="opgaver-og-cases-til-kapitel-8.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 8</a>
+<a href="opsamling-paa-kapitel-8.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 8</a>
+<a href="traening-til-kapitel-8.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 8</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 8. Strategi
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Case 8.3_DK Company
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Case 8.3: DK Company
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+dk company
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Venligst stillet til rådighed af DK Company
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+DK Company er en modehandelsvirksomhed, der har hovedsæde i Ikast. DK
+Company er den andenstørste tekstilvirksomhed i Danmark og har 25 brands.
+Virksomheden beskæftiger ca. 1.550 medarbejdere på verdensplan fordelt på
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+sælgere i Danmark og udlandet og produktionsmedarbejdere i Fjernøsten og
+Østeuropa.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden blev grundlagt i 2001 af Jens Poulsen med tøjmærket Jasmin. Tre
+år efter blev Kaffe Clothing Company købt op som den første virksomhed.
+Efterfølgende er mange brands blevet opkøbt og integreret i virksomheden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Strategier er, at UK COImpariy Spotter teKStIvIrKSormrmeder I KrISe, Som Sd
+opkøbes. Herefter skæres forretningskonceptet til og lægges ind under DK
+Company, så virksomhedens drift igen kommer på rette kurs. Grundidéen er at
+samle administrationen i Ikast, hvorved der opnås store besparelser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vi skal kunne gøre en forskel, når vi går i ind i en virksomhed og se
+mulighederne for en positiv bundlinje.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jens Poulsen, grundlægger af DK Company
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+DK Company leverer mere end 1 mio. private label-enheder om året.
+Produkterne udvikles i snævert samarbejde med kunderne, som kun
+indbefatter større kunder og kapitalkæder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Vores strategi om at skabe value-for-money og luxury-for-less
+passer godt til en markedssituation, hvor kunderne passer be va
+deres penge. Vores ambition om nærhed og tætte relationer - både
+til kunder, leverandører og medarbejdere - har skabt et solidt
+fundament.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jens Poulsen, grundlægger af DK Company
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Klarer sig godt i krisetider
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I regnskabsåret 2024 opnåede DK Company en rekordomsætning på næsten
+5,4 mia. kr. Året forinden var omsætningen på 4,8 mia kr.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fremtiden er dog præget af usikkerhed. I 2025 blev Donald Trump indsat som
+præsident, hvilket har skabt usikkerhed. Andre usikkerhedselementer er den
+fortsatte krig i Ukraine, geopolitisk uro samt en svingende dollarkurs.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jens Poulsen er dog optimistisk:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+fornuftigt prisniveau med værdi for pengene, og vi har historisk
+klaret os godt i krisetider, hvor forbrugernes disponible indkomst er
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">under pres.</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jens Poulsen, grundlægger af DK Company
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Organisationsblomsten som strategisk værktøj
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden har et specielt koncerndiagram. Det er ikke tegnet ind i
+traditionelle kasser - men er derimod udformet som en blomst. Jens Poulsen
+forklarer: 'Rodnettet er tøjkoncernens leverandører, hvoraf vi selv ejer fabrikker
+i Kina og Bangladesh. Virksomheden ønsker kun at eje omkring halvdelen af
+produktionen og indkøber den resterende del hos forskellige leverandører.
+Langs stilken findes fællesfunktioner for de forskellige mærker som fx indkøb,
+it og salg. De enkelte mærker udgør blomstens kronblade, og kunderne er bier,
+= d mmer rundt om blomsten.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Blomsten er en levende organisme, og det samme er vores
+virksomhed. Derfor har vi ingen tre- eller femårsplaner i skuffen, for
+det er for låst. Havde jeg lavet sådan en plan for fem år siden, så
+havde jeg skudt for lavt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Jens Poulsen, grundlægger af DK Company
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Organisationsblomst 2014
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+DK Companys organisationsblomst 2014
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Venligst stillet til rådighed af DK Company
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Organisationsblomsten udvikler sig løbende. Ovenfor ses
+organisationsblomsten, som den så ud i 2014.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Organisationsblomst 2025
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+DK Companys organisationsblomst 2024
+Venligst stillet til radighed af DK Company
+Kilder :
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Herning Folkeblad, Vildt rekordregnskab: DK Company tjener 611
+millioner kroner ,01.02.2022
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Fashionforum.dk, DK Company fortsætter stimen af rekordår —,
+06.02.2023
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Fashionforum.dk, DK Company øger omsætning med 533 millioner
+kroner: "Vi har historisk klaret os godt i krisetider" —,22.05.2025
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e DK Companys årsrapport 2024
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Spørgsmål</blockquote>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Redegør for DK Companys idé.</li>
+<li class="ml-4 mb-1 text-slate-700">Redegør for konceptet i blomsten. Inddrag værdikæden.</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Diskuter virksomhedens strategiske muligheder.</li>
+</ul>
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+DK Company er en modehandelsvirksomhed, der har hovedsæde i Ikast. DK Company er den andenstørste tekstilvirksomhed i Danmark og har 25 brands. Virksomheden beskæftiger ca. 1.550 medarbejdere på verdensplan fordelt på sælgere i Danmark og udlandet og produktionsmedarbejdere i Fjernøsten og Østeuropa.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-8-2-roskilde-festival.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 8.2_Roskilde Festival</a></div>
+                    <div><a href="opgaver-og-cases-til-kapitel-8.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opgaver og cases til kapitel 8 →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

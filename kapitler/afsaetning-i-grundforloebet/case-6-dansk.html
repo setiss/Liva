@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 6_dansk — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📚</span> Grundforløbet
+                    </a>
+                    <div class="space-y-1">
+                        <a href="01-1-marketing-en-grundbog-i-afsaetning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">01_1_Marketing_–_en_grundbog_i_afsætning</a>
+<a href="1-virksomheden-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1. Virksomheden (GF)</a>
+<a href="2-id-og-forretningsmodeller-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2. Idé og forretningsmodeller (GF)</a>
+<a href="3-den-interne-situation-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. Den interne situation (GF)</a>
+<a href="4-den-eksterne-situation-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4. Den eksterne situation (GF)</a>
+<a href="5-koebsadfaerd-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">5. Købsadfærd (GF)</a>
+<a href="6-maalgruppen-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">6. Målgruppen (GF)</a>
+<a href="7-strategi-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7. Strategi (GF)</a>
+<a href="case-1-hansens-floedeis.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1_Hansens Flødeis</a>
+<a href="case-2-racket-club.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 2_Racket Club</a>
+<a href="case-3-ecooking.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3_ECOOKING</a>
+<a href="case-4-den-oekologiske-forbruger.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4_Den økologiske forbruger</a>
+<a href="case-5-skagenfood.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 5_Skagenfood</a>
+<a href="case-6-dansk.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 6_dansk</a>
+<a href="case-7-yarnjunkies.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7_YarnJunkies</a>
+<a href="opgaver-og-cases-til-afsaetning-paa-grundforloebet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til Afsætning på grundforløbet</a>
+<a href="opsamling-paa-afsaetning-i-grundforloebet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på Afsætning i grundforløbet</a>
+<a href="traening-til-afsaetning-i-grundforloebet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til afsætning i grundforløbet</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← Grundforløbet
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Case 6_dansk
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Case 6: dansk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+dansk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mandag - Fredag 10-18
+Lørdøg - Søndag 10-15
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Morten Haase
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I Danmark har vi mange kæder inden for tøjbranchen. En af dem er dansk -
+tidligere hed den Dansk Outlet - en tøjkæde, der har hovedkontor i Ikast i
+Jylland med 40 butikker rundt om i Danmark, som man kan se af kortet
+nedenfor. Desuden har dansk en webshop. På hovedkontoret er bogholderi,
+indkøb, produktudvikling, engroslager, administration, marketing og IT-
+afdeling. Der er 35 ansatte i Ikast, og ude i butikkerne er der over 350
+medarbejdere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ko” >ver dansk butikker.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De fleste forretninger er i Jylland, tre er på Fyn og 10 på Sjælland. Den største
+er i Langeskov med 3.000 kvm. Det er bevidst, at der ikke er nogen i
+Storkøbenhavn, da konceptet passer bedst til provinsen. Forretningerne ligger
+derfor typisk i udkanten af mindre provinsbyer med et stort opland.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kæden har bygget deres koncept op på at sælge tøj til hele familien, og de er
+kendetegnet ved at være de billigste på markedet med et bredt og dybt
+sortiment. Desuden fokuserer de meget på, at de har faguddannet personale
+til at servicere kunderne.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Video: Præsentation af Nicolai Nørskov og dansk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Historien om dansk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+dansk blev etableret under navnet Dansk Outlet tilbage i 2004 af Peter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+— Jor / sen og Jens Nørskov. Peter Jørgensen startede i 1988 tøjvirksomher
+Ca. >, og Jens Nørskov havde en kæde af tøjforretninger. Den første Dan.
+Outlet-butik åbnede i Ikast, senere kom der én i Mariager, og i dag er
+butikkerne som nævnt rundt om i landet. Forretningerne startede blot som et
+lagersalg, og der var ikke et koncept. I dag er det baseret på franchise-
+konceptet, hvor ejerskabet er delt mellem dansk og den enkelte franchisetager
+</p>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">51% til dansk og 49% til franchisetageren. Franchisetager er typisk en lokal</li>
+</ul>person eller familie i området - dansk kalder dem ”local heroes”. De er
+<p class="text-slate-700 leading-relaxed mb-4">
+engageret i lokalområdet eksempelvis aktive i den lokale sportsklub eller
+sponserer lokale sportsklubber fx holdboldklubben. 12 af kædens butikker er
+100% ejet af dansk, og her er ansat en butikschef til at styre forretningen. I
+2023 blev en kædeansvarlig ansat, hvis opgave er at tage rundt til
+forretningerne og have dialog med franchisetager eller butikschefen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I 2009 begyndte daværende Dansk Outlet også at satse på e-commerce, og
+webshoppen styres fra hovedkontoret i Ikast.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I 2014 startede Peter Jørgensen og Jens Nørskov et generationsskifte, hvor Jens
+Nørskovs søn, Nicolai, og Peter Jørgensens søn, Mikkel, blev medejere af
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kæden gennemgik 2023 en rebranding, hvor forretningernes visuelle udtryk -
+dvs. skilte og indoor displays - blev skiftet ud til det nye logo og design.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Video: Historien om dansk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Sortiment
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+dansk har 40% egen produktion med mærkerne Carnét, Yellow Stone, Nero
+Loaded til mænd og Steenholt, ChaCha, ZbyZ og Jam til kvinder samt N.O.H.R.,
+Queenz og Impala til børn. dansk får produceret deres produkter af
+leverandører i Kina, Indien, Pakistan, Bangladesh og Tyrkiet. dansk tager selv
+ud og besøger fabrikkerne, men de har også nogle agenter i markedet, der
+vælger produkter for dem. I foråret 2023 købte Sindico Group, der ejer dansk,
+tøjkæden Marcus og brandet Pre End. Med i købet var også Marcus wholesale
+afdeling med en trecifret millionomsætning. Strategien var, at dansks egen
+wholesale afdeling sammen med Marcus store wholesale salg kunne skabe en
+bedre forhandlingsstyrke overfor deres leverandører.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+virksomhedens kerneområde: beklædning til hele familien. Flere varegrupper
+er derfor ikke længere at finde i forretningen, hvilket giver et mere strømlinet
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">udtryk og ikke forbinder det til en forretning, hvor man kan finde det meste.</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+Navnet outlet er også fjernet i det nye navn, da det kan give nogle
+associationer, der ikke passer til det nye koncept.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Prøv selv at gå ind på dansks hjemmeside — og se deres sortiment og priser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Målgrupper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Man har valgt at kunne servicere hele familien og sælge tøj i alle størrelser - op
+til 8XL til mænd og op til str. 64 til kvinder. Man satser meget på "mommy
+segmentet", da det ofte er moren i familien, der tager initiativ til at købe tøj
+både til mand og børn. Målgruppen fokuserer mere på pris end på brand.
+Denne målgruppe er typisk den nedre del af middelklassen, hvor tøjbudgettet
+er ''”der det gennemsnitlige i Danmark.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Efter en re-branding og re-positionering af kæden vil man fremover også
+fokusere på den øvre del af middelklassen som kædens målgruppe, og i
+kommunikationen vil man fortælle om kvalitet til en konkurrencedygtig pris.
+Mange af deres bedste produkter kan konkurrere med dyrere kæders
+produkter på kvalitetsparameteren.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Målgruppen på webshoppen er den øvre del af middelklassen og over 50% af
+kunderne på webshoppen kommer fra Storkøbenhavn og 10% fra Århus. Rigtig
+mange af kunderne køber plus-size tøj. Dette segment vil helst købe på nettet,
+og det gælder også for dansks kunder. Kunden får typisk sine varer 1 til 3 dage
+efter bestilling, og netop denne kundegruppe ser det ikke som et problem, da
+de godt kan vente, bare prisen er rigtig.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Salget både online og i forretningerne er påvirket af flere forhold. dansk kan
+tydeligt mærke, når der fx er kommet børnepenge eller feriepenge. Men
+inflationen har også påvirket kædens salg. Hvor mange af deres loyale kunder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Distribution
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+dansk har etableret et robotlager i den vestjyske by Ulfborg. Robotlageret har
+effektiviseret distribution og lagerstyringen markant og givet dansk mulighed
+for bedre og hurtigere flow i distributionskanalen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Video: dansks robotlager
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Flere butikker
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når man ønsker at starte en ny butik op i kæden, tager Nicolai ud til det
+område, man ønsker at etablere sig i. Han kører rundt og ser på, om der er
+potentiale for at starte en butik op. Han undersøger, om der er konkurrenter,
+og hvis der er, så hvor mange der er, men han ser også konkret på selve
+placeringen; en dansk skal ligge i et trafikeret område og gerne i et
+industriområde, hvor man kan komme til i bil, og hvor det er nemt at parkere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Markedsføring og kommunikation
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+et katalog i deres fysiske postkasse. Man annoncerer i den lokale avis, på radio
+og laver lokale sponsorater. Nedenfor ses Facebook-siden for afdelingen i
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Brønderslev.</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Facebookside for dansk i Brønderslev
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+bruger også de sociale medier lokalt til at kommunikere til målgruppen.
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Fremtiden</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Om 5 år satser dansk på at have 40 til 45 butikker og have etableret sig på
+nærmarkeder som fx Sverige og Tyskland.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fotos fra dansk
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">o</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Dansks hovedkvarter i Ikast.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Spørgsmål
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Udarbejd en virksomhedskarakteristik af dansk.</li>
+<li class="ml-4 mb-1 text-slate-700">Udarbejd en SWOT-opstilling for dansk.</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Beskriv virksomhedens idé og strategi.</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Beskriv målgrupperne for dansk.</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+= i. Beskriv købsadfærden ved køb af tøj til far, mor og to børn i dans!
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Sn.dk: Dansk Outlet slår dørene op til stor butik i Holbæk, 20.04.2022
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Danskoutlet.dk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Alle fotos i casen er gengivet efter aftale med dansk.
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I Danmark har vi mange kæder inden for tøjbranchen. En af dem er dansk - tidligere hed den Dansk Outlet - en tøjkæde, der har hovedkontor i Ikast i Jylland med 40 butikker rundt om i Danmark, som man kan se af kortet nedenfor. Desuden har dansk en webshop. På hovedkontoret er bogholderi, indkøb, produktudvikling, engroslager, administration, marketing og IT- afdeling. Der er 35 ansatte i Ikast, og ude i butikkerne er der over 350 medarbejdere. De fleste forretninger er i Jylland, tre er på Fyn og 10 på Sjælland. Den største er i Langeskov med 3.000 kvm. Det er bevidst, at der ikke er nogen i...
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-5-skagenfood.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 5_Skagenfood</a></div>
+                    <div><a href="case-7-yarnjunkies.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Case 7_YarnJunkies →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

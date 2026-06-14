@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conzoom-modellen — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🎯</span> 11. Segmentering
+                    </a>
+                    <div class="space-y-1">
+                        <a href="11-segmentering-maalgruppevalg-og-positionering-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11. Segmentering, målgruppevalg og positionering (B)</a>
+<a href="11-1-markedssegmentering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.1 Markedssegmentering</a>
+<a href="11-2-segmenteringsprocessen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.2 Segmenteringsprocessen</a>
+<a href="11-3-livsstilsanalyser.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.3 Livsstilsanalyser</a>
+<a href="11-4-personaer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.4 Personaer</a>
+<a href="11-5-maalgruppevalg.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.5 Målgruppevalg</a>
+<a href="11-6-positionering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.6 Positionering</a>
+<a href="case-11-1-kender-du-typen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.1_Kender du typen</a>
+<a href="case-11-2-chips-med-matematik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.2_Chips (med matematik)</a>
+<a href="case-11-3-nature-footwear.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.3_Nature Footwear</a>
+<a href="conzoom-modellen.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Conzoom-modellen</a>
+<a href="gallup-kompas.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Gallup Kompas</a>
+<a href="opgaver-og-cases-til-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 11</a>
+<a href="opsamling-paa-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 11</a>
+<a href="traening-til-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 11</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 11. Segmentering
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Conzoom-modellen
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+A Velfunderede husejere
+o B Komfort og hygge
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Clivet på landet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o D Velhavere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o E Urban mangfoldighed
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Conzoom-modellen er opdelt i 9 livsstilsgrupper, der igen er underopdelt i 39
+befolkningstyper eller segmenter. De 9 livsstilsgrupper er beskrevet nedenfor,
+ligesom der findes data om de enkelte segmenter. Du kan også læse
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+dybdegående beskrivelser af segmenterne på Geomatics hjemmeside
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+A Velfunderede husejere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gruppe A Velfunderede husejere er overvejende par med en pæn indkomst og
+tilsvarende formue eller en meget høj indkomst og endnu ingen formue. Den
+første gruppe er typisk fra sidst i 40'erne, og til midt i 60'erne og den sidste
+gruppe er fra 30'erne og op.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Denne familietype har typisk 2-3 børn, som ikke nødvendigvis bor hjemme
+længere, og de har et højere uddannelsesniveau end gennemsnittet. Mange i
+gruppen er selvstændige, topledere eller lønmodtagere i de højere lønklasser, og
+en god del har en husstandsindkomst på over en million om året.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+mange har alarm for at sikre sig mod indbrudstyve. Til huset hører ofte en pæn
+have, som familietypen selv passer, ligesom de også selv ofte udfører
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">malerarbejde på huset. De kan godt lide gør-det-selv arbejde, ikke nødvendigvis</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+for at spare penge, men ud fra devisen, at selvgjort er velgjort.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gruppe A har mindst en bil, hvoraf den ene ofte er en firmabil. En forholdsvis stor
+del har også sommerhus.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Velfunderede boligejere er velorienterede og læser de større morgenaviser,
+ligesom de også læser tidskrifter og magasiner.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Godt 17 % af Danmarks husstande befinder sig i gruppe A.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Type Velfunderede husejere Andel af husstande i gruppe A
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Al Overskud i hverdagen 23,2%
+= få Aktive børnefamilier %
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+A3 Gyldne hjem 18,8%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+A4 Lykkesmed 15,0%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+AS Familien Danmark 20,3%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typer i gruppe A
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+B Komfort og hygge
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gruppe B Komfort og hygge er en bred og sammensat gruppe. De udgør en ret
+gennemsnitlig del af den brede danske befolkning. De stræber ikke højt, men er
+generelt fornuftige i deres valg. Størstedelen af gruppen har husstandindkomster
+lige under gennemsnittet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Uddannelsesmæssigt ligger gruppen lidt under gennemsnittet, og typisk tilhører
+Komfort og hygge-gruppen de lavere socialklasser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+samvær.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De har typisk boliger pa 80-115 m?, og rigtig mange bor i række- eller kædehuse
+fra midten af 80'erne. Gruppe B bor typisk i mindre provins- eller landsbyer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Haven og vedligeholdelse af huset fylder meget i segmentet, som også bruger
+fritiden på aktiviteter som at sy og strikke, fordi de finder det hyggeligt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Over halvdelen af gruppe B har bil, andre kører på knallert. De er godt kendt med
+kollektiv transport.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Godt 14 % af Danmarks husstande befinder sig i gruppe B.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Type Komfort og hygge Andel af husstande i gruppe B
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+B1 Dannevang 16,1%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+B2 Optimisterne 22,0%
+= E Plads i reden 6
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+B4 Under bøgen 13,1%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+BS Smat og godt 17,3%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typer i gruppe B
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Livet på landet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+C Livet på landet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I gruppe C Livet på landet finder vi både egentlige landmænd og de udflyttere til
+landbrugsejendomme, som vil et liv på en gård, men som ikke har nogen
+erhvervsmæssig tilknytning til landbruget. På landet kan man få mere bolig for
+pengene. Til gengæld er der færre jobmuligheder, og der skal ofte bruges flere
+penge og tid på at pendle til og fra arbejde.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I gruppen er der både familier, der ejer deres bolig, men også en del, som bor til
+leje. Der er store økonomiske forskelle i gruppen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hos landmænd er fritiden ofte sparsom, og i segmentet bruges fritiden ofte på
+have- og vedligeholdelsesarbejde. Der lægges vægt på hjemmebag og
+naturoplevelser. Familier i segmentet tager ofte aktiv del i lokalsamfundet i
+forsamlingshuset eller i gymnastikforeningen, og de går oftere i kirke end
+gennemsnittet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Godt 10 % af Danmarks husstande befinder sig i gruppe C.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+C2
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">c3</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+C4
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+cS
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typer i gruppe C
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Landbofamilier
+Grønne fingre
+Par i hjerter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Elmely
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Liebhaver-ejendom for velhavere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Østergaard
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+D Velhavere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Som navnet antyder, dækker gruppe D Ve/havere over nogle af landets mest
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+velhavende husstande og familier. Denne gruppe bor, som de gerne vil - ofte i
+herskabs- og penthouselejligheder eller arkitekttegnede villaer i et eftertragtet
+kvarter. Det er boligtyper, der ofte har attraktiv udsigt.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mange i gruppe D Velhavere har formue eller en høj indkomst og er i gang med at
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+opbygge en formue. De gælder også deres børn, som ofte arbejder samtidig
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+LÅ - '
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En del går jævnligt i kirke, til klassisk koncert, ballet, på museum eller til en
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+kunstudstilling. De rejser meget, og ofte er der tid og penge til både kortere
+weekendrejser og længere oversøiske rejser. Andre har sommerhus.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ve/havere er godt orienteret og foretrækker trykte medier som Børsen, Berlingske
+Tidende og Jyllands-Posten. De læser også mange tidsskrifter. De er aktive på
+internettet og er først med de nyeste trends.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+9 % af Danmarks husstande er i gruppe D.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Type Velhavere Andel af husstande i gruppe D
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+D1 Formue og formåen 28,4%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+D2 Solsiden 24,0%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+D3 Guldkant på tilværelsen 20,7%
+= c Nærmest lykkelige %
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typer i Gruppe D
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+E Urban mangfoldighed
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gruppe E Urban mangfoldighed består i overvejende grad af singler, som bor tæt
+sammen i hovedstaden eller i større byer. Der kan også forekomme familier med
+børn i segmentet, ligesom både unge og gamle kan bo i samme husstand.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Halvdelen bor til leje, og halvdelen bor i mindre andels- eller ejerlejligheder i
+tætliggende etage-ejendomme. Boligerne er typisk fra før 1970, og størrelsen
+varierer mellem 60-90 m?.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De fleste i segmentet er under 60 år og har ingen børn. I den ældste del af
+gruppen har man kun grundskoleuddannelse eller kortvarige uddannelser, mens
+man i den yngre del af gruppen er i færd med at uddanne sig. Næsten en
+tredjedel er født i andre lande end Danmark. Indkomsten ligger under middel, og
+formuen er meget lille. De fleste i gruppe E tilfører de lavere socialklasser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ve a - =D 0 - y
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+og til underholdning. Internettet bruges ogsa aktivt af en stor del til sociale
+medier. De gar hyppigt i byen til koncerter eller besøger venner. Et besøg i
+fitnesscenteret er den foretrukne motionsform.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Der er stor forskel på undergruppernes medieforbrug.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Godt 15 % af Danmarks husstande tilhører gruppe E.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Type Urban mangfoldighed Andel af husstande i gruppe E
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+E1 City-singler 16,5%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+E2 Ung andel 13,2%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+E3 Hjerterum 14,7%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+E4 Bysbørn 11,8%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+E5 Familiebånd 19,7%
+= E Urban Living h
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typer i gruppe E
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+F Vid og velstand
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gruppe F Vid og velstand findes i mange varianter af aldersklasser og
+uddannelsesniveauer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typisk har segmentet en bolig på 70-115 m? i etageboliger. Der er ofte tale om
+renoverede og istandsatte ejendomme eller attraktive og efterspurgte
+nybyggerier i storbyer. Halvdelen er singler, og flertallet har ingen børn. Der er
+mange unge og mange ældre i segmentet, og flere end gennemsnittet har en
+lang videregående uddannelse.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De besøger ofte venner eller har gæster til middag, og de serverer ofte lidt
+særligt lækkert og prioriterer denne form for livsnydelse. Segmentet går ofte på
+museum, kunstudstillinger, bruger biblioteket og tager til koncert.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De er modebevidste og køber tidsskrifter for at holde sig opdateret. De vil gerne
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+holde sig i form, og mange går i fitnesscenter eller løber.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Godt 9 % af Danmarks husstande er i gruppe F.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Type Vid og velstand Andel af husstande i gruppe F
+F1 Byens puls
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+F2 Kulturnauter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+F3 Første parket
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+F4 Højt at flyve
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typer i gruppe F
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Byliv i mondæne lejligheder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+G Seniorer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De fleste er på efterløn eller pension, og deres gennemsnitsindkomst er lavere
+end gennemsnitsdanskerens. Halvdelen har bil og nogle har sommerhus. Næsten
+alle er etnisk danskere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I gruppen er der en del, som aldrig bruger en computer. Omvendt bruger to ud af
+tre i gruppen internettet fra deres computer. Nogle er meget aktive, men en stor
+andel deltager aldrig i kulturelle aktiviteter. De ser meget tv, mest DR1 og mindre
+TV2. De kan godt lide at læse om de kongelige og de kendte. De køber eller bytter
+sig til ugeblade. Der læses også bøger og lokalaviser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Godt 10 % af de danske husstande tilhører gruppe G.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Type Seniorer Andel af husstande i gruppe G
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+G1 Livets otium 26,1%
+=> ig Vise veteraner %
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+G3 Velfærdsbyggerne 30,9%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+G4 Pleje og omsorg 30,5%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typer i gruppe G
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+H Unge på vej
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gruppe H Unge på vej er ung og dynamisk. Her mødes unge fra hele landet på
+kollegier og lignende i og omkring universitetsbyer og andre større provinsbyer.
+Gruppen råder ikke over store personlige formuer, men man gør noget ved det -
+tager en uddannelse og har planer for fremtiden. Når de unge på vej ikke læser
+eller arbejder ved siden af, er der gang i de sociale netværk.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det er særlig vigtigt at kommunikere til gruppen på deres egne præmisser. Ikke
+mindst hvis man kender til mødesteder (virtuelle som fysiske) og rutiner.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Lidt over 4 % de danske husstande befinder sig i gruppe H.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+H2 Første stop 63,0%
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">T .</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+yper i gruppe H
+I Provinsliv
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I Gruppe I Provinsliv bor man ofte alene og har ingen børn. Flertallet er født i
+Danmark. Uddannelsesmæssigt har gruppen ofte en erhvervsuddannelse eller
+ingen uddannelse.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En tredjedel er pensionister, og mere end halvdelen er på offentlig forsørgelse.
+Næsten alle andre er lønmodtagere på grundniveau med en husstandsindkomst
+under gennemsnittet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Boligstørrelsen er på 40-90 m', og de fleste bor i ældre etageejendomme i
+provinsbyerne eller i mindre huse i de omkringliggende landsbyer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En ac: klarer sig uden bil. De bruger ofte computer og er på internettet i sto: stil,
+hvor de både følger sociale medier og handler. Mange spiser færdigretter af og til
+fremfor at bruge tid i køkkenet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De hører ikke meget radio og ser heller ikke så meget tv. Aviser læses kun om
+søndagen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mere end 11 % af de danske husstande er i segmentet Provinsliv.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Type Provinsliv Andel af husstande i gruppe I
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+mn Nutidens unge 18,7%
+I2 Hjemme bedst 39,5%
+13 Korssting og platter 5,9%
+14 Livets gang 35,9%
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Typer i gruppe I
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Conzoom-modellen er opdelt i 9 livsstilsgrupper, der igen er underopdelt i 39 befolkningstyper eller segmenter. De 9 livsstilsgrupper er beskrevet nedenfor, ligesom der findes data om de enkelte segmenter. Du kan også læse Gruppe A Velfunderede husejere er overvejende par med en pæn indkomst og tilsvarende formue eller en meget høj indkomst og endnu ingen formue. Den første gruppe er typisk fra sidst i 40'erne, og til midt i 60'erne og den sidste gruppe er fra 30'erne og op.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-11-3-nature-footwear.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 11.3_Nature Footwear</a></div>
+                    <div><a href="gallup-kompas.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Gallup Kompas →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

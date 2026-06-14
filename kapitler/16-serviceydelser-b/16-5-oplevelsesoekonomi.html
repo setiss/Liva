@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16.5 Oplevelsesøkonomi — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🤝</span> 16. Serviceydelser
+                    </a>
+                    <div class="space-y-1">
+                        <a href="16-serviceydelser-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16. Serviceydelser (B)</a>
+<a href="16-1-serviceydelser-som-begreb.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16.1 Serviceydelser som begreb</a>
+<a href="16-2-servicepakke-og-vaerdikaede.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16.2 Servicepakke og værdikæde</a>
+<a href="16-3-serviceleverancesystem.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16.3 Serviceleverancesystem</a>
+<a href="16-4-de-7-p-er.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">16.4 De 7 P’er</a>
+<a href="16-5-oplevelsesoekonomi.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">16.5 Oplevelsesøkonomi</a>
+<a href="case-16-1-den-danske-bankbranche.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 16.1_Den danske bankbranche</a>
+<a href="case-16-2-koebenhavns-skiklub.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 16.2_Københavns Skiklub</a>
+<a href="case-16-3-nordic-seaplanes.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 16.3_Nordic Seaplanes</a>
+<a href="opgaver-og-cases-til-kapitel-16.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 16</a>
+<a href="opsamling-paa-kapitel-16.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 16</a>
+<a href="traening-til-kapitel-16.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 16</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 16. Serviceydelser
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    16.5 Oplevelsesøkonomi
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+© Fra råvareøkonomi til oplevelsesøkonomi
+o Eksempel: Rainforest Café
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Fem væsentlige faktorer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o De fire oplevelsesdomæner
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Eksempel: Med mormor og morfar på oplevelse i zoo
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= It: ed, at mange forbrugere har fået større købekraft og er blevet me!
+krævende, er begrebet oplevelsesøkonomi opstået.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I oplevelsesøkonomien tilføres salget af en vare eller en serviceydelse en form for
+oplevelse, der øger forbrugerens værdi af produktet/serviceydelsen. Kodeordet er
+differentiering via oplevelser, der forøger værdien af produktet eller
+serviceydelsen, og det giver derfor mulighed for en højere pris.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fra råvareøkonomi til oplevelsesøkonomi
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Oplevelsesøkonomi handler om, at forbrugeren skal tillægge oplevelsen en stor
+værdi, således at forbrugeren er villig til at betale en højere pris for oplevelsen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I illustration 16.8 kan man se, hvordan produktet kaffebønner gennemgår en
+transformation i graden af differentiering og prisfastsættelse.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 16.8: Oplevelsesøkonomi - fasemodel
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I første fase under betegnelsen råvareøkonomi, køber en kunde, som i realiteten
+er kaffeimportør, en større mængde sække af kaffebønner til markedsprisen.
+Kaffebønnerne gennemløber de næste to faser og ender i serviceøkonomien,
+som en kaffe i en kantine på en skole eller arbejdsplads til en pris af ca. 12 kr. I
+oplevelsesøkonomien differentieres kaffebønnerne yderligere som produkt og
+serveres som en specialkaffe. Det kan fx være en latte macchiato, double-shot på
+minimælk, 54,5 grader varm i en flot keramik-kop med mælkeskum på toppen
+dekoreret med et lille hjerte af kakaopulver, samt en lille belgisk chokolade ved
+siden af. Kaffen nydes fx i dejlige omgivelser i Emmerys lokaler med god plads og
+muligheder for at læse dagens avis. Prisen er nu minimum 50 kr.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Rainforest Café
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+frokost/aftensmad eller afvikle fødselsdage/events i omgivelser som er en kopi
+af regnskoven. Virksomheden arrangerer også skræddersyede events til
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">forskellige målgrupper. Det kan fx være et event til en virksomhed der har</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+forretningsforbindelser på besøg, en virksomhed der vil afholde et
+medarbejderarrangement, eller en familie der ønsker at holde en fest eller
+fødselsdag.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Specielt børnene får ud over en madoplevelse (fx Python Pasta) en oplevelse af
+dyr og planter, som man ellers kun kan opleve i den farlige regnskov. En
+fødselsdagspakke omfatter:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e A selection from our special Wild Bunch Birthday Bash Menu.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Children's Menu Activity Book & Crayons.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e A Wild Safari Hat.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Wild Bunch Collectible Kids Plate.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+irthday Bash Invitations & Envelopes!
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+“N
+NV
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fem væsentlige faktorer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Essensen i oplevelsesøkonomi er den gode oplevelse. Pine og Gilmore har i deres
+artikel tilbage fra 1999 "The Experience Economy" lavet en liste over fem
+væsentlige faktorer, der er nødvendige for virksomhederne at følge for at skabe
+gode oplevelser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 16.9: Fem væsentlige faktorer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Faktor Forklaring
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Præcist tema LEGOLAND eller Disney World - man ved med det
+samme, hvad det drejer sig om.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+O, velse via positive Konstante signaler til kunden om, at oplevelsen er.
+indtryk. Sætte kundens gang:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+sanser i gang i forhold til e Ikke bare stå i kø, men at få et eller andet i
+oplevelsen. hånden, så oplevelsen allerede er startet - fx
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+kaffekop med eget navn på
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Atkunne følge med i sin oplevelse - en
+medarbejder informerer: "det er dit produkt, der
+er i ovnen lige nu"
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Atfå en lille smagsprøve som appetitvækker
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Atkunne høre oplevelsen - fx løvebrøl i zoo
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Atkunne dufte oplevelsen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Negative distraktioner Undgå at lave negative "forstyrrelser" i kundens
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+skal elimineres oplevelse. Hvis konceptet er selvafrydning i en
+familierestaurant, kan afrydning være positivt, hvis
+madspanden er formet som gabet på et vildt dyr eller
+en stor kødædende blomst.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Fysisk produkt - kunden Hvis en kunde har haft en god oplevelse, vil kunden
+får/kan købe et fysisk gerne huske oplevelsen via et produkt som fx en t-shirt,
+produkt/souvenir et foto eller et glas med virksomhedens logo. Det
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Udnyt flest mulige sanser Sæt kundens sanser i gang, det er med til at gøre
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Se, høre, føle, smage og oplevelsen større og får kunden til at huske oplevelsen</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+dufte. længere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Frit efter Pine, J. and Gilmore, J.: The Experience Economy, Harvard Business School
+Press, Boston, 1999.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De fire oplevelsesdomæner
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+En oplevelse kan opdeles efter, hvilket oplevelsesdomæne den hører til. Der
+arbejdes med fire forskellige oplevelsesdomæner.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 16.10: De fire oplevelsesdomæner
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Frit efter Joseph Pine og James Gilmore: The Experience Economy - Work is Theatre
+and Every Business a Stage. Harvard Business School Press, 1999.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+en cykel i et motionscenter, og du er meget mindre aktiv, når nogen har
+arrangeret en rundtur på et museum på en studietur.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Den vertikale dimension. Denne dimension er ikke lige så logisk og entydig. Det
+drejer sig om, hvordan en kunde møder oplevelsen. Ved tilegnelse er det
+oplevelsen som "kommer" og påvirker kunden fx ved et biografbesøg eller besøg
+i en zoologisk have. Ved fordybelse er det kunden, som "kommer" til oplevelsen
+for at fordybe sig i den. Fx når en kunstinteresseret tager på udstilling, eller når
+to kammerater spiller Fortnite.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Idéen med illustrationen er, at virksomheden skal forstå, hvilke af ovenstående
+fire oplevelsesdomæner personen er interesseret i og hjælpe kunden til at få
+mest mulig oplevelse ud af produktet eller servicen. I illustrationen er der et felt i
+midten. Ifølge Pine & Gilmores teori, er dette det såkaldte "Sweet Spot". Den
+optimale oplevelse er med andre ord, en oplevelse som omfavner samtlige fire
+oplevelsesdomeener:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Underholdning. I oplevelsesdomænet “underholdning” er forbrugeren mere
+passiv og nyder oplevelsen. Det kan fx være en tur i biografen eller en
+koncertoplevelse.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Uddannelse. I oplevelsesdomænet "uddannelse" er der fokus på, at kunden
+lærer noget i forbindelse med oplevelsen. Forbrugeren deltager derfor mere
+aktivt i oplevelsen. Det kan fx være at være på skiskole eller at tage på
+Nationalmuseet og blive klogere på vikingetiden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Æstetik. Æstetik handler om, at forbrugeren fordyber sig i oplevelsen, men
+deltager mere passivt. Det kan fx være en gåtur ved Møns Klint, at stå foran
+Eiffeltårnet eller at se en kunstudstilling.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eskapisme. I dette domæne fordyber forbrugeren sig samtidig med, at man er
+en aktiv deltager i oplevelsen. Det kan fx være ved at skyde paintball eller prøve
+at slippe ud af et escape room.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Karl på 8 og Ida på 10 er i Zoo med deres morfar og mormor. Alle overværer
+det store løveshow -underholdning - hvor man via hovedtelefonerne kan få lidt
+info om løvernes adfærd på savannen - uddannelse. Det gider Karl og Ida dog
+ikke. De vil ned til buret og mærke, hvor stiv og fedtet en løvemanke, er og
+høre løvetæmmeren fortælle om, hvor mange der årligt bliver angrebet af løver
+i Afrika - uddannelse. Herefter fortsætter Karl og Ida rundt i hele Zoo, hvor de
+deltager aktivt i en konkurrence om at finde løsningen på 15 forskellige
+dyrespørgsmål. Fx om kamelen har én eller to pukler? - eskapisme. Mormor og
+morfar har indfundet sig på Zoo'ens skyggefulde café med udsigt til den lille
+skovsø. Morfar læser op fra en lille folder, som han fik gratis ved indgangen, om
+Zoo'ens historie og baggrunden for en berømt arkitekts tanker bag
+udformningen af løveanlægget æstetik. Det er vigtigt, at virksomheden er i
+stand til at dække behov for kunder tilhørende alle fire oplevelsesdomeener.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hanløven nyder livet i solen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 16.7: Silkeborg som Danmarks outdoor-hovedstad
+Opgave 16.8: REGAN Vest
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 16.9: Feriebilleder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+& Forrige
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= It: ed, at mange forbrugere har fået større købekraft og er blevet me! krævende, er begrebet oplevelsesøkonomi opstået. I oplevelsesøkonomien tilføres salget af en vare eller en serviceydelse en form for oplevelse, der øger forbrugerens værdi af produktet/serviceydelsen. Kodeordet er differentiering via oplevelser, der forøger værdien af produktet eller serviceydelsen, og det giver derfor mulighed for en højere pris.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="16-4-de-7-p-er.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 16.4 De 7 P’er</a></div>
+                    <div><a href="case-16-1-den-danske-bankbranche.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Case 16.1_Den danske bankbranche →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

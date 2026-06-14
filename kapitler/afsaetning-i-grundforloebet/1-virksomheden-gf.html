@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Virksomheden (GF) — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>📚</span> Grundforløbet
+                    </a>
+                    <div class="space-y-1">
+                        <a href="01-1-marketing-en-grundbog-i-afsaetning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">01_1_Marketing_–_en_grundbog_i_afsætning</a>
+<a href="1-virksomheden-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">1. Virksomheden (GF)</a>
+<a href="2-id-og-forretningsmodeller-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">2. Idé og forretningsmodeller (GF)</a>
+<a href="3-den-interne-situation-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. Den interne situation (GF)</a>
+<a href="4-den-eksterne-situation-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4. Den eksterne situation (GF)</a>
+<a href="5-koebsadfaerd-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">5. Købsadfærd (GF)</a>
+<a href="6-maalgruppen-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">6. Målgruppen (GF)</a>
+<a href="7-strategi-gf.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7. Strategi (GF)</a>
+<a href="case-1-hansens-floedeis.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1_Hansens Flødeis</a>
+<a href="case-2-racket-club.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 2_Racket Club</a>
+<a href="case-3-ecooking.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 3_ECOOKING</a>
+<a href="case-4-den-oekologiske-forbruger.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 4_Den økologiske forbruger</a>
+<a href="case-5-skagenfood.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 5_Skagenfood</a>
+<a href="case-6-dansk.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 6_dansk</a>
+<a href="case-7-yarnjunkies.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7_YarnJunkies</a>
+<a href="opgaver-og-cases-til-afsaetning-paa-grundforloebet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til Afsætning på grundforløbet</a>
+<a href="opsamling-paa-afsaetning-i-grundforloebet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på Afsætning i grundforløbet</a>
+<a href="traening-til-afsaetning-i-grundforloebet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til afsætning i grundforløbet</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← Grundforløbet
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    1. Virksomheden (GF)
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+a
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside om Materialer 1.
+MV Afsætning i grundforløbet Virks
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© 1. Virksomheden (GF) omh
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+° 2. Idé og forretningsmodeller (GF) eden
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© 3. Den interne situation (GF) (GF)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o 4, Den eksterne situation (GF)
+o 5, Købsadfærd (GF)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+2 ' Virksomhedsbegr«
+o 6. Målgruppen (GF)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+' Virksomhedstyper
+o 7. Strategi (GF) Virk hed
+' Virksomheds
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© Opsamling på Afsætning i grundforløbet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Træning til afsætning i grundforløbet
+En virksomhed kan være
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet alt fra en nystartet</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode internetvirksomhed, der</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+sælger et tøjmærke og som
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1. Markedsanalyse (B) drives på hobbybasis, til</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B) meget store virksomheder</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+med en lang historie og
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3.Den eksterne situation (B) ;</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+mange tusinde ansatte som
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B) fx LEGO og Novo Nordisk.</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5,Brancheforhold (B) Der findes både private</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+virksomheder og offentlige
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B) virksomheder som fx</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B) v børnehaver og hospitaler. Vi</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+. vil dog primært beskæftige
+systime» gP 9
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Om Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+\ Afsætning i grundforløbet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Reinh van Hauen - en
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o 1. Virksomheden (GF)
+bagerkæde i København, der
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o 2.1Idé og forretningsmodeller (GF) har eksisteret i næsten 150 år.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+; a Foto: Birte Ravn Østergaard
+0 3. Den interne situation (GF)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o 4, Den eksterne situation (GF) Virksomhedsbegrebet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+° 5. Købsadfærd (GF) Formålet med at etablere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© 6, Målgruppen (GF) en virksomhed kan vere
+| forskelligt fra virksomhed til
+o 7. Strategi (GF) .
+vir ‘hed. For mar
+0 Opsamling på Afsætning i grundforløbet virksomheder vil formålet
+o Træning til afsætning i grundforløbet være at skabe vækst og
+overskud. Virksomheden
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet drives ved at anvende</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode forskellige resurser, fx</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+råvarer og arbejdskraft, til
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1. Markedsanalyse (B) at fremstille og sælge</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B) produkter. Produkterne</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+skal dække et behov hos de
+kunder, der er villige til at
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B) betale for produkterne. En</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3.Den eksterne situation (B)</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5, Brancheforhold (B) møbelproducent fremstiller</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+møbler ved at
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B) bearbejde træ og dermed fx</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B) v fremstille en reol ved hjælp</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y > af maskiner og arbejdskraft.
+Reolen kan sælges til en
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Om Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+v Afsætning i grundforløbet
+o 1. Virksomheden (GF)
+o 2. Idé og forretningsmodeller (GF)
+© 3. Den interne situation (GF)
+o 4,Den eksterne situation (GF)
+o 5. Købsadfærd (GF)
+o 6, Målgruppen (GF)
+o 7. Strategi (GF)
+© Opsamling på Afsætning i grundforløbet
+o Træning til afsætning i grundforløbet
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3.Den eksterne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5, Brancheforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B)</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+arbejdsløn, og derved kan
+virksomheden opnå et
+overskud.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Les
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Deux
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tøjmærket Les Deux blev
+startet i 2009 af to unge
+iværksættere. De købte
+nogle hvide t-shirts og
+syede militærmærker på.
+Dermed var de i gang
+med deres første
+ko''-'tion. De
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+he fundet sig en ie
+i tøjmarkedet ved at
+blande street wear med
+et mere klassisk kostskole
+look. I dag har
+virksomheden både en
+serie til mænd og børn
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+samt accessories.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Om Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+v Afsætning i grundforløbet
+o 1. Virksomheden (GF)
+o 2. Idé og forretningsmodeller (GF)
+© 3. Den interne situation (GF)
+o 4,Den eksterne situation (GF)
+o 5. Købsadfærd (GF)
+o 6, Målgruppen (GF)
+o 7. Strategi (GF)
+o Opsamling på Afsætning i grundforløbet
+o Træning til afsætning i grundforløbet
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3. Den eksterne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5, Brancheforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B)</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Medstifteren af Les Deux,
+Andreas von der Heide.
+Gengivet med tilladelse fra
+Les Deux.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Navnet Les Deux kommer
+af ;levarto
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+iVa. .sættere bag
+mærket, og at stilen i
+brandet er en blanding
+mellem to stilarter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Bag virksomheden står
+Andreas von der Heide og
+Kristoffer Haapanen.
+Virksomheden havde i
+2025 et overskud på
+næsten 51 millioner
+kroner. Året forinden var
+overskuddet på næsten
+46 millioner kroner.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Les Deux har mere end
+1.000 forhandlere i 25
+lande og et to-cifret antal
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Om Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+v Afsætning i grundforløbet
+o 1. Virksomheden (GF)
+o 2. Idé og forretningsmodeller (GF)
+© 3. Den interne situation (GF)
+o 4,Den eksterne situation (GF)
+o 5. Købsadfærd (GF)
+o 6, Målgruppen (GF)
+o 7. Strategi (GF)
+© Opsamling på Afsætning i grundforløbet
+o Træning til afsætning i grundforløbet
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3. Den eksterne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5, Brancheforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B)</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+stormagasiner, som fx
+Galaries Lafayette i Paris
+og senest Bloomingdale's
+i en række amerikanske
+storbyer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Formålet med
+virksomheden har hele
+tiden været at vækste, og
+stifterne har løbende
+forsøgt at gøre
+virksomheden større og
+større. Det er dog ret dyrt
+at vækste - især i det
+tempo ejerne ønsker. Les
+Dy / har derfor ons \ at
+få … stærk, finansie:
+partner med erfaringer i
+at skalere virksomheder
+internationalt med i
+ejerkredsen. At skalere
+betyder, at man gør
+virksomheden større.
+Derfor solgte stifterne i
+2021 60% af
+virksomheden til den
+svenske virksomhed
+ROko, der ejer mange
+virksomheder og har
+økonomisk mulighed for
+at understøtte Les Deux'
+mål om vækst.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Om Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+v Afsætning i grundforløbet
+o 1. Virksomheden (GF)
+o 2. Idé og forretningsmodeller (GF)
+© 3. Den interne situation (GF)
+o 4,Den eksterne situation (GF)
+o 5. Købsadfærd (GF)
+o 6, Målgruppen (GF)
+o 7. Strategi (GF)
+© Opsamling på Afsætning i grundforløbet
+o Træning til afsætning i grundforløbet
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3.Den eksterne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5, Brancheforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B)</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det er tydeligt, at målet om
+vækst har været centralt for
+Les Deux igennem
+virksomhedens levetid.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomhedstyper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheder kan inddeles
+i forskellige typer afhængig
+af, I virksomhed;
+hoveuaktivitet er.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nogle virksomheder
+fremstiller fysiske
+produkter. Disse
+virksomheder kaldes for
+produktionsvirksomheder
+. En produktionsvirksomhed
+udvikler produkter, som
+kunderne finder
+interessante. Desuden
+indkøbes råvarer og andre
+materialer, som forarbejdes
+til færdigvarer, der herefter
+sælges til kunderne. Målet i
+en produktionsvirksomhed
+er at sælge produkter til
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Om Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+v Afsætning i grundforløbet
+o 1. Virksomheden (GF)
+o 2. 1Idé og forretningsmodeller (GF)
+© 3. Den interne situation (GF)
+o 4,Den eksterne situation (GF)
+o 5. Købsadfærd (GF)
+o 6, Målgruppen (GF)
+o 7. Strategi (GF)
+© Opsamling på Afsætning i grundforløbet
+o Træning til afsætning i grundforløbet
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3. Den eksterne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5, Brancheforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B)</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+mulige omkostninger.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Produktionsvirksomheder
+kan variere i størrelse. Det
+kan fx være en bagerbutik,
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+der fremstiller brød i
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+bageriet, som videresælges
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+til forbrugerne i
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+bagerbutikken. Det kan
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+også være store
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+virksomheder som fx
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Carlsberg, Vestas eller Jysk.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel:
+o Nordisk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Novo Nordisk. En dansk
+produktionsvirksomhed
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+med aktiviteter i hele
+verden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto:
+iStockphoto.com/Ole
+Schwander
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Novo Nordisk er en
+dansk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+produktionsvirksomh
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ed, som blev
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Om Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+v Afsætning i grundforløbet
+o 1. Virksomheden (GF)
+© 2. Idé og forretningsmodeller (GF)
+© 3. Den interne situation (GF)
+o 4. Den eksterne situation (GF)
+o 5. Købsadfærd (GF)
+o 6, Målgruppen (GF)
+o 7. Strategi (GF)
+o Opsamling på Afsætning i grundforløbet
+o Træning til afsætning i grundforløbet
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3.Den eksterne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5, Brancheforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B)</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+formål er at
+forebygge og
+helbrede en lang
+række alvorlige
+sygdomme som fx
+diabetes.
+Virksomheden
+udvikler og
+producerer
+lægemidler.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I dag opererer Novo
+Nordisk over hele
+verden og
+beskæftiger over
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+”00 medarbejc
+v.. «somheden
+producerer deres
+lægemidler i ni
+forskellige lande.
+Virksomhedens
+produkter, som
+bekæmper alvorlige
+kroniske sygdomme,
+sælges i 170 lande
+verden over.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Andre virksomheder
+indkøber varer, som
+videresælges i uændret
+form. Disse virksomheder
+kaldes for
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Om Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+v Afsætning i grundforløbet
+o 1. Virksomheden (GF)
+o 2. Idé og forretningsmodeller (GF)
+© 3. Den interne situation (GF)
+o 4,Den eksterne situation (GF)
+o 5. Købsadfærd (GF)
+o 6, Målgruppen (GF)
+o 7. Strategi (GF)
+© Opsamling på Afsætning i grundforløbet
+o Træning til afsætning i grundforløbet
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2. Den interne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3.Den eksterne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5, Brancheforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B)</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+a
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+handelsvirksomheder som
+fx Netto, Matas, Power og
+Magasin. Jysk er en
+detailvirksomhed, der har
+stor succes. Jysk indkøber
+dyner, håndklæder, møbler
+og andet boligtilbehør, som
+videresælges i Jysk-
+butikkerne. Jysk producerer
+ikke selv varer, men
+indkøber varer hos en lang
+række leverandører.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Servicevirksomheder
+fremstiller og sælger
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ser delser og ud?
+der...d en række
+arbejdsopgaver for
+kunderne. Serviceydelser er
+ikke håndgribelige i
+modsætning til fysiske
+produkter. Serviceydelser
+kan fx være et abonnement
+til et fitnesscenter, en
+biografbillet eller et
+tandlægebesøg. TDC
+udbyder en lang række
+serviceydelser som fx
+telefonabonnementer,
+bredbånd og tv-kanaler
+under navnet YouSee til
+både privatpersoner og
+virksomheder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Om Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+v Afsætning i grundforløbet
+o 1. Virksomheden (GF)
+© 2. Idé og forretningsmodeller (GF)
+© 3. Den interne situation (GF)
+o 4. Den eksterne situation (GF)
+o 5. Købsadfærd (GF)
+o 6, Målgruppen (GF)
+o 7. Strategi (GF)
+o Opsamling på Afsætning i grundforløbet
+o Træning til afsætning i grundforløbet
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3.Den eksterne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4.Konkurrenceforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5, Brancheforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd på konsumentmarkedet (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd på producentmarkedet (B)</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y >
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Er en biograf en
+servicevirksomhed?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomhedskarakteris
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+For at fa indsigt i
+virksomheden, kan man
+udarbejde en beskrivelse af
+virksomheden, som ogsa
+kaldes en
+virksomhedskarakteristik.
+I
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+vir. ihedskaraktei ke
+n kan man fx starte med at
+beskrive, hvem der ejer
+virksomheden, hvilke varer
+virksomheden producerer
+og sælger, hvor mange
+ansatte der er i
+virksomheden, ligesom
+man kan se på
+virksomhedens regnskab.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Oplagte elementer i en
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+virksomhedskarakteristi
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+oe Beliggenhed
+e Ejerforhold
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside Materialer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+\ Afsætning i grundforløbet
+o 1. Virksomheden (GF)
+o 2. Idé og forretningsmodeller (GF)
+© 3. Den interne situation (GF)
+o 4,Den eksterne situation (GF)
+o 5. Købsadfærd (GF)
+o 6, Målgruppen (GF)
+o 7. Strategi (GF)
+© Opsamling på Afsætning i grundforløbet
+o Træning til afsætning i grundforløbet
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3.Den eksterne situation (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4, Konkurrenceforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5. Brancheforhold (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd pa konsumentmarkedet (B)</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd pa producentmarkedet (B)</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Antal ansatte
+e Omsætning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Årets resultat
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: :
+Store danske
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+virksomheder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Her er opstillet en
+liste over nogle af de
+mest succesfulde
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+K ike virksomh« »
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+i nistorien. Nogle at
+virksomhederne har
+en historie der gar
+mange ar tilbage i
+tiden.
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">A.P. Møller</li>
+</ul>Mærsk
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">LEGO</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Danfoss</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Grundfos</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Novo Nordisk</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Vestas</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Jysk</li>
+</ul>
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Bang & Olufsen</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+Forside om Materialer
+Opgave I:
+MV Afsætning i grundforløbet Virksomhedstyper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o 1. Virksomheden (GF)
+o 2. Idé og forretningsmodeller (GF) Opgave 2:
+© 3. Den interne situation (GF) Virksomhedskarakt
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o 4,Den eksterne situation (GF)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o 5, Købsadfærd (GF)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© Opsamling på Afsætning i grundforløbet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Træning til afsætning i grundforløbet Næste
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Opgaver og cases til Afsætning på grundforløbet</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o 6, Målgruppen (GF)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o 7. Strategi (GF)
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Samfundsvidenskabelig metode</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">1.Markedsanalyse (B)</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">2.Den interne situation (B) ISBN: 9788761687050.</blockquote>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">3.Den eksterne situation (B) Systime 2025</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">4, Konkurrenceforhold (B)</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">5. Brancheforhold (B)</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">6. Købsadfærd pa konsumentmarkedet (B)</blockquote>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">7.Købsadfærd pa producentmarkedet (B) td</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+y >
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+med en lang historie og > 3.Den eksterne situation (B) ; mange tusinde ansatte som > 7.Købsadfærd på producentmarkedet (B) v børnehaver og hospitaler. Vi . vil dog primært beskæftige systime» gP 9
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="01-1-marketing-en-grundbog-i-afsaetning.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 01_1_Marketing_–_en_grundbog_i_afsætning</a></div>
+                    <div><a href="2-id-og-forretningsmodeller-gf.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">2. Idé og forretningsmodeller (GF) →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

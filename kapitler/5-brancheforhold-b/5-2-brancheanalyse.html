@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2 Brancheanalyse — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🏭</span> 5. Brancheforhold
+                    </a>
+                    <div class="space-y-1">
+                        <a href="5-brancheforhold-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">5. Brancheforhold (B)</a>
+<a href="5-1-branchekarakteristik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">5.1 Branchekarakteristik</a>
+<a href="5-2-brancheanalyse.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">5.2 Brancheanalyse</a>
+<a href="case-5-1-netflix.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 5.1_Netflix</a>
+<a href="case-5-2-vapiano.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 5.2_Vapiano</a>
+<a href="case-5-3-greengo-energy.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 5.3_GreenGo Energy</a>
+<a href="case-5-4-airbnb.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 5.4_Airbnb</a>
+<a href="opgaver-og-cases-til-kapitel-5.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 5</a>
+<a href="opsamling-paa-kapitel-5.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 5</a>
+<a href="traening-kapitel-5.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning kapitel 5</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 5. Brancheforhold
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    5.2 Brancheanalyse
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+5.2 Brancheanalyse y Aa |
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ø EG
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Din Al-sparringspartner: Porters five forces
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o De fem aktører i brancheanalysemodellen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+° Truslen fra potentielle indtrængere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Rivalisering blandt de eksisterende konkurrenter i branchen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Trusler fra substituerende produkter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Den amerikanske økonom Michael E. Porter lancerede i 1980 i sin bog
+Competitive Strategy en model til at analysere de kræfter, der påvirker
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+aktørerne i branchen centralt i modellen og benævnes derfor Porters five forces.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Brancheanalysen kan give de nuværende konkurrenter i branchen samt
+aktørerne inden for de fire øvrige kræfter et overblik over, hvor attraktiv branchen
+er at operere i eller have relationer til. Desuden kan brancheanalysen anvendes til
+at give virksomheder, der overvejer at indtræde i branchen et indtryk af, om
+denne er attraktiv at indtræde i.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 5.2: Brancheanalysemodel - Porters five forces-model
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilde: Michael E. Porter, Competitive Strategy, The Free Press, 1980. iStockphoto.com/-
+VICTOR-
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Din Al-sparringspartner: Porters five forces
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Her kan du chatte, få sparring og skabe overblik over Porters five forces.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Systimes Aldnteraktivdteter.e dukkede |
+elærsinådes presrksekksy pienom, der står bag modellen?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+perserne er eksamenslukkede den 20/5-24/6-2026 og 4/8-
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Skrisggg B02
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+mere på Systime og Al.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Interaktiviteten er ikke tilgængelig i eksamensperioderne. Eksamensperioderne for sommeren er 20/5-24/6-
+2026 og 4/8-28/8-2026.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Få illustration 5.2 forklaret:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+De fem aktører i brancheanalysemodellen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Modellens lodrette dimension vedrører aktører, der på forskellig vis kan være i
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+— kor’ ,rence med hver enkelt virksomhed i branchen og derfor kan anses s . > en
+tru. N for den enkelte virksomhed. Modellens vandrette dimension vedrø
+aktører (leverandører og kunder), som de enkelte virksomheder i branchen er
+afhængige af for at kunne udbyde og afsætte sine produkter. Branchens
+indtjeningsmuligheder afhænger i høj grad af leverandørernes og kundernes
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+forhandlingsstyrke over for de enkelte udbydere i branchen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det er vigtigt at forstå, hvori begrebet “force” opstår i modellen. I illustration 5.2
+ses fx en boks, hvori der star "Leverandører”. Leverandører er ikke en force i sig
+selv, men en aktør i branchen. Forcen opstår, når man betragter leverandørens
+forhandlingsstyrke.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Inden der foretages en analyse af branchen, er det vigtigt at konkretisere, hvem
+de fem forces aktører består af: Hvilke virksomheder er leverandører, udbydere af
+substituerende produkter, hvem udgør kunderne osv.? Selve analysen består i at
+vurdere styrken af hver enkelt af de fem forces; jo større
+trussel/forhandlingsstyrke de fem forces hver især udøver, jo stærkere betegnes
+den enkelte force. Analysen kan afrundes med at konkludere, hvorvidt branchen
+er attraktiv eller ikke attraktiv.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+er mange eksempler på brancher med stærke forces, der har haft høj langsigtet
+indtjening, da stærke forces styrker de enkelte udbydere i branchen, der lærer at
+</p>
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">agere i et konkurrencepræget miljø.</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I det følgende vil vi gennemgå de fem forces i modellen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Betydende variable i Porters five forces
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Truslen fra potentielle indtrængere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Potentielle indtrængere er virksomheder, der endnu ikke er etableret i branchen,
+men som kan beslutte at træde ind. Dette kan være nyetablerede virksomheder
+eller eksisterende virksomheder, der ønsker vækst ved produktudvikling,
+markedsudvikling eller diversifikation. På det danske marked for designerure
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= (pr enter/importører) kunne nye designere overveje at træde ind, det: 18
+kunne udenlandske udbydere, der endnu ikke er til stede på det danske marked.
+Interessen for at trænge ind i branchen, vil være påvirket af, om de nuværende
+virksomheder i branchen tjener en overnormal profit, eller hvis vækstraterne på
+markedet er høje. Hvis branchen ser attraktiv ud, vil potentielle indtrængere være
+mere tilbøjelige til at forsøge at trænge ind.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvad påvirker truslen fra potentielle indtrængere?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Rivalisering blandt de eksisterende konkurrenter i
+branchen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Konkurrenterne repræsenterer den helt snævre konkurrence, som er første led i
+konkurrencetragtmodellen, dvs. mærkekonkurrenter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Trusler fra substituerende produkter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Substituerende produkter - der er andre produkttyper og varianter - tilhører de 2
+midterste niveauer i konkurrencetragtmodellen, der kan dække samme
+overordnede behov som branchens produkter. Når de substituterende produkter
+er identificeret, kan de evt. rangordnes efter grad af substitution, da dette
+påvirker truslen fra den pågældende substitut. I praksis vil en sådan rangordning
+skulle foretages på baggrund af en field research. Hvis branchen defineres som
+det danske marked for designerure, vil andre armbåndsure betragtes som nære
+substitutter. Vægure, mobiltelefoner og andre devices med urfunktion kan
+betragtes som fjernere substitutter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+, Kundernes forhandlingsstyrke
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kunderne defineres som efterfølgende led i branchens forsyningskæde og kan
+både være mellemhandlere og slutbrugere. Slutbrugerne bør i visse tilfælde
+opdeles i B-t-C- og B-t-B-kunder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvad påvirker kundernes forhandlingsstyrke?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Leverandørernes forhandlingsstyrke
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Leverandørerne er de virksomheder, der leverer væsentligt input til branchen og
+er det tidligere led i forsyningskæden:
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+‘ serandører af råvarer, komponenter og færdigvarer
+e Leverandører af vigtige aktiver
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Leverandører af know-how og arbejdskraft
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I branchen producenter/importører af designerure vil udenlandske producenter
+være leverandører. Producenternes leverandører vil være leverandører af råvarer
+eller evt. underleverandør af det færdige produkt, hvis produktet købes udefra, et
+såkaldt OEM-samarbejde.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hvad påvirker leverandørernes forhandlingsstyrke?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Sammenfatning på brancheanalysen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når aktørerne i modellen er identificeret og de fem forces analyseret, kan der
+konkluderes på branchens attraktivitet ud fra en opsummering af de fem forces
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">Illustration 5.3: Eksempel på styrkevurdering af branchens five forces</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Hen. »kabelon, styrkevurdering af branchens five forces
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Interaktivitet 5.3: Styrkevurdering af branchens five forces
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Interaktiviteten kan bruges til at fastsætte styrken af de fem forces ud fra en
+foregående analyse. Således kan man skabe sig et visuelt overblik over
+branchens fem forces.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Din Al-sparringspartner: Porters five forces og pizzeria-
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+branchen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nu du har lært modellen Porters five forces godt at kende, er det tid til at
+anvende modellen i praksis.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Tag udgangspunkt i pizzeria-branchen i Indre By København eller en anden
+større by, du kender til.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Brug de fem skrivefelter til at skrive svar, og modtag derefter feedback. Når du
+har modtaget feedback, kan du bruge feedbacken til at forbedre dine svar i de
+enkelte felter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Til sidst kan du samle op på dine vurderinger og komme med en begrundet
+vurdering af, om pizzabranchen i Indre København er attraktiv at gå ind i, ud
+fra de fem kræfter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+“N
+NV
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Skriveguide til Porters five forces
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Start med at afgrænse den branche, som du vil analysere. Du kan fx
+afgrænse branchen produktmæssigt og geografisk. Forklar kort,
+hvorfor du har valgt at inddrage Porters five forces til at analysere
+konkurrencen i branchen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+BJ: = X x?
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Brancheanalysen omfatter en analyse af branchen for ..
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Til at analysere branchen har jeg valgt at benytte Porters five
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+forces-model, da...
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+138 /2400
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+ø Kladden er ikke gemt
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Trin 2: Analyse af kræfterne i branchen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Trin 3: Vurdering af forhandlingsstyrke og trusler
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Trin 4: Sammenfatning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+&, Hent som PDF
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 5.3: Dagligvarediscountbranchen
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Den amerikanske økonom Michael E. Porter lancerede i 1980 i sin bog Competitive Strategy en model til at analysere de kræfter, der påvirker Brancheanalysen kan give de nuværende konkurrenter i branchen samt aktørerne inden for de fire øvrige kræfter et overblik over, hvor attraktiv branchen er at operere i eller have relationer til. Desuden kan brancheanalysen anvendes til at give virksomheder, der overvejer at indtræde i branchen et indtryk af, om denne er attraktiv at indtræde i.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="5-1-branchekarakteristik.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 5.1 Branchekarakteristik</a></div>
+                    <div><a href="case-5-1-netflix.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Case 5.1_Netflix →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

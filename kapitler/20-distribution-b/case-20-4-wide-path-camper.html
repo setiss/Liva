@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 20.4_Wide Path Camper — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🚚</span> 20. Distribution
+                    </a>
+                    <div class="space-y-1">
+                        <a href="20-distribution-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20. Distribution (B)</a>
+<a href="20-1-direkte-og-indirekte-distribution.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.1 Direkte og indirekte distribution</a>
+<a href="20-2-distributionskanaler.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.2 Distributionskanaler</a>
+<a href="20-3-distributionsstrategi.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.3 Distributionsstrategi</a>
+<a href="20-4-butikstyper-og-kaeder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.4 Butikstyper og kæder</a>
+<a href="20-5-e-handel.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">20.5 E-handel</a>
+<a href="case-20-1-morfars-dk.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.1_Morfars.dk</a>
+<a href="case-20-2-loow-undertoej-og-toej-af-merino-uld.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.2_LOOW - Undertøj og tøj af merino-uld</a>
+<a href="case-20-3-varens-vej-til-kunden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 20.3_Varens vej til kunden</a>
+<a href="case-20-4-wide-path-camper.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Case 20.4_Wide Path Camper</a>
+<a href="opgaver-og-cases-til-kapitel-20.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 20</a>
+<a href="opsamling-paa-kapitel-20.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 20</a>
+<a href="traening-til-kapitel-20.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 20</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 20. Distribution
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Case 20.4_Wide Path Camper
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+Case 20.4: Wide Path Camper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Case 20.4: Wide Path Camper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I 2015 præsenterede den dengang 24-årige Mads Johansen fra Sønderborg sin
+nye opfindelse, en cykelcampingvogn, på feriemessen Ferie for Alle i Herning.
+Mads Johansen, der på daværende tidspunkt studerede innovation og business
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+på Syddansk Universitet, har givet sin opfindelse navnet Wide Path Camper.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Gengivet med tilladelse fra Wide Path Camper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Wide Path Camper er 1 m bred og 1,3 m lang, når den er klappet sammen og
+man kører med den spændt på cyklen. Udslået og klar til brug er den 2,6 m
+lang. Den vejer 45 kg, er lavet af glasfiber og godkendt af myndighederne.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Camperen kan slås op og være klar til brug på 3 minutter. Den indvendige
+højde er 1,3 m og der er sidde- plads til 2 personer med et bord imellem
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Baggrunden for opfindelsen er, at mange oplagte cykelcampister afholder sig
+fra at tage på cykelcamping af frygt for at få tøj og bagage gennemvædet i
+tilfælde af regn.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Cykel- og campingforhandlere fra Holland, Tyskland, Sverige og Norge har vist
+interesse for Wide Path Camper. Det samme har flere cykeludlejere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Wide Path Camper blev sendt på markedet i foråret 2016, og blev solgt direkte
+fra producenten (Mads Johansen) i Sønderborg via dennes hjemmeside til en
+pris på 3500 EUR (= ca. 26.050 kr.). Prisen inkluderer madras, bord, siddegruppe
+og opbevaringsrum under sengen. Man har mulighed for at tilkøbe forskelligt
+udstyr til cykelcamperen, bl.a. en solcellepakke indeholdende lys og ventilator,
+et sæt møbler samt køkkenudstyr. I dag koster cykelcamperen 4299 EUR (= ca.
+31.995 kr.) og bestilles direkte hos den nuværende producent, Thomas Møller
+Pedersen ApS i Roslev.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kilder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Trendsandtravel.dk, En campingvogn til din e-cykel, 10.02.2019
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e U(Dansk Camping Union), Magasinet Camping-fritid udgave 5,
+01.06.2016
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e widepathcamper.com
+e facebook.com/widepathcamper
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e altomcamping.dk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Spørgsmål
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Wide Path Camper ønsker på længere sigt at etablere et net af
+forhandlere af cykelcamperen på det danske marked. Det forudsættes, at
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Fremsæt udførligt begrundet forslag til distributionsstrategi for</li>
+</ul>
+<p class="text-slate-700 leading-relaxed mb-4">
+produktet.
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Med udgangspunkt i svaret på spørgsmål 1 fremsættes konkret</li>
+</ul>forslag til forhandlere, der kan sælge cykelcamperen.
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Vurder, hvorvidt Mads Johansen bør droppe salget fra egen</li>
+</ul>hjemmeside, når produktet distribueres via de nævnte forhandlere.
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I 2015 præsenterede den dengang 24-årige Mads Johansen fra Sønderborg sin nye opfindelse, en cykelcampingvogn, på feriemessen Ferie for Alle i Herning. Mads Johansen, der på daværende tidspunkt studerede innovation og business Wide Path Camper er 1 m bred og 1,3 m lang, når den er klappet sammen og man kører med den spændt på cyklen. Udslået og klar til brug er den 2,6 m lang. Den vejer 45 kg, er lavet af glasfiber og godkendt af myndighederne.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="case-20-3-varens-vej-til-kunden.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Case 20.3_Varens vej til kunden</a></div>
+                    <div><a href="opgaver-og-cases-til-kapitel-20.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Opgaver og cases til kapitel 20 →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

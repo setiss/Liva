@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.1 Delmarkeder på producentmarkedet — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🏗️</span> 7. Købsadfærd (producent)
+                    </a>
+                    <div class="space-y-1">
+                        <a href="7-koebsadfaerd-paa-producentmarkedet-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7. Købsadfærd på producentmarkedet (B)</a>
+<a href="7-1-delmarkeder-paa-producentmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">7.1 Delmarkeder på producentmarkedet</a>
+<a href="7-2-koebstyper-paa-producentmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7.2 Købstyper på producentmarkedet</a>
+<a href="7-3-koebsbeslutningsproces-paa-producentmarkedet.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7.3 Købsbeslutningsproces på producentmarkedet</a>
+<a href="7-4-valgkriterier-paa-producentmarkedets-delmarkeder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7.4 Valgkriterier på producentmarkedets delmarkeder</a>
+<a href="7-5-faktorer-der-paavirker-koebsadfaerden.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">7.5 Faktorer der påvirker købsadfærden</a>
+<a href="case-7-1-trip-trap-woodcare.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7.1_Trip Trap Woodcare</a>
+<a href="case-7-2-hilti.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7.2_Hilti</a>
+<a href="case-7-3-wemarket.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7.3_WeMarket</a>
+<a href="case-7-4-statens-koeb-af-f-35-kampfly.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7.4_Statens køb af F-35 kampfly</a>
+<a href="case-7-5-wise-home.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 7.5_Wise Home</a>
+<a href="opgaver-og-cases-til-kapitel-7.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 7</a>
+<a href="opsamling-paa-kapitel-7.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på kapitel 7</a>
+<a href="traening-til-kapitel-7.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 7</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 7. Købsadfærd (producent)
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    7.1 Delmarkeder på producentmarkedet
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+o Det industrielle marked
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Mellemhandlermarkedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+o Det offentlige marked
+o Salg til flere markeder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Producentmarkedet kan opdeles i tre delmarkeder: Det industrielle marked,
+= me / handlermarkedet og det offentlige marked.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 7.1: Delmarkeder på producentmarkedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Producentmarkedet
+Det industrielle Mellemhandler- Det offentlige
+marked markedet marked
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I illustration 7.2 nedenfor foregår alle køb inden for det stiplede område på
+producentmarkedet. Kassen uden for det stiplede område er
+konsumentmarkedet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det industrielle marked udgør de blå kasser i illustration 7.2. Det er private
+virksomheders køb til brug i erhvervsudøvelsen. Købet kan vedrøre råvarer,
+inventar, forbrug i administration, facilityservice osv.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+udelukkende med videresalg for øje.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det offentlige marked udgør den lyse orange kasse til højre i illustration 7.2 og
+er offentlige virksomheders og institutioners køb. Kunderne er dermed staten,
+regionerne, kommunerne samt selvejende institutioner som fx gymnasier.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 7.2: Konsumentmarkedet og producentmarkedet illustreret
+ved køb og salg af møbler
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det industrielle marked
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheder, der handler med råvarer, halvfabrikata, komponenter og maskiner,
+agerer på det industrielle marked. Det industrielle marked er kendetegnet ved, at
+de produkter, der handles med på dette marked, indgår direkte eller indirekte i en
+virksomheds videre produktion af et produkt. Det industrielle marked, der er det
+største af de tre markeder, er præget af meget stærk, international konkurrence.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det industrielle marked vedrører indkøb af varer, der indgår direkte eller
+indirekte i fremstillingen af den købende virksomheds produkter.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+en del af de produkter, virksomheden sælger videre. Andre produkter indgår
+indirekte i produktionen, dvs. de anvendes ikke i virksomhedens produkter, men
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">som støtte til at producere produkterne. Det kan være it-udstyr, kontorartikler,</blockquote>
+<p class="text-slate-700 leading-relaxed mb-4">
+kantinedrift eller maskiner.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Virksomheden køber med henblik på at producere et konkurrencedygtigt produkt
+eller for at sælge produktet videre til detailhandlen. Værditilvækst (i henhold til
+værdikæden) er omdrejningspunktet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mellemhandlermarkedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Kendetegnet for mellemhandlermarkedet er, at virksomheden ikke forarbejder
+eller på anden måde bearbejder produktet. Virksomheden køber produkter med
+henblik på videresalg.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+indkøb i store kvanta, så der kan opnås fordelagtige priser.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mellemhandlermarkedet omhandler virksomheders køb af produkter
+med det formål at videresælge dem uforarbejdet til andre virksomheder
+eller til private forbrugere.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mineralvandsfabrikken Frem i Ribe, der er ejet af bryggeriet Royal Unibrew,
+producerer et bredt sortiment af sodavand, cider, saft og most, der primært
+sælges gennem mindre, selvstændige købmandsbutikker samt frivillige kæder
+som fx Spar. Frem sælger dermed sine produkter til mellemhandlermarkedet.
+Butikkerne videreforarbejder ikke produkterne, de sælger dem blot videre til
+slutbrugerne på konsumentmarkedet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Foto: Michael Bregendahl
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det offentlige marked
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+fængsler, børnehaver og vejvæsenet køber ind, sker det på det offentlige marked.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det offentlige marked vedrører salg af produkter til offentlige
+virksomheder og institutioner.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Med det offentlige marked menes blot, at en virksomhed har valgt en offentlig
+virksomhed som målgruppe eller som kunde. At det offentlige betegnes som et
+marked og ikke bare som kunder skyldes, at det offentlige ofte afgiver store
+ordrer, og at indkøbene typisk sker centralt. Det er fx en stor ordre at kunne
+levere uniformer til hele det danske militær. Uniformerne indkøbes centralt til
+kasernerne i Danmark.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Staten og Kommunernes Indkøbs Service A/S (SKI) laver aftaler med en række
+leverandører, som offentlige virksomheder så kan benytte sig af.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ste ndkøbsopgaver i det offentlige sendes i udbud - licitation - hvoreft
+interesserede virksomheder inviteres til at byde på opgaven. Offentligt udbud
+kræver et stort forarbejde med at udarbejde udbudsmaterialet. Af dette skal
+fremgå, hvad der lægges vægt på ved valg af produkt og leverandør. Forsvarets
+nylige indkøb af kampfly er et eksempel på en meget stor opgave, der har været i
+udbud.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Prisen er relativt vigtig på det offentlige marked, da købene primært er
+skattefinansieret.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Salg til flere markeder
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Nogle produkter er egnede til brug på såvel producentmarkedet og på
+konsumentmarkedet, mens andre er tilpasset det specifikke marked. På
+producentmarkedet efterspørges ofte forskellige udgaver af et produkt på
+henholdsvis det offentlige marked og det industrielle marked. Et industrikøkken
+eller en restaurant (det industrielle marked) samt fx et hospitalskøkken (det
+offentlige marked) vil typisk efterspørge en industriopvaskemaskine. Derimod vil
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Mellemhandlermarkedet efterspørger udelukkende produktet til videresalg i
+uforarbejdet tilstand og er derfor ikke konsumentenheder til produkterne. Især
+på det industrielle marked ses ofte, at et produkt købes direkte hos producenten
+således, at mellemhandlermarkedet ikke involveres. Dette gælder fx ved salg af
+specialtilpassede maskiner, byggerier og energiforsyningsanlæg.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Eksempel: Jespers Torvekøkken
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I dette videoklip præsenterer ejerleder Ronny Saul, Jespers Torvekøkken,
+herunder virksomhedens kundegrundlag.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Det fremgår, at Jespers Torvekøkken er leverandør til flere delmarkeder.
+Kantinemad til private virksomheder udgør salg til det industrielle marked. Det
+fremgår ikke, om der også leveres til offentlige kantiner, der i givet fald vil
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+U 2 det offentlige marked. Jespers Torvekøkken leverer halvfabrikata
+restaurationer og lignende, hvilket indikerer salg til det industrielle marked, da
+disse produkter indgår i restaurationernes produktion.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 7.1: Airtox
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Neeste
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+7I7
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Producentmarkedet kan opdeles i tre delmarkeder: Det industrielle marked, = me / handlermarkedet og det offentlige marked. Producentmarkedet Det industrielle Mellemhandler- Det offentlige marked markedet marked
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="7-koebsadfaerd-paa-producentmarkedet-b.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 7. Købsadfærd på producentmarkedet (B)</a></div>
+                    <div><a href="7-2-koebstyper-paa-producentmarkedet.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">7.2 Købstyper på producentmarkedet →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

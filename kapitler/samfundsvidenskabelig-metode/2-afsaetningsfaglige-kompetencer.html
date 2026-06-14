@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Afsætningsfaglige kompetencer — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🔬</span> Metode
+                    </a>
+                    <div class="space-y-1">
+                        <a href="1-fagets-modeller-og-arbejdsmetode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">1. Fagets modeller og arbejdsmetode</a>
+<a href="2-afsaetningsfaglige-kompetencer.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">2. Afsætningsfaglige kompetencer</a>
+<a href="3-at-kommunikere-i-afsaetning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3. At kommunikere i afsætning</a>
+<a href="3-1-argumentation-og-dokumentation.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.1 Argumentation og dokumentation</a>
+<a href="3-2-afsaetningsfaglige-genrer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">3.2 Afsætningsfaglige genrer</a>
+<a href="4-informationssoegning.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">4. Informationssøgning</a>
+<a href="5-kildekritik-og-empiri.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">5. Kildekritik og empiri</a>
+<a href="6-fagets-analysemetoder.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">6. Fagets analysemetoder</a>
+<a href="case-1-kvalitativ-metode-og-feltarbejde.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 1_Kvalitativ metode og feltarbejde</a>
+<a href="opgaver-og-cases-til-samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til Samfundsvidenskabelig metode</a>
+<a href="opsamling-paa-samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opsamling på samfundsvidenskabelig metode</a>
+<a href="samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Samfundsvidenskabelig metode</a>
+<a href="traening-til-samfundsvidenskabelig-metode.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til samfundsvidenskabelig metode</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← Metode
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    2. Afsætningsfaglige kompetencer
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Afsætningsfaglige kompetencer Aa I |</li>
+</ul>De økonomiske kompetencer, som handelsgymnasiets økonomiske fag bygger
+<p class="text-slate-700 leading-relaxed mb-4">
+på, er fælles for de tre økonomiske fag. Overordnet set arbejdes der derfc L |
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+de samme kompetencebegreber i afsætning, virksomhedsøkonomi og
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+international økonomi.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration 6: Økonomiske kompetencer :
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Illustration: Systime inspireret af Achilles, Mads m.fl.: Kompetencer og kernefaglighed i det
+samfundsvidenskabelige fag på hhx, 2007
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Igennem gymnasietiden skal du tilegne dig en række økonomiske kompetencer.
+Det betyder, at du gradvis skal lære at tænke som en økonom og se forskellige
+problemstillinger ud fra en økonomisk synsvinkel.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+I nedenstående skema er der en uddybning af, hvad de enkelte kompetencer
+betyder.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At tænke
+økonomisk
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At finde
+udfordringer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At
+argumentere
+fagligt
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At arbejde
+med modeller
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At
+kommunikere
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At arbejde
+med data
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+At arbejde
+med it-
+værktøjer
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når du arbejder med et informationsmateriale om en
+casevirksomhed, skal du bruge din økonomiske
+tankegangskompetence til at udvælge de informationer og data,
+som er relevante for casearbejdet. Ud fra datagrundlaget skal du
+finde ud af, hvad der karakteriserer den virksomhed, der er tale
+om, og hvilke udfordringer som virksomheden står overfor. Du
+skal være i stand til at afgøre, hvilke forhold der har betydning for
+virksomhedens afsætning, økonomi og fortsatte vækst. Endvidere
+skal du kunne stille relevante spørgsmål.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Med økonomisk problembehandlingskompetence skal du være
+i stand til at identificere og formulere en virksomheds
+udfordringer.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Du skal kunne følge og bedømme et økonomiske ræsonnement.
+Endvidere skal du kunne vurdere sammenhængen i en række
+økonomiske forhold. Endelig skal du kunne formulere gode,
+troværdige ræsonnementer for at beherske økonomisk
+ræsonnementskompetence.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Når du skal analysere virksomheder, skal du inddrage fagets
+modeller. Med modelleringskompetencen kan du anvende
+økonomiske modeller og forklare modellernes forudsætninger og
+egenskaber.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Du skal kunne udtrykke dig både skriftligt og mundtligt om
+afsætningsøkonomiske forhold. Endvidere skal du kunne sætte dig
+ind i og fortolke andres økonomiske udsagn og tekster. Når du
+bruger økonomisk kommunikationskompetence behersker du
+fagets fagsprog og er i stand til at opbygge din kommunikation i
+en logisk struktur.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Du skal kunne indsamle, udvælge og bearbejde relevant
+datamateriale og vurdere troværdigheden og relevansen af data.
+Dermed har du økonomisk databehandlingskompetence.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Du skal kunne udvælge og anvende relevante redskaber i
+forbindelse med økonomiske forhold. Med den økonomiske
+redskabskompetence behersker du relevante it-værktøjer og
+kender en række gængse databaser med økonomiske data.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Elever fra HHX Rønde fortæller om baggrunden for deres valg studieretning
+med Afsætning A.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Studieretning: Afsætning A og International økonomi A
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Cille Kater og Niels Ulrik Drescher fra HHX Rønde, fortæller om baggrunden for
+deres valg af studieretning, forskelle og ligheder på Afsætning A og
+International økonomi A, samt hvordan fagene spiller sammen i
+undervisningen.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Studieretning: Afsætning A og Virksomhedsøkonomi A
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Marie Nyholm Møller og Markus Kahr, begge elever fra HHX Rønde fortæller
+om studieretningen med Afsætning A og Virksomhedsøkonomi A.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= A’ / ‘ning på A-niveau
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Cille Kater og Niels Ulrik Drescher fra HHX Rønde, fortæller om baggrunden for
+deres valg af studieretning med Afsætning A.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Opgave 3: Økonomiske kompetencer i afsætning
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Neeste
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Afsætningsfaglige kompetencer Aa I | De økonomiske kompetencer, som handelsgymnasiets økonomiske fag bygger på, er fælles for de tre økonomiske fag. Overordnet set arbejdes der derfc L | Illustration: Systime inspireret af Achilles, Mads m.fl.: Kompetencer og kernefaglighed i det samfundsvidenskabelige fag på hhx, 2007</li>
+</ul></div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="1-fagets-modeller-og-arbejdsmetode.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← 1. Fagets modeller og arbejdsmetode</a></div>
+                    <div><a href="3-at-kommunikere-i-afsaetning.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">3. At kommunikere i afsætning →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

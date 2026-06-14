@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opsamling på kapitel 11 — Afsætning Studiesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .prose-content h2 { scroll-margin-top: 5rem; }
+        .chapter-card { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.2s ease, background-color 0.2s ease; }
+        .sidebar-link { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .sidebar-link:hover { transform: translateX(4px); }
+        .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(12px); } }
+        .search-highlight { background: #fef08a; padding: 0 2px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../../index.html" class="flex items-center gap-3 group">
+                <span class="text-2xl">📖</span>
+                <span class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors">Afsætning</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1">
+                <a href="../../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Hjem</a>
+                <a href="../../alle-kapitler.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">Alle kapitler</a>
+                <a href="../../soeg.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-700 hover:bg-emerald-50">🔍 Søg</a>
+            </div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3">
+        <a href="../../index.html" class="block py-2 text-slate-700 hover:text-emerald-600">Hjem</a>
+        <a href="../../alle-kapitler.html" class="block py-2 text-slate-700 hover:text-emerald-600">Alle kapitler</a>
+        <a href="../../soeg.html" class="block py-2 text-slate-700 hover:text-emerald-600">🔍 Søg</a>
+    </div>
+</nav>
+
+<main class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+            <!-- Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold text-slate-800 mb-4">
+                        <span>🎯</span> 11. Segmentering
+                    </a>
+                    <div class="space-y-1">
+                        <a href="11-segmentering-maalgruppevalg-og-positionering-b.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11. Segmentering, målgruppevalg og positionering (B)</a>
+<a href="11-1-markedssegmentering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.1 Markedssegmentering</a>
+<a href="11-2-segmenteringsprocessen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.2 Segmenteringsprocessen</a>
+<a href="11-3-livsstilsanalyser.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.3 Livsstilsanalyser</a>
+<a href="11-4-personaer.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.4 Personaer</a>
+<a href="11-5-maalgruppevalg.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.5 Målgruppevalg</a>
+<a href="11-6-positionering.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">11.6 Positionering</a>
+<a href="case-11-1-kender-du-typen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.1_Kender du typen</a>
+<a href="case-11-2-chips-med-matematik.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.2_Chips (med matematik)</a>
+<a href="case-11-3-nature-footwear.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Case 11.3_Nature Footwear</a>
+<a href="conzoom-modellen.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Conzoom-modellen</a>
+<a href="gallup-kompas.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Gallup Kompas</a>
+<a href="opgaver-og-cases-til-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Opgaver og cases til kapitel 11</a>
+<a href="opsamling-paa-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border bg-emerald-50 border-emerald-300 text-emerald-700 truncate transition-all">Opsamling på kapitel 11</a>
+<a href="traening-til-kapitel-11.html" class="block px-3 py-1.5 text-xs rounded-lg border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50 truncate transition-all">Træning til kapitel 11</a>
+
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Content -->
+            <article class="min-w-0 max-w-3xl">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors lg:hidden">
+                        ← 11. Segmentering
+                    </a>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 fade-in">
+                    Opsamling på kapitel 11
+                </h1>
+                
+                <div class="prose-content fade-in" style="animation-delay: 0.1s">
+                    <p class="text-slate-700 leading-relaxed mb-4">
+© Resumé: Segmentering, målgruppevalg og positionering
+o Centrale begreber: Segmentering, målgruppevalg og positionering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© Præsentation: Segmentering, målgruppevalg og positionering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Resumé: Segmentering, målgruppevalg og positionering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+= ‘irksomhed er sjældent i stand til at nå hele markedet i sin
+kommunikation. Derfor gennemføres en segmentering for at finde
+virksomhedens målgruppe. På den måde er det lettere for virksomheden
+at rette sin markedsføring, produktudvikling og andre parametre mod den
+del af markedet, som er mest attraktivt for virksomheden.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+SMP-processen omfatter således segmenteringen af markedet (S),
+målgruppevalget (M) og positionering af produktet på markedet (P).
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Ved segmentering starter man med at definere eller afgrænse markedet.
+Herefter vælges relevante segmenteringsvariable, som bruges til at opdele
+markedet i segmenter. Det kan fx være alder, køn, indkomst, bopæl eller
+lignende. Når markedet er opdelt i segmenter, vurderes de enkelte
+segmenters attraktivitet ved hjælp af SMOK: segmenternes størrelse og
+vækst, mulighed for kontakt med segmentet, omkostninger ved at
+bearbejde segmentet og konkurrence om segmentet. Ud fra vurderingen
+af de enkelte segmenter vælges de mest attraktive segmenter som
+virksomhedens målgruppe.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+lit
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+differentieret, koncentreret eller one-to-one.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Til sidst fastlægges virksomhedens positionering, som enten kan tage
+afsæt i en USP, ESP eller me too-strategi. Positioneringskortet er et
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+værktøj, som bruges til at fastlægge virksomhedens position på markedet.
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Centrale begreber: Segmentering, målgruppevalg og
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+positionering
+Målgruppebeskrivelse
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Segmenteringsprocessen
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Beskrivelse af relevante forhold på markedet
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Valg af segmenteringsvariable
+Segmentering og opdeling i segmenter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Vurdering af segmenters attraktivitet (SMOK)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Valg af målgruppe
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Segmenteringsvariable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Sociodemografiske variable
+e Adfærdsorienterede variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Psykografiske variable
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Livsstilsanalyser
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Gallup Kompas
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Conzoom-modellen
+Målgruppestrategi
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Koncentreret markedsføring
+</p>
+
+<blockquote class="border-l-4 border-indigo-300 pl-4 py-2 my-4 italic text-slate-600 bg-indigo-50/50 rounded-r">e One-to-one markedsføring</blockquote>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Positionering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Repositionering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Unique Selling Proposition (USP)
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Emotional Selling Proposition (ESP)
+e Me too-produkter
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+e Top-of-mind
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Positioneringskort
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Præsentation: Segmentering, målgruppevalg og positionering
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+1 y
+</p>
+
+<ul class="list-disc pl-6 my-4 space-y-1"><li class="ml-4 mb-1 text-slate-700">Segmentering, målgruppevalg og</li>
+</ul>positionering
+
+<p class="text-slate-700 leading-relaxed mb-4">
+vv
+rå
+</p>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+Q Google Slides
+</p>
+
+<div class="resume-section mt-12 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl"><h2 class="text-xl font-bold text-emerald-800 mb-3">📝 Resumé</h2>
+
+<p class="text-slate-700 leading-relaxed mb-4">
+© Resumé: Segmentering, målgruppevalg og positionering o Centrale begreber: Segmentering, målgruppevalg og positionering = ‘irksomhed er sjældent i stand til at nå hele markedet i sin kommunikation. Derfor gennemføres en segmentering for at finde virksomhedens målgruppe. På den måde er det lettere for virksomheden at rette sin markedsføring, produktudvikling og andre parametre mod den del af markedet, som er mest attraktivt for virksomheden.
+</p>
+</div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                    <div><a href="opgaver-og-cases-til-kapitel-11.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors">← Opgaver og cases til kapitel 11</a></div>
+                    <div><a href="traening-til-kapitel-11.html" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors">Træning til kapitel 11 →</a></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="mt-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <p class="text-slate-500 text-sm">📖 Afsætning Studiesite — Lavet med ❤️ til eksamenslæsning</p>
+            <p class="text-slate-400 text-xs mt-2">Marketing — en grundbog i afsætning (Systime)</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
